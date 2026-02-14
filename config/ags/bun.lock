@@ -1,0 +1,19 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 0,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "ags": "*",
+        "gnim": "*",
+      },
+    },
+  },
+  "packages": {
+    "ags": ["ags@file:../../../../../usr/share/ags/js", { "peerDependencies": { "gnim": "^1.9.0" }, "os": "linux" }],
+
+    "gnim": ["gnim@file:../../../../../usr/share/ags/js/node_modules/gnim", {}],
+
+    "ags/gnim": ["gnim@file:../../../../../usr/share/ags/js/node_modules/gnim", {}],
+  }
+}

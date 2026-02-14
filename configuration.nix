@@ -127,6 +127,7 @@ programs.hyprland = {
     alejandra
     localsend
     gcc
+    watchexec
     fd
     kitty
     tmux
