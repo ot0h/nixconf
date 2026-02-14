@@ -3,6 +3,8 @@
 {
   imports = [
     inputs.ags.homeManagerModules.default
+
+    ./nixs/nvf.nix
   ];
 
   home.username = "rimv";
@@ -38,7 +40,6 @@
     configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags"; 
     
     extraPackages = with pkgs; [
-      gtk4
       libadwaita
       inputs.astal.packages.${pkgs.system}.battery
       inputs.astal.packages.${pkgs.system}.network

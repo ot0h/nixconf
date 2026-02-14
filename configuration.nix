@@ -102,6 +102,7 @@ programs.hyprland = {
   environment.systemPackages = with pkgs; [
     vim
     btop
+    swww
     opencode
     rofi
     ghostty
@@ -146,9 +147,8 @@ programs.hyprland = {
     spotify
     ani-cli
     yazi
-    sass
+    dart-sass
     glib
-    gtk4
     networkmanager
     libpulseaudio
     gobject-introspection

@@ -10,6 +10,13 @@
     astal.url = "github:aylur/astal";
 
     ags.url = "github:aylur/ags"; 
+
+    nvf = {
+    	url = "github:notashelf/nvf";
+	input.nixpkgs.follows = "nixpkgs";
+    };
+
+    
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
