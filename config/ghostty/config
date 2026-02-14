@@ -1,0 +1,54 @@
+# Tema
+config-file = "~/.cache/wal/ghostty.conf"
+config-file = "~/.config/ghostty/configs/background.conf"
+
+# Shaders
+# custom-shader = "./shaders/shake.glsl"
+# custom-shader = "./shaders/ripple_cursor.glsl"
+# custom-shader = "./shaders/smear_cursor.glsl"
+# custom-shader = "./shaders/kitty_cursor.glsl"
+
+# Fonts
+font-family = "IosevkaTermSlab NF"
+font-feature = ["liga" "calt"]
+font-size = 12
+
+# Generales
+app-notifications = false
+alpha-blending = linear
+shell-integration = fish
+resize-overlay = never
+confirm-close-surface = false
+class = ghostty
+# Windows y Tabs
+window-decoration = false
+window-vsync = false
+window-padding-x = 10
+window-padding-y = 10
+window-show-tab-bar = never
+gtk-tabs-location = hidden
+gtk-wide-tabs = true
+gtk-titlebar-style = native
+gtk-toolbar-style = flat
+gtk-single-instance = true
+
+cursor-style = block
+mouse-hide-while-typing = true
+
+# ----> Keybinds Generales <---------
+keybind = clear
+keybind = ctrl+;=reload_config
+
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+
+
+keybind = ctrl++=increase_font_size:1.5
+keybind = ctrl+-=decrease_font_size:1.5
+keybind = ctrl+backspace=reset_font_size
+
+keybind = ctrl+alt+i=inspector:toggle
+keybind = ctrl+shift+alt+i=show_gtk_inspector
+
+keybind = ctrl+shift+up=scroll_page_up
+keybind = ctrl+shift+down=scroll_page_down

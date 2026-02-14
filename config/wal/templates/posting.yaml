@@ -1,0 +1,12 @@
+name: posting
+
+primary: "{color4}"
+secondary: "{color3}"
+accent: "{color8}"
+
+background: "{background}"
+surface: "{color1}"
+
+error: "{color8}"
+success: "{color14}"
+warning: "{color13}"

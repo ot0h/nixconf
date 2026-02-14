@@ -102,6 +102,9 @@ programs.hyprland = {
   environment.systemPackages = with pkgs; [
     vim
     btop
+    opencode
+    rofi
+    ghostty
     wget
     pywal16
     ncspot
