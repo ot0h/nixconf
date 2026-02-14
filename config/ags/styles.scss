@@ -1,10 +1,11 @@
 // Estilos de AGS
 
 // Colores de PYWAL
-@import "root_colors";
+@import "./colors.scss";
+
 * {
   all: unset;
-  font-family: "Iosevka";
+  font-family: "IosevkaTermSlab NF";
   background: $background;
   color: $foreground;
 }

@@ -35,7 +35,7 @@
   };
   programs.ags = {
     enable = true;
-    configDir = ./config/ags;
+    configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags"; 
     
     extraPackages = with pkgs; [
       inputs.astal.packages.${pkgs.system}.battery
