@@ -38,7 +38,6 @@
     configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags"; 
     
     extraPackages = with pkgs; [
-      gtk3
       gtk4
       libadwaita
       inputs.astal.packages.${pkgs.system}.battery

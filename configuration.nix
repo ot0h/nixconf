@@ -148,7 +148,6 @@ programs.hyprland = {
     yazi
     sass
     glib
-    gtk3
     gtk4
     networkmanager
     libpulseaudio
