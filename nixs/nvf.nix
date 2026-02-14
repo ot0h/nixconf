@@ -50,7 +50,7 @@
 
         theme = {
           enable = true;
-          name = "gruvbox";
+          name = "mini-base16";
           transparent = true;
           style = "dark";
         };
@@ -70,11 +70,30 @@
         languages = {
           enableLSP = true;
           enableTreesitter = true;
-          nix.enable = true;
-          ts.enable = true;
-          clang.enable = true;
+          nix = {
+            enable = true;
+            treesitter = {
+              enable = true;
+            };
+
+          };
+          ts = {
+            enable = true;
+            treesitter = {
+              enable = true;
+            };
+          };
+          clang = {
+            enable = true;
+            treesitter = {
+              enable = true;
+            };
+          };
           typst = {
             enable = true;
+            treesitter = {
+              enable = true;
+            };
             extensions = {
               typst-preview-nvim = {
                 enable = true;

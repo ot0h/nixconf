@@ -57,6 +57,8 @@
       inputs.astal.packages.${pkgs.system}.auth
       inputs.astal.packages.${pkgs.system}.apps
       inputs.astal.packages.${pkgs.system}.mpris
+      gtk4
+      gtk3
     ];
   };
   programs.home-manager.enable = true;

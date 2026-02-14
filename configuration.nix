@@ -157,7 +157,6 @@
     yazi
     dart-sass
     brightnessctl
-    glib
     networkmanager
     libpulseaudio
     gobject-introspection
