@@ -39,7 +39,7 @@
       inputs.astal.packages.${pkgs.system}.hyprland
       inputs.astal.packages.${pkgs.system}.notifd
       inputs.astal.packages.${pkgs.system}.auth
-      inputs.astal.packages.${pkgs.system}.app
+      inputs.astal.packages.${pkgs.system}.apps
       inputs.astal.packages.${pkgs.system}.mpris
     ];
   };
