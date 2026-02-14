@@ -9,32 +9,41 @@
     };
     astal.url = "github:aylur/astal";
 
-    ags.url = "github:aylur/ags"; 
+    ags.url = "github:aylur/ags";
 
     nvf = {
-    	url = "github:notashelf/nvf";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations."rimv" = nixpkgs.lib.nixosSystem {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+    in
+    {
+      homeConfigurations.rimv = home-manager.lib.homeConfigurations {
+        pkgs = import nixpkgs {inherit system;};
+        extraSpecialArgs = { inherit inputs; };
 
-      modules = [
-        ./configuration.nix
+        modules = [
+          ./configuration.nix
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.rimv = import ./home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
-      ];
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.rimv = import ./home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      };
     };
-  };
+
 }

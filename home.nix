@@ -42,7 +42,8 @@
   };
   programs.ags = {
     enable = true;
-    configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags";
+
+    configDir = ../ags;
 
     extraPackages = with pkgs; [
       libadwaita
@@ -58,8 +59,6 @@
       inputs.astal.packages.${pkgs.system}.auth
       inputs.astal.packages.${pkgs.system}.apps
       inputs.astal.packages.${pkgs.system}.mpris
-      gtk4
-      gtk3
     ];
   };
   programs.home-manager.enable = true;

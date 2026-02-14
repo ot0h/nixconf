@@ -1,4 +1,4 @@
-@import "/home/otoh/.cache/wal/colors-waybar.css";
+@import "/home/rimv/.cache/wal/colors-waybar.css";
 
 * {
   padding: 0;
@@ -13,7 +13,7 @@
 
 window#waybar {
   background: @color0;
-  font-family: Iosevka Term Slab;
+  font-family: Iosevka;
   /* font-family: Monocraft; */
   font-size: 13px;
   font-weight: 900;

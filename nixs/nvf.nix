@@ -22,6 +22,35 @@
           };
         };
 
+        lsp = {
+          enable = true;
+          inlayHints.enable = true;
+        };
+
+        diagnostics = {
+          enable = true;
+          config ={
+            virtual_lines =true;
+            virtual_text =true;
+          };
+        };
+
+        autocomplete = {
+          blink-cmp = {
+            enable = true;
+
+            mappings = {
+              close = "esc";
+              confirm = "<C-y>";
+              next = "<C-n>";
+              previous = "<C-p>";
+            };
+
+            friendly-snippets = {
+              enable = true;
+            };
+          };
+        };
         keymaps = [
           {
             key = "-";
@@ -45,7 +74,7 @@
           indent-blankline = {
             enable = true;
           };
-
+        };
 
         theme = {
           enable = true;
@@ -154,9 +183,8 @@
           };
         };
 
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
         statusline.lualine.enable = true;
+        telescope.enable = true;
       };
     };
   };

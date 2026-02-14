@@ -1,6 +1,0 @@
-export * from "./getRamPercent"
-export * from "./getCpuPercent"
-export * from "./autoReload"
-export * from "./getSubmapHyprland"
-export * from "./file"
-export * from "./brightnessService"
