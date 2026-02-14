@@ -146,6 +146,13 @@ programs.hyprland = {
     spotify
     ani-cli
     yazi
+    sass
+    glib
+    gtk3
+    gtk4
+    networkmanager
+    libpulseaudio
+    gobject-introspection
     mpv
     onlyoffice-desktopeditors
     home-manager

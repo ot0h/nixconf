@@ -24,10 +24,10 @@
   	".config/wak".source  = ./config/wal;
   	".config/opencode".source  = ./config/opencode;
   	".config/ghostty".source  = ./config/ghostty;
-  	".config/ags".source  = ./config/ags;
   };
   programs.ags = {
     enable = true;
+    configDir = ../../config/ags;
     
     extraPackages = with pkgs; [
       inputs.astal.packages.${pkgs.system}.battery
