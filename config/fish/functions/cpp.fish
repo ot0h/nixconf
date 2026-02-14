@@ -17,5 +17,5 @@ function cpp
     end
 
     set -l base (string split -r -m1 . $file)[1]
-    clang++ "$file" -o "$base" && "./$base"
+    g++ "$file" -o "$base" && "./$base"
 end

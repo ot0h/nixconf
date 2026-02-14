@@ -1,4 +1,9 @@
-{ config, pkgs, inputs,... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -9,36 +14,35 @@
 
   home.username = "rimv";
   home.homeDirectory = "/home/rimv";
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11";
 
   home.packages = [
   ];
- 
 
   home.file = {
-	#Los dizque Dotfiles xD
-  	".config/hypr".source  = ./config/hypr;
-  	".config/fish".source  = ./config/fish;
-  	".config/yazi".source  = ./config/yazi;
-  	".config/tmux".source  = ./config/tmux;
-  	".config/kitty".source  = ./config/kitty;
-  	".config/rofi".source  = ./config/rofi;
-  	".config/wak".source  = ./config/wal;
-  	".config/opencode".source  = ./config/opencode;
-  	".config/ghostty".source  = ./config/ghostty;
-  	
-	#Extras
-	"Pictures/Wallpapers".source = ./extras/Wallpapers;
-	"scripts".source = ./extras/scripts;
-	"Documents/TYPST".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
-	
-	
-	
+
+    # Config
+    ".config/hypr".source = ./config/hypr;
+    ".config/fish".source = ./config/fish;
+    ".config/yazi".source = ./config/yazi;
+    ".config/tmux".source = ./config/tmux;
+    ".config/kitty".source = ./config/kitty;
+    ".config/rofi".source = ./config/rofi;
+    ".config/wal".source = ./config/wal;
+    ".config/opencode".source = ./config/opencode;
+    ".config/ghostty".source = ./config/ghostty;
+
+    #Extras
+    "Pictures/Wallpapers".source = ./extras/Wallpapers;
+    "scripts".source = ./extras/scripts;
+    "Documents/TYPST".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
+
   };
   programs.ags = {
     enable = true;
-    configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags"; 
-    
+    configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags";
+
     extraPackages = with pkgs; [
       libadwaita
       inputs.astal.packages.${pkgs.system}.battery

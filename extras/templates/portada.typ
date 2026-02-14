@@ -5,7 +5,7 @@
   docente: [docente],
   grupal: false,
   grupo: none,
-  font: "Iosevka Term Slab",
+  font: "Iosevka",
 ) = {
   set page(fill: rgb("#FFF"), margin: (rest: 1.0in), "us-letter")
   set text(font: font, size: 12pt)
@@ -75,6 +75,6 @@
   grupal: true,
   grupo: (
     "Raul Moncada — 62311465",
-    "Juan Pérez — 62311432",
+    "Diego Moncada — 62311432",
   ),
 )

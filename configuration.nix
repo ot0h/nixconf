@@ -1,11 +1,10 @@
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -13,8 +12,10 @@
 
   networking.hostName = "nixos"; # Define your hostname.
 
-nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.networkmanager.enable = true;
 
@@ -39,11 +40,11 @@ nix.settings.experimental-features = ["nix-command" "flakes"];
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-services.getty.autologinUser = "rimv";
-programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
-};
+  services.getty.autologinUser = "rimv";
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   services.xserver.xkb = {
     layout = "latam";
@@ -63,37 +64,38 @@ programs.hyprland = {
     pulse.enable = true;
   };
 
-
   programs.fish = {
-  	enable = true;
+    enable = true;
   };
 
-	nix.gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 7d";
-	};
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   users.users.rimv = {
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Raul Moncada";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
-	programs.git = {
-		enable = true;
-		config = {
-			user.name = "rimv175";
-			user.email = "rimv715@gmail.com";
-			init.defaultBranch = "main";
-			pull.rebase = true;
-		};
-	};
-
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "rimv175";
+      user.email = "rimv715@gmail.com";
+      init.defaultBranch = "main";
+      pull.rebase = true;
+    };
+  };
 
   programs.firefox.enable = true;
 
@@ -111,17 +113,23 @@ programs.hyprland = {
     ncspot
     neovim
     git
+    wiremix
     lazygit
     fzf
     zoxide
     fish
     starship
+    typstyle
     atuin
     bun
     bat
     cups
     nodejs
     vscode
+    hypridle
+    hyprlock
+    hyprsunset
+    hyprshot
     zed-editor
     tinymist
     nixd
@@ -148,6 +156,7 @@ programs.hyprland = {
     ani-cli
     yazi
     dart-sass
+    brightnessctl
     glib
     networkmanager
     libpulseaudio
@@ -165,30 +174,28 @@ programs.hyprland = {
     noto-fonts-cjk-sans
   ];
 
-networking.firewall.allowedTCPPorts = [ 2222 ];
+  networking.firewall.allowedTCPPorts = [ 2222 ];
   services.openssh = {
-  	enable = true;
+    enable = true;
 
-	settings = {
-		PasswordAuthentication = false;
-		PermitRootLogin = "no";
-	};
-  	ports =[2222];
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+    ports = [ 2222 ];
   };
 
   programs.ssh = {
-	startAgent = true;
-	
-	extraConfig = "
+    startAgent = true;
 
-		Host github.com
-			Hostname ssh.github.com
-			Port 443
-			User git
+    extraConfig = "
+        Host github.com
+                Hostname ssh.github.com
+                Port 443
+                User git
 	";
 
   };
- 
 
   system.stateVersion = "25.11"; # Did you read the comment?
 
