@@ -12,7 +12,7 @@
  
 
   home.file = {
-  	".config/kitty".source  = ./config/kitty;
+  	".config/hypr".source  = ./config/hypr;
   };
 
   # Home Manager can also manage your environment variables through
