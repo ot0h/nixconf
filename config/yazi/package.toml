@@ -1,0 +1,27 @@
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "30440c7"
+hash = "211b7d22478b907e5f6fd4fe27a923e"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "0e56060"
+hash = "ab2e66065a94cca4886b303518e44bd8"
+
+[[plugin.deps]]
+use = "dedukun/bookmarks"
+rev = "9ef1254"
+hash = "92fbb5483657fa7976cdf4e0104e18e0"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "594b8a2"
+hash = "c9e628fc0312d198db22ae2fa74883b"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "88990a6"
+hash = "8a7c58225816a163a6e8730c0adafbc8"
+
+[flavor]
+deps = []
