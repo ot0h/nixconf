@@ -24,10 +24,18 @@
   	".config/wak".source  = ./config/wal;
   	".config/opencode".source  = ./config/opencode;
   	".config/ghostty".source  = ./config/ghostty;
+  	
+	#Extras
+	"Pictures/Wallpapers".source = ./extras/Wallpapers;
+	"scripts".source = ./extras/scripts;
+	"Documents/TYPST".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
+	
+	
+	
   };
   programs.ags = {
     enable = true;
-    configDir = ../../config/ags;
+    configDir = ./config/ags;
     
     extraPackages = with pkgs; [
       inputs.astal.packages.${pkgs.system}.battery
