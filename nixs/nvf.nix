@@ -1,5 +1,4 @@
 { inputs, pkgs, ... }: {
-  # Importamos el módulo desde los inputs del flake
   imports = [ inputs.nvf.homeManagerModules.default ];
 
   programs.nvf = {
@@ -8,15 +7,30 @@
       vim = {
         viAlias = true;
         vimAlias = true;
+
+        options = {
+                shiftwidth = 2;
+         };
         
-        # Estética de miedo
         theme = {
           enable = true;
-          name = "base16";
-		transparent = true;
+          name = "gruvbox";
+	  transparent = true;
+	  style = "dark";
+        };
+        
+        formatter = {
+                conform-nvim = {
+                   enable = true;
+                 };
         };
 
-        # Pa' que programés tranquilo
+        binds = {
+         whicKey = {
+           enable = true;
+                };
+        };
+
         languages = {
           enableLSP = true;
           enableTreesitter = true;
@@ -31,7 +45,6 @@
 		};
 	};
 
-        # Herramientas útiles
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
         statusline.lualine.enable = true;
