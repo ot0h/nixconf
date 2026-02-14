@@ -46,11 +46,10 @@
             enable = true;
           };
 
-        };
 
         theme = {
           enable = true;
-          name = "mini-base16";
+          name = "gruvbox";
           transparent = true;
           style = "dark";
         };

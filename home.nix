@@ -31,6 +31,7 @@
     ".config/wal".source = ./config/wal;
     ".config/opencode".source = ./config/opencode;
     ".config/ghostty".source = ./config/ghostty;
+    ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/waybar";
 
     #Extras
     "Pictures/Wallpapers".source = ./extras/Wallpapers;
