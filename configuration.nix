@@ -148,10 +148,7 @@
     hyprlock
     hyprsunset
     hyprshot
-    zed-editor
     tinymist
-    nixd
-    alejandra
     localsend
     gcc
     watchexec

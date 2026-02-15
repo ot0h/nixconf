@@ -1,0 +1,36 @@
+{
+  "ui_font_size": 16,
+  "ui_font_family": "Iosevka",
+  "buffer_font_size": 15,
+  "buffer_font_family": "Iosevka",
+
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Monosami Dark",
+  },
+
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
+
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "toolbar": {
+    "quick_actions": false,
+  },
+
+  "terminal": {
+    "shell": "system",
+    "font_family": "Iosevka",
+  },
+
+  "project_panel": {
+    "dock": "right",
+    "indent_size": 12,
+  },
+}
