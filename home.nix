@@ -33,7 +33,6 @@
 
     inputs.ags.packages.${system}.default
 
-
     zed-editor
     gtk4
     glib
@@ -42,7 +41,6 @@
     python3
     nixd
     alejandra
-    xdg-desktop-portal-termfilechooser
   ];
 
   home.file = {
@@ -61,7 +59,7 @@
     ".config/zed".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/zed";
 
     # Wrapper para TermfileChooser para HYprland
-    ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ./extras/scripts/yazi-wrapper.sh;
+    ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ./extras/termfilechooser;
 
     #Extras
     "Pictures/Wallpapers".source = ./extras/Wallpapers;
