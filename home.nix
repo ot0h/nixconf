@@ -32,6 +32,7 @@
     inputs.ags.packages.${pkgs.system}.default
 
     pkgs.gtk4
+    pkgs.glib
   ];
 
   home.file = {
@@ -39,11 +40,13 @@
     # Config
     ".config/hypr".source = ./config/hypr;
     ".config/fish".source = ./config/fish;
-    ".config/yazi".source = ./config/yazi;
+    ".config/yazi".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/yazi";
     ".config/tmux".source = ./config/tmux;
     ".config/kitty".source = ./config/kitty;
     ".config/rofi".source = ./config/rofi;
-    ".config/wal".source = ./config/wal;
+    ".config/wal".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/wal";
     ".config/opencode".source = ./config/opencode;
     ".config/ghostty".source = ./config/ghostty;
     ".config/waybar".source =

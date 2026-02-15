@@ -37,7 +37,25 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm.enable = true;
+  services.gvfs = {
+    enable = true;
+  };
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  services.gnome = {
+    core-apps.enable = true;
+    core-developer-tools.enable = false;
+    gcr-ssh-agent.enable = false;
+  };
+
+  environment.gnome = {
+    excludePackages = with pkgs; [
+      gnome-tour
+      gnome-user-docs
+    ];
+  };
 
   services.getty.autologinUser = "rimv";
   programs.hyprland = {
