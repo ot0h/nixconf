@@ -50,6 +50,23 @@
     gcr-ssh-agent.enable = false;
   };
 
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-termfilechooser
+    ];
+
+    config = {
+      hyprland = {
+        default = [ "gtk" "hyprland" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+      };
+    };
+  };
+
   environment.gnome = {
     excludePackages = with pkgs; [
       gnome-tour

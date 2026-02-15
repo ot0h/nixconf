@@ -42,6 +42,7 @@
     python3
     nixd
     alejandra
+    xdg-desktop-portal-termfilechooser
   ];
 
   home.file = {
@@ -58,6 +59,9 @@
     ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ghostty";
     ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/waybar";
     ".config/zed".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/zed";
+
+    # Wrapper para TermfileChooser para HYprland
+    ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ./extras/scripts/yazi-wrapper.sh;
 
     #Extras
     "Pictures/Wallpapers".source = ./extras/Wallpapers;
