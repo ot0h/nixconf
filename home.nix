@@ -7,7 +7,6 @@
 
 {
   imports = [
-    inputs.ags.homeManagerModules.default
 
     ./nixs/nvf.nix
   ];
@@ -30,7 +29,9 @@
     inputs.astal.packages.${pkgs.system}.apps
     inputs.astal.packages.${pkgs.system}.mpris
 
-    pkgs.gkt4
+    inputs.ags.packages.${pkgs.system}.default
+
+    pkgs.gtk4
   ];
 
   home.file = {
@@ -54,11 +55,6 @@
     "Documents/TYPST/templates".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
 
-  };
-  programs.ags = {
-    enable = true;
-
-    configDir = ../ags;
   };
   programs.home-manager.enable = true;
 }

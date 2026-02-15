@@ -3,19 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    astal.url = "github:aylur/astal";
 
-    ags.url = "github:aylur/ags";
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs =
@@ -29,13 +36,15 @@
       system = "x86_64-linux";
     in
     {
-      homeConfigurations.rimv = home-manager.lib.homeConfigurations {
-        pkgs = import nixpkgs {inherit system;};
-        extraSpecialArgs = { inherit inputs; };
+      nixosConfigurations.rimv = nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        specialArgs = { inherit inputs; };
 
         modules = [
           ./configuration.nix
 
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -45,5 +54,4 @@
         ];
       };
     };
-
 }
