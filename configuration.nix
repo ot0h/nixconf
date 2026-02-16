@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -61,7 +61,10 @@
 
     config = {
       hyprland = {
-        default = [ "gtk" "hyprland" ];
+        default = [
+          "gtk"
+          "hyprland"
+        ];
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
     };
@@ -115,9 +118,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-    ];
-    packages = with pkgs; [
-      #  thunderbird
     ];
   };
 

@@ -9,13 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    astal = {
-      url = "github:aylur/astal";
+    ags = {
+      url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags = {
-      url = "github:aylur/ags";
+    astal = {
+      url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,33 +25,33 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations.rimv = nixpkgs.lib.nixosSystem {
-        inherit system;
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  let
+    system = "x86_64-linux";
+    username = "rimv";
+    pkgs = import nixpkgs { inherit system; };
+  in
+  {
+    # 🔹 Para nixos-rebuild (opcional si quieres seguir usándolo)
+    nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
 
-        specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+      ];
+    };
+
+    homeConfigurations.${username} =
+      home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        extraSpecialArgs = { inherit inputs; };
 
         modules = [
-          ./configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.rimv = import ./home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
+          ./home.nix
         ];
       };
-    };
+  };
 }
+

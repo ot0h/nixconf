@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
 
@@ -22,6 +22,11 @@
           };
         };
 
+        mini = {
+          icons = {
+            enable = true;
+          };
+        };
         lsp = {
           enable = true;
           inlayHints.enable = true;
@@ -29,9 +34,9 @@
 
         diagnostics = {
           enable = true;
-          config ={
-            virtual_lines =true;
-            virtual_text =true;
+          config = {
+            virtual_lines = true;
+            virtual_text = false;
           };
         };
 
@@ -103,12 +108,27 @@
             treesitter = {
               enable = true;
             };
-
+            format = {
+              enable = true;
+              type = [ "alejandra" ];
+            };
+            lsp = {
+              enable = true;
+              servers = [ "nixd" ];
+            };
           };
           ts = {
             enable = true;
             treesitter = {
               enable = true;
+            };
+          };
+          markdown = {
+            enable = true;
+            extensions = {
+              markview-nvim = {
+                enable = false;
+              };
             };
           };
           clang = {
@@ -158,6 +178,15 @@
 
           };
 
+          images = {
+            image-nvim = {
+              enable = true;
+
+              setupOpts = {
+                backend = "kitty";
+              };
+            };
+          };
           surround = {
             enable = true;
 
