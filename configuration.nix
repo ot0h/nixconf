@@ -129,6 +129,11 @@
     nssmdns = true;
     nssmdns4 = true;
     openFirewall = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      userServices = true;
+    };
   };
   services.udev = {
     enable = true;
