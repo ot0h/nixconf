@@ -20,7 +20,7 @@
 
   };
   networking.firewall = {
-    enable = false;
+    enable = true;
 
     allowedTCPPorts = [ 22 80  2222 1865 3289];
   };
@@ -153,13 +153,13 @@
       epkowa
       utsushi
 
-      # (writeTextFile {
-      #   name = "epson2.conf";
-      #   text = ''
-      #     net  192.168.0.129
-      #     '';
-      #   destination = "/etc/sane.d/epson2.conf";
-      # })
+      (writeTextFile {
+        name = "epson2.conf";
+        text = ''
+          net  192.168.123.26
+          '';
+        destination = "/etc/sane.d/epson2.conf";
+      })
     ];
   };
   services.pulseaudio.enable = false;
