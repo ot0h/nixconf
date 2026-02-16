@@ -15,7 +15,7 @@
   networking.networkmanager = {
     enable = true;
     wifi ={
-      backend = "iwd";
+      backend = "wpa_supplicant";
     };
 
   };
@@ -24,11 +24,6 @@
     1865
   ];
 
-  networking.wireless ={
-    iwd = {
-      enable = true;
-    };
-  };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -75,6 +70,7 @@
     core-apps.enable = true;
     core-developer-tools.enable = false;
     gcr-ssh-agent.enable = false;
+    gnome-keyring.enable = true;
   };
 
   xdg.portal = {
@@ -151,6 +147,7 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;

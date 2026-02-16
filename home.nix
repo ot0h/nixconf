@@ -27,9 +27,9 @@
     imagemagick
     typst
     vala
-    impala
     bluetui
     samba
+    polkit_gnome
     simple-scan
   ];
 
