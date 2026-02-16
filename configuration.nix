@@ -159,6 +159,12 @@
     enable = true;
   };
 
+  programs.localsend = {
+    enable = true;
+
+    openFirewall = true;
+  };
+
   nix.gc = {
     automatic = true;
     dates = "weekly";

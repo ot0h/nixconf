@@ -9,6 +9,7 @@
   imports = [
     ./nixs/nvf.nix
     ./modules/ags.nix
+    ./nixs/zen-browser.nix
   ];
 
   home.username = "rimv";
@@ -30,8 +31,8 @@
     bluetui
     samba
     polkit_gnome
-    xsane
     gnome-tweaks
+    poppler-utils
   ];
 
   home.file = {

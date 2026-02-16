@@ -23,13 +23,25 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     username = "rimv";
-    pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit  system;
+        config = {
+          allowUnfree = true;
+        };
+      };
   in
   {
     # 🔹 Para nixos-rebuild (opcional si quieres seguir usándolo)
