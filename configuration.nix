@@ -153,7 +153,7 @@
       epkowa
       utsushi
 
-      lib.singleton (writeTextFile {
+      (writeTextFile {
         name = "epson2.conf";
         text = "
           net  192.168.0.129
