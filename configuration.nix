@@ -19,11 +19,11 @@
     };
 
   };
-  networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 
-    2222 
-    1865
-  ];
+  networking.firewall = {
+    enable = true;
+
+    allowedTCPPorts = [ 22 80  2222 1865 3289];
+  };
 
 
   nix.settings.experimental-features = [
@@ -154,7 +154,10 @@
       utsushi
     ];
   };
-
+  # Impresora en SYSCOM
+  environment.etc."sane.d/epson2.conf".text = ''
+    net 192.168.0.129
+  '';
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
