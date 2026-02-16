@@ -19,6 +19,7 @@
     };
 
   };
+  networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 
     2222 
     1865
@@ -120,6 +121,9 @@
       epson-escpr
       epson-escpr2
     ];
+
+    browsing = true;
+    defaultShared = true;
   };
 
 
