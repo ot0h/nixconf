@@ -12,12 +12,20 @@
 
   networking.hostName = "nixos"; # Define your hostname.
 
+  networking.networkmanager = {
+    enable = true;
+    wifi ={
+      backend = "iwd";
+    };
+
+  };
+  networking.firewall.allowedTCPPorts = [ 2222 ];
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Tegucigalpa";
 
@@ -203,9 +211,9 @@
     liberation_ttf
     noto-fonts
     noto-fonts-cjk-sans
+    nerd-fonts.jetbrains-mono
   ];
 
-  networking.firewall.allowedTCPPorts = [ 2222 ];
   services.openssh = {
     enable = true;
 

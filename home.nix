@@ -27,6 +27,7 @@
     imagemagick
     typst
     vala
+    impala
   ];
 
   home.file = {
@@ -52,6 +53,8 @@
     ".config/zed".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/zed";
 
+    ".config/ags".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags";
     # Wrapper para TermfileChooser para HYprland
     ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ./extras/termfilechooser;
 

@@ -1,0 +1,16 @@
+// Estilos de AGS
+
+// Colores de PYWAL
+@import "./colors.scss";
+
+* {
+  all: unset;
+  font-family: "JetbrainsMono Nerd Font";
+  background: $background;
+  color: $foreground;
+}
+
+// WINDOWS
+@import "./windows/Bars/Sidebar/style.scss";
+@import "./windows/Bars/Topbar/style.scss";
+@import "./windows/Panel/styles.scss";

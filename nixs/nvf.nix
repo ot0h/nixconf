@@ -148,6 +148,25 @@
               };
             };
           };
+          tailwind = {
+            enable = true;
+          };
+          rust = {
+            enable = true;
+            format  = {
+              enable = true;
+            };
+          };
+          python = {
+            enable = true;
+            format = {
+              enable = true;
+              type = ["ruff"];
+            };
+            lsp = {
+              enable = true;
+            };
+          };
         };
 
         utility = {
