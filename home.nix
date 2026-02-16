@@ -9,7 +9,6 @@
   imports = [
     ./nixs/nvf.nix
     ./modules/ags.nix
-    ./nixs/zen-browser.nix
   ];
 
   home.username = "rimv";
@@ -19,6 +18,7 @@
   home.packages = with pkgs; [
     zed-editor
     jmtpfs
+    inputs.zen-browser.packages.${system}.default
     meson
     python3
     nixd
