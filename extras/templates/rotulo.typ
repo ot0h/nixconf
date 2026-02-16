@@ -4,7 +4,7 @@
 #let rotulo(empresa: none, persona: [PERSONA], telefono: [TELEFONO], direccion: [DIRECCION], tamañoLetra: 25pt) = {
   // Configuración general del template
   set page(flipped: true, "us-letter", margin: (rest: 1.3in))
-  set text(font: "Iosevka Slab", weight: "regular", tamañoLetra)
+  set text(font: "Iosevka", weight: "regular", tamañoLetra)
 
 
   /** --> Variables <-- */

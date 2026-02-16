@@ -19,7 +19,16 @@
     };
 
   };
-  networking.firewall.allowedTCPPorts = [ 2222 ];
+  networking.firewall.allowedTCPPorts = [ 
+    2222 
+    1865
+  ];
+
+  networking.wireless ={
+    iwd = {
+      enable = true;
+    };
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -47,6 +56,16 @@
 
   services.gvfs = {
     enable = true;
+  };
+
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+  };
+  services.samba-wsdd = {
+
+    enable = true;
+    openFirewall = true;
   };
 
   services.displayManager.gdm.enable = true;
@@ -98,7 +117,37 @@
 
   console.keyMap = "la-latin1";
 
-  services.printing.enable = true;
+  services.printing ={
+    enable = true;
+
+    drivers = with pkgs; [
+      epson-escpr
+      epson-escpr2
+    ];
+  };
+
+
+  services.avahi ={
+    enable = true;
+
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  services.udev = {
+    enable = true;
+    packages = with pkgs; [
+      utsushi
+    ];
+  };
+
+  # Scanner
+  hardware.sane = {
+    enable = true;
+    extraBackends =with pkgs; [
+      epkowa
+      utsushi
+    ];
+  };
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

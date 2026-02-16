@@ -28,6 +28,9 @@
     typst
     vala
     impala
+    bluetui
+    samba
+    simple-scan
   ];
 
   home.file = {
