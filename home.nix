@@ -16,6 +16,7 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
+    gdu
     zed-editor
     jmtpfs
     inputs.zen-browser.packages.${system}.default
