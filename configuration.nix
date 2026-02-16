@@ -126,6 +126,7 @@
   services.avahi ={
     enable = true;
 
+    nssmdns = true;
     nssmdns4 = true;
     openFirewall = true;
   };
@@ -175,10 +176,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Raul Moncada";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp"];
   };
 
   programs.git = {
@@ -202,7 +200,6 @@
     swww
     opencode
     rofi
-    ghostty
     wget
     pywal16
     ncspot

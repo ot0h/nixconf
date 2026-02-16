@@ -17,9 +17,11 @@
               enable = true;
             };
             xclip = {
-              enable = true;
+              enable = false;
             };
           };
+
+          registers  ="unnamedplus";
         };
 
         mini = {
@@ -110,7 +112,6 @@
             };
             format = {
               enable = true;
-              type = [ "alejandra" ];
             };
             lsp = {
               enable = true;
@@ -147,6 +148,12 @@
                 enable = true;
               };
             };
+          };
+          css = {
+            enable = true;
+          };
+          html = {
+            enable = true;
           };
           tailwind = {
             enable = true;

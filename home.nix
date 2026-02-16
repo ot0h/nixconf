@@ -22,7 +22,11 @@
     inputs.zen-browser.packages.${system}.default
     meson
     python3
+    jq
+    procps
+    clipse
     nixd
+    google-drive-ocamlfuse
     nil
     alejandra
     ouch
@@ -34,6 +38,10 @@
     polkit_gnome
     gnome-tweaks
     poppler-utils
+    gruvbox-gtk-theme
+    gruvbox-plus-icons
+    sane-backends
+    sambaFull
   ];
 
   home.file = {
@@ -52,8 +60,6 @@
     ".config/wal".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/wal";
     ".config/opencode".source = ./config/opencode;
-    ".config/ghostty".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ghostty";
     ".config/waybar".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/waybar";
     ".config/zed".source =
@@ -66,9 +72,8 @@
 
     #Extras
     "Pictures/Wallpapers".source = ./extras/Wallpapers;
-    "scripts".source = ./extras/scripts;
-    "Documents/TYPST/templates".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
+    "scripts".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/scripts";
+    "Documents/TYPST/templates".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
 
   };
   programs.home-manager.enable = true;
