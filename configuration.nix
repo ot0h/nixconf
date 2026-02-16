@@ -20,7 +20,7 @@
 
   };
   networking.firewall = {
-    enable = true;
+    enable = false;
 
     allowedTCPPorts = [ 22 80  2222 1865 3289];
   };
@@ -152,12 +152,16 @@
     extraBackends =with pkgs; [
       epkowa
       utsushi
+
+      lib.singleton (writeTextFile {
+        name = "epson2.conf";
+        text = "
+          net  192.168.0.129
+          ";
+        destination = "/etc/sane.d/epson2.conf";
+      })
     ];
   };
-  # Impresora en SYSCOM
-  environment.etc."sane.d/epson2.conf".text = ''
-    net 192.168.0.129
-  '';
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
