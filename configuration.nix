@@ -68,7 +68,7 @@
 
   services.gnome = {
     core-apps.enable = true;
-    core-developer-tools.enable = false;
+    core-developer-tools.enable = true;
     gcr-ssh-agent.enable = false;
     gnome-keyring.enable = true;
   };

@@ -30,7 +30,8 @@
     bluetui
     samba
     polkit_gnome
-    simple-scan
+    xsane
+    gnome-tweaks
   ];
 
   home.file = {
