@@ -1,0 +1,163 @@
+do
+	vim.diagnostic.config({
+		virtual_text = {
+			prefix = "●", -- Ícono para el error al final de la línea
+			source = "if_many",
+		},
+		signs = true,
+		underline = true,
+		update_in_insert = false,
+		severity_sort = true,
+	})
+end
+
+do
+	require("blink.cmp").setup({
+		snippets = { preset = "default" },
+
+		keymap = {
+			preset = "super-tab",
+		},
+
+		cmdline = {
+			keymap = { preset = "inherit" },
+			completion = { menu = { auto_show = true } },
+		},
+
+		appearance = {
+			nerd_font_variant = "mono",
+		},
+
+		completion = {
+			documentation = {
+				auto_show = true,
+				window = { border = "single" },
+			},
+			menu = {
+				border = "none",
+				draw = {
+					columns = { { "kind_icon" }, { "label", gap = 1 } },
+					components = {
+						label = {
+							text = function(ctx)
+								return require("colorful-menu").blink_components_text(ctx)
+							end,
+							highlight = function(ctx)
+								return require("colorful-menu").blink_components_highlight(ctx)
+							end,
+						},
+						kind_icon = {
+							text = function(ctx)
+								local icon = ctx.kind_icon
+								if vim.tbl_contains({ "Path" }, ctx.source_name) then
+									local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
+									if dev_icon then
+										icon = dev_icon
+									end
+								else
+									-- Requiere plugin 'onsails/lspkind.nvim'
+									icon = require("lspkind").symbolic(ctx.kind, { mode = "symbol" })
+								end
+								return icon .. ctx.icon_gap
+							end,
+							highlight = function(ctx)
+								local hl = ctx.kind_hl
+								if vim.tbl_contains({ "Path" }, ctx.source_name) then
+									local _, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
+									if dev_hl then
+										hl = dev_hl
+									end
+								end
+								return hl
+							end,
+						},
+					},
+				},
+			},
+		},
+
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
+
+		fuzzy = {
+			implementation = "lua",
+		},
+	})
+end
+
+do
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+	local on_attach = function(client, bufnr)
+		local opts = { noremap = true, silent = true, buffer = bufnr }
+
+		-- Atajos de teclado
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, opts)
+
+		-- Formateo con Conform (Tu <leader>F)
+		vim.keymap.set("n", "<leader>F", function()
+			require("conform").format({ bufnr = bufnr, lsp_fallback = true })
+		end, opts)
+	end
+
+	vim.lsp.config("vtsls", {
+		cmd = { "vtsls", "--stdio" },
+		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+		root_markers = { ".git", "package.json", "tsconfig.json" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			typescript = {
+				updateImportsOnRename = true,
+				suggest = { completeFunctionCalls = true },
+			},
+			vtsls = {
+				autoUseWorkspaceTsdk = true,
+			},
+		},
+	})
+	vim.lsp.enable("vtsls")
+
+	vim.lsp.config("nixd", {
+		cmd = { "nixd" },
+		filetypes = { "nix" },
+		root_markers = { "flake.nix", "configuration.nix" },
+	})
+	vim.lsp.enable("nixd")
+
+	vim.lsp.config("lua_ls", {
+		cmd = { "lua-language-server" },
+		filetypes = { "lua" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+					checkThirdParty = false,
+				},
+				telemetry = { enable = false },
+			},
+		},
+	})
+	vim.lsp.enable("lua_ls")
+end
+
+do
+	require("conform").setup({
+		formatters_by_ft = {
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
+			lua = { "stylua" },
+			nix = { "alejandra" },
+		},
+		format_on_save = true,
+	})
+end
