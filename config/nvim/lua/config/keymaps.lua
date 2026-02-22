@@ -1,7 +1,8 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
-keymap("n", "-", ":lua MiniFiles.open()<CR>", opts)
+keymap("n", "-", ":Oil<CR>", opts)
+keymap("n", "_", ":lua MiniFiles.open()<CR>", opts)
 keymap("n", "<leader>", ":WhichKey<CR>", opts)
 
 -- SmartSplits

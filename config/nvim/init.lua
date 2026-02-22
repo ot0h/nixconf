@@ -78,12 +78,13 @@ vim.pack.add({
 	},
 
 	{
-		src = "https://github.com/neovim/nvim-lspconfig",
-		version = "master",
+		src = "https://github.com/folke/ts-comments.nvim",
+		version = "main",
 	},
 
 	{
-		src = "https://github.com/folke/ts-comments.nvim",
+		-- Oil
+		src = "https://github.com/stevearc/oil.nvim",
 		version = "main",
 	},
 
