@@ -12,6 +12,12 @@ vim.pack.add({
 	},
 
 	{
+		-- MiniSurround
+		src = "https://github.com/nvim-mini/mini.surround",
+		version = "main",
+	},
+
+	{
 		-- Smart-Splits
 		src = "https://github.com/mrjones2014/smart-splits.nvim",
 		version = "master",
@@ -78,6 +84,7 @@ vim.pack.add({
 	},
 
 	{
+		-- TS-COMMENTS
 		src = "https://github.com/folke/ts-comments.nvim",
 		version = "main",
 	},
@@ -85,6 +92,12 @@ vim.pack.add({
 	{
 		-- Oil
 		src = "https://github.com/stevearc/oil.nvim",
+		version = "main",
+	},
+
+	{
+		-- Flash
+		src = "https://github.com/folke/flash.nvim",
 		version = "main",
 	},
 
