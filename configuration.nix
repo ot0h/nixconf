@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -14,23 +12,20 @@
 
   networking.networkmanager = {
     enable = true;
-    wifi ={
+    wifi = {
       backend = "wpa_supplicant";
     };
-
   };
   networking.firewall = {
     enable = true;
 
-    allowedTCPPorts = [ 22 80  2222 1865 3289];
+    allowedTCPPorts = [22 80 2222 1865 3289];
   };
-
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
 
   time.timeZone = "America/Tegucigalpa";
 
@@ -59,7 +54,6 @@
     openFirewall = true;
   };
   services.samba-wsdd = {
-
     enable = true;
     openFirewall = true;
   };
@@ -89,7 +83,7 @@
           "gtk"
           "hyprland"
         ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+        "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
       };
     };
   };
@@ -114,7 +108,7 @@
 
   console.keyMap = "la-latin1";
 
-  services.printing ={
+  services.printing = {
     enable = true;
 
     drivers = with pkgs; [
@@ -126,8 +120,7 @@
     defaultShared = true;
   };
 
-
-  services.avahi ={
+  services.avahi = {
     enable = true;
 
     nssmdns = true;
@@ -149,7 +142,7 @@
   # Scanner
   hardware.sane = {
     enable = true;
-    extraBackends =with pkgs; [
+    extraBackends = with pkgs; [
       epkowa
       utsushi
 
@@ -157,7 +150,7 @@
         name = "epson2.conf";
         text = ''
           net  192.168.123.26
-          '';
+        '';
         destination = "/etc/sane.d/epson2.conf";
       })
     ];
@@ -192,7 +185,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Raul Moncada";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp"];
+    extraGroups = ["networkmanager" "wheel" "scanner" "lp"];
   };
 
   programs.git = {
@@ -286,7 +279,7 @@
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
-    ports = [ 2222 ];
+    ports = [2222];
   };
 
   programs.ssh = {
@@ -298,9 +291,7 @@
                 Port 443
                 User git
 	";
-
   };
 
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

@@ -1,9 +1,8 @@
-{ inputs, ... }:
-{
-  imports = [ inputs.nvf.homeManagerModules.default ];
+{inputs, ...}: {
+  imports = [inputs.nvf.homeManagerModules.default];
 
   programs.nvf = {
-    enable = true;
+    enable = false;
     enableManpages = true;
     settings = {
       vim = {
@@ -21,7 +20,7 @@
             };
           };
 
-          registers  ="unnamedplus";
+          registers = "unnamedplus";
         };
 
         mini = {
@@ -115,7 +114,7 @@
             };
             lsp = {
               enable = true;
-              servers = [ "nixd" ];
+              servers = ["nixd"];
             };
           };
           ts = {
@@ -160,7 +159,7 @@
           };
           rust = {
             enable = true;
-            format  = {
+            format = {
               enable = true;
             };
           };
@@ -201,7 +200,6 @@
               swap_buf_up = "<C-A-k>";
               swap_buf_right = "<C-A-l>";
             };
-
           };
 
           images = {

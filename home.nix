@@ -3,9 +3,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./nixs/nvf.nix
     ./modules/ags.nix
@@ -45,7 +43,6 @@
   ];
 
   home.file = {
-
     # Config
     ".config/hypr".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/hypr";
@@ -77,7 +74,6 @@
     "Pictures/Wallpapers".source = ./extras/Wallpapers;
     "scripts".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/scripts";
     "Documents/TYPST/templates".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/templates";
-
   };
   programs.home-manager.enable = true;
 }
