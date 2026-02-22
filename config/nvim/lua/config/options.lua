@@ -3,6 +3,7 @@ local o = vim.opt
 
 g.mapleader = " "
 g.maplocalleader = " "
+g.snacks_animate = false
 
 o.swapfile = true
 o.smartcase = true

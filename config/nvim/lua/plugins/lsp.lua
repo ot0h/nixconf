@@ -1,7 +1,7 @@
 do
 	vim.diagnostic.config({
 		virtual_text = {
-			prefix = "●", -- Ícono para el error al final de la línea
+			prefix = "●",
 			source = "if_many",
 		},
 		signs = true,
@@ -16,7 +16,19 @@ do
 		snippets = { preset = "default" },
 
 		keymap = {
-			preset = "super-tab",
+			preset = "default",
+
+			["<C-p"] = { "select_prev", "fallback" },
+			["<C-n"] = { "select_next", "fallback" },
+
+			["<C-y"] = { "select_and_accept", "fallback" },
+			["tab"] = { "select_and_accept", "fallback" },
+
+			["<C-space>"] = {
+				function(cmp)
+					cmp.show({ providers = { "snippets" } })
+				end,
+			},
 		},
 
 		cmdline = {
@@ -103,6 +115,7 @@ do
 		end, opts)
 	end
 
+	-- LSP para Typescript y Javascript
 	vim.lsp.config("vtsls", {
 		cmd = { "vtsls", "--stdio" },
 		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
@@ -121,6 +134,7 @@ do
 	})
 	vim.lsp.enable("vtsls")
 
+	-- LSP para Nix
 	vim.lsp.config("nixd", {
 		cmd = { "nixd" },
 		filetypes = { "nix" },
@@ -128,6 +142,7 @@ do
 	})
 	vim.lsp.enable("nixd")
 
+	-- LSP para Lua
 	vim.lsp.config("lua_ls", {
 		cmd = { "lua-language-server" },
 		filetypes = { "lua" },
@@ -147,6 +162,23 @@ do
 		},
 	})
 	vim.lsp.enable("lua_ls")
+
+	-- LSP para C/C++
+	vim.lsp.config("clangd", {
+		cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+		filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+		root_markers = { ".clangd", ".clang-format", "compile_commands.json", "compile_flags.txt", ".git" },
+		capabilities = capabilities,
+	})
+	vim.lsp.enable("clangd")
+
+	-- LSP para Typst
+	vim.lsp.config("tinymist", {
+		cmd = { "tinymist" },
+		filetypes = { "typst", "typ" },
+		on_attach = on_attach,
+	})
+	vim.lsp.enable("tinymist")
 end
 
 do
