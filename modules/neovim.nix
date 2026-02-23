@@ -41,7 +41,6 @@
 
     # TYPST
     tinymist
-    typst
     typstyle
 
     # NIX (siempre es bueno tenerlo para tu config)
@@ -67,6 +66,15 @@ in {
       withPython3 = false;
       withRuby = false;
       wrapRc = false; # Esto deja que tu init.lua en ~/.config/nvim mande
+      configure = {
+        packages.myPlugins = with pkgs.vimPlugins; {
+          start = [
+            typst-preview-nvim
+            oil-nvim
+          ];
+          opt = [];
+        };
+      };
       wrapperArgs = [
         "--set"
         "SHELL"

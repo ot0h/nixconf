@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     gdu
+    typst
     zed-editor
     websocat
     jmtpfs

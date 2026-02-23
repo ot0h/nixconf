@@ -96,21 +96,9 @@ vim.pack.add({
 	},
 
 	{
-		-- Oil
-		src = "https://github.com/stevearc/oil.nvim",
-		version = "main",
-	},
-
-	{
 		-- Flash
 		src = "https://github.com/folke/flash.nvim",
 		version = "main",
-	},
-
-	{
-		-- TypstPreview
-		src = "https://github.com/chomosuke/typst-preview.nvim",
-		version = "master",
 	},
 
 	{
