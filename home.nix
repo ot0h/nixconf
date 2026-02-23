@@ -25,7 +25,6 @@
     clipse
     nixd
     google-drive-ocamlfuse
-    nil
     alejandra
     ouch
     imagemagick
