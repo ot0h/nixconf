@@ -1,122 +1,29 @@
 vim.pack.add({
+	{ src = "https://github.com/nvim-mini/mini.files", version = "main" },
+	{ src = "https://github.com/nvim-mini/mini.hipatterns", version = "main" },
+	{ src = "https://github.com/nvim-mini/mini.surround", version = "main" },
+	{ src = "https://github.com/nvim-mini/mini.pairs", version = "main" },
+	{ src = "https://github.com/mrjones2014/smart-splits.nvim", version = "master" },
+	{ src = "https://github.com/b0o/incline.nvim", version = "main" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim", version = "master" },
+	{ src = "https://github.com/folke/which-key.nvim", version = "main" },
+	{ src = "https://github.com/folke/noice.nvim", version = "main" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons", version = "master" },
+	{ src = "https://github.com/folke/snacks.nvim", version = "main" },
+	{ src = "https://github.com/saghen/blink.cmp", version = "main" },
+	{ src = "https://github.com/b0o/SchemaStore.nvim", version = "main" },
+	{ src = "https://github.com/stevearc/conform.nvim", version = "master" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/folke/ts-comments.nvim", version = "main" },
+	{ src = "https://github.com/folke/flash.nvim", version = "main" },
+	{ src = "https://github.com/Chaitanyabsprip/fastaction.nvim", version = "main" },
+	{ src = "https://github.com/chomosuke/typst-preview.nvim", version = "master" },
 
-	{
-		-- MiniFiles
-		src = "https://github.com/nvim-mini/mini.files",
-		version = "main",
-	},
-	{
-		-- MiniHipatterns
-		src = "https://github.com/nvim-mini/mini.hipatterns",
-		version = "main",
-	},
-
-	{
-		-- MiniSurround
-		src = "https://github.com/nvim-mini/mini.surround",
-		version = "main",
-	},
-
-	{
-		-- MiniPairs
-		src = "https://github.com/nvim-mini/mini.pairs",
-		version = "main",
-	},
-
-	{
-		-- Smart-Splits
-		src = "https://github.com/mrjones2014/smart-splits.nvim",
-		version = "master",
-	},
-
-	{
-		-- Incline
-		src = "https://github.com/b0o/incline.nvim",
-		version = "main",
-	},
-
-	{
-		-- Lualine
-		src = "https://github.com/nvim-lualine/lualine.nvim",
-		version = "master",
-	},
-
-	{
-		-- which-key
-		src = "https://github.com/folke/which-key.nvim",
-		version = "main",
-	},
-
-	{
-		-- Noice
-		src = "https://github.com/folke/noice.nvim",
-		version = "main",
-	},
-
-	{
-		-- nvim-web-devicons
-		src = "https://github.com/nvim-tree/nvim-web-devicons",
-		version = "master",
-	},
-
-	{
-		-- Snacks
-		src = "https://github.com/folke/snacks.nvim",
-		version = "main",
-	},
-
-	{
-		-- BlinckCMP
-		src = "https://github.com/saghen/blink.cmp",
-		version = "main",
-	},
-
-	{
-		-- SchemaStore
-		src = "https://github.com/b0o/SchemaStore.nvim",
-		version = "main",
-	},
-
-	{
-		-- Conform
-		src = "https://github.com/stevearc/conform.nvim",
-		version = "master",
-	},
-
-	{
-		-- Treesitter
-		src = "https://github.com/nvim-treesitter/nvim-treesitter",
-		version = "main",
-	},
-
-	{
-		-- TS-COMMENTS
-		src = "https://github.com/folke/ts-comments.nvim",
-		version = "main",
-	},
-
-	{
-		-- Flash
-		src = "https://github.com/folke/flash.nvim",
-		version = "main",
-	},
-
-	{
-		-- FastAction
-		src = "https://github.com/Chaitanyabsprip/fastaction.nvim",
-		version = "main",
-	},
-
-	{
-		-- Oil
-		src = "https://github.com/stevearc/oil.nvim",
-	},
-
-	-- dependencias
-	"https://github.com/MunifTanjim/nui.nvim",
-	"https://github.com/rafamadriz/friendly-snippets",
-	"https://github.com/xzbdmw/colorful-menu.nvim",
-	"https://github.com/onsails/lspkind.nvim",
+	-- Dependencias
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/xzbdmw/colorful-menu.nvim" },
+	{ src = "https://github.com/onsails/lspkind.nvim" },
 })
 
 require("config.options")

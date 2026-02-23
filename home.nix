@@ -17,6 +17,7 @@
     gdu
     typst
     zed-editor
+    bibata-cursors
     libreoffice-fresh
     websocat
     jmtpfs

@@ -82,8 +82,7 @@
     },
     "nvim-lspconfig": {
       "rev": "5a855bcfec7973767a1a472335684bbd71d2fa2b",
-      "src": "https://github.com/neovim/nvim-lspconfig",
-      "version": "'master'"
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
       "rev": "8701bece920b38ea289b457f902e2ad184131a5d",
@@ -102,10 +101,6 @@
       "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
-    },
-    "oil.nvim": {
-      "rev": "f55b25e493a7df76371cfadd0ded5004cb9cd48a",
-      "src": "https://github.com/stevearc/oil.nvim"
     },
     "smart-splits.nvim": {
       "rev": "23f1e57d5af462c69e988642c020430449a7b1b0",
