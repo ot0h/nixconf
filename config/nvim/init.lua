@@ -18,6 +18,12 @@ vim.pack.add({
 	},
 
 	{
+		-- MiniPairs
+		src = "https://github.com/nvim-mini/mini.pairs",
+		version = "main",
+	},
+
+	{
 		-- Smart-Splits
 		src = "https://github.com/mrjones2014/smart-splits.nvim",
 		version = "master",
@@ -101,6 +107,18 @@ vim.pack.add({
 		version = "main",
 	},
 
+	{
+		-- TypstPreview
+		src = "https://github.com/chomosuke/typst-preview.nvim",
+		version = "master",
+	},
+
+	{
+		-- FastAction
+		src = "https://github.com/Chaitanyabsprip/fastaction.nvim",
+		version = "main",
+	},
+
 	-- dependencias
 	"https://github.com/MunifTanjim/nui.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
@@ -115,6 +133,7 @@ require("plugins.nav")
 require("plugins.editor")
 require("plugins.ui")
 require("plugins.lsp")
+require("plugins.typst")
 require("plugins.treesitter")
 
 vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/lua/config/assets/pywal")

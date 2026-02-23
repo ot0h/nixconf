@@ -19,6 +19,11 @@
       "src": "https://github.com/stevearc/conform.nvim",
       "version": "'master'"
     },
+    "fastaction.nvim": {
+      "rev": "b147d91727cb35be4f722f17e7d4ed5b4a5801d8",
+      "src": "https://github.com/Chaitanyabsprip/fastaction.nvim",
+      "version": "'main'"
+    },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim",
@@ -55,6 +60,11 @@
     "mini.icons": {
       "rev": "5b9076dae1bfbe47ba4a14bc8b967cde0ab5d77e",
       "src": "https://github.com/nvim-mini/mini.icons"
+    },
+    "mini.pairs": {
+      "rev": "b7fde3719340946feb75017ef9d75edebdeb0566",
+      "src": "https://github.com/nvim-mini/mini.pairs",
+      "version": "'main'"
     },
     "mini.surround": {
       "rev": "d205d1741d1fcc1f3117b4e839bf00f74ad72fa2",
@@ -112,6 +122,11 @@
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
       "src": "https://github.com/folke/ts-comments.nvim",
       "version": "'main'"
+    },
+    "typst-preview.nvim": {
+      "rev": "bf5d5eaf23bbfcca9f98a24ed29bd084abf89bf2",
+      "src": "https://github.com/chomosuke/typst-preview.nvim",
+      "version": "'master'"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

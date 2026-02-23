@@ -54,3 +54,59 @@ require("mini.surround").setup( -- No need to copy this inside `setup()`. Will b
 		silent = false,
 	}
 )
+
+require("mini.pairs").setup( -- No need to copy this inside `setup()`. Will be used automatically.
+	{
+		-- In which modes mappings from this `config` should be created
+		modes = { insert = true, command = false, terminal = false },
+
+		-- Global mappings. Each right hand side should be a pair information, a
+		-- table with at least these fields (see more in |MiniPairs.map|):
+		-- - <action> - one of 'open', 'close', 'closeopen'.
+		-- - <pair> - two character string for pair to be used.
+		-- By default pair is not inserted after `\`, quotes are not recognized by
+		-- <CR>, `'` does not insert the pair after a letter.
+		-- Only parts of tables can be tweaked (others will use these defaults).
+		mappings = {
+			["("] = { action = "open", pair = "()", neigh_pattern = "^[^\\]" },
+			["["] = { action = "open", pair = "[]", neigh_pattern = "^[^\\]" },
+			["{"] = { action = "open", pair = "{}", neigh_pattern = "^[^\\]" },
+
+			[")"] = { action = "close", pair = "()", neigh_pattern = "^[^\\]" },
+			["]"] = { action = "close", pair = "[]", neigh_pattern = "^[^\\]" },
+			["}"] = { action = "close", pair = "{}", neigh_pattern = "^[^\\]" },
+
+			['"'] = { action = "closeopen", pair = '""', neigh_pattern = "^[^\\]", register = { cr = false } },
+			["'"] = { action = "closeopen", pair = "''", neigh_pattern = "^[^%a\\]", register = { cr = false } },
+			["`"] = { action = "closeopen", pair = "``", neigh_pattern = "^[^\\]", register = { cr = false } },
+		},
+	}
+)
+
+require("fastaction").setup({
+	dismiss_keys = { "j", "k", "<c-c>", "q" },
+	override_function = function(_) end,
+	keys = "qwertyuiopasdfghlzxcvbnm",
+	popup = {
+		border = "rounded",
+		hide_cursor = true,
+		highlight = {
+			action = "MoreMsg",
+			divider = "FloatBorder",
+			key = "MoreMsg",
+			source = "Comment",
+			title = "Title",
+			window = "NormalFloat",
+		},
+		title = "Select one of:",
+	},
+	priority = {
+		-- dart = {
+		--   { pattern = "organize import", key ="o", order = 1 },
+		--   { pattern = "extract method", key ="x", order = 2 },
+		--   { pattern = "extract widget", key ="e", order = 3 },
+		-- },
+	},
+	register_ui_select = false,
+	format_right_section = nil,
+})

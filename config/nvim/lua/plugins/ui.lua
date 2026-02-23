@@ -106,11 +106,51 @@ require("snacks").setup({
 	quickfile = { enabled = true },
 	indent = { enabled = true },
 	bigfile = { enabled = true },
-	dashboard = { enabled = false },
 	explorer = { enabled = true },
 	input = { enabled = true },
 	scope = { enabled = true },
 	scroll = { enabled = true },
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
+	dashboard = {
+		enabled = true,
+
+		formats = {
+			footer = { "%s", align = "center" },
+		},
+		hide = {
+			statusline = false,
+		},
+		sections = {
+			{ section = "header" },
+			{ section = "keys" },
+		},
+		preset = {
+			header = [[
+	        ████ ██████           █████      ██                     
+	       ███████████             █████                             
+	       █████████ ███████████████████ ███   ███████████   
+	      █████████  ███    █████████████ █████ ██████████████   
+	     █████████ ██████████ █████████ █████ █████ ████ █████   
+	   ███████████ ███    ███ █████████ █████ █████ ████ █████  
+	  ██████  █████████████████████ ████ █████ █████ ████ ██████ 
+	 ]],
+		},
+
+		---@type snacks.dashboard.Item[]
+		keys = {
+			{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+			-- { icon = " ", key = "o", desc = "Obsidian", action = ":Oil ~/Documents/Notas/"},
+			{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+			{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
+			{ icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+			{
+				icon = " ",
+				key = "c",
+				desc = "Config",
+				action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+			},
+			{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+		},
+	},
 })

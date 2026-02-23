@@ -232,3 +232,17 @@ function SaveFile()
 		vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
 	end
 end
+
+-- Fast Actions
+keymap(
+	{ "n", "x" },
+	"<leader>a",
+	'<cmd>lua require("fastaction").code_action()<CR>',
+	{ desc = "Display code actions", buffer = bufnr }
+)
+keymap(
+	{ "n", "x" },
+	"<leader>f",
+	'<cmd>lua require("fastaction").code_action({ select_first = true })<CR>',
+	{ desc = "Select and apply first code action", buffer = bufnr }
+)
