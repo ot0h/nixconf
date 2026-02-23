@@ -135,37 +135,37 @@ require("smart-splits").setup({
 	log_level = "info",
 })
 
--- require("oil").setup({
--- 	default_file_explorer = true,
--- 	columns = {
--- 		"icon",
--- 		-- "permissions",
--- 		-- "size",
--- 		-- "mtime",
--- 	},
--- 	-- Buffer-local options to use for oil buffers
--- 	buf_options = {
--- 		buflisted = true,
--- 		bufhidden = "hide",
--- 	},
--- 	-- Key mappings for oil.nvim actions
--- 	keymaps = {
--- 		["g?"] = "actions.show_help", -- Show help
--- 		["<A-l>"] = "actions.select", -- Select entry
--- 		["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" }, -- Open entry in vertical split
--- 		["<A-s>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" }, -- Open entry in horizontal split
--- 		["<A-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" }, -- Open entry in new tab
--- 		["<A-p>"] = "actions.preview", -- Preview entry
--- 		["q"] = "actions.close", -- Close oil.nvim
--- 		["<A-u>"] = "actions.refresh", -- Refresh oil.nvim
--- 		["<A-h>"] = "actions.parent", -- Go to parent directory
--- 		["<ESCAPE>"] = "actions.open_cwd", -- Open current working directory
--- 		["`"] = "actions.cd", -- Change directory
--- 		["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" }, -- Change directory for the current tab
--- 		["gs"] = "actions.change_sort", -- Change sorting method
--- 		["gx"] = "actions.open_external", -- Open entry with external application
--- 		["g."] = "actions.toggle_hidden", -- Toggle hidden files
--- 		["gt"] = "actions.toggle_trash", -- Toggle trash
--- 	},
--- 	use_default_keymaps = false, -- Do not use default key mappings
--- })
+require("oil").setup({
+	default_file_explorer = true,
+	columns = {
+		"icon",
+		-- "permissions",
+		-- "size",
+		-- "mtime",
+	},
+	-- Buffer-local options to use for oil buffers
+	buf_options = {
+		buflisted = true,
+		bufhidden = "hide",
+	},
+	-- Key mappings for oil.nvim actions
+	keymaps = {
+		["g?"] = "actions.show_help", -- Show help
+		["<A-l>"] = "actions.select", -- Select entry
+		["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" }, -- Open entry in vertical split
+		["<A-s>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" }, -- Open entry in horizontal split
+		["<A-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" }, -- Open entry in new tab
+		["<A-p>"] = "actions.preview", -- Preview entry
+		["q"] = "actions.close", -- Close oil.nvim
+		["<A-u>"] = "actions.refresh", -- Refresh oil.nvim
+		["<A-h>"] = "actions.parent", -- Go to parent directory
+		["<ESCAPE>"] = "actions.open_cwd", -- Open current working directory
+		["`"] = "actions.cd", -- Change directory
+		["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" }, -- Change directory for the current tab
+		["gs"] = "actions.change_sort", -- Change sorting method
+		["gx"] = "actions.open_external", -- Open entry with external application
+		["g."] = "actions.toggle_hidden", -- Toggle hidden files
+		["gt"] = "actions.toggle_trash", -- Toggle trash
+	},
+	use_default_keymaps = false, -- Do not use default key mappings
+})

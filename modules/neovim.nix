@@ -69,8 +69,8 @@ in {
       configure = {
         packages.myPlugins = with pkgs.vimPlugins; {
           start = [
-            typst-preview-nvim
-            oil-nvim
+            # typst-preview-nvim
+            # oil-nvim
           ];
           opt = [];
         };

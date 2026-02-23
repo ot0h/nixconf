@@ -107,6 +107,11 @@ vim.pack.add({
 		version = "main",
 	},
 
+	{
+		-- Oil
+		src = "https://github.com/stevearc/oil.nvim",
+	},
+
 	-- dependencias
 	"https://github.com/MunifTanjim/nui.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
