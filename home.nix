@@ -17,6 +17,7 @@
     gdu
     typst
     zed-editor
+    libreoffice-fresh
     websocat
     jmtpfs
     inputs.zen-browser.packages.${system}.default

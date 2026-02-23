@@ -166,7 +166,7 @@ keymap("n", "<F5>", function()
 			return "gcc " .. esc_file .. " -o " .. esc_name .. " && ./" .. name
 		end,
 		cpp = function()
-			return "clang++ " .. esc_file .. " -o " .. esc_name .. " && ./" .. name
+			return "g++ " .. esc_file .. " -o " .. esc_name .. " && ./" .. name
 		end,
 		java = function()
 			return "javac " .. esc_file .. " && java " .. name

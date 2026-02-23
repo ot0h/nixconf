@@ -1,4 +1,4 @@
 -- A veces el guion medio da guerra o el nombre es diferente
-require("typst-preview").setup({
-	-- tu config...
-})
+-- require("typst-preview").setup({
+-- 	-- tu config...
+-- })
