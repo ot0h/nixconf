@@ -31,9 +31,6 @@ require("typst-preview").setup(require("typst-preview").setup({
 	-- Setting this will skip the download of the binary by the plugin.
 	-- Warning: Be aware that your version might be older than the one
 	-- required.
-	dependencies_bin = {
-		["websocat"] = nil,
-	},
 
 	-- A list of extra arguments (or nil) to be passed to previewer.
 	-- For example, extra_args = { "--input=ver=draft", "--ignore-system-fonts" }

@@ -191,7 +191,7 @@
   programs.git = {
     enable = true;
     config = {
-      user.name = "rimv175";
+      user.name = "rrimv";
       user.email = "rimv715@gmail.com";
       init.defaultBranch = "main";
       pull.rebase = true;
@@ -212,7 +212,6 @@
     wget
     pywal16
     ncspot
-    neovim
     git
     wiremix
     lazygit

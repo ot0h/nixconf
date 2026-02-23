@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ./nixs/nvf.nix
     ./modules/ags.nix
+    ./modules/neovim.nix
   ];
 
   home.username = "rimv";
@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     gdu
     zed-editor
+    websocat
     jmtpfs
     inputs.zen-browser.packages.${system}.default
     meson
@@ -23,12 +24,9 @@
     jq
     procps
     clipse
-    nixd
     google-drive-ocamlfuse
-    alejandra
     ouch
     imagemagick
-    typst
     vala
     bluetui
     samba
