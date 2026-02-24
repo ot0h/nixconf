@@ -33,6 +33,14 @@ TS.install({
 	"xml",
 	"yaml",
 	"json5",
+	"html",
+	"css",
+	"scss",
+	"json",
+	"jsonc",
+	"javascript",
+	"typescript",
+	"typst",
 })
 
 _G.mytreesitter_indentexpr = function()
