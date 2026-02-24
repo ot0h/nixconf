@@ -43,6 +43,15 @@ require("incline").setup({
 	end,
 })
 
+local function show_macro_recording()
+	local recording_register = vim.fn.reg_recording()
+	if recording_register == "" then
+		return ""
+	else
+		return "󰑊 Recording @" .. recording_register
+	end
+end
+
 -- Plugin: nvim-lualine/lualine.nvim
 -- URL: https://github.com/nvim-lualine/lualine.nvim
 -- description: A blazing fast and easy to configure neovim statusline plugin written in pure lua.
@@ -57,11 +66,12 @@ require("lualine").setup({
 				"mode", -- Display the current mode
 				icon = "", -- Set the icon for the mode
 			},
+			{
+				show_macro_recording,
+				color = { gui = "bold" },
+			},
 		},
 		lualine_z = {
-			-- {
-			--   require("opencode").statusline,
-			-- },
 			{
 				function()
 					return "󱎫 " .. os.date("%-H:%02M")
@@ -113,7 +123,7 @@ require("snacks").setup({
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
 	dashboard = {
-		enabled = true,
+		enabled = false,
 
 		formats = {
 			footer = { "%s", align = "center" },

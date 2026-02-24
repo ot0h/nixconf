@@ -179,6 +179,48 @@ do
 		on_attach = on_attach,
 	})
 	vim.lsp.enable("tinymist")
+
+	-- LSP para HTML
+	vim.lsp.config("html", {
+		cmd = { "vscode-html-language-server", "--stdio" },
+		filetypes = { "html", "templ" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	vim.lsp.enable("html")
+
+	-- LSP para CSS/SCSS
+	vim.lsp.config("cssls", {
+		cmd = { "vscode-css-language-server", "--stdio" },
+		filetypes = { "css", "scss", "less" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	vim.lsp.enable("cssls")
+
+	-- LSP para JSON
+	vim.lsp.config("jsonls", {
+		cmd = { "vscode-json-language-server", "--stdio" },
+		filetypes = { "json", "jsonc" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			json = {
+				schemas = require("schemastore").json.schemas(),
+				validate = { enable = true },
+			},
+		},
+	})
+	vim.lsp.enable("jsonls")
+
+	-- Emmet
+	vim.lsp.config("emmet_ls", {
+		cmd = { "emmet-ls", "--stdio" },
+		filetypes = { "html", "css", "scss", "javascriptreact", "typescriptreact" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	vim.lsp.enable("emmet_ls")
 end
 
 do
@@ -189,6 +231,11 @@ do
 			typescriptreact = { "prettier" },
 			lua = { "stylua" },
 			nix = { "alejandra" },
+			html = { "prettier" },
+			ccs = { "prettier" },
+			sccs = { "prettier" },
+			json = { "prettier" },
+			jsonc = { "prettier" },
 		},
 		format_on_save = true,
 	})

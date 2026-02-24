@@ -19,6 +19,7 @@
     zed-editor
     bibata-cursors
     libreoffice-fresh
+    cmake
     websocat
     jmtpfs
     inputs.zen-browser.packages.${system}.default

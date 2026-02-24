@@ -37,7 +37,6 @@
     # C++ / C
     clang-tools
     gdb
-    cmake
 
     # TYPST
     tinymist
@@ -46,6 +45,9 @@
     # NIX (siempre es bueno tenerlo para tu config)
     nixd
     alejandra
+
+    emmet-ls
+    vscode-langservers-extracted
   ];
 
   # Herramientas específicas para Linux (Clipboard)

@@ -110,3 +110,5 @@ require("fastaction").setup({
 	register_ui_select = false,
 	format_right_section = nil,
 })
+
+require("nvim-ts-autotag").setup({})
