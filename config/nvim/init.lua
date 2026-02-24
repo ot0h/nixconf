@@ -19,6 +19,7 @@ vim.pack.add({
 	{ src = "https://github.com/Chaitanyabsprip/fastaction.nvim", version = "main" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim", version = "master" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag", version = "main" },
+	{ src = "https://github.com/stevearc/oil.nvim", version = "master" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },

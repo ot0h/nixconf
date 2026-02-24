@@ -122,6 +122,17 @@ require("snacks").setup({
 	scroll = { enabled = true },
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
+	image = {
+		enabled = true,
+		doc = {
+			enabled = true,
+			inline = true,
+			float = false,
+		},
+		icon = {
+			image = "󰥶 ",
+		},
+	},
 	dashboard = {
 		enabled = false,
 

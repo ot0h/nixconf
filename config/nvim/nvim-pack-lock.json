@@ -107,6 +107,11 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
     },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim",
+      "version": "'master'"
+    },
     "smart-splits.nvim": {
       "rev": "23f1e57d5af462c69e988642c020430449a7b1b0",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
