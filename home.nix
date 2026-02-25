@@ -42,6 +42,7 @@
     gruvbox-plus-icons
     sane-backends
     sambaFull
+    hyprlandPlugins.hyprscrolling
   ];
 
   home.file = {
