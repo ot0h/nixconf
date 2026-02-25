@@ -43,16 +43,12 @@
     username = "rimv";
     pkgs = import nixpkgs {
       inherit system;
-      config.allowUnfree = true;
-      overlays = [
-        (final: prev: {
-          python311 = prev.python311.override {
-            packageOverrides = hFinal: hPrev: {
-              sphinx = hPrev.sphinx_8;
-            };
-          };
-        })
-      ];
+      config = {
+        allowUnfree = true;
+        pythonPackageOverrides = final: prev: {
+          sphinx = prev.sphinx_8;
+        };
+      };
     };
   in {
     # 🔹 Para nixos-rebuild (opcional si quieres seguir usándolo)
