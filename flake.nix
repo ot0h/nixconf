@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-   neovim-nightly-overlay = {
+    neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -28,44 +28,51 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        home-manager.follows =  "home-manager";
+        home-manager.follows = "home-manager";
       };
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     username = "rimv";
-      pkgs = import nixpkgs {
-        inherit  system;
-        config = {
-          allowUnfree = true;
-        };
-      };
-  in
-  {
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      overlays = [
+        (final: prev: {
+          python311 = prev.python311.override {
+            packageOverrides = hFinal: hPrev: {
+              sphinx = hPrev.sphinx_8;
+            };
+          };
+        })
+      ];
+    };
+  in {
     # 🔹 Para nixos-rebuild (opcional si quieres seguir usándolo)
     nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
 
       modules = [
         ./configuration.nix
       ];
     };
 
-    homeConfigurations.${username} =
-      home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
 
-        extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = {inherit inputs;};
 
-        modules = [
-          ./home.nix
-        ];
-
-      };
+      modules = [
+        ./home.nix
+      ];
+    };
   };
 }
-
