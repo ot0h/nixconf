@@ -45,9 +45,6 @@
       inherit system;
       config = {
         allowUnfree = true;
-        pythonPackageOverrides = final: prev: {
-          sphinx = prev.sphinx_8;
-        };
       };
     };
   in {
