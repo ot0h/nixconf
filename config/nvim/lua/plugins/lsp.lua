@@ -201,7 +201,7 @@ do
 	-- LSP para JSON
 	vim.lsp.config("jsonls", {
 		cmd = { "vscode-json-language-server", "--stdio" },
-		filetypes = { "json", "jsonc" },
+		filetypes = { "json" },
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
@@ -235,7 +235,6 @@ do
 			ccs = { "prettier" },
 			sccs = { "prettier" },
 			json = { "prettier" },
-			jsonc = { "prettier" },
 		},
 		format_on_save = true,
 	})

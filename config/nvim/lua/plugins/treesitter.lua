@@ -37,7 +37,6 @@ TS.install({
 	"css",
 	"scss",
 	"json",
-	"jsonc",
 	"javascript",
 	"typescript",
 	"typst",
