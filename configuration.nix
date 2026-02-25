@@ -143,7 +143,7 @@
     enable = true;
     extraBackends = with pkgs; [
       epkowa
-      utsushi
+      # utsushi
 
       (writeTextFile {
         name = "epson2.conf";
