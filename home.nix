@@ -24,6 +24,7 @@
     jmtpfs
     inputs.zen-browser.packages.${system}.default
     meson
+    onefetch
     fastfetch
     python3
     jq
