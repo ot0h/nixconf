@@ -22,6 +22,7 @@
     cmake
     websocat
     jmtpfs
+    obsidian
     inputs.zen-browser.packages.${system}.default
     meson
     onefetch
