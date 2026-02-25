@@ -134,7 +134,7 @@
   services.udev = {
     enable = true;
     packages = with pkgs; [
-      utsushi
+      # utsushi
     ];
   };
 
