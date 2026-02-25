@@ -27,7 +27,7 @@
     meson
     onefetch
     fastfetch
-    python315
+    python313
     jq
     procps
     clipse
