@@ -44,7 +44,6 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     sane-backends
-    sambaFull
     hyprlandPlugins.hyprscrolling
   ];
 
