@@ -15,7 +15,6 @@ end
 
 map("n", "-", ":Oil<CR>", "Abrir Oil")
 map("n", "_", ":lua MiniFiles.open()<CR>", "Abrir MiniFiles")
-map("n", "<leader>", ":WhichKey<CR>", "WhichKey")
 
 -- SmartSplits
 local smart_splits = require("smart-splits")
@@ -33,24 +32,18 @@ map("n", "<C-M-k>", smart_splits.swap_buf_up)
 map("n", "<C-M-l>", smart_splits.swap_buf_right)
 
 -- Snacks: Pickers & Extras
-map("n", "<leader><space>", ":lua Snacks.picker.smart()<CR>", "Smart Picker")
-map("n", "<leader>,", ":lua Snacks.picker.buffers()<CR>", "Buffers")
-map("n", "<leader>/", ":lua Snacks.picker.grep()<CR>", "Grep")
-map("n", "<leader>fb", ":lua Snacks.picker.buffers()<CR>", "Find Buffers")
-map("n", "<leader>ff", ":lua Snacks.picker.files()<CR>", "Find Files")
-map("n", "<leader>gg", ":lua Snacks.lazygit()<CR>", "LazyGit")
-map("n", "<leader>z", ":lua Snacks.zen()<CR>", "Zen Mode")
-map("n", "<leader>bd", ":lua Snacks.bufdelete()<CR>", "Delete Buffer")
-map("n", "<c-/>", ":lua Snacks.terminal()<CR>", "Terminal")
+map("n", "<space><space>", ":lua Snacks.picker.smart()<CR>", "Smart Picker")
+map("n", "<space>,", ":lua Snacks.picker.buffers()<CR>", "Buffers")
+map("n", "<space>p", ":lua Snacks.picker()<CR>", "Snacks Picker")
 
 -- LSP & Search
 map("n", "gd", ":lua Snacks.picker.lsp_definitions()<CR>", "Definición")
 map("n", "gr", ":lua Snacks.picker.lsp_references()<CR>", "Referencias")
-map("x", "<leader>sw", ":lua Snacks.picker.grep_word()<CR>", "Visual Grep Word")
-map("x", "<leader>si", ":lua Snacks.picker.icons()<CR>", "Visual Grep Word")
+map("x", "<space>fw", ":lua Snacks.picker.grep_word()<CR>", "Visual Grep Word")
+map("x", "<space>fi", ":lua Snacks.picker.icons()<CR>", "Visual Grep Word")
 
 -- Conform y Guardado
-map("n", "<leader>w", ":w<CR>", "Guardar")
+map("n", "<space>w", ":w<CR>", "Guardar")
 map("n", "<C-s>", function()
 	SaveFile()
 end, "Guardar con Notificación")
@@ -61,8 +54,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local b_opts = { buffer = ev.buf }
 		map("n", "K", vim.lsp.buf.hover, b_opts)
-		map("n", "<leader>k", vim.diagnostic.open_float, b_opts)
-		map("n", "<leader>F", function()
+		map("n", "<space>k", vim.diagnostic.open_float, b_opts)
+		map("n", "<space>F", function()
 			require("conform").format({ bufnr = ev.buf, lsp_fallback = true })
 		end, { buffer = ev.buf, desc = "Format Code" })
 	end,
@@ -144,8 +137,8 @@ function SaveFile()
 	end
 end
 
---  Flash
-map({ "n", "x" }, "<leader>a", function()
+--  FastAction
+map({ "n", "x" }, "<space>a", function()
 	require("fastaction").code_action()
 end, "Code Actions")
 
