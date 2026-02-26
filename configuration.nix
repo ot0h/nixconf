@@ -43,7 +43,10 @@
     LC_TIME = "es_HN.UTF-8";
   };
 
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    libinput.enable = true;
+  };
 
   services.gvfs = {
     enable = true;
