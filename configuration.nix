@@ -154,6 +154,14 @@
       })
     ];
   };
+
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  # Audio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
