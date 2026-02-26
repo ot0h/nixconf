@@ -44,7 +44,6 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     sane-backends
-    hyprlandPlugins.hyprscrolling
   ];
 
   home.file = {
