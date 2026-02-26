@@ -59,13 +59,13 @@
   };
 
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = false;
 
   services.gnome = {
-    core-apps.enable = true;
-    core-developer-tools.enable = true;
+    core-apps.enable = false;
+    core-developer-tools.enable = false;
     gcr-ssh-agent.enable = false;
-    gnome-keyring.enable = true;
+    gnome-keyring.enable = false;
   };
 
   xdg.portal = {
@@ -236,7 +236,6 @@
     fd
     kitty
     tmux
-    emacs
     cargo
     nodePackages.npm
     nodePackages.prettier

@@ -17,6 +17,7 @@
     gdu
     typst
     zed-editor
+    bluetui
     bibata-cursors
     libreoffice-fresh
     cmake
