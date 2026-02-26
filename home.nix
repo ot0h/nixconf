@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     gdu
+    impala
     typst
     zed-editor
     bibata-cursors
@@ -43,7 +44,6 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     sane-backends
-    sambaFull
     hyprlandPlugins.hyprscrolling
   ];
 
