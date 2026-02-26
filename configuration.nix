@@ -13,21 +13,9 @@
   networking.networkmanager = {
     enable = true;
     wifi = {
-      backend = "iwd";
+      backend = "wpa_supplicant";
     };
   };
-
-  networking.wireless.iwd = {
-    settings = {
-      Network = {
-        EnableIPv6 = true;
-      };
-      Settings = {
-        AutoConnect = true;
-      };
-    };
-  };
-
   networking.firewall = {
     enable = true;
 
