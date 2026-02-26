@@ -237,6 +237,7 @@
     hyprlock
     hyprsunset
     hyprshot
+    hyprpicker
     tinymist
     localsend
     gcc
