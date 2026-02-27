@@ -80,9 +80,9 @@ play = [
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
 document = [
-  { run = "onlyoffice-desktopeditors %s", orphan = true, desc = "OnlyOffice", for = "linux" },
   # office
   { run = "libreoffice %s", orphan = true, desc = "Libreoffice", for = "linux" },
+  { run = "onlyoffice-desktopeditors %s", orphan = true, desc = "OnlyOffice", for = "linux" },
 ]
 game = [{ run = 'mgba-qt "$@"', orphan = true, desc = "MGBA", for = "unix" }]
 nds = [{ run = 'melonDS "$@"', orphan = true, desc = "melonDs", for = "unix" }]
