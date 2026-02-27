@@ -18,6 +18,7 @@
     typst
     zed-editor
     bluetui
+    obs-studio
     bibata-cursors
     libreoffice-fresh
     cmake
