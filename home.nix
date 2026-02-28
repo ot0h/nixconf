@@ -14,9 +14,12 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
+    deno
     gdu
     typst
     zed-editor
+    pnpm
+    yarn
     bluetui
     obs-studio
     bibata-cursors
