@@ -22,6 +22,7 @@
     yarn
     bluetui
     obs-studio
+    eza
     bibata-cursors
     libreoffice-fresh
     cmake
