@@ -33,6 +33,9 @@
     nodePackages.npm
     vtsls
     nodePackages.prettier
+    yarn
+    deno
+    pnpm
 
     # C++ / C
     clang-tools

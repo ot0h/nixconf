@@ -235,6 +235,7 @@ do
 			ccs = { "prettier" },
 			sccs = { "prettier" },
 			json = { "prettier" },
+			typst = { "typstyle" },
 		},
 		format_on_save = true,
 	})
