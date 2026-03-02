@@ -172,6 +172,33 @@ do
 	})
 	vim.lsp.enable("clangd")
 
+	-- LSP Rust
+	vim.lsp.config("rust-analyzer", {
+		cmd = { "rust-analyzer" },
+		filetypes = { "rust" },
+		root_markers = { "Cargo.toml", "rust-project.json", ".git" },
+		capabilities = capabilities,
+		settings = {
+			["rust-analyzer"] = {
+				imports = {
+					granularity = {
+						group = "module",
+					},
+					prefix = "self",
+				},
+				cargo = {
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+				},
+			},
+		},
+	})
+	vim.lsp.enable("rust-analyzer")
+
 	-- LSP para Typst
 	vim.lsp.config("tinymist", {
 		cmd = { "tinymist" },
@@ -236,6 +263,7 @@ do
 			sccs = { "prettier" },
 			json = { "prettier" },
 			typst = { "typstyle" },
+			rust = { "rustfmt" },
 		},
 		format_on_save = true,
 	})

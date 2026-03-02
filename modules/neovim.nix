@@ -4,14 +4,9 @@
   inputs,
   ...
 }: let
-  # 1. Definimos el paquete base (el nightly puro de la fuente)
-  # Usamos 'inputs' para ir directo al grano
   neovim-nightly = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
-  # 2. Herramientas que Neovim va a tener "en su mochila" (PATH)
-  # Solo lo que pediste: TS, C++, Typst y Lua
   bins = with pkgs; [
-    # Esenciales para que plugins como Lazy o Mason no chillen
     git
     gcc
     gnumake
@@ -45,15 +40,18 @@
     tinymist
     typstyle
 
-    # NIX (siempre es bueno tenerlo para tu config)
+    # NIX
     nixd
     alejandra
+
+    # Rust
+    rust-analyzer
+    rustfmt
 
     emmet-ls
     vscode-langservers-extracted
   ];
 
-  # Herramientas específicas para Linux (Clipboard)
   linuxBins =
     if pkgs.stdenv.isDarwin
     then []
