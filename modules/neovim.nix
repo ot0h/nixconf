@@ -48,7 +48,7 @@
     rust-analyzer
     rustfmt
 
-    emmet-ls
+    emmet-language-server
     vscode-langservers-extracted
   ];
 

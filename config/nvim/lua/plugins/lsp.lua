@@ -240,14 +240,30 @@ do
 	})
 	vim.lsp.enable("jsonls")
 
-	-- Emmet
-	vim.lsp.config("emmet_ls", {
-		cmd = { "emmet-ls", "--stdio" },
-		filetypes = { "html", "css", "scss", "javascriptreact", "typescriptreact" },
+	-- Emmet Moderno (emmet-language-server)
+	vim.lsp.config("emmet_language_server", {
+		cmd = { "emmet-language-server", "--stdio" },
+		filetypes = {
+			"html",
+			"css",
+			"scss",
+			"javascriptreact",
+			"typescriptreact",
+			"sass",
+			"less",
+			"heex",
+			"elixir",
+			"eruby",
+		},
+		init_options = {
+			showAbbreviationSuggestions = true,
+			showExpandedAbbreviation = "always",
+			showSuggestionsAsSnippets = true,
+		},
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-	vim.lsp.enable("emmet_ls")
+	vim.lsp.enable("emmet_language_server")
 end
 
 do
