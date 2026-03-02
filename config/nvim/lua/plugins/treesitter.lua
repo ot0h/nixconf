@@ -39,6 +39,8 @@ TS.install({
 	"css",
 	"scss",
 	"rust",
+	"tsx",
+	"jsx",
 	"json",
 	"javascript",
 	"typescript",
