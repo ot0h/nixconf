@@ -59,7 +59,7 @@
     openFirewall = true;
   };
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = false;
 
   services.gnome = {
