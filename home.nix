@@ -33,6 +33,7 @@
     meson
     onefetch
     fastfetch
+    samba4Full
     python313
     jq
     procps
