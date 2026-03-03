@@ -47,6 +47,11 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim",
       "version": "'master'"
     },
+    "markview.nvim": {
+      "rev": "633e627f82011dc888ea4444a98c98bd783951b0",
+      "src": "https://github.com/OXY2DEV/markview.nvim",
+      "version": "'main'"
+    },
     "mini.files": {
       "rev": "1202e26484c10e9d6190cab3314dd187f871472c",
       "src": "https://github.com/nvim-mini/mini.files",
@@ -106,6 +111,11 @@
       "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
+    },
+    "obsidian.nvim": {
+      "rev": "20432a5ca03d99a9d5ad51d362e19d9b832e46f0",
+      "src": "https://github.com/obsidian-nvim/obsidian.nvim",
+      "version": ">=0.0.0"
     },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",

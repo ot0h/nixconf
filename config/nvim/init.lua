@@ -20,6 +20,8 @@ vim.pack.add({
 	{ src = "https://github.com/chomosuke/typst-preview.nvim", version = "master" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag", version = "main" },
 	{ src = "https://github.com/stevearc/oil.nvim", version = "master" },
+	{ src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
+	{ src = "https://github.com/OXY2DEV/markview.nvim", version = "main" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -35,6 +37,7 @@ require("plugins.nav")
 require("plugins.editor")
 require("plugins.ui")
 require("plugins.lsp")
+require("plugins.markdown")
 require("plugins.typst")
 require("plugins.treesitter")
 
