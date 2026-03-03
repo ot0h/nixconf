@@ -31,6 +31,7 @@
     jmtpfs
     obsidian
     inputs.zen-browser.packages.${system}.default
+    inputs.gazelle.packages.${pkgs.system}.default
     meson
     onefetch
     fastfetch
