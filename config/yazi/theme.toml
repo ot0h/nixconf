@@ -29,7 +29,7 @@ prepend_dirs = [
   { name = "tmux", text = "" },
   { name = "go", text = "" },
 ]
-append_exts = [{ name = "aseprite", text = "󰽉" }]
+append_exts = [{ name = "aseprite", text = "󰽉" },{ name = "ts", text = "" }]
 
 prepend_exts = []
 # : }}}
