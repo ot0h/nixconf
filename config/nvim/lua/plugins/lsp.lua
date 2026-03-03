@@ -249,6 +249,8 @@ do
 			"scss",
 			"javascriptreact",
 			"typescriptreact",
+			"typescript",
+			"javascript",
 			"sass",
 			"less",
 			"heex",
