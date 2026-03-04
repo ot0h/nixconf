@@ -35,7 +35,6 @@
       url = "github:Zeus-Deus/gazelle-tui";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
       };
     };
   };
