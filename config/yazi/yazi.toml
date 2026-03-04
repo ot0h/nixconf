@@ -48,6 +48,7 @@ image = [
   { run = '~/.config/yazi/scripts/wallpaper.sh "$1"', orphan = false, block = false, desc = "Wallpaper", for = "linux" },
 ]
 pdf = [
+  { run = "zen-beta %s", orphan = true, desc = "Zen", for = "linux" },
   { run = "firefox %s", orphan = true, desc = "Firefox", for = "linux" },
   # { run = "chromium %s", orphan = true, desc = "Chromium", for = "linux" },
   # { run = "zathura-pywal %s", orphan = true, desc = "Zathura", for = "linux" },
@@ -164,14 +165,14 @@ rules = [
   ] },
 
   { url = "*.pdf", use = [
-    "pdf",
+    "pdf", "document"
   ] },
 
   { url = "*.epub", use = [
     "epub",
   ] },
 
-  { url = "*.{docx,doc,odt,rtf,pdf,txt,md,tex,wps,wpd,fodt,xlsx,xls,ods,csv,pptx,ppt,odp}", use = [
+  { url = "*.{docx,doc,odt,rtf,pdf,txt,md,tex,wps,wpd,fodt,xlsx,xls,ods,csv,pptx,ppt,odp,odg}", use = [
     "document",
   ] },
 
