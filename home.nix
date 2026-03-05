@@ -41,6 +41,7 @@
     clipse
     google-drive-ocamlfuse
     ouch
+    aseprite
     imagemagick
     vala
     bluetui
