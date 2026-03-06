@@ -102,8 +102,8 @@ rules = [
     "reveal",
   ] },
   { mime = "image/*", use = [
-    "open",
     "image",
+    "open",
     "reveal",
   ] },
   { mime = "video/*", use = [
