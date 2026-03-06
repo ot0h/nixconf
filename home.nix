@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     deno
     gdu
+    imv
     typst
     zed-editor
     glib
