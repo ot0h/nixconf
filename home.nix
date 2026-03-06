@@ -23,6 +23,7 @@
     yarn
     bluetui
     obs-studio
+    unrar
     eza
     bibata-cursors
     libreoffice-fresh
