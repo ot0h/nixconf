@@ -48,7 +48,7 @@
       "version": "'master'"
     },
     "markview.nvim": {
-      "rev": "fdc8bac74550f2ac847578cb74c7ad99b3421bc2",
+      "rev": "239feb70ed1cfc26e2c91b32590fd63f7b015599",
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
@@ -86,7 +86,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "2b87d107942b9eebef768512f5849330335a9493",
+      "rev": "2163c54bb6cfec53e3e555665ada945b8c8331b9",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "1970f0d3bbb99c7659e58914948749437c7b7398",
+      "rev": "5cb05e1b0fa3c469958a2b26f36b3fe930af221c",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -123,7 +123,7 @@
       "version": "'master'"
     },
     "smart-splits.nvim": {
-      "rev": "f4e4908fe901444d05feff0ad1cca146ec0be73f",
+      "rev": "25bf40abf79720ebfa98e09259b7c42942055f4c",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
