@@ -18,6 +18,7 @@
     deno
     gdu
     imv
+    nix-init
     typst
     zed-editor
     glib
