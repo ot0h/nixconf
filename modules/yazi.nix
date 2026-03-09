@@ -1,25 +1,30 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  yaziRepo = "${config.home.homeDirectory}/nixconf/config/yazi";
+in {
   programs.yazi = {
     enable = true;
     plugins = with pkgs.yaziPlugins; {
       gvfs = gvfs;
+      projects = projects;
+      lazygit = lazygit;
+      ouch = ouch;
+      toggle-pane = toggle-pane;
+      bookmarks = bookmarks;
     };
   };
 
-  xdg.configFile = {
-    "yazi/yazi.toml".source = ../config/yazi/yazi.toml;
-    "yazi/keymap.toml".source = ../config/yazi/keymap.toml;
-    "yazi/theme.toml".source = ../config/yazi/theme.toml;
-    "yazi/init.lua".source = ../config/yazi/init.lua;
+  home.file = {
+    # Config de yazi
+    ".config/yazi/yazi.toml".source = config.lib.file.mkOutOfStoreSymlink "${yaziRepo}/yazi.toml";
+    ".config/yazi/keymap.toml".source = config.lib.file.mkOutOfStoreSymlink "${yaziRepo}/keymap.toml";
+    ".config/yazi/theme.toml".source = config.lib.file.mkOutOfStoreSymlink "${yaziRepo}/theme.toml";
+    ".config/yazi/init.lua".source = config.lib.file.mkOutOfStoreSymlink "${yaziRepo}/init.lua";
 
-    "yazi/scripts" = {
-      source = ../config/yazi/scripts;
-      recursive = true;
-    };
-
-    "yazi/plugins" = {
-      source = ../config/yazi/plugins;
-      recursive = true;
-    };
+    # Scripts
+    ".config/yazi/scripts".source = config.lib.file.mkOutOfStoreSymlink "${yaziRepo}/scripts";
   };
 }

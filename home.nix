@@ -65,8 +65,6 @@
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/fastfetch";
     ".config/fish".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/fish";
-    ".config/yazi".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/yazi";
     ".config/tmux".source = ./config/tmux;
     ".config/kitty".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/kitty";
