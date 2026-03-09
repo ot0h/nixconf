@@ -15,7 +15,7 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    (pkgs.callPackages ./modules/helium-browser.nix {})
+    (pkgs.callPackage ./modules/helium-browser.nix {})
     deno
     gdu
     imv
