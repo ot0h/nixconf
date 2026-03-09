@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "boydaihungst/gvfs"
-rev = "9d64595"
-hash = "b6f691f01a2122bd94866800d4d12a22"
-
-[[plugin.deps]]
 use = "Lil-Dank/lazygit"
 rev = "0e56060"
 hash = "ab2e66065a94cca4886b303518e44bd8"

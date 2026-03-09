@@ -7,6 +7,7 @@
   imports = [
     ./modules/ags.nix
     ./modules/neovim.nix
+    ./modules/yazi.nix
   ];
 
   home.username = "rimv";

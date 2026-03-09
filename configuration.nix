@@ -281,7 +281,6 @@
     clang-tools
     spotify
     ani-cli
-    yazi
     dart-sass
     brightnessctl
     networkmanager
