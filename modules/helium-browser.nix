@@ -1,40 +1,41 @@
 {
-  lib,
   stdenv,
-  fetchFromGitHub,
-  cmake,
-  pkg-config,
-  qt6,
-}:
-stdenv.mkDerivation (finalAttrs: {
-  pname = "helium";
+  lib,
+  appimageTools,
+  fetchurl,
+  makeDesktopItem,
+  copyDesktopItems,
+}: let
+  pname = "helium-browser";
   version = "0.10.1";
 
-  src = fetchFromGitHub {
-    owner = "imputnet";
-    repo = "helium";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-be66jS8RrRDElwJBsovoYR436Wt/A9t47gjyeQ2+rs8=";
+  architectures = {
+    "x86_64-linux" = {
+      arch = "x86_64";
+      hash = "sha256-FCLCt0T+U8JqUkFVAfl//OtnWsNoN8lWHIiMJws2Mqo=";
+    };
+    "aarch64-linux" = {
+      arch = "arm64";
+      hash = "sha256-KfQlOT4mMKQ40B8hWl+GlmRNVhZnEln59ptfXN0XCLc=";
+    };
   };
 
-  nativeBuildInputs = [
-    cmake
-    pkg-config
-    qt6.wrapQtAppsHook
-  ];
-
-  buildInputs = [
-    qt6.qtbase
-    qt6.qtwebengine
-    qt6.qtwebchannel
-  ];
-
-  meta = {
-    description = "Private, fast, and honest web browser";
-    homepage = "https://github.com/imputnet/helium";
-    license = lib.licenses.gpl3Only;
-    maintainers = [lib.maintainers.rimv];
-    mainProgram = "helium";
-    platforms = lib.platforms.linux;
-  };
-})
+  src = let
+    inherit (architectures.${stdenv.hostPlatform.system}) arch hash;
+  in
+    fetchurl {
+      url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-${arch}.AppImage";
+      inherit hash;
+    };
+in
+  appimageTools.wrapType2 {
+    inherit pname version src;
+    nativeBuildInputs = [copyDesktopItems];
+    desktopItems = [
+      (makeDesktopItem {
+        })
+    ];
+    meta = {
+      platforms = lib.attrNames architectures;
+    };
+  }
