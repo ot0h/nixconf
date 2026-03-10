@@ -48,6 +48,10 @@
     rust-analyzer
     rustfmt
 
+    # Python
+    basedpyright
+    ruff
+
     emmet-language-server
     vscode-langservers-extracted
   ];
