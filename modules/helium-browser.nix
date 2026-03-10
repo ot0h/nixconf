@@ -1,30 +1,31 @@
 {
+  appimageTools,
+  fetchurl,
   lib,
-  stdenv,
-  fetchFromGitHub,
-}:
-stdenv.mkDerivation (finalAttrs: {
+}: let
   pname = "helium";
   version = "0.10.1";
 
-  src = fetchFromGitHub {
-    owner = "imputnet";
-    repo = "helium";
-    tag = finalAttrs.version;
-    hash = "sha256-be66jS8RrRDElwJBsovoYR436Wt/A9t47gjyeQ2+rs8=";
+  src = fetchurl {
+    url = "https://github.com/imputnet/helium/releases/download/v${version}/Helium-${version}.AppImage";
+    # OJO: Este hash tenés que actualizarlo cuando Nix te dé el error
+    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
   };
+in
+  appimageTools.wrapType2 {
+    inherit pname version src;
 
-  meta = {
-    description = "Private, fast, and honest web browser";
-    homepage = "https://github.com/imputnet/helium";
-    license = with lib.licenses; [
-      bsd3
-      gpl3Only
-    ];
-    maintainers = with lib.maintainers; [
-      rimv
-    ];
-    mainProgram = "helium";
-    platforms = lib.platforms.all;
-  };
-})
+    # Esto es para que aparezca en tu menú de aplicaciones (Rofi, Waybar, etc.)
+    extraInstallCommands = ''
+      mv $out/bin/${pname}-${version} $out/bin/${pname}
+    '';
+
+    meta = {
+      description = "Private, fast, and honest web browser";
+      homepage = "https://github.com/imputnet/helium";
+      license = lib.licenses.gpl3Only;
+      maintainers = [lib.maintainers.rimv];
+      platforms = ["x86_64-linux"];
+      mainProgram = "helium";
+    };
+  }
