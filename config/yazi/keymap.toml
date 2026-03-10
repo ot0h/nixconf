@@ -1,1 +1,218 @@
-/nix/store/jw60x0gqq2a4w6ia5fbhv0ni2gqw6gvq-home-manager-files/.config/yazi/keymap.toml
+[mgr]
+prepend_keymap = [
+  # --> CUSTOM KEYMAPS <--
+  { on = [
+    "A",
+  ], run = "create --dir", desc = "Create a Directory" },
+
+  { on = [
+    "g",
+    "t",
+  ], run = "cd ~/.local/share/Trash/files", desc = "Go to Trash" },
+
+  # --> PLUGIN GVFS <-- 
+
+  { on = [
+    "M",
+    "m",
+  ], run = "plugin gvfs -- select-then-mount", desc = "Select device to mount and jump to its mount point" },
+  # This will remount device under cwd (e.g. cwd = /run/user/1000/gvfs/DEVICE_1/FOLDER_A, device mountpoint = /run/user/1000/gvfs/DEVICE_1)
+  { on = [
+    "M",
+    "R",
+  ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount device under cwd" },
+  { on = [
+    "M",
+    "u",
+  ], run = "plugin gvfs -- select-then-unmount", desc = "Select device then unmount" },
+  # or this if you want to unmount and eject device. Ejected device can safely be removed.
+  # Ejecting a device will unmount all paritions/volumes under it.
+  # Fallback to normal unmount if not supported by device.
+  # force = true -> Ignore outstanding file operations when unmounting or ejecting
+  { on = [
+    "M",
+    "U",
+  ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Select device then force to eject/unmount" },
+
+  # Add|Edit|Remove mountpoint: smb, sftp, ftp, nfs, dns-sd, dav, davs, dav+sd, davs+sd, afp, afc, sshfs
+  # Read more about the schemes here: https://wiki.gnome.org/Projects(2f)gvfs(2f)schemes.html
+  # For example: smb://user@192.168.1.2/share, sftp://user@192.168.1.2/, ftp://192.168.1.2/
+  # - Scheme/Mount URIs shouldn't contain password.
+  # - Google Drive, One drive are mounted automatically via GNOME Online Accounts (GOA). Avoid adding them. Use GOA instead: ./GNOME_ONLINE_ACCOUNTS_GOA.md
+  # - MTP, GPhoto2, AFC, Hard disk/drive are listed automatically. Avoid adding them
+  { on = [
+    "M",
+    "a",
+  ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+  # Edit or remove a GVFS mount URI will clear saved passwords for that mount URI.
+  { on = [
+    "M",
+    "e",
+  ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+  { on = [
+    "M",
+    "r",
+  ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+
+  # Jump
+  { on = [
+    "g",
+    "m",
+  ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
+  { on = [
+    "`",
+    "`",
+  ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back to the position before jumped to device" },
+
+  # --> COPY PAL CLIPBOARD <--------
+
+  { on = [
+    "y",
+  ], run = [
+    'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list',
+    "yank",
+  ], desc = "Copy" },
+
+  # --> DISK MANAGER GDU <--------
+
+  { on = [
+    "M",
+    "G",
+  ], run = 'shell --block -- fish -ic "exec gdu -d /"', desc = "Disk Manager for Root" },
+
+  { on = [
+    "M",
+    "g",
+  ], run = 'shell --block -- fish -ic "exec gdu -d ~"', desc = "Disk Manager for Home" },
+
+  { on = [
+    "M",
+    "h",
+  ], run = 'shell --block -- fish -ic "exec gdu -d /home"', desc = "Disk Manager for Home Directory" },
+
+  { on = [
+    "M",
+    "D",
+  ], run = 'shell --block -- fish -ic "exec gdu -d "', desc = "Disk Manager for All mounted" },
+
+  { on = [
+    "M",
+    "d",
+  ], run = 'shell --block -- fish -ic "exec gdu"', desc = "Disk Manager" },
+
+  # --> LAZY GIT <--
+
+  { on = [
+    "g",
+    "i",
+  ], run = "plugin lazygit", desc = "LazyGit" },
+
+  # --> PLUGIN DE BOOKMARKS TIPO VIM <--
+
+  { on = [
+    "b",
+    "a",
+  ], run = "plugin bookmarks save", desc = "Save current position as a bookmark" },
+
+  { on = [
+    "'",
+  ], run = "plugin bookmarks jump", desc = "Jump to a bookmark" },
+
+  { on = [
+    "b",
+    "d",
+  ], run = "plugin bookmarks delete", desc = "Delete a bookmark" },
+
+  { on = [
+    "b",
+    "D",
+  ], run = "plugin bookmarks delete_all", desc = "Delete all bookmarks" },
+
+  # --> Abrir en otro File Manager <--
+
+  { on = [
+    "E",
+  ], run = [
+    'shell -- dolphin "$PWD"',
+  ], desc = "Open CWD in Dolphin" },
+
+  # ---> OUCH <---
+  { on = [
+    "C",
+  ], run = "plugin ouch", desc = "Comprimir con ouch" },
+
+  # ---> Eazy Jump <---
+  # { on = [
+  #   "i",
+  # ], run = "plugin easyjump", desc = "easyjump" },
+  # --> ZOOM PLUGIN <--
+  # { on = [
+  #   "+",
+  # ], run = "plugin zoom 1", desc = "Zoom in hovered file" },
+  #
+  # { on = [
+  #   "-",
+  # ], run = "plugin zoom -1", desc = "Zoom out hovered file" },
+
+  # ---> KDE CONNECT PLUGIN <---
+  # { on = [
+  #   "<C-k>",
+  # ], run = "plugin kdeconnect-send", desc = "Send selected files via KDE CONNECT" },
+
+  # ---> Toggle Pane <----
+  { on = [
+    "T",
+  ], run = "plugin toggle-pane max-preview", desc = "Maximize or restore the preview pane" },
+
+  # ---> SUDO <---
+  { on = [
+    "<C-t>",
+  ], run = "plugin sudo-demo" },
+
+  # ----> SMART PASTE <----
+  # { on = [
+  #   "P",
+  # ], run = "plugin smart-paste", desc = "Paste into the hovered directory or CWD" },
+
+ # --> PROJECT <--
+{ on = [
+    "P",
+    "s",
+  ], run = "plugin projects save", desc = "Save current project" },
+
+{ on = [
+    "P",
+    "l",
+  ], run = "plugin projects load", desc = "Load project" },
+
+{ on = [
+    "P",
+    "P",
+  ], run = "plugin projects load_last", desc = "Load last project" },
+
+{ on = [
+    "P",
+    "d",
+  ], run = "plugin projects delete", desc = "Delete project" },
+
+{ on = [
+    "P",
+    "D",
+  ], run = "plugin projects delete_all", desc = "Delete all projects" },
+
+{ on = [
+    "P",
+    "m",
+  ], run = "plugin projects 'merge current'", desc = "Merge current tab to other projects" },
+
+{ on = [
+    "P",
+    "M",
+  ], run = "plugin projects 'merge all'", desc = "Merge current project to other projects" },
+
+{ on = [
+    "P",
+    "p",
+  ], run = "plugin projects 'load SomeProject'", desc = "Load the 'SomeProject' project" },
+
+]
