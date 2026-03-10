@@ -7,7 +7,7 @@
   copyDesktopItems,
 }: let
   pname = "helium-browser";
-  version = "0.10.1";
+  version = "0.10.0";
 
   architectures = {
     "x86_64-linux" = {
