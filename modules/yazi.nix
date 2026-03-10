@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  yaziRepo = "${config.home.homeDirectory}/nixconf/config/yazi";
+  yaziRepo = "../config/yazi";
 in {
   programs.yazi = {
     enable = true;
