@@ -266,6 +266,26 @@ do
 		on_attach = on_attach,
 	})
 	vim.lsp.enable("emmet_language_server")
+
+	-- LSP para Python
+	vim.lsp.config("basedpyright", {
+		cmd = { "basedpyright-langserver", "--stdio" },
+		filetypes = { "python" },
+		root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			basedpyright = {
+				analysis = {
+					autoSearchPaths = true,
+					diagnosticMode = "openFilesOnly",
+					useLibraryCodeForTypes = true,
+					typeCheckingMode = "basic",
+				},
+			},
+		},
+	})
+	vim.lsp.enable("basedpyright")
 end
 
 do
@@ -283,6 +303,7 @@ do
 			cpp = { "clang-format" },
 			typst = { "typstyle" },
 			rust = { "rustfmt" },
+			python = { "ruff_format", "ruff_organize_imports" },
 		},
 		format_on_save = true,
 	})
