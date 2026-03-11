@@ -54,6 +54,8 @@
 
     emmet-language-server
     vscode-langservers-extracted
+    #Extras
+    arrpc
   ];
 
   linuxBins =

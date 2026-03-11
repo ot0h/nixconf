@@ -22,6 +22,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim", version = "master" },
 	{ src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
 	{ src = "https://github.com/OXY2DEV/markview.nvim", version = "main" },
+	{ src = "https://github.com/vyfor/cord.nvim", version = "master" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -41,6 +42,7 @@ require("plugins.lsp")
 require("plugins.markdown")
 require("plugins.typst")
 require("plugins.treesitter")
+require("plugins.cord")
 
 vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/lua/config/assets/pywal")
 vim.cmd.colorscheme("pywal")
