@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     deno
     gdu
+    codeblocksFull
     imv
     nix-init
     typst

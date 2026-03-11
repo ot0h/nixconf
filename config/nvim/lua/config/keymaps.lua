@@ -31,6 +31,10 @@ map("n", "<C-M-j>", smart_splits.swap_buf_down)
 map("n", "<C-M-k>", smart_splits.swap_buf_up)
 map("n", "<C-M-l>", smart_splits.swap_buf_right)
 
+-- Cambiar entre Buffers
+map("n", "L", "<cmd>bnext<CR>")
+map("n", "H", "<cmd>bprevious<CR>")
+
 -- Snacks: Pickers & Extras
 map("n", "<space><space>", ":lua Snacks.picker.smart()<CR>", "Smart Picker")
 map("n", "<space>,", ":lua Snacks.picker.buffers()<CR>", "Buffers")
