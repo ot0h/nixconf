@@ -21,6 +21,7 @@
     nix-init
     typst
     zed-editor
+    spotatui
     glib
     pnpm
     yarn
