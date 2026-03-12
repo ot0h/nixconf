@@ -14,6 +14,7 @@ in {
       ouch = ouch;
       toggle-pane = toggle-pane;
       bookmarks = bookmarks;
+      rich-preview = rich-preview;
     };
   };
 
