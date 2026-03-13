@@ -67,12 +67,11 @@
       ];
 in {
   home.packages = [
-    # 3. El Wrapper: Aquí es donde armamos el Neovim con esteroides
     (pkgs.wrapNeovimUnstable neovim-nightly {
       withNodeJs = true;
       withPython3 = false;
       withRuby = false;
-      wrapRc = false; # Esto deja que tu init.lua en ~/.config/nvim mande
+      wrapRc = false;
       configure = {
         packages.myPlugins = with pkgs.vimPlugins; {
           start = [
@@ -94,7 +93,6 @@ in {
     })
   ];
 
-  # Definimos nvim como el editor por defecto en la terminal
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
