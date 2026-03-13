@@ -23,6 +23,7 @@
     zed-editor
     spotatui
     glib
+    simple-scan
     pnpm
     yarn
     bluetui
