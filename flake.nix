@@ -68,10 +68,8 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
 
-          # 3. Tu config de usuario (Neovim, LSPs, etc)
           home-manager.users.${username} = import ./home.nix;
 
-          # Crea un backup si hay conflicto de archivos (evita que el build falle)
           home-manager.backupFileExtension = "backup";
         }
       ];
