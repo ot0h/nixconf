@@ -1,6 +1,15 @@
 import { getSubmapHyprland } from "../../../../utils"
 
+function formatText(name: string, mode: "vertical" | "horizontal") {
+  if (mode === "vertical") {
+    return name.split("").join("\n")
+  }
+  return name
+}
+
 export default function Submap() {
+  const mode: "vertical" | "horizontal" = "horizontal"
+
   return (
     <revealer revealChild={getSubmapHyprland.as((s) => s.raw !== "default")}>
       <box class="submap">
@@ -10,7 +19,7 @@ export default function Submap() {
         />
         <label
           class="submap-text"
-          label={getSubmapHyprland.as((s) => s.text)}
+          label={getSubmapHyprland.as((s) => formatText(s.raw, mode))}
         />
       </box>
     </revealer>
