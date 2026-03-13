@@ -1,14 +1,9 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: let
   yaziRepo = "${config.home.homeDirectory}/nixconf/config/yazi";
-
-  yaziBins = with pkgs; [
-    dragon-drop
-  ];
 in {
   programs.yazi = {
     enable = true;
@@ -21,16 +16,6 @@ in {
       toggle-pane = toggle-pane;
       bookmarks = bookmarks;
     };
-
-    package = pkgs.yazi.overrideAttrs (oldAttrs: {
-      nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [pkgs.makeWrapper];
-      postInstall =
-        (oldAttrs.postInstall or "")
-        + ''
-          wrapProgram $out/bin/yazi \
-            --suffix PATH : "${lib.makeBinPath yaziBins}"
-        '';
-    });
   };
 
   home.file = {
