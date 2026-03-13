@@ -59,7 +59,8 @@
     openFirewall = true;
   };
 
-  services.displayManager.gdm.enable = true;
+  services.getty.autologinUser = "rimv";
+  services.displayManager.gdm.enable = false;
   services.desktopManager.gnome.enable = false;
 
   services.gnome = {
@@ -96,7 +97,6 @@
     ];
   };
 
-  services.getty.autologinUser = "rimv";
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
