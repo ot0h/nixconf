@@ -67,8 +67,10 @@
     core-apps.enable = false;
     core-developer-tools.enable = false;
     gcr-ssh-agent.enable = false;
-    gnome-keyring.enable = false;
+    gnome-keyring.enable = true;
   };
+
+  security.pam.services.hyprland.enableGnomeKeyring = true;
 
   xdg.portal = {
     enable = true;

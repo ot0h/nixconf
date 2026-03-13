@@ -21,7 +21,7 @@ require("gvfs"):setup({
 
 	-- (Optional) Select where to save passwords. Default: nil
 	-- Available options: "keyring", "pass", or nil
-	password_vault = "nil",
+	password_vault = "keyring",
 
 	-- (Optional) Only need if you set password_vault = "pass"
 	-- Read the guide at SECURE_SAVED_PASSWORD.md to get your key_grip
