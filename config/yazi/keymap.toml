@@ -215,4 +215,8 @@ prepend_keymap = [
     "p",
   ], run = "plugin projects 'load SomeProject'", desc = "Load the 'SomeProject' project" },
 
+{ on = [
+    "<C-n>",
+  ], run = "shell -- dragon -x -i -T %h", desc = "Drag y Drop via dragon" },
+
 ]
