@@ -26,6 +26,7 @@
     simple-scan
     pnpm
     yarn
+    dragon-drop
     bluetui
     obs-studio
     unrar
