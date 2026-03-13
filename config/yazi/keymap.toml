@@ -217,6 +217,6 @@ prepend_keymap = [
 
 { on = [
     "<C-n>",
-  ], run = "shell -- dragon-drop -x -i -T %h", desc = "Drag y Drop via dragon" },
+  ], run = "shell -- ripdrag -x -i -T %h", desc = "Drag y Drop via ripdrag" },
 
 ]
