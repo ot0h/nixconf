@@ -1,12 +1,12 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "47b1e85c020c9c359a2e6438405dd7b382b014af",
+      "rev": "27f7d753990c8d79bdefe75be0094e7e86eabf16",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "72c3bc29688c405263569ca1083d862bfc09d4fc",
+      "rev": "3586996d1d468cd9bea24e534387e9ffd60198f1",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -94,7 +94,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "5cb05e1b0fa3c469958a2b26f36b3fe930af221c",
+      "rev": "493890b87a81dfe6a7e577dbc364ae33fa482da9",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -138,7 +138,7 @@
       "version": "'main'"
     },
     "typst-preview.nvim": {
-      "rev": "cbf8492873073d11f03c6b4e1405e3fb3b0feecc",
+      "rev": "325036ee145ca51d9efb145c09ac16bce3bc8b7d",
       "src": "https://github.com/chomosuke/typst-preview.nvim",
       "version": "'master'"
     },
