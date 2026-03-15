@@ -161,7 +161,7 @@ require("snacks").setup({
 		---@type snacks.dashboard.Item[]
 		keys = {
 			{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-			-- { icon = " ", key = "o", desc = "Obsidian", action = ":Oil ~/Documents/Notas/"},
+			-- { icon = " ", key = "o", desc = "Obsidian", action = ":Oil ~/Documents/Notas/" },
 			{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
 			{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
 			{ icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
