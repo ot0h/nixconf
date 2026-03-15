@@ -1,12 +1,12 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "27f7d753990c8d79bdefe75be0094e7e86eabf16",
+      "rev": "157fa3f37a3be55ceb375274e2f3ea2d7d2f9ef6",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "cb8840b3a669e2af24e922ea58b44ccc0b8916ea",
+      "rev": "539053d87740e357a96fb304c9a4da2ef27b3576",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -86,7 +86,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "883c6495b53fccbd35d0938aac8bdf72f6d499c0",
+      "rev": "4d0724be90b633ddce51b328a631060e6acd7d66",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "493890b87a81dfe6a7e577dbc364ae33fa482da9",
+      "rev": "2f5d4c3f3c675962242096bcc8e586d76dd72eb2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -128,7 +128,7 @@
       "version": "'master'"
     },
     "snacks.nvim": {
-      "rev": "9912042fc8bca2209105526ac7534e9a0c2071b2",
+      "rev": "a049339328e2599ad6e85a69fa034ac501e921b2",
       "src": "https://github.com/folke/snacks.nvim",
       "version": "'main'"
     },

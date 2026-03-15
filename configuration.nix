@@ -59,8 +59,7 @@
     openFirewall = true;
   };
 
-  services.getty.autologinUser = "rimv";
-  services.displayManager.gdm.enable = false;
+  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = false;
 
   services.gnome = {
