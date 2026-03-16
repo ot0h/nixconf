@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
     deno
     gdu
-    vencord
+    vesktop
     imv
     nix-init
     typst
