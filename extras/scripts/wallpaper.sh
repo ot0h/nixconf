@@ -1,1 +1,1 @@
-../../.config/yazi/scripts/wallpaper.sh
+../../../.config/yazi/scripts/wallpaper.sh
