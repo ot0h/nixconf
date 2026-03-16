@@ -32,3 +32,4 @@ o.pumheight = 16
 o.winborder = "single"
 o.timeout = true
 o.timeoutlen = 300
+o.undofile = true
