@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
     deno
     gdu
-    vesktop
+    discord
     imv
     nix-init
     typst
