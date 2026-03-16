@@ -255,7 +255,7 @@
     bat
     cups
     nodejs
-    vscode
+    # vscode
     hypridle
     hyprlock
     hyprsunset
