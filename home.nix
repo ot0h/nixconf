@@ -8,6 +8,7 @@
     ./modules/ags.nix
     ./modules/neovim.nix
     ./modules/yazi.nix
+    ./modules/ghostty.nix
   ];
 
   home.username = "rimv";
