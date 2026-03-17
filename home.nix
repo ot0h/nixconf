@@ -18,6 +18,7 @@
     deno
     gdu
     discord
+    ghostty
     imv
     nix-init
     typst
