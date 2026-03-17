@@ -18,7 +18,7 @@
     deno
     gdu
     discord
-    ghostty
+    foot
     imv
     nix-init
     typst
