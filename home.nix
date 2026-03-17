@@ -18,7 +18,6 @@
     deno
     gdu
     discord
-    foot
     imv
     nix-init
     typst
