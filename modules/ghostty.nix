@@ -11,7 +11,7 @@
     settings = {
       config-file = "${config.home.homeDirectory}/.cache/wal/ghostty.conf";
 
-      command = "env GTK_IM_MODULE=simple tmux -CC attach -t default || env GTK_IM_MODULE=simple tmux -CC new -s default";
+      command = "env GTK_IM_MODULE=simple ${pkgs.fish}/bin/fish";
       shell-integration = "fish";
       font-family = "IosevkaTermSlab Nerd Font";
       font-size = 12;
