@@ -19,6 +19,7 @@
     gdu
     discord
     imv
+    sioyek
     nix-init
     typst
     zed-editor
