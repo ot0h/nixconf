@@ -48,11 +48,11 @@ image = [
   { run = '~/.config/yazi/scripts/wallpaper.sh "$1"', orphan = false, block = false, desc = "Wallpaper", for = "linux" },
 ]
 pdf = [
+  { run = "sioyek %s", orphan = true, desc = "Sioyek", for = "linux" },
   { run = "zen-beta %s", orphan = true, desc = "Zen", for = "linux" },
   { run = "firefox %s", orphan = true, desc = "Firefox", for = "linux" },
   # { run = "chromium %s", orphan = true, desc = "Chromium", for = "linux" },
   # { run = "zathura-pywal %s", orphan = true, desc = "Zathura", for = "linux" },
-  # { run = 'sioyek "$@"', orphan = true, desc = "Sioyek", for = "linux" },
 ]
 epub = [
   { run = "bookokrat %s", block = true, desc = "Bookokrat", for = "linux" },
