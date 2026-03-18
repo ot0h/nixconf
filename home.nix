@@ -23,7 +23,7 @@
     nix-init
     typst
     zed-editor
-    wdisplays
+    nwg-displays
     spotatui
     glib
     simple-scan
