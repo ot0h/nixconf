@@ -42,7 +42,7 @@ require("plugins.lsp")
 require("plugins.markdown")
 require("plugins.typst")
 require("plugins.treesitter")
-require("plugins.misc")
+-- require("plugins.misc")
 
 vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/lua/config/assets/pywal")
 vim.cmd.colorscheme("pywal")
