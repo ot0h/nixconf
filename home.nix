@@ -19,6 +19,7 @@
     thunar
     gdu
     discord
+    karere
     imv
     sioyek
     nix-init
