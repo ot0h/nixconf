@@ -6,7 +6,7 @@
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "612f4bd2bc29d9e7dc7be1dde960908951bedad1",
+      "rev": "62c3d54f7d739ee46f850ea6832383e3b7ca2ee1",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -53,7 +53,7 @@
       "version": "'master'"
     },
     "markview.nvim": {
-      "rev": "ed989a2036a85ec7e1d41de77bf01d0537b19799",
+      "rev": "1861f959599ae03cfd59f56222a542035b0cd947",
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
@@ -99,7 +99,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "53f6ce29df5841ce26e5a9f06fb371088b8d8031",
+      "rev": "6620ae1c44dfa8623b22d0cbf873a9e8d073b849",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -128,12 +128,12 @@
       "version": "'master'"
     },
     "smart-splits.nvim": {
-      "rev": "82d01bb71bc051955654b3af68355f783d872fe0",
+      "rev": "96afd5d3b029ac354aaa369fb33b4613a0bbf2f0",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
     "snacks.nvim": {
-      "rev": "a049339328e2599ad6e85a69fa034ac501e921b2",
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim",
       "version": "'main'"
     },
@@ -143,7 +143,7 @@
       "version": "'main'"
     },
     "typst-preview.nvim": {
-      "rev": "325036ee145ca51d9efb145c09ac16bce3bc8b7d",
+      "rev": "a42c86ef1875100c2be92e90a637064efb0eab06",
       "src": "https://github.com/chomosuke/typst-preview.nvim",
       "version": "'master'"
     },
