@@ -19,7 +19,7 @@ $radius: 10px;
   // CONTROL
   .center-control {
     padding: 20px;
-    border-radius: $radius;
+    border-radius: 0px;
     background: $background;
 
     // Sliders
@@ -29,7 +29,7 @@ $radius: 10px;
       & trough {
         min-height: 10px;
         background: $color1;
-        border-radius: 10px;
+        border-radius: 0px;
       }
       & highlight {
         min-height: 10px;
@@ -66,7 +66,7 @@ $radius: 10px;
         padding: 5px;
         padding-right: 14px;
         padding-left: 10px;
-        border-radius: 2px;
+        border-radius: 0px;
       }
       & label {
         background: none;
@@ -82,9 +82,9 @@ $radius: 10px;
 
     & .stack {
       padding: 10px;
-      border-radius: 20px;
+      border-radius: 0px;
       & .card-player {
-        border-radius: 20px;
+        border-radius: 0px;
       }
     }
 
