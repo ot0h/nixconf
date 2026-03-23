@@ -134,7 +134,7 @@ require("snacks").setup({
 		},
 	},
 	dashboard = {
-		enabled = true,
+		enabled = false,
 
 		formats = {
 			footer = { "%s", align = "center" },
