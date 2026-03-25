@@ -46,6 +46,7 @@ TS.install({
 	"typescript",
 	"typst",
 	"python",
+	"go",
 })
 
 _G.mytreesitter_indentexpr = function()

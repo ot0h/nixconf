@@ -52,6 +52,11 @@
     basedpyright
     ruff
 
+    # Go
+    go
+    gopls
+    gotools
+
     emmet-language-server
     vscode-langservers-extracted
   ];

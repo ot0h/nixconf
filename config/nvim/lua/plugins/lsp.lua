@@ -286,6 +286,27 @@ do
 		},
 	})
 	vim.lsp.enable("basedpyright")
+
+	-- LSP para Go (Golang)
+	vim.lsp.config("gopls", {
+		cmd = { "gopls" },
+		filetypes = { "go", "gomod", "gowork", "gotmpl" },
+		root_markers = { "go.work", "go.mod", ".git" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			gopls = {
+				analyses = {
+					unusedparams = true,
+					shadow = true,
+				},
+				staticcheck = true,
+				completeUnimported = true,
+				usePlaceholders = true,
+			},
+		},
+	})
+	vim.lsp.enable("gopls")
 end
 
 do
@@ -304,6 +325,7 @@ do
 			typst = { "typstyle" },
 			rust = { "rustfmt" },
 			python = { "ruff_format", "ruff_organize_imports" },
+			go = { "goimports" },
 		},
 		format_on_save = true,
 	})
