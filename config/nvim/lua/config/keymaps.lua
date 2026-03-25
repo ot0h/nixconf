@@ -111,6 +111,9 @@ map("n", "<F5>", function()
 		java = function()
 			return "javac " .. esc_file .. " && java " .. name
 		end,
+		go = function()
+			return "go run " .. esc_file
+		end,
 	}
 
 	local builder = commands[ext]

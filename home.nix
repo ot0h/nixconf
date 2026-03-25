@@ -48,6 +48,7 @@
     onefetch
     fastfetch
     python313
+    go
     jq
     procps
     clipse
