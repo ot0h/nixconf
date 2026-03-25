@@ -45,7 +45,7 @@ image = [
   { run = 'imv-dir "$@"', orphan = true, desc = "IMV-DIR", for = "linux" },
   { run = 'aseprite "$@"', orphan = true, desc = "Aseprite", for = "linux" },
   { run = 'gimp "$@"', orphan = true, desc = "Gimp", for = "linux" },
-  { run = '~/.config/yazi/scripts/wallpaper.sh "$1"', orphan = false, block = false, desc = "Wallpaper", for = "linux" },
+  { run = 'sh ~/.config/yazi/scripts/wallpaper.sh "$@"', orphan = false, block = false, desc = "Wallpaper", for = "linux" },
 ]
 pdf = [
   { run = "sioyek %s", orphan = true, desc = "Sioyek", for = "linux" },
