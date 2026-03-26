@@ -19,6 +19,7 @@
     thunar
     gdu
     discord
+    sshfs
     television
     karere
     imv
