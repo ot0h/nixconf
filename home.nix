@@ -19,6 +19,7 @@
     thunar
     gdu
     discord
+    television
     karere
     imv
     sioyek
