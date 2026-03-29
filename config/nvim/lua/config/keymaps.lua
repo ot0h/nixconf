@@ -46,6 +46,18 @@ map("n", "gr", ":lua Snacks.picker.lsp_references()<CR>", "Referencias")
 map("x", "<space>fw", ":lua Snacks.picker.grep_word()<CR>", "Visual Grep Word")
 map("x", "<space>fi", ":lua Snacks.picker.icons()<CR>", "Visual Grep Word")
 
+map("n", "<leader>uh", function()
+	local current_state = vim.lsp.inlay_hint.is_enabled()
+	vim.lsp.inlay_hint.enable(not current_state)
+
+	-- Mandamos la notificación según el nuevo estado
+	if not current_state then
+		vim.notify("Inlay Hints: ON", vim.log.levels.INFO, { title = "LSP" })
+	else
+		vim.notify("Inlay Hints: OFF", vim.log.levels.WARN, { title = "LSP" })
+	end
+end, { desc = "Toggle Hints" })
+
 -- Conform y Guardado
 map("n", "<space>w", ":w<CR>", "Guardar")
 map("n", "<C-s>", function()
