@@ -1,13 +1,14 @@
 {
+  "icon_theme": "Monospace Icon Theme - Dark",
   "ui_font_size": 16,
   "ui_font_family": "Iosevka",
   "buffer_font_size": 15,
   "buffer_font_family": "Iosevka",
 
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Gruvbox Material",
+    "mode": "dark",
+    "light": "Monospace light",
+    "dark": "Monosami Dark",
   },
 
   "vim_mode": true,
