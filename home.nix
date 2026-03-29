@@ -20,9 +20,7 @@
     gdu
     discord
     sshfs
-    television
     rustc
-    karere
     imv
     sioyek
     nix-init
