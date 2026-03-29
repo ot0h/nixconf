@@ -65,6 +65,7 @@
     poppler-utils
     gruvbox-gtk-theme
     gruvbox-plus-icons
+    papirus-icon-theme
     sane-backends
   ];
 
