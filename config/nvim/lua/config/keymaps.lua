@@ -126,6 +126,9 @@ map("n", "<F5>", function()
 		go = function()
 			return "go run " .. esc_file
 		end,
+		rs = function()
+			return "rustc " .. esc_file .. " -o " .. esc_name .. " && ./" .. name
+		end,
 	}
 
 	local builder = commands[ext]

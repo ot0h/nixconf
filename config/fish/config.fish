@@ -24,6 +24,9 @@ set -g fish_greeting ""
 # TMUX
 set -x TMUX_CONF ~/.config/tmux/tmux.conf
 
+# Path
+fish_add_path $HOME/.cargo/bin
+
 # Cosas
 set -gx EDITOR nvim
 set -gx VISUAL nvim
