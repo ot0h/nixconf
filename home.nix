@@ -19,7 +19,6 @@
     thunar
     gdu
     discord
-    tdf
     sshfs
     rustc
     imv
