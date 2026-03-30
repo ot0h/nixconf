@@ -1,12 +1,12 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "cf2b276dc88696b35d55ea4bd55dfaf7d608c9a2",
+      "rev": "24eeb97da8d605c480dc68bb6276248702e31d2a",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "62c3d54f7d739ee46f850ea6832383e3b7ca2ee1",
+      "rev": "8a2060dff4e68ac17f1c92aed526c76fb0c1ac2f",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -86,7 +86,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "841c6d4139aedb8a3f2baf30cef5327371385b93",
+      "rev": "16812abf0e8d8175155f26143a8504e8253e92b0",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "6620ae1c44dfa8623b22d0cbf873a9e8d073b849",
+      "rev": "7caec274fd19c12b55902a5b795100d21531391f",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -123,7 +123,7 @@
       "version": "'master'"
     },
     "smart-splits.nvim": {
-      "rev": "96afd5d3b029ac354aaa369fb33b4613a0bbf2f0",
+      "rev": "12426763591f06b865c20990d8423345ea96d44f",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
@@ -138,7 +138,7 @@
       "version": "'main'"
     },
     "typst-preview.nvim": {
-      "rev": "a42c86ef1875100c2be92e90a637064efb0eab06",
+      "rev": "5f3068df703a40fa4b8ac1c13a7d18ed78483be9",
       "src": "https://github.com/chomosuke/typst-preview.nvim",
       "version": "'master'"
     },
