@@ -68,7 +68,9 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     graphite-gtk-theme
-    tela-circle-icon-theme
+    (tela-circle-icon-theme.override {
+      colorVariants = ["black"];
+    })
     nwg-look
     sane-backends
   ];
