@@ -43,6 +43,7 @@
     websocat
     jmtpfs
     obsidian
+    gh-dash
     inputs.zen-browser.packages.${system}.default
     inputs.gazelle.packages.${pkgs.system}.default
     meson
