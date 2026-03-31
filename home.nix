@@ -68,7 +68,7 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     (graphite-gtk-theme.override {
-      themeVariants = ["grey"];
+      themeVariants = ["default"];
       colorVariants = ["black"];
       sizeVariants = ["compact"];
       tweaks = ["black"];
