@@ -68,6 +68,7 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     graphite-gtk-theme
+    nwg-look
     sane-backends
   ];
 
