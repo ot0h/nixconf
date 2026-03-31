@@ -44,6 +44,7 @@
     jmtpfs
     obsidian
     gh-dash
+    gh
     inputs.zen-browser.packages.${system}.default
     inputs.gazelle.packages.${pkgs.system}.default
     meson
