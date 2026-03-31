@@ -16,6 +16,7 @@
 
   home.packages = with pkgs; [
     deno
+    simplescreenrecorder
     thunar
     tumbler
     gdu
