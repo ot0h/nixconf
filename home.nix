@@ -67,7 +67,12 @@
     poppler-utils
     gruvbox-gtk-theme
     gruvbox-plus-icons
-    graphite-gtk-theme
+    (graphite-gtk-theme.override {
+      themeVariants = ["grey"];
+      colorVariants = ["black"];
+      sizeVariants = ["compact"];
+      tweaks = ["black"];
+    })
     (tela-circle-icon-theme.override {
       colorVariants = ["black"];
     })
