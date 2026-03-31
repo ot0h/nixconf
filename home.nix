@@ -68,6 +68,7 @@
     gruvbox-gtk-theme
     gruvbox-plus-icons
     graphite-gtk-theme
+    tela-circle-icon-theme
     nwg-look
     sane-backends
   ];
