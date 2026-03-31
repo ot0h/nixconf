@@ -16,7 +16,6 @@
 
   home.packages = with pkgs; [
     deno
-    simplescreenrecorder
     thunar
     tumbler
     gdu
@@ -37,6 +36,7 @@
     ripdrag
     bluetui
     obs-studio
+    wf-recorder
     unrar
     eza
     bibata-cursors
