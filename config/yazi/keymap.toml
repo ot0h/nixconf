@@ -133,8 +133,8 @@ prepend_keymap = [
   { on = [
     "E",
   ], run = [
-    'shell -- dolphin "$PWD"',
-  ], desc = "Open CWD in Dolphin" },
+    'shell -- thunar "$PWD"',
+  ], desc = "Open CWD in Thunar" },
 
   # ---> OUCH <---
   { on = [

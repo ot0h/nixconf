@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     deno
     thunar
+    tumbler
     gdu
     discord
     sshfs
