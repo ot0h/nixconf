@@ -133,7 +133,8 @@ in {
       # --- Plugins Config ---
       set -g @resurrect-capture-pane-contents 'on'
       set -g @resurrect-processes 'yazi'
-      set -g @resurrect-strategy-vim 'session'
+      # Nota: @resurrect-strategy-vim no existe, es @resurrect-strategy-nvim
+      # set -g @resurrect-strategy-nvim 'session'
 
       # Scratchpad (Popup)
       bind-key o if-shell -F '#{==:#{session_name},scratch}' { detach-client } { display-popup -d "#{pane_current_path}" -E "tmux new-session -A -s scratch" }
