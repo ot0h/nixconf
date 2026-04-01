@@ -22,7 +22,6 @@ in {
     terminal = "tmux-256color";
     prefix = "M-Space";
     baseIndex = 1;
-    paneBaseIndex = 1;
     mouse = true;
     keyMode = "vi";
     escapeTime = 0;
