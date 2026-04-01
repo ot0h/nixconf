@@ -66,11 +66,11 @@ in {
       bind-key -n M-l if -F "#{@pane-is-vim}" 'send-keys M-l' 'resize-pane -R 3'
 
       # --- last-pane con C-\ (version-aware) ---
-      tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
-      if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
-          "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C-\'  'select-pane -l'"
-      if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
-          "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C\\'  'select-pane -l'"
+      # tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
+      # if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
+      #     "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C-\'  'select-pane -l'"
+      # if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
+      #     "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C\\'  'select-pane -l'"
 
       # --- Zoom + Navegación ---
       bind Up if -F '#{window_zoomed_flag}' 'select-pane -U ; resize-pane -Z'
