@@ -68,9 +68,9 @@ in {
       # --- last-pane con C-\ (version-aware) ---
       tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
       if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
-          "bind-key -n 'C-\\' if -F "#{@pane-is-vim}" 'send-keys C-\\'  'select-pane -l'"
+          "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C-\'  'select-pane -l'"
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
-          "bind-key -n 'C-\\' if -F "#{@pane-is-vim}" 'send-keys C\\\\'  'select-pane -l'"
+          "bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C\\'  'select-pane -l'"
 
       # --- Zoom + Navegación ---
       bind Up if -F '#{window_zoomed_flag}' 'select-pane -U ; resize-pane -Z'
@@ -85,7 +85,7 @@ in {
       bind-key -T copy-mode-vi 'C-j' select-pane -D
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
-      bind-key -T copy-mode-vi 'C-\\' select-pane -l
+      bind-key -T copy-mode-vi 'C-\' select-pane -l
       bind-key -T copy-mode-vi v send -X begin-selection
       bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
       bind-key -T copy-mode-vi C-v send -X rectangle-toggle
@@ -97,7 +97,7 @@ in {
       bind-key k switch-client -n
 
       # --- Borrar archivos de resurrect ---
-      bind-key M-d command-prompt -p "Borrar archivos de resurrect? (y/n)" "run-shell 'if [ \"%%\" = \"y\" ]; then rm -f ~/.local/share/tmux/resurrect/* && tmux display-message \"Archivos de resurrect eliminados\"; else tmux display-message \"Cancelado\"; fi'"
+      bind-key M-d command-prompt -p "Borrar archivos de resurrect? (y/n)" "run-shell 'if [ \"%\" = \"y\" ]; then rm -f ~/.local/share/tmux/resurrect/* && tmux display-message \"Archivos de resurrect eliminados\"; else tmux display-message \"Cancelado\"; fi'"
 
       # --- Border Styles ---
       set -g pane-border-style 'fg=colour1'
@@ -114,11 +114,6 @@ in {
 
       set -g status-right-length 100
       set -g status-right " #{?client_prefix,#[fg=colour8 bold]PREFIX ,#{?#{==:#{pane_mode},copy-mode},#[fg=colour3 bold]COPY ,#[fg=colour4 bold]NORMAL }}#[fg=colour15]│ #[fg=colour15,bold] #S "
-
-      # RAM (sh -c para compatibilidad)
-      set -ga status-right "#[bg=none,fg=colour15,none]│ #[fg=colour5,bold]󰍛 #(sh -c \"${pkgs.procps}/bin/free -h | awk 'NR==2{printf \\\"%.0f%%\\\", \$3*100/\$2 }'\")"
-      # Batería (con fallback si no hay batería)
-      set -ga status-right "#[bg=none,fg=colour15,none] │ #[fg=colour5,bold]#(sh -c \"if ${pkgs.acpi}/bin/acpi -b 2>/dev/null | grep -q .; then ${pkgs.acpi}/bin/acpi -b | awk '{ match(\$0, /([0-9]+)%/, a); p=a[1]; if(/Charging/){ if(p<=10)icon=\\\"󰢜\\\";else if(p<=20)icon=\\\"󰂆\\\";else if(p<=30)icon=\\\"󰂇\\\";else if(p<=40)icon=\\\"󰂈\\\";else if(p<=50)icon=\\\"󰢝\\\";else if(p<=60)icon=\\\"󰂉\\\";else if(p<=70)icon=\\\"󰢞\\\";else if(p<=80)icon=\\\"󰂊\\\";else if(p<=90)icon=\\\"󰂋\\\";else icon=\\\"󰂄\\\";}else{ if(p<=10)icon=\\\"󰁺\\\";else if(p<=20)icon=\\\"󰁻\\\";else if(p<=30)icon=\\\"󰁼\\\";else if(p<=40)icon=\\\"󰁽\\\";else if(p<=50)icon=\\\"󰁾\\\";else if(p<=60)icon=\\\"󰁿\\\";else if(p<=70)icon=\\\"󰂀\\\";else if(p<=80)icon=\\\"󰂁\\\";else if(p<=90)icon=\\\"󰂂\\\";else icon=\\\"󰁹\\\";} print icon \\\" \\\" p \\\"%\\\" }'; else echo \\\"󰁹 \\\"; fi')\")"
 
       # --- Window Status ---
       set -g window-status-format " #I#{?#{!=},: #W,} "
