@@ -8,6 +8,7 @@
     ./modules/ags.nix
     ./modules/neovim.nix
     ./modules/yazi.nix
+    ./modules/tmux.nix
   ];
 
   home.username = "rimv";
@@ -90,7 +91,7 @@
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/fastfetch";
     ".config/fish".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/fish";
-    ".config/tmux".source = ./config/tmux;
+    # ".config/tmux".source = ./config/tmux;
     ".config/kitty".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/kitty";
     ".config/rofi".source = ./config/rofi;

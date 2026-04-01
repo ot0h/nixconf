@@ -267,7 +267,6 @@
     watchexec
     fd
     kitty
-    tmux
     cargo
     nodePackages.npm
     nodePackages.prettier
