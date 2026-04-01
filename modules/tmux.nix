@@ -9,10 +9,7 @@
   ];
 
   tmuxPluginsList = with pkgs.tmuxPlugins; [
-    sensible
     vim-tmux-navigator
-    resurrect
-    continuum
     tmux-fzf
   ];
 in {
@@ -96,9 +93,6 @@ in {
             bind-key j switch-client -p
             bind-key k switch-client -n
 
-            # --- Borrar archivos de resurrect ---
-            bind-key M-d command-prompt -p "Borrar archivos de resurrect? (y/n)" "run-shell 'if [ \"%\" = \"y\" ]; then rm -f ~/.local/share/tmux/resurrect/* && tmux display-message \"Archivos de resurrect eliminados\"; else tmux display-message \"Cancelado\"; fi'"
-
             # --- Border Styles ---
             set -g pane-border-style 'fg=colour1'
             set -g pane-active-border-style 'fg=colour3'
@@ -137,10 +131,6 @@ in {
             set -g window-status-current-style "bg=default,fg=colour4,bold"
 
             # --- Plugins Config ---
-            set -g @resurrect-capture-pane-contents 'on'
-            set -g @resurrect-processes 'yazi'
-            # Nota: @resurrect-strategy-vim no existe, es @resurrect-strategy-nvim
-            # set -g @resurrect-strategy-nvim 'session'
 
             # Scratchpad (Popup)
             bind-key o if-shell -F '#{==:#{session_name},scratch}' { detach-client } { display-popup -d "#{pane_current_path}" -E "tmux new-session -A -s scratch" }
