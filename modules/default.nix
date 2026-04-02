@@ -1,4 +1,4 @@
-# Embudo general - importa todos los módulos automáticamente
+# Embudo general - importa todos los módulos de Home Manager automáticamente
 { pkgs, ... }: {
   imports = [
     # Desktop
@@ -15,16 +15,7 @@
     # Configs
     ./configs/fonts.nix
 
-    # Hardware
-    ./hardware/battery/tlp.nix
-
     # Paquetes (el otro embudo)
     ./paquetes/default.nix
-
-    # Servicios
-    ./servicios/audio/pipewire.nix
-    ./servicios/printing/cups.nix
-    ./servicios/red/avahi.nix
-    ./servicios/red/samba.nix
   ];
 }

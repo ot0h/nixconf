@@ -1,6 +1,6 @@
 { pkgs, ... }: {
-  # Fuentes del sistema
-  fonts.packages = with pkgs; [
+  # Fuentes del usuario
+  home.packages = with pkgs; [
     iosevka
     monocraft
     liberation_ttf

@@ -2,12 +2,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/configs/fonts.nix
 
     # Hardware
     ../../modules/hardware/battery/tlp.nix
 
-    # Servicios
+    # Servicios del sistema
     ../../modules/servicios/red/samba.nix
     ../../modules/servicios/red/avahi.nix
     ../../modules/servicios/printing/cups.nix
