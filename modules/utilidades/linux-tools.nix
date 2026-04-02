@@ -12,5 +12,8 @@
     awww
     bluetui
     aseprite
+
+    # Transferencia
+    localsend
   ];
 }
