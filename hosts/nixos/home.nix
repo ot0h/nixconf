@@ -5,15 +5,8 @@
   ...
 }: {
   imports = [
-    # Módulos de escritorio
-    ../../modules/ags.nix
-    ../../modules/neovim.nix
-    ../../modules/yazi.nix
-    ../../modules/tmux.nix
-    ../../modules/desktop/hyprland/packages.nix
-
-    # Embudo de paquetes (todos los módulos)
-    ../../modules/paquetes/default.nix
+    # Embudo - importa todos los módulos
+    ../../modules/default.nix
   ];
 
   home.username = "rimv";
