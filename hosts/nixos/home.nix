@@ -14,104 +14,40 @@
 
     # Paquetes modulares
     ../../modules/paquetes/utilidades/cli.nix
+    ../../modules/paquetes/shell/shell.nix
+    ../../modules/paquetes/editors/editors.nix
+    ../../modules/paquetes/dev-tools/dev-tools.nix
     ../../modules/paquetes/programacion/basics.nix
     ../../modules/paquetes/entretenimiento/multimedia.nix
+    ../../modules/paquetes/oficina/oficina.nix
+    ../../modules/paquetes/file-management/file-management.nix
+    ../../modules/paquetes/hardware/hardware.nix
+    ../../modules/paquetes/themes/themes.nix
   ];
 
   home.username = "rimv";
   home.homeDirectory = "/home/rimv";
   home.stateVersion = "25.11";
 
+  # Paquetes adicionales que no están en módulos
   home.packages = with pkgs; [
-    # CLI y utilidades
-    vim
-    btop
+    # Utilidades varias
     opencode
-    rofi
-    wget
-    fzf
-    zoxide
-    bat
-    fd
-    xclip
-    wl-clipboard
-
-    # Shell
-    fish
-    starship
-    atuin
-    typstyle
-
-    # Hyprland utilities
-    hypridle
-    hyprlock
-    hyprsunset
-    hyprshot
-    hyprpicker
     pywal16
-
-    # Editores y tooling
-    kitty
-    tinymist
     localsend
-    prettier
-    vtsls
-    watchexec
-
-    # Lenguajes y runtimes
-    deno
-    bun
-    nodejs
-    yarn
-    pnpm
-
-    # Compiladores y build tools
-    gcc
-    clang-tools
-    cargo
-    rustc
-    cmake
-    meson
-    go
-
-    # Multimedia
-    mpv
-    spotify
-    ncspot
-    obs-studio
-    wf-recorder
-    ani-cli
-    dart-sass
-
-    # Utilidades de sistema
-    brightnessctl
-    acpi
-    onlyoffice-desktopeditors
-    git
-    lazygit
     wiremix
-    opencode
-    typstyle
-    gh
-    gh-dash
 
-    # Aplicaciones de oficina
-    libreoffice-fresh
-
-    # File managers y tools
-    thunar
-    tumbler
-    gdu
-    eza
-    imv
-
-    # Visores y editors
-    zed-editor
+    # Runtime y lenguajes adicionales
+    deno
     typst
     sioyek
 
-    # Utilidades
+    # Entretenimiento adicional
     discord
+    obs-studio
+    wf-recorder
+
+    # Utilidades varias
     awww
     sshfs
     ripdrag
@@ -124,21 +60,7 @@
     imagemagick
     poppler-utils
 
-    # Temas y look
-    gruvbox-gtk-theme
-    gruvbox-plus-icons
-    (graphite-gtk-theme.override {
-      themeVariants = ["default"];
-      colorVariants = ["dark"];
-      sizeVariants = ["compact"];
-      tweaks = ["black"];
-    })
-    (tela-circle-icon-theme.override {
-      colorVariants = ["black"];
-    })
-    bibata-cursors
-
-    # Herramientas de desarrollo
+    # Herramientas adicionales de desarrollo
     nix-init
     nwg-displays
     spotatui
@@ -148,15 +70,11 @@
 
     # Apps varias
     obsidian
-    nwg-look
-
-    # Inputs externos
-    inputs.zen-browser.packages.${system}.default
-    inputs.gazelle.packages.${pkgs.system}.default
+    typst
+    sass
 
     # Python y herramientas
     python314
-    go
     jq
     procps
     clipse
