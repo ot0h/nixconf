@@ -5,10 +5,17 @@
   ...
 }: {
   imports = [
+    # Módulos de escritorio
     ../../modules/ags.nix
     ../../modules/neovim.nix
     ../../modules/yazi.nix
     ../../modules/tmux.nix
+    ../../modules/desktop/hyprland/packages.nix
+
+    # Paquetes modulares
+    ../../modules/paquetes/utilidades/cli.nix
+    ../../modules/paquetes/programacion/basics.nix
+    ../../modules/paquetes/entretenimiento/multimedia.nix
   ];
 
   home.username = "rimv";

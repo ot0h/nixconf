@@ -1,19 +1,16 @@
 { pkgs, ... }: {
-  # Paquetes del sistema
-  environment.systemPackages = with pkgs; [
-    # Compiladores
+  # Compiladores y lenguajes
+  home.packages = with pkgs; [
     gcc
     clang-tools
     cmake
     meson
 
-    # Lenguajes
     cargo
     rustc
     go
     nodejs
 
-    # Herramientas de build
     bun
     yarn
     pnpm

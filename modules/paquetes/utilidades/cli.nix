@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # CLI tools básicos
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     vim
     btop
     opencode

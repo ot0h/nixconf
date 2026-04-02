@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # Multimedia
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     mpv
     spotify
     ncspot

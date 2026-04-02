@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # Paquetes Hyprland
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     hypridle
     hyprlock
     hyprsunset
