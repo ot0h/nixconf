@@ -268,8 +268,7 @@
     fd
     kitty
     cargo
-    nodePackages.npm
-    nodePackages.prettier
+    prettier
     bun
     acpi
     yarn

@@ -25,9 +25,8 @@
 
     # TYPESCRIPT / JS
     nodejs
-    nodePackages.npm
     vtsls
-    nodePackages.prettier
+    prettier
     yarn
     deno
     pnpm
