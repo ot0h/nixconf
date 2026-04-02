@@ -5,67 +5,13 @@
   ...
 }: {
   imports = [
-    # Embudo - importa todos los módulos
-    ../../modules/default.nix
+    # Módulos específicos del host
+    ./modules.nix
   ];
 
   home.username = "rimv";
   home.homeDirectory = "/home/rimv";
   home.stateVersion = "25.11";
-
-  # Paquetes adicionales que no están en módulos
-  home.packages = with pkgs; [
-    # Utilidades varias
-    opencode
-    pywal16
-    localsend
-    wiremix
-
-    # Runtime y lenguajes adicionales
-    deno
-    typst
-    sioyek
-
-    # Entretenimiento adicional
-    discord
-    obs-studio
-    wf-recorder
-
-    # Utilidades varias
-    awww
-    sshfs
-    ripdrag
-    bluetui
-    unrar
-    websocat
-    jmtpfs
-    ouch
-    aseprite
-    imagemagick
-    poppler-utils
-
-    # Herramientas adicionales de desarrollo
-    nix-init
-    nwg-displays
-    spotatui
-    glib
-    simple-scan
-    vala
-
-    # Apps varias
-    obsidian
-    typst
-    sass
-
-    # Python y herramientas
-    python314
-    jq
-    procps
-    clipse
-    google-drive-ocamlfuse
-    onefetch
-    fastfetch
-  ];
 
   home.file = {
     # Config
