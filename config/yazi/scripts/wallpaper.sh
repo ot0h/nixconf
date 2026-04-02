@@ -12,9 +12,9 @@ echo "$WALL" >~/.wallpaper
 
 # Cambiar wallpaper
 if [ -n "$WAYLAND_DISPLAY" ]; then
-  swww clear-cache
+  awww clear-cache
   sleep 0.5
-  swww img --transition-type any --transition-duration 1 "$WALL"
+  awww img --transition-type any --transition-duration 1 "$WALL"
 else
   feh --bg-scale "$WALL"
 fi
