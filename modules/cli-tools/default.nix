@@ -1,6 +1,5 @@
 {
   imports = [
-    ./default.nix
     ./tmux.nix
     ./yazi.nix
   ];

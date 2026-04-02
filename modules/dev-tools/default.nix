@@ -1,6 +1,6 @@
 {
   imports = [
-    ./default.nix
+    ./dev-tools.nix
     ./nix-tools.nix
   ];
 }

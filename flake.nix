@@ -47,6 +47,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     username = "rimv";
+    hostName = "laptop-dell";
     pkgs = import nixpkgs {
       inherit system;
       config = {
@@ -54,13 +55,13 @@
       };
     };
   in {
-    nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {inherit inputs;};
 
       modules = [
         {nixpkgs.pkgs = pkgs;}
-        ./hosts/nixos/configuration.nix
+        ./hosts/${hostName}/configuration.nix
 
         home-manager.nixosModules.home-manager
         {
@@ -68,7 +69,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
 
-          home-manager.users.${username} = import ./hosts/nixos/home.nix;
+          home-manager.users.${username} = import ./hosts/${hostName}/home.nix;
 
           home-manager.backupFileExtension = "backup";
         }
