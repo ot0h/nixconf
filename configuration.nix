@@ -235,7 +235,6 @@
   environment.systemPackages = with pkgs; [
     vim
     btop
-    swww
     opencode
     rofi
     wget

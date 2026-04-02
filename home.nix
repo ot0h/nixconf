@@ -21,6 +21,7 @@
     tumbler
     gdu
     discord
+    awww
     sshfs
     rustc
     imv
