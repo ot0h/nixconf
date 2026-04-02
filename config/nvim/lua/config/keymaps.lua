@@ -42,7 +42,7 @@ map("n", "<space>p", ":lua Snacks.picker()<CR>", "Snacks Picker")
 
 -- LSP & Search
 map("n", "gd", ":lua Snacks.picker.lsp_definitions()<CR>", "Definición")
-map("n", "gr", ":lua Snacks.picker.lsp_references()<CR>", "Referencias")
+-- map("n", "gr", ":lua Snacks.picker.lsp_references()<CR>", "Referencias")
 map("x", "<space>fw", ":lua Snacks.picker.grep_word()<CR>", "Visual Grep Word")
 map("x", "<space>fi", ":lua Snacks.picker.icons()<CR>", "Visual Grep Word")
 
