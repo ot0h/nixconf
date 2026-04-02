@@ -124,11 +124,32 @@ do
 		on_attach = on_attach,
 		settings = {
 			typescript = {
-				updateImportsOnRename = true,
+				updateImportsOnFileMove = true,
 				suggest = { completeFunctionCalls = true },
+				inlayHints = {
+					parameterNames = { enabled = "all", suppressWhenArgumentMatchesName = false },
+					parameterTypes = { enabled = true },
+					variableTypes = { enabled = false, suppressWhenTypeMatchesName = true },
+					propertyDeclarationTypes = { enabled = true },
+					functionLikeReturnTypes = { enabled = true },
+					functionTypeParameters = { enabled = true },
+					enumMemberValues = { enabled = true },
+				},
+			},
+			javascript = {
+				updateImportsOnFileMove = { enabled = "always" },
+				inlayHints = {
+					parameterNames = { enabled = "literals" },
+					parameterTypes = { enabled = false },
+					variableTypes = { enabled = false },
+					propertyDeclarationTypes = { enabled = true },
+					functionLikeReturnTypes = { enabled = false },
+					enumMemberValues = { enabled = true },
+				},
 			},
 			vtsls = {
 				autoUseWorkspaceTsdk = true,
+				enableMoveToFileCodeAction = true,
 			},
 		},
 	})
@@ -193,6 +214,13 @@ do
 				},
 				procMacro = {
 					enable = true,
+				},
+				inlayHints = {
+					bindingModeHints = { enable = true },
+					chainingHints = { enable = true },
+					closingBraceHints = { enable = true, minLines = 25 },
+					parameterHints = { enable = true },
+					typeHints = { enable = true },
 				},
 			},
 		},
@@ -303,6 +331,15 @@ do
 				staticcheck = true,
 				completeUnimported = true,
 				usePlaceholders = true,
+				hints = {
+					assignVariableTypes = true,
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					constantValues = true,
+					functionTypeParameters = true,
+					parameterNames = true,
+					rangeVariableTypes = true,
+				},
 			},
 		},
 	})
