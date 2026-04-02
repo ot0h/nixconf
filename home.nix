@@ -97,8 +97,6 @@
     ".config/wal".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/wal";
     ".config/opencode".source = ./config/opencode;
-    ".config/waybar".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/waybar";
     ".config/zed".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/zed";
 

@@ -234,7 +234,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    waybar
     btop
     swww
     opencode
