@@ -1,6 +1,10 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    libreoffice-fresh
-    onlyoffice-desktopeditors
+{
+  imports = [
+    ./{ pkgs, ... }: {
+      home.packages = with pkgs; [
+        libreoffice-fresh
+        onlyoffice-desktopeditors
+      ];
+    }
   ];
 }

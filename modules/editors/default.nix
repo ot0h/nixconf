@@ -1,5 +1,8 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    zed-editor
+{
+  imports = [
+    ./neovim.nix
+    ./{ pkgs, ... }: {
+      home.packages = with pkgs; [ zed-editor ];
+    }
   ];
 }

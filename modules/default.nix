@@ -2,21 +2,17 @@
 { pkgs, ... }: {
   imports = [
     # Desktop
-    ./desktop/ags.nix
-    ./desktop/hyprland.nix
+    ./desktop/default.nix
 
     # Editors
-    ./editors/neovim.nix
     ./editors/default.nix
 
     # CLI tools
     ./cli-tools/default.nix
-    ./cli-tools/tmux.nix
-    ./cli-tools/yazi.nix
 
     # Multimedia
     ./multimedia/default.nix
-    ./entretenimiento/recording.nix
+    ./entretenimiento/default.nix
 
     # Oficina
     ./oficina/default.nix
@@ -29,7 +25,6 @@
 
     # Dev tools
     ./dev-tools/default.nix
-    ./dev-tools/nix-tools.nix
 
     # Shell
     ./shell/default.nix
@@ -39,11 +34,9 @@
 
     # Utilidades
     ./utilidades/default.nix
-    ./utilidades/linux-tools.nix
-    ./utilidades/system-utils.nix
 
     # Hardware
-    ./hardware/hardware.nix
+    ./hardware/default.nix
 
     # Configs
     ./configs/fonts.nix

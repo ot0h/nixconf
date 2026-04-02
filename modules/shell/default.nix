@@ -1,8 +1,12 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    fish
-    starship
-    atuin
-    typstyle
+{
+  imports = [
+    ./{ pkgs, ... }: {
+      home.packages = with pkgs; [
+        fish
+        starship
+        atuin
+        typstyle
+      ];
+    }
   ];
 }
