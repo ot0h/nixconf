@@ -1,53 +1,7 @@
 { pkgs, ... }: {
-  # Paquetes adicionales específicos de este host
+  # Paquetes específicos de laptop-dell que no encajan en otros módulos
   home.packages = with pkgs; [
-    # Utilidades varias
-    opencode
-    pywal16
+    # Transferencia local
     localsend
-    wiremix
-
-    # Runtime y lenguajes
-    deno
-    typst
-    sioyek
-
-    # Entretenimiento
-    discord
-    obs-studio
-    wf-recorder
-
-    # Utilidades varias
-    awww
-    sshfs
-    ripdrag
-    bluetui
-    unrar
-    websocat
-    jmtpfs
-    ouch
-    aseprite
-    imagemagick
-    poppler-utils
-
-    # Herramientas adicionales de desarrollo
-    nix-init
-    nwg-displays
-    spotatui
-    glib
-    simple-scan
-    vala
-
-    # Apps varias
-    obsidian
-
-    # Python y herramientas
-    python314
-    jq
-    procps
-    clipse
-    google-drive-ocamlfuse
-    onefetch
-    fastfetch
   ];
 }

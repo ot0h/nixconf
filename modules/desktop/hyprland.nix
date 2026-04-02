@@ -6,5 +6,6 @@
     hyprsunset
     hyprshot
     hyprpicker
+    pywal16
   ];
 }

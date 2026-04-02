@@ -1,7 +1,6 @@
 {
   imports = [
-    ./cli-utils.nix
+    # UI tools
     ./linux-tools.nix
-    ./system-utils.nix
   ];
 }

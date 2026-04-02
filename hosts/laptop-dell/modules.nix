@@ -41,7 +41,7 @@
     # Configs
     ../../modules/configs/fonts.nix
 
-    # Paquetes adicionales para laptop-dell
+    # Paquetes específicos de laptop-dell (localsend, nwg-look)
     ./extra-packages.nix
   ];
 }

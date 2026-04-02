@@ -1,3 +1,7 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ zed-editor ];
+  home.packages = with pkgs; [
+    zed-editor
+    sioyek
+    typst
+  ];
 }

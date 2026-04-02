@@ -10,6 +10,7 @@
     rustc
     go
     nodejs
+    deno
 
     bun
     yarn
