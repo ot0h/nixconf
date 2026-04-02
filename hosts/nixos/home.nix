@@ -12,17 +12,8 @@
     ../../modules/tmux.nix
     ../../modules/desktop/hyprland/packages.nix
 
-    # Paquetes modulares
-    ../../modules/paquetes/utilidades/cli.nix
-    ../../modules/paquetes/shell/shell.nix
-    ../../modules/paquetes/editors/editors.nix
-    ../../modules/paquetes/dev-tools/dev-tools.nix
-    ../../modules/paquetes/programacion/basics.nix
-    ../../modules/paquetes/entretenimiento/multimedia.nix
-    ../../modules/paquetes/oficina/oficina.nix
-    ../../modules/paquetes/file-management/file-management.nix
-    ../../modules/paquetes/hardware/hardware.nix
-    ../../modules/paquetes/themes/themes.nix
+    # Embudo de paquetes (todos los módulos)
+    ../../modules/paquetes/default.nix
   ];
 
   home.username = "rimv";
