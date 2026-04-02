@@ -53,7 +53,7 @@
     meson
     onefetch
     fastfetch
-    python313
+    python314
     go
     jq
     procps

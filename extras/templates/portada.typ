@@ -1,3 +1,6 @@
+/**
+ Template para Portadas Universitarias
+*/
 #let portada(
   asignatura: [asignatura],
   seccion: [seccion],
