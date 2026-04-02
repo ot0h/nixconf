@@ -1,37 +1,39 @@
 # Embudo - Importa todos los módulos de paquetes automáticamente
-{ pkgs, ... }: [
-  # CLI utilities
-  ./utilidades/cli.nix
-  ./utilidades/system-utils.nix
-  ./utilidades/linux-tools.nix
+{ pkgs, ... }: {
+  imports = [
+    # CLI utilities
+    ./utilidades/cli.nix
+    ./utilidades/system-utils.nix
+    ./utilidades/linux-tools.nix
 
-  # Shell
-  ./shell/shell.nix
+    # Shell
+    ./shell/shell.nix
 
-  # Editors
-  ./editors/editors.nix
-  ./editors/specialized.nix
+    # Editors
+    ./editors/editors.nix
+    ./editors/specialized.nix
 
-  # Dev tools
-  ./dev-tools/dev-tools.nix
-  ./dev-tools/nix-tools.nix
+    # Dev tools
+    ./dev-tools/dev-tools.nix
+    ./dev-tools/nix-tools.nix
 
-  # Programación
-  ./programacion/basics.nix
+    # Programación
+    ./programacion/basics.nix
 
-  # Entretenimiento
-  ./entretenimiento/multimedia.nix
-  ./entretenimiento/recording.nix
+    # Entretenimiento
+    ./entretenimiento/multimedia.nix
+    ./entretenimiento/recording.nix
 
-  # Oficina
-  ./oficina/oficina.nix
+    # Oficina
+    ./oficina/oficina.nix
 
-  # File management
-  ./file-management/file-management.nix
+    # File management
+    ./file-management/file-management.nix
 
-  # Hardware
-  ./hardware/hardware.nix
+    # Hardware
+    ./hardware/hardware.nix
 
-  # Themes
-  ./themes/themes.nix
-]
+    # Themes
+    ./themes/themes.nix
+  ];
+}
