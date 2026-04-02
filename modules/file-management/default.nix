@@ -1,13 +1,5 @@
 {
   imports = [
-    ./{ pkgs, ... }: {
-      home.packages = with pkgs; [
-        thunar
-        tumbler
-        eza
-        imv
-        gdu
-      ];
-    }
+    ./file-managers.nix
   ];
 }
