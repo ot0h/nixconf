@@ -16,58 +16,108 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
+    # CLI y utilidades
+    vim
+    btop
+    opencode
+    rofi
+    wget
+    fzf
+    zoxide
+    bat
+    fd
+    xclip
+    wl-clipboard
+
+    # Shell
+    fish
+    starship
+    atuin
+    typstyle
+
+    # Hyprland utilities
+    hypridle
+    hyprlock
+    hyprsunset
+    hyprshot
+    hyprpicker
+    pywal16
+
+    # Editores y tooling
+    kitty
+    tinymist
+    localsend
+    prettier
+    vtsls
+    watchexec
+
+    # Lenguajes y runtimes
     deno
+    bun
+    nodejs
+    yarn
+    pnpm
+
+    # Compiladores y build tools
+    gcc
+    clang-tools
+    cargo
+    rustc
+    cmake
+    meson
+    go
+
+    # Multimedia
+    mpv
+    spotify
+    ncspot
+    obs-studio
+    wf-recorder
+    ani-cli
+    dart-sass
+
+    # Utilidades de sistema
+    brightnessctl
+    acpi
+    onlyoffice-desktopeditors
+    git
+    lazygit
+    wiremix
+    opencode
+    typstyle
+    gh
+    gh-dash
+
+    # Aplicaciones de oficina
+    libreoffice-fresh
+
+    # File managers y tools
     thunar
     tumbler
     gdu
+    eza
+    imv
+
+    # Visores y editors
+    zed-editor
+    typst
+    sioyek
+
+    # Utilidades
     discord
     awww
     sshfs
-    rustc
-    imv
-    sioyek
-    nix-init
-    typst
-    zed-editor
-    nwg-displays
-    spotatui
-    glib
-    simple-scan
-    pnpm
-    yarn
     ripdrag
     bluetui
-    obs-studio
-    wf-recorder
     unrar
-    eza
-    bibata-cursors
-    libreoffice-fresh
-    cmake
     websocat
     jmtpfs
-    obsidian
-    gh-dash
-    gh
-    inputs.zen-browser.packages.${system}.default
-    inputs.gazelle.packages.${pkgs.system}.default
-    meson
-    onefetch
-    fastfetch
-    python314
-    go
-    jq
-    procps
-    clipse
-    google-drive-ocamlfuse
     ouch
     aseprite
     imagemagick
-    vala
-    samba
-    polkit_gnome
-    gnome-tweaks
     poppler-utils
+
+    # Temas y look
     gruvbox-gtk-theme
     gruvbox-plus-icons
     (graphite-gtk-theme.override {
@@ -79,8 +129,33 @@
     (tela-circle-icon-theme.override {
       colorVariants = ["black"];
     })
+    bibata-cursors
+
+    # Herramientas de desarrollo
+    nix-init
+    nwg-displays
+    spotatui
+    glib
+    simple-scan
+    vala
+
+    # Apps varias
+    obsidian
     nwg-look
-    sane-backends
+
+    # Inputs externos
+    inputs.zen-browser.packages.${system}.default
+    inputs.gazelle.packages.${pkgs.system}.default
+
+    # Python y herramientas
+    python314
+    go
+    jq
+    procps
+    clipse
+    google-drive-ocamlfuse
+    onefetch
+    fastfetch
   ];
 
   home.file = {

@@ -241,65 +241,7 @@
 
   programs.firefox.enable = true;
 
-  # Paquetes de usuario que van en el sistema (disponibles para el usuario)
-  environment.systemPackages = with pkgs; [
-    # CLI tools y utilities
-    vim
-    btop
-    opencode
-    rofi
-    wget
-    pywal16
-    ncspot
-    git
-    wiremix
-    lazygit
-    fzf
-    zoxide
-    fish
-    starship
-    typstyle
-    atuin
-    bun
-    bat
-
-    # Hyprland utilities
-    hypridle
-    hyprlock
-    hyprsunset
-    hyprshot
-    hyprpicker
-
-    # Editores y tooling
-    tinymist
-    localsend
-    watchexec
-    fd
-    kitty
-    cargo
-    prettier
-    vtsls
-
-    # Gestión de paquetes JS
-    yarn
-    pnpm
-
-    # Utilidades de sistema
-    xclip
-    wl-clipboard
-    brightnessctl
-
-    # Multimedia
-    spotify
-    mpv
-    ani-cli
-    dart-sass
-
-    # Utilidades adicionales
-    onlyoffice-desktopeditors
-  ];
-
-  # Fuentes ahora se gestionan desde modules/packages.nix
+  # Los paquetes de usuario ahora están en home.nix
 
   services.openssh = {
     enable = true;
