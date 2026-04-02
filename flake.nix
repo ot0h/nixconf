@@ -60,7 +60,7 @@
 
       modules = [
         {nixpkgs.pkgs = pkgs;}
-        ./configuration.nix
+        ./hosts/nixos/configuration.nix
 
         home-manager.nixosModules.home-manager
         {
@@ -68,7 +68,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
 
-          home-manager.users.${username} = import ./home.nix;
+          home-manager.users.${username} = import ./hosts/nixos/home.nix;
 
           home-manager.backupFileExtension = "backup";
         }

@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
-    ./modules/ags.nix
-    ./modules/neovim.nix
-    ./modules/yazi.nix
-    ./modules/tmux.nix
+    ../../modules/ags.nix
+    ../../modules/neovim.nix
+    ../../modules/yazi.nix
+    ../../modules/tmux.nix
   ];
 
   home.username = "rimv";
@@ -64,7 +64,6 @@
     aseprite
     imagemagick
     vala
-    bluetui
     samba
     polkit_gnome
     gnome-tweaks
@@ -94,10 +93,10 @@
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/fish";
     ".config/kitty".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/kitty";
-    ".config/rofi".source = ./config/rofi;
+    ".config/rofi".source = ../../config/rofi;
     ".config/wal".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/wal";
-    ".config/opencode".source = ./config/opencode;
+    ".config/opencode".source = ../../config/opencode;
     ".config/zed".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/zed";
 
@@ -107,7 +106,7 @@
     ".config/ags".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/config/ags";
     # Wrapper para TermfileChooser para HYprland
-    ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ./extras/termfilechooser;
+    ".config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh".source = ../../extras/termfilechooser;
 
     #Extras
     "Pictures/Wallpapers".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconf/extras/Wallpapers";

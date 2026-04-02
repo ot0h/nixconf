@@ -2,6 +2,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../modules/packages.nix
   ];
 
   # Bootloader.
@@ -232,7 +233,9 @@
 
   programs.firefox.enable = true;
 
+  # Paquetes de usuario que van en el sistema (disponibles para el usuario)
   environment.systemPackages = with pkgs; [
+    # CLI tools y utilities
     vim
     btop
     opencode
@@ -251,51 +254,44 @@
     atuin
     bun
     bat
-    cups
-    nodejs
-    # vscode
+
+    # Hyprland utilities
     hypridle
     hyprlock
     hyprsunset
     hyprshot
     hyprpicker
+
+    # Editores y tooling
     tinymist
     localsend
-    gcc
     watchexec
     fd
     kitty
     cargo
     prettier
-    bun
-    acpi
+    vtsls
+
+    # Gestión de paquetes JS
     yarn
     pnpm
-    vtsls
+
+    # Utilidades de sistema
     xclip
     wl-clipboard
-    clang-tools
+    brightnessctl
+
+    # Multimedia
     spotify
+    mpv
     ani-cli
     dart-sass
-    brightnessctl
-    networkmanager
-    libpulseaudio
-    gobject-introspection
-    mpv
+
+    # Utilidades adicionales
     onlyoffice-desktopeditors
-    home-manager
   ];
 
-  fonts.packages = with pkgs; [
-    iosevka
-    monocraft
-    liberation_ttf
-    noto-fonts
-    noto-fonts-cjk-sans
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.iosevka-term-slab
-  ];
+  # Fuentes ahora se gestionan desde modules/packages.nix
 
   services.openssh = {
     enable = true;
