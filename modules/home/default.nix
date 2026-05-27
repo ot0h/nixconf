@@ -1,0 +1,19 @@
+{
+  imports = [
+    ./desktop/default.nix
+    ./editors/default.nix
+    ./cli-tools/default.nix
+    ./terminales/default.nix
+    ./shell/default.nix
+    ./dev-tools/default.nix
+    ./programacion/default.nix
+    ./multimedia/default.nix
+    ./entretenimiento/default.nix
+    ./oficina/default.nix
+    ./file-management/default.nix
+    ./themes/default.nix
+    ./utilidades/default.nix
+    ./hardware/default.nix
+    ./configs/fonts.nix
+  ];
+}

@@ -1,0 +1,89 @@
+.HyprlandLayoutsSwitcher {
+  background-color: transparentize($background, 0.7);
+
+  .layout-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: $color4;
+    letter-spacing: 2px;
+  }
+
+  .layout-container {
+    background-color: transparent;
+    padding: 32px 48px;
+    border: 1px solid transparentize($foreground, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 0 32px transparentize($color4, 0.85);
+  }
+
+  button {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 20px 28px;
+    transition: all 150ms ease;
+
+    .layout-icon {
+      font-size: 48px;
+      color: $color3;
+      transition: all 150ms ease;
+    }
+
+    .layout-label {
+      font-size: 13px;
+      color: $color3;
+      transition: all 150ms ease;
+    }
+
+    .scroll-dir-arrow {
+      font-size: 16px;
+      color: $color10;
+      animation: pulso-flecha 2s ease-in-out infinite;
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+
+      .layout-icon {
+        animation: parpadeo-icon 1.2s ease-in-out infinite;
+      }
+
+      .layout-label {
+        animation: parpadeo-label 1.2s ease-in-out infinite;
+      }
+
+      .scroll-dir-arrow {
+        color: $color4;
+      }
+    }
+  }
+}
+
+@keyframes parpadeo-icon {
+  0% {
+    color: $color7;
+  }
+  50% {
+    color: $color3;
+  }
+  100% {
+    color: $color7;
+  }
+}
+
+@keyframes parpadeo-label {
+  0% {
+    color: $color6;
+    font-weight: bold;
+  }
+  50% {
+    color: $color3;
+    font-weight: normal;
+  }
+  100% {
+    color: $color6;
+    font-weight: bold;
+  }
+}

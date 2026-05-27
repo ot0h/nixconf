@@ -1,0 +1,27 @@
+{
+  "name": "Akahada",
+  "author": "rrimv",
+  "special": {
+    "background": "#0f0f0f",
+    "foreground": "#c5c1c1",
+    "cursor": "#c03838"
+  },
+  "colors": {
+    "color0": "#151515",
+    "color1": "#a82a2a",
+    "color2": "#c8a898",
+    "color3": "#d44040",
+    "color4": "#4e4848",
+    "color5": "#d4c4b8",
+    "color6": "#e0d0c4",
+    "color7": "#c5c1c2",
+    "color8": "#322d2d",
+    "color9": "#e64545",
+    "color10": "#f0e0d0",
+    "color11": "#666060",
+    "color12": "#fff4eb",
+    "color13": "#8c8484",
+    "color14": "#524a4a",
+    "color15": "#ffffff"
+  }
+}

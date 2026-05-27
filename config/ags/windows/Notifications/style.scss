@@ -1,0 +1,127 @@
+@use "sass:string";
+@function gtkalpha($c, $a) {
+  @return string.unquote("alpha(#{$c},#{$a})");
+}
+
+window.NotificationPopups {
+  all: unset;
+}
+
+.Notification {
+  border-radius: 0;
+  background-color: $background;
+  margin: 4px 12px;
+  border-left: 2px solid $color3;
+
+  &.critical {
+    border-left: 2px solid $color7;
+
+    .header .app-name {
+      color: $color7;
+    }
+  }
+
+  &.low {
+    border-left: 2px solid $color1;
+
+    .header {
+      color: $color2;
+    }
+  }
+
+  .header {
+    padding: 8px 10px;
+    color: $color3;
+
+    .app-icon {
+      margin-right: 6px;
+      color: $color4;
+    }
+
+    .app-name {
+      font-size: 11px;
+      font-weight: bold;
+      color: $color4;
+      margin-right: 4px;
+    }
+
+    .time {
+      font-size: 10px;
+      color: $color2;
+      margin: 0 6px;
+    }
+
+    button {
+      padding: 0;
+      min-width: 0;
+      min-height: 0;
+      background: transparent;
+      border: none;
+      color: $color2;
+      transition: color 150ms ease;
+
+      &:hover {
+        color: $color7;
+      }
+    }
+  }
+
+  separator {
+    background-color: transparentize($color1, 0.7);
+    margin: 0 10px;
+  }
+
+  .content {
+    margin: 10px 12px;
+
+    .summary {
+      font-size: 13px;
+      font-weight: bold;
+      color: $foreground;
+    }
+
+    .body {
+      font-size: 12px;
+      color: $color5;
+      margin-top: 2px;
+    }
+
+    .image {
+      border-radius: 4px;
+      margin-right: 10px;
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .icon-image {
+      margin-right: 10px;
+      color: $color4;
+    }
+  }
+
+  .actions {
+    margin: 8px 12px;
+
+    button {
+      background-color: transparentize($color1, 0.6);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin: 0 4px;
+      color: $color5;
+      font-size: 12px;
+      transition: all 150ms ease;
+
+      &:first-child { margin-left: 0; }
+      &:last-child  { margin-right: 0; }
+
+      &:hover {
+        background-color: transparentize($color3, 0.5);
+        color: $foreground;
+      }
+    }
+  }
+}
+
+.notis-box {
+  background-color: transparent;
+}

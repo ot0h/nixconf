@@ -1,0 +1,1 @@
+../../../.config/yazi/scripts/wallpaper.sh
