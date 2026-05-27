@@ -11,6 +11,12 @@ in {
     ../../modules/nixos/default.nix
   ];
 
+  # Mas cosas del Hardware
+  hardware.enableRedistributableFirmware = true;
+
+  # Cosas relacionadas al Fimware
+  services.fwupd.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -156,7 +162,6 @@ in {
     enable = true;
     powerOnBoot = true;
   };
-
 
   programs.fish = {
     enable = true;
