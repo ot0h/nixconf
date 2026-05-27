@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     nix-init
     home-manager
+    nix-prefetch-github
   ];
 
   programs.direnv = {
