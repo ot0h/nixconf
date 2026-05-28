@@ -8,7 +8,7 @@ import { execAsync } from "ags/process"
 
 const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor
 
-const TERMINAL_APPS = ["nvim", "vim", "btop", "yazi", "ncspot"]
+const TERMINAL_APPS = ["nvim", "vim", "btop", "yazi", "ncspot", "hx"]
 const TERMINALS = ["kitty", "alacritty", "foot", "wezterm", "ghostty"]
 
 export default function AppLauncher(
