@@ -159,7 +159,7 @@ rules = [
     "reveal",
   ] },
 
-  { name = "*.{gba,gb,gbc}", use = [
+  { url = "*.{gba,gb,gbc}", use = [
     "game",
   ] },
 
@@ -175,7 +175,7 @@ rules = [
     "document",
   ] },
 
-  { name = "*.nds", use = [
+  { url = "*.nds", use = [
     "nds",
   ] },
 ]
