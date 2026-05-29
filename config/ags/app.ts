@@ -10,6 +10,7 @@ import ScreenShots from "./windows/ScreenShots/ScreenShots.js"
 import HyprlandLayoutsSwitcher from "./windows/HyprlandLayouts/HyprlandLayoutsSwitcher.js"
 import Marco from "./windows/Marco/Marco.js"
 import WallpaperPicker from "./windows/Wallpaper/Wallpaper.js"
+import Clock from "./windows/Clock/Clock"
 
 async function toggleOnActiveMonitor(windowBaseName: string) {
   const out = await execAsync(["hyprctl", "activeworkspace", "-j"])
@@ -32,6 +33,7 @@ app.start({
       HyprlandLayoutsSwitcher(monitor, i)
       Marco(monitor, i)
       WallpaperPicker(monitor, i)
+      Clock(monitor, i)
     })
   },
   requestHandler(argv: string[], res: (r: unknown) => void) {

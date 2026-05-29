@@ -127,7 +127,7 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " --title=clipse -e clips
 
 hl.bind(
 	mainMod .. " + W",
-	hl.dsp.exec_cmd("ags request toggle-all Sidebar Marco-margen-arriba Marco-margen-abajo Marco-margen-derecho")
+	hl.dsp.exec_cmd("ags request toggle-all ClockW Sidebar Marco-margen-arriba Marco-margen-abajo Marco-margen-derecho")
 )
 
 hl.bind("Print", hl.dsp.exec_cmd("ags request toggle Screenshot"))

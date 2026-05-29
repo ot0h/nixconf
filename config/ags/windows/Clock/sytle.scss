@@ -1,0 +1,46 @@
+.ClockW {
+  background: transparent;
+  padding: 30px 60px;
+
+  .caja {
+    background: transparent;
+
+    .day {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "Monocraft";
+      text-shadow: 1px 1px 1px transparentize($color4, 0.45);
+      color: $color4;
+      letter-spacing: 4px;
+      background: transparent;
+    }
+
+    .time {
+      font-size: 60pt;
+      font-weight: 800;
+      text-shadow: 2px 2px 2px transparentize($foreground, 0.45);
+      color: $foreground;
+      letter-spacing: 1px;
+      background: transparent;
+    }
+
+    .date {
+      font-size: 14px;
+      font-weight: bold;
+      color: transparentize($foreground, 0.45);
+      background: transparent;
+    }
+  }
+
+  // ── Posiciones por wallpaper ──
+  &.ClockW-15 {
+    margin-top: 700px;
+    margin-left: 700px;
+  }
+  &.ClockW-1 {
+    margin-bottom: 600px;
+  }
+  .ClockW-4 {
+    margin-top: 700px;
+  }
+}
