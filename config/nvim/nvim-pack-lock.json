@@ -1,17 +1,17 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "e25e63f3b24fd6b8c2fc713107ad5d5594028eac",
+      "rev": "efa62017f59a6346486cc567d70acce965a00b12",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "0593548ee0b0978abf303d30f449234e07f951d1",
+      "rev": "1b8809dcbb20f023b7cc69ec560e927ae858f9b2",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
     "blink.lib": {
-      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "rev": "2cb62890cee636fe46722d03b7b2331e54fb3755",
       "src": "https://github.com/saghen/blink.lib",
       "version": "'main'"
     },
@@ -25,7 +25,7 @@
       "version": "'master'"
     },
     "copilot.lua": {
-      "rev": "393fd009c39b24dfc4cb4bf6f632288c64b13258",
+      "rev": "1d457ad5f267b8ef855a6b8b3fe152403cb00947",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": "'master'"
     },
@@ -68,7 +68,7 @@
       "version": "'main'"
     },
     "mini.files": {
-      "rev": "423d6b5afb7a94e658950d470957f830d43dd41e",
+      "rev": "17b58c3227cffe47ded884c234aa61dab492363a",
       "src": "https://github.com/nvim-mini/mini.files",
       "version": "'main'"
     },
@@ -101,7 +101,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
+      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -123,7 +123,7 @@
       "src": "https://github.com/yioneko/nvim-vtsls"
     },
     "nvim-web-devicons": {
-      "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
     },
@@ -147,7 +147,7 @@
       "version": "'main'"
     },
     "smart-splits.nvim": {
-      "rev": "b24335c3186b6c35522fa108af63646a2f70b3b6",
+      "rev": "1865e6826b1cd90098f198acb0f5b744a7b40c22",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
@@ -172,7 +172,7 @@
       "version": "'main'"
     },
     "yazi.nvim": {
-      "rev": "c3d71b172fa12c029c72f9848e0338da90de74ab",
+      "rev": "0ed11f5b5f1e741f41ea0e9d9b388f326d78129f",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": "'main'"
     }

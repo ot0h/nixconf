@@ -10,7 +10,7 @@
 
   home.username = "rimv";
   home.homeDirectory = "/home/rimv";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   home.file = {
     # Config
