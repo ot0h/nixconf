@@ -4,6 +4,7 @@
     nix-init
     home-manager
     nix-prefetch-github
+    devenv
   ];
 
   programs.direnv = {
