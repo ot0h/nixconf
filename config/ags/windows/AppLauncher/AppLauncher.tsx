@@ -52,6 +52,13 @@ export default function AppLauncher(
     else if (btnBottom > viewBottom) adj.value = btnBottom - adj.page_size
   }
 
+  const resetState = () => {
+    searchentry?.set_text("")
+    setList([])
+    setSelected(0)
+    buttonRefs = []
+  }
+
   const showAll = async () => {
     apps.reload()
     buttonRefs = []
@@ -62,6 +69,7 @@ export default function AppLauncher(
   const launch = (a?: AstalApps.Application) => {
     if (!a) return
     win.hide()
+    resetState()
 
     const exec = cleanExec(a.executable)
 
@@ -100,6 +108,7 @@ export default function AppLauncher(
 
     if (keyval === Gdk.KEY_Escape) {
       win.visible = false
+      resetState()
       return
     }
     if (keyval === Gdk.KEY_Return) {
@@ -119,6 +128,7 @@ export default function AppLauncher(
     const position = new Graphene.Point({ x, y })
     if (!rect.contains_point(position)) {
       win.visible = false
+      resetState()
       return true
     }
   }
@@ -163,7 +173,7 @@ export default function AppLauncher(
             searchentry = self
 
             app.connect("window-toggled", async (_, w) => {
-              if (w.name === "AppLauncher" && w.visible) {
+              if (w.name === `AppLauncher-${index}` && w.visible) {
                 apps.reload()
                 buttonRefs = []
                 setList([])
@@ -193,6 +203,7 @@ export default function AppLauncher(
                 }
                 if (keyval === Gdk.KEY_Escape) {
                   win.visible = false
+                  resetState()
                   return true
                 }
 
