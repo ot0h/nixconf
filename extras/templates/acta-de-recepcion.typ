@@ -5,7 +5,7 @@
   cantidad: 1,
 ) = {
   set page(fill: rgb("#FFF"), margin: (rest: 0.5in), "us-letter")
-  set text(font: "Iosevka NF", size: 14pt)
+  set text(font: "Iosevka", size: 12pt)
 
   align(top + left)[
     #image("imagenes/logo-syscom.png", width: 30%)
@@ -46,23 +46,43 @@
     #v(5em)
 
     // Donde la persona debe escribir a mano
-    #text(size: 14pt, weight: "bold", "Entregado por:  __________________________________________________")\
+    #text(
+      size: 14pt,
+      weight: "bold",
+      "Entregado por:  __________________________________________________",
+    )\
     #v(-2mm)
     #align(center)[
       #text(size: 14pt, weight: "bold", upper("Personal de SYSCOM"))
     ]
     #v(1.0em)
-    #text(size: 14pt, weight: "bold", "Recibido por:   __________________________________________________")
+    #text(
+      size: 14pt,
+      weight: "bold",
+      "Recibido por:   __________________________________________________",
+    )
     #v(-2mm)
     #align(center)[
       #text(size: 14pt, weight: "bold", upper("Personal de CENTRO DE LLAVES"))
     ]
     #v(1.0em)
-    #text(size: 14pt, weight: "bold", "Identidad de quien recibe: _______________________________________")
+    #text(
+      size: 14pt,
+      weight: "bold",
+      "Identidad de quien recibe: _______________________________________",
+    )
     #v(1.5em)
-    #text(size: 14pt, weight: "bold", "Fecha:          __________________________________________________")
+    #text(
+      size: 14pt,
+      weight: "bold",
+      "Fecha:          __________________________________________________",
+    )
     #v(1.5em)
-    #text(size: 14pt, weight: "bold", "Telefono quien recibe: ___________________________________________")
+    #text(
+      size: 14pt,
+      weight: "bold",
+      "Telefono quien recibe: ___________________________________________",
+    )
   ]
 }
 
