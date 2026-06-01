@@ -14,6 +14,7 @@ in {
       liberation_ttf
       noto-fonts
       noto-fonts-cjk-sans
+      monaspace
     ]
     ++ nerdFonts;
 }

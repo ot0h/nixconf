@@ -6,12 +6,12 @@
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "1b8809dcbb20f023b7cc69ec560e927ae858f9b2",
+      "rev": "7c0fae7fb37c4ee43927df88f4f1b7eb8e33a520",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
     "blink.lib": {
-      "rev": "2cb62890cee636fe46722d03b7b2331e54fb3755",
+      "rev": "c09dd66e9ad97e1a7777f3fa5f0504ca2e877231",
       "src": "https://github.com/saghen/blink.lib",
       "version": "'main'"
     },
@@ -58,7 +58,7 @@
       "src": "https://github.com/onsails/lspkind.nvim"
     },
     "lualine.nvim": {
-      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim",
       "version": "'master'"
     },
@@ -87,7 +87,7 @@
       "version": "'main'"
     },
     "mini.surround": {
-      "rev": "1e37ade260e2b655c3a9b8407ba7e6b0fb995b28",
+      "rev": "d12d8e6ea8e4d9d3e6fb0e3ff11c84fcce2299ac",
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
@@ -137,7 +137,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "roslyn.nvim": {
-      "rev": "426984d6c1e8ee88a394a562eb925e687340f91e",
+      "rev": "a5035c374d0fe49e16ae30a5b95931f9a01d4bfd",
       "src": "https://github.com/seblyng/roslyn.nvim",
       "version": "'main'"
     },
@@ -172,7 +172,7 @@
       "version": "'main'"
     },
     "yazi.nvim": {
-      "rev": "0ed11f5b5f1e741f41ea0e9d9b388f326d78129f",
+      "rev": "8a26074568790bb5c73e56eb871a74709a13dd43",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": "'main'"
     }
