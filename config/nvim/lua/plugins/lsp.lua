@@ -142,13 +142,6 @@ do
 		root_dir = function(bufnr, on_dir)
 			local fname = vim.api.nvim_buf_get_name(bufnr)
 
-			-- Si existe angular.json, NO iniciar vtsls
-			local angular_root = vim.fs.root(fname, "angular.json")
-
-			if angular_root then
-				return
-			end
-
 			local root = vim.fs.root(fname, {
 				"tsconfig.json",
 				"package.json",
@@ -229,6 +222,12 @@ do
 		},
 
 		filetypes = { "typescript", "html" },
+
+		-- Si ngserver no está en PATH global, intentá con:
+		-- cmd = { "npx", "-p", "@angular/language-server", "ngserver", "--stdio",
+		--   "--tsProbeLocations", "node_modules",
+		--   "--ngProbeLocations", "node_modules/@angular/language-server",
+		-- },
 
 		root_dir = function(bufnr, on_dir)
 			local fname = vim.api.nvim_buf_get_name(bufnr)
@@ -624,7 +623,7 @@ do
 			lua = { "stylua" },
 			nix = { "alejandra" },
 			html = { "prettier" },
-			ccs = { "prettier" },
+			css = { "prettier" },
 			scss = { "prettier" },
 			json = { "prettier" },
 			cpp = { "clang-format" },
