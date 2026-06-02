@@ -38,6 +38,15 @@ export default function AppLauncher(
   const isTerminalEmulator = (exec: string) =>
     TERMINALS.some((t) => exec.includes(t))
 
+  const notifyError = (name: string) => (e: unknown) =>
+    execAsync([
+      "notify-send",
+      "-u",
+      "critical",
+      `Error al lanzar ${name}`,
+      String(e),
+    ])
+
   const scrollToSelected = (i: number) => {
     const btn = buttonRefs[i]
     if (!btn || !scrollRef) return
@@ -74,27 +83,27 @@ export default function AppLauncher(
     const exec = cleanExec(a.executable)
 
     if (isTerminalEmulator(exec)) {
-      execAsync(["bash", "-c", `cd ~ && ${exec}`]).catch((e) =>
-        execAsync([
-          "notify-send",
-          "-u",
-          "critical",
-          `Error al lanzar ${a.name}`,
-          String(e),
-        ]),
-      )
+      execAsync([
+        "systemd-run",
+        "--user",
+        "--scope",
+        "bash",
+        "-c",
+        `cd ~ && ${exec}`,
+      ]).catch(notifyError(a.name))
     } else if (isTerminalApp(a)) {
-      execAsync(["bash", "-c", `cd ~ && ${terminal} ${exec}`]).catch((e) =>
-        execAsync([
-          "notify-send",
-          "-u",
-          "critical",
-          `Error al lanzar ${a.name}`,
-          String(e),
-        ]),
-      )
+      execAsync([
+        "systemd-run",
+        "--user",
+        "--scope",
+        "bash",
+        "-c",
+        `cd ~ && ${terminal} ${exec}`,
+      ]).catch(notifyError(a.name))
     } else {
-      a.launch()
+      execAsync(["systemd-run", "--user", "--scope", "bash", "-c", exec]).catch(
+        notifyError(a.name),
+      )
     }
   }
 
