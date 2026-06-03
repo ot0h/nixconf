@@ -1,0 +1,42 @@
+name: "posting"
+
+primary: "{color4}"    # Gris intermedio (botones, columnas fijas)
+secondary: "{color3}"  # Gris oscuro (selectores, etiquetas menores)
+accent: "{color15}"    # Blanco puro (texto de cabecera, cursors, focus)
+
+background: "{background}" # Negro absoluto (#000000)
+surface: "{color8}"       # Paneles y superficies (Gris muy oscuro)
+
+error: "{color1}"      # Gris de alerta (tu diag_red)
+success: "{color15}"    # Blanco (éxito)
+warning: "{color13}"    # Gris claro
+
+dark: "true"
+
+text_area:
+  cursor: "reverse {color15}"
+  cursor_line: "underline {color7}"
+  selection: "reverse {color8}"
+  gutter: "bold {color15}"
+  matched_bracket: "reverse {color15}"
+
+url:
+  base: "italic {color4}"
+  protocol: "bold {color15}"
+  separator: "{color7}"
+
+syntax:
+  json_key: "italic {color4}"
+  json_number: "{color15}"
+  json_string: "{color7}"
+  json_boolean: "{color12}"
+  json_null: "{color8}"
+
+method:
+  get: "bold {color4}"
+  post: "bold {color15}"
+  put: "bold {color13}"
+  delete: "bold {color1}"
+  patch: "bold {color12}"
+  options: "bold {color5}"
+  head: "bold {color6}"

@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./file-managers.nix
+  ];
+}
+

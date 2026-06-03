@@ -1,0 +1,588 @@
+/* =========================================================
+   OBSIDIAN PYWAL16 TEMPLATE
+   File:
+   ~/.config/wal/templates/obsidian-pywal.css
+   ========================================================= */
+
+.theme-dark {
+
+    /* =====================================================
+       CORE COLORS
+       ===================================================== */
+
+    --background-primary: {background};
+
+    --background-primary-alt:
+        rgba({color0.rgb}, 0.96);
+
+    --background-secondary:
+        rgba({color0.rgb}, 0.92);
+
+    --background-secondary-alt:
+        rgba({color8.rgb}, 0.18);
+
+    /* =====================================================
+       MODIFIERS
+       ===================================================== */
+
+    --background-modifier-hover:
+        rgba({foreground.rgb}, 0.035);
+
+    --background-modifier-active-hover:
+        rgba({foreground.rgb}, 0.06);
+
+    --background-modifier-border:
+        rgba({foreground.rgb}, 0.05);
+
+    --background-modifier-border-hover:
+        rgba({foreground.rgb}, 0.08);
+
+    --background-modifier-box-shadow:
+        rgba(0,0,0,0.85);
+
+    --background-modifier-form-field:
+        rgba({color0.rgb}, 0.95);
+
+    /* =====================================================
+       INTERACTIVE
+       ===================================================== */
+
+    --interactive-normal:
+        rgba({color0.rgb}, 0.92);
+
+    --interactive-hover:
+        rgba({color8.rgb}, 0.22);
+
+    --interactive-accent:
+        {color1};
+
+    --interactive-accent-hover:
+        {foreground};
+
+    /* =====================================================
+       TEXT
+       ===================================================== */
+
+    --text-normal:
+        {foreground};
+
+    --text-muted:
+        {color5};
+
+    --text-faint:
+        {color8};
+
+    --text-on-accent:
+        {background};
+
+    --text-accent:
+        {color1};
+
+    --text-accent-hover:
+        {foreground};
+
+    --text-selection:
+        rgba({color1.rgb}, 0.18);
+
+    --titlebar-text-color-focused:
+        {foreground};
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    --nav-item-color:
+        {color3};
+
+    --nav-item-color-hover:
+        {foreground};
+
+    --nav-item-color-active:
+        {foreground};
+
+    --nav-item-background-hover:
+        rgba({foreground.rgb}, 0.03);
+
+    --nav-item-background-active:
+        rgba({color1.rgb}, 0.12);
+
+    /* =====================================================
+       TABS
+       ===================================================== */
+
+    --tab-text-color:
+        {color4};
+
+    --tab-text-color-focused:
+        {foreground};
+
+    --tab-text-color-active:
+        {foreground};
+
+    --tab-container-background:
+        {background};
+
+    --tab-divider-color:
+        rgba({foreground.rgb}, 0.03);
+
+    --tab-outline-color:
+        rgba({foreground.rgb}, 0.04);
+
+    --tab-background-active:
+        rgba({foreground.rgb}, 0.05);
+
+    --tab-background-inactive:
+        {background};
+
+    --tab-background-focused:
+        rgba({foreground.rgb}, 0.03);
+
+    /* =====================================================
+       DIVIDERS
+       ===================================================== */
+
+    --divider-color:
+        rgba({foreground.rgb}, 0.045);
+
+    --divider-color-hover:
+        rgba({foreground.rgb}, 0.075);
+
+    /* =====================================================
+       BLOCKQUOTE
+       ===================================================== */
+
+    --blockquote-color:
+        {color4};
+
+    --blockquote-border-color:
+        rgba({color2.rgb}, 0.65);
+
+    --blockquote-background-color:
+        rgba({color2.rgb}, 0.06);
+
+    /* =====================================================
+       CODE
+       ===================================================== */
+
+    --code-normal:
+        {foreground};
+
+    --code-background:
+        rgba({color0.rgb}, 0.95);
+
+    /* =====================================================
+       LINKS
+       ===================================================== */
+
+    --link-color:
+        {color1};
+
+    --link-color-hover:
+        {foreground};
+
+    --link-external-color:
+        {color4};
+
+    /* =====================================================
+       TAGS
+       ===================================================== */
+
+    --tag-color:
+        {foreground};
+
+    --tag-background:
+        rgba({color1.rgb}, 0.12);
+
+    --tag-border-color:
+        rgba({color1.rgb}, 0.18);
+
+    /* =====================================================
+       LISTS / ICONS
+       ===================================================== */
+
+    --list-marker-color:
+        {color3};
+
+    --icon-color:
+        {color4};
+
+    --icon-color-hover:
+        {foreground};
+
+    --icon-color-focused:
+        {foreground};
+
+    /* =====================================================
+       METADATA
+       ===================================================== */
+
+    --metadata-label-text-color:
+        {color4};
+
+    --metadata-input-text-color:
+        {foreground};
+
+    /* =====================================================
+       SCROLLBAR
+       ===================================================== */
+
+    --scrollbar-bg:
+        transparent;
+
+    --scrollbar-thumb-bg:
+        rgba({foreground.rgb}, 0.08);
+
+    --scrollbar-active-thumb-bg:
+        rgba({foreground.rgb}, 0.14);
+
+    /* =====================================================
+       GRAPH
+       ===================================================== */
+
+    --graph-line:
+        rgba({foreground.rgb}, 0.18);
+
+    --graph-node:
+        {color3};
+
+    --graph-node-focused:
+        {foreground};
+
+    --graph-node-tag:
+        {color1};
+
+    --graph-node-attachment:
+        {color4};
+
+    --graph-node-unresolved:
+        {color8};
+
+    /* =====================================================
+       INLINE TITLE
+       ===================================================== */
+
+    --inline-title-color:
+        {foreground};
+
+    /* =====================================================
+       HR
+       ===================================================== */
+
+    --hr-color:
+        rgba({foreground.rgb}, 0.07);
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.theme-dark,
+.theme-dark .workspace-leaf,
+.theme-dark .workspace-sidedock-vault-profile,
+.theme-dark .workspace-tab-header-container,
+.theme-dark .view-content,
+.theme-dark .markdown-source-view,
+.theme-dark .markdown-preview-view {
+    background-color: var(--background-primary);
+}
+
+/* =========================================================
+   RESIZE HANDLES
+   ========================================================= */
+
+.theme-dark .workspace-split.mod-root,
+.theme-dark .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+.theme-dark .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+    background-color: var(--background-primary);
+}
+
+.theme-dark .workspace-leaf-resize-handle {
+    opacity: 0.2;
+}
+
+.theme-dark .workspace-leaf-resize-handle:hover {
+    opacity: 0.45;
+}
+
+/* =========================================================
+   HOVERS
+   ========================================================= */
+
+.theme-dark .workspace-tab-header.is-active,
+.theme-dark .workspace-tab-header:hover,
+.theme-dark .nav-file-title:hover,
+.theme-dark .nav-folder-title:hover,
+.theme-dark .tree-item-self:hover,
+.theme-dark .suggestion-item.is-selected,
+.theme-dark .menu-item:hover {
+    box-shadow:
+        inset 0 0 0 1px rgba({foreground.rgb}, 0.03);
+}
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.theme-dark .cm-line,
+.theme-dark .markdown-preview-view,
+.theme-dark .inline-title {
+    color: var(--text-normal);
+}
+
+/* =========================================================
+   SHAPE RESET
+   ========================================================= */
+
+.theme-dark .workspace-tab-header,
+.theme-dark .workspace-tab-header-inner,
+.theme-dark .nav-file-title,
+.theme-dark .nav-folder-title,
+.theme-dark .tree-item-self,
+.theme-dark .clickable-icon,
+.theme-dark .side-dock-actions button {
+    border-radius: 0;
+}
+
+/* =========================================================
+   MARK / SEARCH
+   ========================================================= */
+
+.theme-dark .markdown-rendered mark,
+.theme-dark .search-result-file-matched-text,
+.theme-dark .cm-highlight {
+    background-color:
+        rgba({foreground.rgb}, 0.06);
+
+    color:
+        {foreground};
+}
+
+/* =========================================================
+   ACTIVE LINE
+   ========================================================= */
+
+.theme-dark .cm-active,
+.theme-dark .is-flashing {
+    background-color:
+        rgba({foreground.rgb}, 0.03);
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+.theme-dark .cm-selectionBackground,
+.theme-dark .markdown-source-view.mod-cm6 .cm-selectionBackground,
+.theme-dark ::selection {
+    background:
+        rgba({color1.rgb}, 0.18) !important;
+}
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+.theme-dark .HyperMD-codeblock,
+.theme-dark pre[class*="language-"],
+.theme-dark code {
+    border:
+        1px solid rgba({foreground.rgb}, 0.035);
+
+    border-radius: 0;
+}
+
+.theme-dark :not(pre) > code {
+    background:
+        rgba({color0.rgb}, 0.92);
+}
+
+/* =========================================================
+   BLOCKQUOTE
+   ========================================================= */
+
+.theme-dark blockquote {
+    background:
+        rgba({color2.rgb}, 0.05);
+
+    border-color:
+        rgba({color2.rgb}, 0.35);
+}
+
+/* =========================================================
+   CALLOUTS / EMBEDS
+   ========================================================= */
+
+.theme-dark .callout {
+    background:
+        rgba({color0.rgb}, 0.92);
+
+    border:
+        1px solid rgba({foreground.rgb}, 0.04);
+
+    border-radius: 0;
+}
+
+.theme-dark .callout .callout-title,
+.theme-dark .callout .callout-content,
+.theme-dark .markdown-embed,
+.theme-dark .internal-embed,
+.theme-dark .frontmatter-container,
+.theme-dark .metadata-container,
+.theme-dark .metadata-properties,
+.theme-dark .cm-embed-block,
+.theme-dark .image-embed,
+.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content {
+    background-color:
+        rgba({color0.rgb}, 0.92);
+}
+
+.theme-dark .markdown-embed,
+.theme-dark .internal-embed,
+.theme-dark .frontmatter-container,
+.theme-dark .metadata-container,
+.theme-dark .metadata-properties {
+
+    border:
+        1px solid rgba({foreground.rgb}, 0.04);
+
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* =========================================================
+   MENUS / INPUTS
+   ========================================================= */
+
+.theme-dark .search-result-file-match,
+.theme-dark .suggestion-item,
+.theme-dark .menu,
+.theme-dark .modal,
+.theme-dark .popover,
+.theme-dark .prompt,
+.theme-dark .dropdown,
+.theme-dark input:not([type="range"]),
+.theme-dark textarea {
+
+    background-color:
+        rgba({color0.rgb}, 0.94);
+
+    color:
+        var(--text-normal);
+
+    border-color:
+        rgba({foreground.rgb}, 0.045);
+}
+
+/* =========================================================
+   STATUS / HEADER
+   ========================================================= */
+
+.theme-dark .status-bar,
+.theme-dark .titlebar,
+.theme-dark .workspace-ribbon,
+.theme-dark .side-dock-actions,
+.theme-dark .view-header {
+
+    background-color:
+        var(--background-primary);
+
+    border-color:
+        rgba({foreground.rgb}, 0.035);
+}
+
+/* =========================================================
+   ACTIVE TAB
+   ========================================================= */
+
+.theme-dark .workspace-tab-header.is-active {
+
+    background:
+        rgba({foreground.rgb}, 0.04);
+
+    border-bottom:
+        1px solid {color1};
+
+    box-shadow:
+        0 0 12px rgba({color1.rgb}, 0.12);
+}
+
+/* =========================================================
+   ACTIVE FILE
+   ========================================================= */
+
+.theme-dark .nav-file-title.is-active {
+
+    background:
+        rgba({color1.rgb}, 0.08);
+
+    border-left:
+        2px solid {color1};
+}
+
+/* =========================================================
+   SYNTAX HIGHLIGHTING
+   ========================================================= */
+
+.theme-dark .cm-s-obsidian span.cm-keyword,
+.theme-dark .token.keyword {
+    color: {color1} !important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-def,
+.theme-dark .cm-s-obsidian span.cm-variable,
+.theme-dark .cm-s-obsidian span.cm-variable-2,
+.theme-dark .cm-s-obsidian span.cm-variable-3,
+.theme-dark .token.function {
+    color: {color2} !important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-property,
+.theme-dark .cm-s-obsidian span.cm-attribute,
+.theme-dark .token.property {
+    color: {color4} !important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-string,
+.theme-dark .cm-s-obsidian span.cm-string-2,
+.theme-dark .token.string {
+    color: {color3} !important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-number,
+.theme-dark .token.number {
+    color: {color6} !important;
+}
+
+.theme-dark .cm-s-obsidian span.cm-comment,
+.theme-dark .token.comment,
+.theme-dark .token.prolog,
+.theme-dark .token.doctype {
+
+    color:
+        {color8} !important;
+
+    font-style: italic;
+}
+
+.theme-dark .cm-s-obsidian span.cm-operator,
+.theme-dark .token.operator,
+.theme-dark .token.entity,
+.theme-dark .token.punctuation {
+    color: {foreground} !important;
+}
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.theme-dark input.task-list-item-checkbox:checked {
+
+    background-color:
+        {color1} !important;
+
+    border-color:
+        {color1} !important;
+
+    box-shadow:
+        0 0 8px rgba({color1.rgb}, 0.18);
+}

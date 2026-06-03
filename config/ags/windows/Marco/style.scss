@@ -1,0 +1,25 @@
+$border: 10px;
+
+.Marco {
+  background: transparent;
+
+  & .corner {
+    background: $background;
+    border: transparent;
+  }
+
+  &.margen-arriba .corner {
+    min-height: $border;
+    min-width: 0;
+  }
+
+  &.margen-abajo .corner {
+    min-height: $border;
+    min-width: 0;
+  }
+
+  &.margen-derecho .corner {
+    min-width: $border;
+    min-height: 0;
+  }
+}

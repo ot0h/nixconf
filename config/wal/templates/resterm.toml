@@ -1,0 +1,342 @@
+[metadata]
+name = "Pywal"
+author = "Raul"
+description = "Dark theme derived from pywal palette"
+version = "1.0.0"
+tags = ["dark", "pywal", "muted"]
+
+# ── Pane borders ─────────────────────────────────────────────────────────────
+[colors]
+pane_border_focus_file      = "{color3}"
+pane_border_focus_requests  = "{color2}"
+pane_border_focus_editor    = "{color4}"
+pane_border_focus_response  = "{color2}"
+pane_active_foreground      = "{foreground}"
+
+# HTTP method badges
+method_get     = "{color2}"
+method_post    = "{color4}"
+method_put     = "{color3}"
+method_patch   = "{color5}"
+method_delete  = "{color1}"
+method_head    = "{color6}"
+method_options = "{color8}"
+method_grpc    = "{color5}"
+method_ws      = "{color4}"
+method_default = "{foreground}"
+
+# ── App frame & header ───────────────────────────────────────────────────────
+[styles.app_frame]
+background = "{background}"
+foreground = "{foreground}"
+
+[styles.header]
+background = "{background}"
+foreground = "{foreground}"
+
+[styles.header_brand]
+foreground = "{color4}"
+bold       = true
+
+[styles.header_title]
+foreground = "{foreground}"
+bold       = true
+
+[styles.header_value]
+foreground = "{color5}"
+
+[styles.header_separator]
+foreground = "{color8}"
+
+# ── Status bar ───────────────────────────────────────────────────────────────
+[styles.status_bar]
+background = "{background}"
+foreground = "{color8}"
+
+[styles.status_bar_info]
+foreground = "{color5}"
+
+[styles.status_bar_key]
+foreground = "{color4}"
+bold       = true
+
+[styles.status_bar_value]
+foreground = "{foreground}"
+
+# ── Command bar ──────────────────────────────────────────────────────────────
+[styles.command_bar]
+background = "{background}"
+foreground = "{color5}"
+
+[styles.command_bar_hint]
+foreground = "{color8}"
+
+# ── Navigator (sidebar) ──────────────────────────────────────────────────────
+[styles.navigator_title]
+foreground = "{color4}"
+bold       = true
+
+[styles.navigator_title_selected]
+foreground = "{foreground}"
+bold       = true
+
+[styles.navigator_subtitle]
+foreground = "{color8}"
+
+[styles.navigator_subtitle_selected]
+foreground = "{color5}"
+
+[styles.navigator_badge]
+foreground = "{background}"
+background = "{color2}"
+bold       = true
+
+[styles.navigator_tag]
+foreground = "{color4}"
+
+[styles.navigator_detail_title]
+foreground = "{color5}"
+
+[styles.navigator_detail_value]
+foreground = "{foreground}"
+
+[styles.navigator_detail_dim]
+foreground = "{color8}"
+
+# ── Pane titles ──────────────────────────────────────────────────────────────
+[styles.pane_title]
+foreground = "{color5}"
+
+[styles.pane_title_file]
+foreground = "{color3}"
+
+[styles.pane_title_requests]
+foreground = "{color2}"
+
+[styles.pane_title_editor]
+foreground = "{color4}"
+
+[styles.pane_title_response]
+foreground = "{color2}"
+
+[styles.pane_divider]
+foreground = "{color8}"
+
+# ── Borders ──────────────────────────────────────────────────────────────────
+[styles.browser_border]
+border_style = "rounded"
+
+[styles.editor_border]
+border_style = "rounded"
+
+[styles.response_border]
+border_style = "rounded"
+
+# ── Tabs ─────────────────────────────────────────────────────────────────────
+[styles.tabs]
+background = "{background}"
+
+[styles.tab_active]
+foreground = "{foreground}"
+bold       = true
+underline  = true
+
+[styles.tab_inactive]
+foreground = "{color8}"
+
+# ── List items ───────────────────────────────────────────────────────────────
+[styles.list_item_title]
+foreground = "{foreground}"
+
+[styles.list_item_description]
+foreground = "{color5}"
+
+[styles.list_item_selected_title]
+foreground = "{foreground}"
+background = "{color0}"
+bold       = true
+
+[styles.list_item_selected_description]
+foreground = "{color4}"
+background = "{color0}"
+
+[styles.list_item_dimmed_title]
+foreground = "{color8}"
+
+[styles.list_item_dimmed_description]
+foreground = "{color8}"
+faint      = true
+
+[styles.list_item_filter_match]
+foreground = "{color4}"
+bold       = true
+
+# ── Response panes ───────────────────────────────────────────────────────────
+[styles.response_content]
+foreground = "{foreground}"
+background = "{background}"
+
+[styles.response_content_raw]
+foreground = "{color6}"
+
+[styles.response_content_headers]
+foreground = "{color5}"
+
+[styles.response_selection]
+background = "{color2}"
+foreground = "{foreground}"
+
+[styles.response_cursor]
+background = "{color4}"
+foreground = "{background}"
+
+[styles.response_search_highlight]
+background = "{color3}"
+foreground = "{foreground}"
+
+[styles.response_search_highlight_active]
+background = "{color4}"
+foreground = "{background}"
+bold       = true
+
+# ── Notifications ────────────────────────────────────────────────────────────
+[styles.notification]
+foreground = "{foreground}"
+background = "{color0}"
+
+[styles.error]
+foreground = "{color1}"
+bold       = true
+
+[styles.success]
+foreground = "{color2}"
+bold       = true
+
+[styles.command_divider]
+foreground = "{color8}"
+
+# ── Editor hints / autocomplete ──────────────────────────────────────────────
+[styles.editor_hint_box]
+background   = "{background}"
+border_style = "rounded"
+
+[styles.editor_hint_item]
+foreground = "{color5}"
+
+[styles.editor_hint_selected]
+foreground = "{foreground}"
+background = "{color0}"
+bold       = true
+
+[styles.editor_hint_annotation]
+foreground = "{color8}"
+italic     = true
+
+# ── CLI run picker ───────────────────────────────────────────────────────────
+[styles.cli_run_picker]
+foreground = "{color5}"
+
+[styles.cli_run_picker_selected]
+foreground = "{foreground}"
+background = "{color0}"
+
+[styles.cli_run_picker_cursor]
+foreground = "{color4}"
+
+[styles.cli_run_picker_cursor_selected]
+foreground = "{color4}"
+background = "{color0}"
+bold       = true
+
+# ── Stream / WebSocket viewer ────────────────────────────────────────────────
+[styles.stream_content]
+foreground = "{foreground}"
+
+[styles.stream_timestamp]
+foreground = "{color8}"
+italic     = true
+
+[styles.stream_direction_send]
+foreground = "{color4}"
+bold       = true
+
+[styles.stream_direction_receive]
+foreground = "{color2}"
+bold       = true
+
+[styles.stream_direction_info]
+foreground = "{color8}"
+
+[styles.stream_event_name]
+foreground = "{color3}"
+
+[styles.stream_data]
+foreground = "{color6}"
+
+[styles.stream_binary]
+foreground = "{color8}"
+italic     = true
+
+[styles.stream_summary]
+foreground = "{color5}"
+
+[styles.stream_error]
+foreground = "{color1}"
+bold       = true
+
+# ── WebSocket interactive console ────────────────────────────────────────────
+[styles.stream_console_title]
+foreground = "{color4}"
+bold       = true
+
+[styles.stream_console_mode]
+foreground = "{color5}"
+
+[styles.stream_console_status]
+foreground = "{color2}"
+
+[styles.stream_console_prompt]
+foreground = "{color3}"
+bold       = true
+
+[styles.stream_console_input]
+foreground = "{foreground}"
+
+[styles.stream_console_input_focused]
+foreground = "{foreground}"
+background = "{color0}"
+
+# ── Editor metadata highlighting ─────────────────────────────────────────────
+[editor_metadata]
+comment_marker    = "{color8}"
+directive_default = "{color4}"
+value             = "{foreground}"
+setting_key       = "{color3}"
+setting_value     = "{color5}"
+request_line      = "{color2}"
+request_separator = "{color8}"
+
+[editor_metadata.directive_colors]
+name = "{color6}"
+
+# ── Rotating header chips ────────────────────────────────────────────────────
+[[header_segments]]
+background = "{color0}"
+foreground = "{color4}"
+
+[[header_segments]]
+background = "{color0}"
+foreground = "{color3}"
+
+# ── Command bar hint capsules ─────────────────────────────────────────────────
+[[command_segments]]
+background = "{color0}"
+border     = "{color8}"
+key        = "{color4}"
+text       = "{foreground}"
+
+[[command_segments]]
+background = "{color0}"
+border     = "{color8}"
+key        = "{color3}"
+text       = "{foreground}"

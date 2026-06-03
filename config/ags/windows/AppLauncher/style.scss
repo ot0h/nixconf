@@ -1,0 +1,81 @@
+.AppLauncher {
+  background-color: transparentize($background, 0.7);
+
+  .launcher-container {
+    background-color: $background;
+    min-width: 480px;
+    padding: 20px;
+    border: 2px solid transparentize($foreground, 0.9);
+    border-radius: 20px;
+  }
+
+  .launcher-search {
+    font-size: 15px;
+    padding: 8px 0px;
+    color: $foreground;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid transparentize($foreground, 0.6);
+    border-radius: 0;
+
+    &:focus {
+      border-bottom: 1px solid $foreground;
+    }
+  }
+
+  separator {
+    background-color: transparent;
+  }
+
+  .launcher-item {
+    padding: 12px 4px;
+    border-radius: 0;
+    transition: all 100ms ease;
+    background-color: transparent;
+    border-bottom: 1px solid transparentize($foreground, 0.95);
+
+    label {
+      font-size: 13px;
+      color: transparentize($foreground, 0.2);
+    }
+
+    image {
+      opacity: 0.7;
+    }
+
+    &.selected {
+      background-color: transparent;
+
+      label {
+        color: $foreground;
+      }
+
+      image {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      label {
+        color: $foreground;
+      }
+    }
+  }
+
+  .launcher-shortcut {
+    font-size: 10px;
+    color: transparentize($foreground, 0.5);
+    background-color: transparent;
+    border: 1px solid transparentize($foreground, 0.7);
+    border-radius: 4px;
+    padding: 1px 5px;
+    min-width: 16px;
+  }
+
+  .launcher-item.selected .launcher-shortcut {
+    color: $foreground;
+    border-color: transparentize($foreground, 0.3);
+  }
+}

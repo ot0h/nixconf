@@ -1,0 +1,52 @@
+local g = vim.g
+local o = vim.opt
+
+g.mapleader = " "
+g.maplocalleader = " "
+g.snacks_animate = false
+
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
+o.swapfile = true
+o.smartcase = true
+o.laststatus = 3
+o.hlsearch = true
+o.incsearch = true
+o.ignorecase = true
+o.relativenumber = true
+o.number = true
+o.wrap = false
+o.clipboard = "unnamedplus"
+o.encoding = "utf-8"
+o.hidden = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
+o.updatetime = 300
+o.termguicolors = true
+o.mouse = "a"
+o.splitbelow = true
+o.splitright = true
+o.scrolloff = 9
+o.cursorline = true
+o.scroll = 6
+o.signcolumn = "yes"
+o.pumheight = 16
+o.winborder = "single"
+o.timeout = true
+o.timeoutlen = 300
+o.showcmdloc = "last" -- Muestra comandos pendientes en su propia línea abajo
+o.undofile = true
+o.viewoptions = "folds,cursor,curdir"
+o.foldcolumn = "1"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
+o.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	eob = " ",
+}

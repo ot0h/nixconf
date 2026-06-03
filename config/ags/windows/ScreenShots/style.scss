@@ -1,0 +1,121 @@
+.Screenshot {
+  background-color: transparentize($background, 0.2);
+
+  .screenshot-container {
+    background-color: transparent;
+    padding: 32px 48px;
+    border: 1px solid transparentize($foreground, 0.8);
+  }
+
+  button {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 20px 28px;
+    transition: all 150ms ease;
+
+    .screenshot-icon {
+      color: $color3;
+      transition: all 150ms ease;
+    }
+
+    .screenshot-label {
+      color: $color3;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+
+      .screenshot-icon {
+        color: $color7;
+        animation: parpadeo-screenshot-icon 1.5s ease-in-out infinite;
+      }
+
+      .screenshot-label {
+        color: $color6;
+        animation: parpadeo-screenshot-icon 1.5s ease-in-out infinite;
+      }
+    }
+  }
+
+  .screenshot-icon {
+    font-size: 48px;
+  }
+
+  .screenshot-label {
+    font-size: 13px;
+  }
+
+  .mode-indicator {
+    background-color: transparent;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 150ms ease;
+    color: $color3;
+
+    label {
+      color: $color3;
+    }
+
+    &.active {
+      background-color: transparentize($color1, 0.5);
+
+      label {
+        color: $color7;
+        background: transparent;
+      }
+    }
+
+    &:hover {
+      background-color: transparentize($color1, 0.7);
+    }
+  }
+
+  .mode-separator {
+    color: $color1;
+
+    .mode-hint {
+      font-size: 11px;
+      color: $color2;
+    }
+  }
+
+  .screenshot-path {
+    font-size: 11px;
+    color: $color2;
+  }
+
+  .picker-format {
+    font-size: 10px;
+    color: $color7;
+    background-color: transparentize($color1, 0.5);
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+
+  .picker-hint {
+    font-size: 10px;
+    color: $color2;
+  }
+}
+
+@keyframes parpadeo-screenshot-icon {
+  0%,
+  100% {
+    color: $color7;
+  }
+  50% {
+    color: $color3;
+  }
+}
+
+@keyframes parpadeo-screenshot-label {
+  0%,
+  100% {
+    color: $color6;
+  }
+  50% {
+    color: $color3;
+  }
+}
