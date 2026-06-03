@@ -2,11 +2,11 @@
 
 Configuración personal de NixOS — [@numbpi](https://github.com/numbpi)
 
-> NixOS + Home Manager + Hyprland + AGS + 👻
+> NixOS + Home Manager + Hyprland + AGS + Depresion xd
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Escritorio
 
@@ -18,7 +18,7 @@ Configuración personal de NixOS — [@numbpi](https://github.com/numbpi)
 
 ---
 
-## 🖥️ Stack
+## Stack
 
 | Capa | Tecnología |
 |------|-----------|
@@ -34,7 +34,7 @@ Configuración personal de NixOS — [@numbpi](https://github.com/numbpi)
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 nixconf/
@@ -71,7 +71,7 @@ nixconf/
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
 # Clonar
@@ -86,9 +86,3 @@ nh os switch .
 ```
 
 > **Nota:** los dotfiles en `config/` están linkeados como symlinks out-of-store al directorio `~/nixconf/config/`. Si clonás en otra ruta, actualizá los paths en `home.nix`.
-
----
-
-## 🏷️ Licencia
-
-MIT
