@@ -20,7 +20,7 @@ function getWallpaperClass(): string {
 
 const WALLPAPER_CLASS = getWallpaperClass()
 const WALLPAPER_NAME = WALLPAPER_CLASS.replace("ClockW-", "")
-const VISIBLE_WALLPAPERS = ["15", "4", "1"]
+const VISIBLE_WALLPAPERS = ["11", "4", "1"]
 const IS_CLOCK_VISIBLE = VISIBLE_WALLPAPERS.includes(WALLPAPER_NAME)
 
 export default function Clock(monitor: Gdk.Monitor, index: number = 0) {
@@ -46,7 +46,9 @@ export default function Clock(monitor: Gdk.Monitor, index: number = 0) {
       valign={Gtk.Align.CENTER}
       gdkmonitor={monitor}
       application={app}
-      $={(self) => { self.visible = IS_CLOCK_VISIBLE }}
+      $={(self) => {
+        self.visible = IS_CLOCK_VISIBLE
+      }}
     >
       <box
         class={"caja"}

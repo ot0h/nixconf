@@ -37,6 +37,7 @@ declare -A THEME_MAP=(
     ["9.png"]="inkwash"
     ["7.png"]="shadow"
     ["4.jpg"]="monochrome"
+    ["12.png"]="monochrome"
     ["5.png"]="monochrome"
 )
 
