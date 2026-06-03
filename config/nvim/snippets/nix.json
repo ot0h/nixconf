@@ -1,0 +1,31 @@
+{
+  "Nix Flake DevShell": {
+    "prefix": "flake",
+    "body": [
+      "{",
+      "  description = \"$1\";",
+      "  inputs.nixpkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";",
+      "",
+      "  outputs = { nixpkgs, ... }: let",
+      "    inherit (nixpkgs.lib) systems;",
+      "    forAllSystems = nixpkgs.lib.genAttrs systems.flakeExposed;",
+      "  in {",
+      "    formatter = forAllSystems (system: nixpkgs.legacyPackages.\\${system}.nixpkgs-fmt);",
+      "",
+      "    devShells = forAllSystems (system: let",
+      "      pkgs = import nixpkgs { inherit system; };",
+      "    in {",
+      "      default = pkgs.mkShell {",
+      "        packages = with pkgs; [ $2 ];",
+      "",
+      "        shellHook = ''",
+      "          $3",
+      "        '';",
+      "      };",
+      "    });",
+      "  };",
+      "}"
+    ],
+    "description": "devShell multi-sistema con formatter y shellHook"
+  }
+}
