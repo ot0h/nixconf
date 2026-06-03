@@ -31,7 +31,7 @@ app.start({
       PowerMenu(monitor, i)
       ScreenShots(monitor, i)
       HyprlandLayoutsSwitcher(monitor, i)
-      Marco(monitor, i)
+      // Marco(monitor, i)
       WallpaperPicker(monitor, i)
       Clock(monitor, i)
     })

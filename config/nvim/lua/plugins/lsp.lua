@@ -627,6 +627,7 @@ do
 			scss = { "prettier" },
 			json = { "prettier" },
 			cpp = { "clang-format" },
+			c = { "clang-format" },
 			typst = { "typstyle" },
 			rust = { "rustfmt" },
 			python = { "ruff_format", "ruff_organize_imports" },
