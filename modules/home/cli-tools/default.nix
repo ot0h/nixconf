@@ -1,6 +1,6 @@
 {
   imports = [
     ./tmux
-    ./yazi.nix
+    ./yazi
   ];
 }
