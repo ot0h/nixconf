@@ -328,10 +328,28 @@ do
 
 	-- LSP para C/C++
 	vim.lsp.config("clangd", {
-		cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+		cmd = {
+			"clangd",
+			"--background-index",
+			"--clang-tidy",
+			"--header-insertion=iwyu",
+			"--function-arg-placeholders",
+			"--fallback-style=llvm",
+		},
 		filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-		root_markers = { ".clangd", ".clang-format", "compile_commands.json", "compile_flags.txt", ".git" },
+		root_markers = {
+			".clangd",
+			"compile_commands.json",
+			"compile_flags.txt",
+			"CMakeLists.txt", -- agregar esto
+			".git",
+		},
 		capabilities = capabilities,
+		init_options = {
+			usePlaceholders = true,
+			completeUnimported = true,
+			clangdFileStatus = true,
+		},
 	})
 	vim.lsp.enable("clangd")
 
