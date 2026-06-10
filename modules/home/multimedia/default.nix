@@ -11,6 +11,8 @@
     # Audio
     wiremix
 
+    mgba
+
     (callPackage ./ani-cli.nix {})
   ];
 }

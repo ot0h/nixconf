@@ -215,7 +215,7 @@
       ];
       game = [
         {
-          run = ''mgba-qt "$@"'';
+          run = ''mgba "$@"'';
           orphan = true;
           desc = "MGBA";
           for = "unix";
