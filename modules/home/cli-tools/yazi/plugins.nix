@@ -111,6 +111,7 @@ in {
       package = pkgs.yaziPlugins.yafg;
       setup = true;
       settings = {
+        toggle_mode_key = "f1";
         editor = "nvim";
         args = ["--noplugin"];
         file_arg_format = "+{row} {file}";
