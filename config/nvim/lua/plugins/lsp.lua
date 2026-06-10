@@ -132,11 +132,18 @@ do
 	vim.lsp.config("vtsls", {
 		cmd = { "vtsls", "--stdio" },
 
+		extension = {
+			mjs = "javascript",
+			mts = "typescript",
+		},
+
 		filetypes = {
 			"javascript",
 			"javascriptreact",
 			"typescript",
 			"typescriptreact",
+			"mjs",
+			"mts",
 		},
 
 		root_dir = function(bufnr, on_dir)
