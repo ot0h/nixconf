@@ -106,6 +106,7 @@ in {
         default = [
           "gtk"
           "hyprland"
+          "sway"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
       };
