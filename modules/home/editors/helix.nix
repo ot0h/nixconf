@@ -92,7 +92,7 @@
     };
 in {
   programs.helix = {
-    enable = true;
+    enable = false;
     package = helix-wrapped;
 
     settings = {
