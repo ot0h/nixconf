@@ -350,3 +350,7 @@ end, { desc = "Send Visual Selection", icon = "󰒇" })
 map({ "n", "x" }, "<leader>ap", function()
 	require("sidekick.cli").prompt()
 end, { desc = "Sidekick Prompt", icon = "" })
+
+map({ "n" }, "<C-t>", function()
+	require("minty.shades").open()
+end)

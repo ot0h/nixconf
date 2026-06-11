@@ -1,12 +1,12 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "8fa7f9cb8805f8abf27432d4b1e7c4be83d76807",
+      "rev": "c87dda7c8e5c4437d0d270ea6b73afb683607706",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "3db7326f54b73df4789e0fd6274bedda33975fea",
+      "rev": "b02ac65634bdb8af2dcc4eb6c807c060e1e15ae6",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -25,7 +25,7 @@
       "version": "'master'"
     },
     "copilot.lua": {
-      "rev": "0415bd625c3076a6a5ee445be484574d55b4fbfc",
+      "rev": "dada2f90220861d6e9d30eca6a3997cf5d0c9936",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": "'master'"
     },
@@ -63,7 +63,7 @@
       "version": "'master'"
     },
     "markview.nvim": {
-      "rev": "fbe5ec7d127ab3435ffd62740a7b27e7fabf42dc",
+      "rev": "3d8f68812262b516d533acf603c2ecaf72f8edb5",
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
@@ -78,7 +78,7 @@
       "version": "'main'"
     },
     "mini.icons": {
-      "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94",
+      "rev": "284509648db084c5e40a31afa9abb9887c49e04a",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.pairs": {
@@ -91,6 +91,11 @@
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
+    "minty": {
+      "rev": "aafc9e8e0afe6bf57580858a2849578d8d8db9e0",
+      "src": "https://github.com/nvzone/minty",
+      "version": "'main'"
+    },
     "noice.nvim": {
       "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
       "src": "https://github.com/folke/noice.nvim",
@@ -101,7 +106,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "229b79051b380377664edc4cbd534930154921a1",
+      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -166,13 +171,18 @@
       "src": "https://github.com/chomosuke/typst-preview.nvim",
       "version": "'master'"
     },
+    "volt": {
+      "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
+      "src": "https://github.com/nvzone/volt",
+      "version": "'main'"
+    },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim",
       "version": "'main'"
     },
     "yazi.nvim": {
-      "rev": "4224f0dd182afb532ebc5b0f9ff74480b80bf9cc",
+      "rev": "daaff7dae62a48f167f5e887a2e4049e732568e7",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": "'main'"
     }
