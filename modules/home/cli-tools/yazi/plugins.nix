@@ -118,6 +118,18 @@ in {
       };
     };
 
+    starship = {
+      package = pkgs.yaziPlugins.starship;
+      setup = true;
+      settings = {
+        hide_flags = false;
+        flags_after_prompt = true;
+        show_right_prompt = false;
+        hide_count = false;
+        count_separator = " ";
+      };
+    };
+
     # ── Plugins sin setup (solo se linkean) ──────────────────────
 
     lazygit = pkgs.yaziPlugins.lazygit;
