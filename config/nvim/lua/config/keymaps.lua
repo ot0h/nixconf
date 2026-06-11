@@ -38,10 +38,12 @@ end
 -- MiniFiles
 map("n", "_", ":lua MiniFiles.open()<CR>", "Abrir MiniFiles")
 
--- Yazi
-map({ "n", "v" }, "-", ":Yazi <CR>", "Abrir Yazi")
-map("n", "<C-->", "Yazi cwd <CR>", "Abrir Yazi en Working Directory")
-map("n", "<A->", ":Yazi toggle<CR>", "Abrir Yazi en la ultima session")
+map("n", "-", "<cmd>Oil<CR>", { desc = "Abir Oil", icon = "" })
+
+-- -- Yazi
+-- map({ "n", "v" }, "-", ":Yazi <CR>", "Abrir Yazi")
+-- map("n", "<C-->", "Yazi cwd <CR>", "Abrir Yazi en Working Directory")
+-- map("n", "<A->", ":Yazi toggle<CR>", "Abrir Yazi en la ultima session")
 
 -- Treesitter
 map({ "n", "x", "o" }, "<A-o>", function()

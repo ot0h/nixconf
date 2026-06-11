@@ -22,13 +22,13 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-ts-autotag", version = "main" },
 	{ src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
 	{ src = "https://github.com/OXY2DEV/markview.nvim", version = "main" },
-	{ src = "https://github.com/mikavilpas/yazi.nvim", version = "main" },
 	{ src = "https://github.com/folke/sidekick.nvim", version = "main" },
 	{ src = "https://github.com/zbirenbaum/copilot.lua", version = "master" },
 	{ src = "https://github.com/seblyng/roslyn.nvim", version = "main" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim", version = "main" },
 	{ src = "https://github.com/nvzone/minty", version = "main" },
 	{ src = "https://github.com/nvzone/volt", version = "main" },
+	{ src = "https://github.com/stevearc/oil.nvim", version = "master" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },

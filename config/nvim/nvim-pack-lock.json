@@ -137,6 +137,11 @@
       "src": "https://github.com/obsidian-nvim/obsidian.nvim",
       "version": ">=0.0.0"
     },
+    "oil.nvim": {
+      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
+      "src": "https://github.com/stevearc/oil.nvim",
+      "version": "'master'"
+    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
@@ -179,11 +184,6 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim",
-      "version": "'main'"
-    },
-    "yazi.nvim": {
-      "rev": "daaff7dae62a48f167f5e887a2e4049e732568e7",
-      "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": "'main'"
     }
   }
