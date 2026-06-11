@@ -126,6 +126,11 @@ in {
     portalPackage = xdg-desktop-portal-hyprland;
   };
 
+  programs.sway = with pkgs; {
+    enable = true;
+    package = swayfx;
+  };
+
   # services.xserver.xkb = {
   #   layout = "latam";
   #   variant = "";
