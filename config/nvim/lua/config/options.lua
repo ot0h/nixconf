@@ -7,7 +7,7 @@ g.snacks_animate = false
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-
+o.shell = "fish"
 o.swapfile = true
 o.smartcase = true
 o.laststatus = 3

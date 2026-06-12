@@ -40,6 +40,25 @@ map("n", "_", ":lua MiniFiles.open()<CR>", "Abrir MiniFiles")
 
 map("n", "-", "<cmd>Oil<CR>", { desc = "Abir Oil", icon = "" })
 
+-- Terminal
+map("n", "<leader>ts", function()
+	vim.cmd("sp | terminal")
+	vim.schedule(function()
+		vim.cmd("startinsert")
+	end)
+end, { desc = "Abrir terminal en horizontal", icon = "" })
+map("n", "<leader>tv", function()
+	vim.cmd("vsp | terminal")
+	vim.schedule(function()
+		vim.cmd("startinsert")
+	end)
+end, { desc = "Abrir terminal en vertical", icon = "" })
+map("t", { "<Esc>", "<C-c>" }, [[<C-\><C-n>]], { desc = "Salir del modo terminal con Esc" })
+map("t", "<C-h>", [[<C-\><C-n><C-w>h]], { desc = "Mover a la ventana izquierda" })
+map("t", "<C-j>", [[<C-\><C-n><C-w>j]], { desc = "Mover a la ventana de abajo" })
+map("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Mover a la ventana de arriba" })
+map("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Mover a la ventana derecha" })
+
 -- -- Yazi
 -- map({ "n", "v" }, "-", ":Yazi <CR>", "Abrir Yazi")
 -- map("n", "<C-->", "Yazi cwd <CR>", "Abrir Yazi en Working Directory")
