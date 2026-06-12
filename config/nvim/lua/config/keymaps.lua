@@ -36,9 +36,9 @@ local function map(mode, lhs, rhs, desc_or_opts)
 end
 
 -- MiniFiles
-map("n", "_", ":lua MiniFiles.open()<CR>", "Abrir MiniFiles")
+map("n", "-", ":lua MiniFiles.open()<CR>", "Abrir MiniFiles")
 
-map("n", "-", "<cmd>Oil<CR>", { desc = "Abir Oil", icon = "" })
+map("n", "_", "<cmd>Oil<CR>", { desc = "Abir Oil", icon = "" })
 
 -- Terminal
 map("n", "<leader>ts", function()
