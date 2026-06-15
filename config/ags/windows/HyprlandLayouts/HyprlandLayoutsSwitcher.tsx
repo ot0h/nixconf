@@ -87,7 +87,7 @@ export default function HyprlandLayoutsSwitcher(
       isScrolling: false,
     },
     {
-      icon: "",
+      icon: "",
       label: "Scrolling",
       action: () => switchLayout("scrolling"),
       isScrolling: true,
@@ -198,7 +198,7 @@ export default function HyprlandLayoutsSwitcher(
                           $type="overlay"
                           class="scroll-dir-arrow"
                           label={scrollDir((d) =>
-                            d === "right" ? "  󰜴" : "  󰜮",
+                            d === "right" ? " 󰜴" : " 󰜮",
                           )}
                           halign={Gtk.Align.CENTER}
                           valign={Gtk.Align.CENTER}
