@@ -8,6 +8,7 @@ in {
   # Herramientas de desarrollo
   home.packages = with pkgs; [
     git
+    git-filter-repo
     lazygit
     gh
     gh-dash
