@@ -8,6 +8,7 @@
 in {
   home.packages = with pkgs;
     [
+      pixel-code
       iosevka
       monocraft
       victor-mono

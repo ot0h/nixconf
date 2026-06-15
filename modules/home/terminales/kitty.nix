@@ -8,7 +8,7 @@
       include /tmp/kitty-opacity.conf
     '';
     settings = {
-      font_family = "family=\"Monocraft\"";
+      font_family = "family=\"Pixel Code\"";
       italic_font = "auto";
       bold_italic_font = "auto";
       font_size = 9.0;
