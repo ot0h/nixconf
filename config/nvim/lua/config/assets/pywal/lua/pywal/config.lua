@@ -363,8 +363,73 @@ M.highlights_base = function(colors)
 		LualineInactive = { bg = "none" },
 
 		-- Markview
+		-- Paletas primarias (0 = base, 1-6 = acentos para headings/blockquotes)
+		MarkviewPalette0 = { fg = colors.foreground, bg = colors.background },
 		MarkviewPalette0Fg = { fg = colors.foreground },
 		MarkviewPalette0Bg = { bg = colors.background },
+		MarkviewPalette0Sign = { fg = colors.foreground, bg = colors.background },
+
+		MarkviewPalette1 = { fg = colors.color1, bg = colors.background },
+		MarkviewPalette1Fg = { fg = colors.color1 },
+		MarkviewPalette1Bg = { bg = colors.color1 },
+		MarkviewPalette1Sign = { fg = colors.color1, bg = colors.background },
+
+		MarkviewPalette2 = { fg = colors.color2, bg = colors.background },
+		MarkviewPalette2Fg = { fg = colors.color2 },
+		MarkviewPalette2Bg = { bg = colors.color2 },
+		MarkviewPalette2Sign = { fg = colors.color2, bg = colors.background },
+
+		MarkviewPalette3 = { fg = colors.color3, bg = colors.background },
+		MarkviewPalette3Fg = { fg = colors.color3 },
+		MarkviewPalette3Bg = { bg = colors.color3 },
+		MarkviewPalette3Sign = { fg = colors.color3, bg = colors.background },
+
+		MarkviewPalette4 = { fg = colors.color4, bg = colors.background },
+		MarkviewPalette4Fg = { fg = colors.color4 },
+		MarkviewPalette4Bg = { bg = colors.color4 },
+		MarkviewPalette4Sign = { fg = colors.color4, bg = colors.background },
+
+		MarkviewPalette5 = { fg = colors.color5, bg = colors.background },
+		MarkviewPalette5Fg = { fg = colors.color5 },
+		MarkviewPalette5Bg = { bg = colors.color5 },
+		MarkviewPalette5Sign = { fg = colors.color5, bg = colors.background },
+
+		MarkviewPalette6 = { fg = colors.color6, bg = colors.background },
+		MarkviewPalette6Fg = { fg = colors.color6 },
+		MarkviewPalette6Bg = { bg = colors.color6 },
+		MarkviewPalette6Sign = { fg = colors.color6, bg = colors.background },
+
+		-- Headings (brillantes: fondo claro con texto oscuro, como render-markdown)
+		MarkviewHeading1 = { fg = colors.color0, bg = colors.color7, bold = true },
+		MarkviewHeading2 = { fg = colors.color0, bg = colors.color6, bold = true },
+		MarkviewHeading3 = { fg = colors.color0, bg = colors.color5, bold = true },
+		MarkviewHeading4 = { fg = colors.color0, bg = colors.color4, bold = true },
+		MarkviewHeading5 = { fg = colors.color0, bg = colors.color3, bold = true },
+		MarkviewHeading6 = { fg = colors.color0, bg = colors.color2, bold = true },
+		MarkviewHeading1Sign = { fg = colors.color7, bg = colors.background },
+		MarkviewHeading2Sign = { fg = colors.color6, bg = colors.background },
+		MarkviewHeading3Sign = { fg = colors.color5, bg = colors.background },
+		MarkviewHeading4Sign = { fg = colors.color4, bg = colors.background },
+		MarkviewHeading5Sign = { fg = colors.color3, bg = colors.background },
+		MarkviewHeading6Sign = { fg = colors.color2, bg = colors.background },
+
+		-- Code blocks
+		MarkviewCode = { bg = colors.color8 },
+		MarkviewCodeInfo = { fg = colors.foreground },
+		MarkviewCodeFg = { fg = colors.foreground },
+		MarkviewInlineCode = { fg = colors.color6, bg = colors.color8 },
+
+		-- Gradientes (tablas, alternancia de colores, etc.)
+		MarkviewGradient0 = { fg = colors.color0 },
+		MarkviewGradient1 = { fg = colors.color1 },
+		MarkviewGradient2 = { fg = colors.color2 },
+		MarkviewGradient3 = { fg = colors.color3 },
+		MarkviewGradient4 = { fg = colors.color4 },
+		MarkviewGradient5 = { fg = colors.color5 },
+		MarkviewGradient6 = { fg = colors.color6 },
+		MarkviewGradient7 = { fg = colors.color7 },
+		MarkviewGradient8 = { fg = colors.color8 },
+		MarkviewGradient9 = { fg = colors.color9 },
 	}
 end
 return M
