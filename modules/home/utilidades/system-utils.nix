@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Utilidades varias
   home.packages = with pkgs; [
     # Sistema

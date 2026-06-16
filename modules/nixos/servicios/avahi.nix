@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Avahi (mDNS/DNS-SD)
   services.avahi = {
     enable = true;

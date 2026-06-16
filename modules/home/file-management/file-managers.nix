@@ -22,4 +22,3 @@
     poppler-utils
   ];
 }
-

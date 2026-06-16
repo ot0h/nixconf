@@ -1,4 +1,4 @@
-{ pkgs }: {
+{pkgs}: {
   list = with pkgs.tmuxPlugins; [
     vim-tmux-navigator
   ];

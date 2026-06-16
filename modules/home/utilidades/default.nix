@@ -6,4 +6,3 @@
     ./cli-utils.nix
   ];
 }
-
