@@ -2,7 +2,6 @@
   # Herramientas de sistema Linux
   home.packages = with pkgs; [
     # UI tools
-    nwg-look
     nix-init
     glib
     simple-scan

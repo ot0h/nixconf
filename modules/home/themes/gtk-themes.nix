@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    gruvbox-gtk-theme            # Alternativa disponible
-    gruvbox-plus-icons           # Alternativa disponible
-    nwg-look                     # Explorador visual de temas GTK
+    gruvbox-gtk-theme # Alternativa disponible
+    gruvbox-plus-icons # Alternativa disponible
   ];
 
   # -------------------------------------------------------------------
@@ -19,20 +18,20 @@
     # ---- Tema ----
     theme = {
       name = "Graphite-Dark-compact";
-      package = (pkgs.graphite-gtk-theme.override {
+      package = pkgs.graphite-gtk-theme.override {
         themeVariants = ["default"];
         colorVariants = ["dark"];
         sizeVariants = ["compact"];
         tweaks = ["black"];
-      });
+      };
     };
 
     # ---- Iconos ----
     iconTheme = {
       name = "Tela-circle-black-dark";
-      package = (pkgs.tela-circle-icon-theme.override {
+      package = pkgs.tela-circle-icon-theme.override {
         colorVariants = ["black"];
-      });
+      };
     };
 
     # ---- Cursor ----
@@ -44,8 +43,8 @@
 
     # ---- Fuente ----
     font = {
-      name = "IosevkaTermSlab Nerd Font";
-      size = 11;
+      name = "Pixel Code";
+      size = 10;
     };
 
     # ---- Config extra de GTK ----
