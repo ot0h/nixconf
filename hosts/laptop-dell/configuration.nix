@@ -106,7 +106,6 @@ in {
         default = [
           "gtk"
           "hyprland"
-          "sway"
         ];
         "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
       };
@@ -125,11 +124,6 @@ in {
     xwayland.enable = true;
     package = hyprland;
     portalPackage = xdg-desktop-portal-hyprland;
-  };
-
-  programs.sway = with pkgs; {
-    enable = true;
-    package = swayfx;
   };
 
   # services.xserver.xkb = {
