@@ -7,5 +7,6 @@
     hyprshot
     hyprpicker
     pywal16
+    hyprcursor
   ];
 }
