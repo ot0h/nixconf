@@ -1,12 +1,12 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "c87dda7c8e5c4437d0d270ea6b73afb683607706",
+      "rev": "304d2286752923e3b0eb1ddcb3d4002a69b855ad",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "b02ac65634bdb8af2dcc4eb6c807c060e1e15ae6",
+      "rev": "91774548bc358c02fcc327d33c9ac0d9830c8c47",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -78,7 +78,7 @@
       "version": "'main'"
     },
     "mini.icons": {
-      "rev": "284509648db084c5e40a31afa9abb9887c49e04a",
+      "rev": "ac38c983aed0a2bd32a65ca3e2348e12e58ca292",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.pairs": {
@@ -87,7 +87,7 @@
       "version": "'main'"
     },
     "mini.surround": {
-      "rev": "9fd5ebef2b34cc4ac3c0f1811a6726ea6d92fa91",
+      "rev": "d401c3856585473693e5ce9ec4c8e5b608b4c0fe",
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
@@ -147,7 +147,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "roslyn.nvim": {
-      "rev": "9c5da79216e5776e020dcc6c157983f5352f3f11",
+      "rev": "c4ef25973bcc30a2c8c8766711fbbdb3d02b70a3",
       "src": "https://github.com/seblyng/roslyn.nvim",
       "version": "'main'"
     },
@@ -157,7 +157,7 @@
       "version": "'main'"
     },
     "smart-splits.nvim": {
-      "rev": "6806149fd36d1c5e797debe3e18b2c07219b685a",
+      "rev": "2aad9808f289f5d65cfa77840a04b8590e5e34e9",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
