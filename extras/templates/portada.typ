@@ -9,7 +9,7 @@
   grupal: false,
   size: 12pt,
   grupo: none,
-  font: "Iosevka",
+  font: "Pixel Code",
 ) = {
   set page(fill: rgb("#FFF"), margin: (rest: 1.0in), "us-letter")
   set text(font: font, size: size)

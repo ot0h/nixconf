@@ -414,7 +414,7 @@ M.highlights_base = function(colors)
 		MarkviewHeading6Sign = { fg = colors.color2, bg = colors.background },
 
 		-- Code blocks
-		MarkviewCode = { bg = colors.color8 },
+		MarkviewCode = { bg = colors.color8, fg = colors.color5 },
 		MarkviewCodeInfo = { fg = colors.foreground },
 		MarkviewCodeFg = { fg = colors.foreground },
 		MarkviewInlineCode = { fg = colors.color6, bg = colors.color8 },
