@@ -1,14 +1,14 @@
 {pkgs, ...}: let
   nerdFonts = with pkgs.nerd-fonts; [
     jetbrains-mono
-    # caskaydia-cove
-    # iosevka-term-slab
+    caskaydia-cove
+    iosevka-term-slab
   ];
 in {
   home.packages = with pkgs;
     [
       pixel-code
-      # iosevka
+      iosevka
       liberation_ttf
       noto-fonts
       noto-fonts-cjk-sans
