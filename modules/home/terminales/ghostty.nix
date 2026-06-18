@@ -11,9 +11,7 @@
       config-file = "~/.cache/wal/ghostty.conf";
 
       # Font Settings
-      font-family = "IosevkaTermSlab Nerd Font";
-      font-family-italic = "Victor Mono Italic";
-      font-feature = ["liga" "calt"];
+      font-family = "Pixel Code";
     };
   };
 }
