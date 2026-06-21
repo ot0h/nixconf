@@ -23,6 +23,10 @@ in {
   hour_format = "hour24";
   auto_update = false;
 
+  sessions = {
+    trust_all_worktrees = true;
+  };
+
   terminal = {
     alternate_scroll = "off";
     blinking = "off";
@@ -56,8 +60,8 @@ in {
 
   theme = {
     mode = "system";
-    light = "Gruvbox Dark Hard";
-    dark = "Gruvbox Dark Hard";
+    light = "Gruvbox Material";
+    dark = "Monosami Dark";
   };
 
   ui_font_family = font;

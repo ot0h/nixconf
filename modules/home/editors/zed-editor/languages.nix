@@ -32,13 +32,20 @@
     command = "prettier";
     arguments = ["--stdin-filepath" "{buffer_path}"];
   };
-  "CSS".format_on_save.external = {
-    command = "prettier";
-    arguments = ["--stdin-filepath" "{buffer_path}"];
+  "CSS" = {
+    language_servers = ["vscode-css-language-server" "tailwindcss-language-server"];
+    format_on_save.external = {
+      command = "prettier";
+      arguments = ["--stdin-filepath" "{buffer_path}"];
+    };
   };
-  "HTML".format_on_save.external = {
-    command = "prettier";
-    arguments = ["--stdin-filepath" "{buffer_path}"];
+  "SCSS".language_servers = ["vscode-css-language-server" "tailwindcss-language-server" "some-sass-language-server"];
+  "HTML" = {
+    language_servers = ["superhtml"];
+    format_on_save.external = {
+      command = "prettier";
+      arguments = ["--stdin-filepath" "{buffer_path}"];
+    };
   };
   "Nix".format_on_save.external = {
     command = "alejandra";

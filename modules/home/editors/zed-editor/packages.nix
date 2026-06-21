@@ -62,9 +62,11 @@
     roslyn-ls
     dotnet-sdk_8
 
-    # HTML / CSS / Emmet
+    # HTML / CSS / Tailwind / Emmet
     emmet-language-server
     vscode-langservers-extracted
+    tailwindcss-language-server
+    superhtml
 
     # Bash
     bash-language-server

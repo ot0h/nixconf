@@ -210,14 +210,6 @@
     };
   };
 
-  # ── HTML ─────────────────────────────────────────────────────────
-  vscode-html-language-server = {
-    binary.path_lookup = true;
-    settings = {
-      html.suggest.html5 = true;
-    };
-  };
-
   # ── CSS / SCSS ───────────────────────────────────────────────────
   vscode-css-language-server = {
     binary.path_lookup = true;
@@ -238,6 +230,18 @@
       };
       less.validate = true;
     };
+  };
+
+  # ── Tailwind CSS ───────────────────────────────────────────────────
+  tailwindcss-language-server.binary.path_lookup = true;
+
+  # ── Some Sass (SCSS/Sass) ─────────────────────────────────────────
+  some-sass-language-server.binary.path_lookup = true;
+
+  # ── SuperHTML (validación, formato, hover) ─────────────────────────
+  superhtml.binary = {
+    path_lookup = true;
+    arguments = [ "lsp" ];
   };
 
   # ── Emmet ────────────────────────────────────────────────────────

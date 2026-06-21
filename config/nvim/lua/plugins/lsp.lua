@@ -231,13 +231,7 @@ do
 			"node_modules/@angular/language-server",
 		},
 
-		filetypes = { "typescript", "html" },
-
-		-- Si ngserver no está en PATH global, intentá con:
-		-- cmd = { "npx", "-p", "@angular/language-server", "ngserver", "--stdio",
-		--   "--tsProbeLocations", "node_modules",
-		--   "--ngProbeLocations", "node_modules/@angular/language-server",
-		-- },
+		filetypes = { "typescript", "html", "htmlangular" },
 
 		root_dir = function(bufnr, on_dir)
 			local fname = vim.api.nvim_buf_get_name(bufnr)
@@ -438,34 +432,19 @@ do
 	})
 	vim.lsp.enable("tinymist")
 
-	-- LSP para HTML
-	vim.lsp.config("html", {
-		cmd = { "vscode-html-language-server", "--stdio" },
-		filetypes = { "html", "templ" },
+	-- LSP para HTML con SuperHTML (validación, formato, hover)
+	vim.lsp.config("superhtml", {
+		cmd = { "superhtml", "lsp" },
+		filetypes = { "html", "shtml", "htm" },
 		capabilities = capabilities,
 		on_attach = on_attach,
-		settings = {
-			html = {
-				suggest = {
-					html5 = true,
-				},
-			},
-		},
-		init_options = {
-			provideFormatter = true,
-			embeddedLanguages = {
-				css = true,
-				javascript = true,
-			},
-			configurationSection = { "html", "css", "javascript" },
-		},
 	})
-	vim.lsp.enable("html")
+	vim.lsp.enable("superhtml")
 
-	-- LSP para CSS/SCSS
+	-- LSP para CSS/SCSS (solo CSS y LESS, SCSS lo toma somesass_ls)
 	vim.lsp.config("cssls", {
 		cmd = { "vscode-css-language-server", "--stdio" },
-		filetypes = { "css", "scss", "less" },
+		filetypes = { "css", "less" },
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
@@ -489,6 +468,30 @@ do
 		},
 	})
 	vim.lsp.enable("cssls")
+
+	-- LSP para Tailwind CSS (clases, @apply, hover)
+	vim.lsp.config("tailwindcss", {
+		cmd = { "tailwindcss-language-server", "--stdio" },
+		filetypes = { "css", "scss", "sass", "html", "javascript", "typescript", "typescriptreact", "javascriptreact" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {},
+	})
+	vim.lsp.enable("tailwindcss")
+
+	-- LSP para Sass/SCSS (some-sass-language-server)
+	vim.lsp.config("somesass_ls", {
+		cmd = { "some-sass-language-server", "--stdio" },
+		filetypes = { "scss", "sass" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			somesass = {
+				suggestAllFromOpenDocument = true,
+			},
+		},
+	})
+	vim.lsp.enable("somesass_ls")
 
 	-- LSP para JSON
 	vim.lsp.config("jsonls", {
@@ -650,7 +653,7 @@ do
 			typescriptreact = { "prettier" },
 			lua = { "stylua" },
 			nix = { "alejandra" },
-			html = { "prettier" },
+			html = { "html" },
 			css = { "prettier" },
 			scss = { "prettier" },
 			json = { "prettier" },

@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: let
   llmAgents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
@@ -38,9 +39,36 @@ in {
     # Typst
     typst
 
+    # Tailwind CSS LSP
+    tailwindcss-language-server
+
+    # SuperHTML LSP
+    superhtml
+
     #Cosas de IA
     llmAgents.opencode
     qwen-code
     (callPackage ./engram.nix {})
   ];
+
+  # Instalar herramientas globales que no están en nixpkgs
+  home.activation.installExtraTools = let
+    bun = "${pkgs.bun}/bin/bun";
+  in
+    lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+      # some-sass-language-server
+      if ! command -v some-sass-language-server &> /dev/null; then
+        ${bun} i -g some-sass-language-server
+      fi
+
+      # Angular CLI
+      if ! command -v ng &> /dev/null; then
+        ${bun} i -g @angular/cli
+      fi
+
+      # NestJS CLI
+      if ! command -v nest &> /dev/null; then
+        ${bun} i -g @nestjs/cli
+      fi
+    '';
 }

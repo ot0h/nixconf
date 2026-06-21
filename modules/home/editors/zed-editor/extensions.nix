@@ -11,4 +11,5 @@
   "c#"
   "typst"
   "scss & sass"
+  "Monosami Theme"
 ]
