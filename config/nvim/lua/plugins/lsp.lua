@@ -34,6 +34,9 @@ do
 			["<C-y>"] = { "select_and_accept", "fallback" },
 			["<Tab>"] = { "select_and_accept", "fallback" },
 
+			["<C-d>"] = { "scroll_documentation_down" },
+			["<C-u>"] = { "scroll_documentation_up" },
+
 			["<C-space>"] = {
 				function(cmp)
 					cmp.show({ providers = { "snippets" } })
