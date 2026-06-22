@@ -61,7 +61,6 @@
 
     # Extras
     emmet-language-server
-    vscode-langservers-extracted
 
     #AI
     lsof

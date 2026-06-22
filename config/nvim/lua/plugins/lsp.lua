@@ -432,14 +432,29 @@ do
 	})
 	vim.lsp.enable("tinymist")
 
-	-- LSP para HTML con SuperHTML (validación, formato, hover)
-	vim.lsp.config("superhtml", {
-		cmd = { "superhtml", "lsp" },
-		filetypes = { "html", "shtml", "htm" },
+	-- LSP para HTML
+	vim.lsp.config("html", {
+		cmd = { "vscode-html-language-server", "--stdio" },
+		filetypes = { "html", "templ" },
 		capabilities = capabilities,
 		on_attach = on_attach,
+		settings = {
+			html = {
+				suggest = {
+					html5 = true,
+				},
+			},
+		},
+		init_options = {
+			provideFormatter = true,
+			embeddedLanguages = {
+				css = true,
+				javascript = true,
+			},
+			configurationSection = { "html", "css", "javascript" },
+		},
 	})
-	vim.lsp.enable("superhtml")
+	vim.lsp.enable("html")
 
 	-- LSP para CSS/SCSS (solo CSS y LESS, SCSS lo toma somesass_ls)
 	vim.lsp.config("cssls", {
@@ -653,7 +668,7 @@ do
 			typescriptreact = { "prettier" },
 			lua = { "stylua" },
 			nix = { "alejandra" },
-			html = { "html" },
+			html = { "prettier" },
 			css = { "prettier" },
 			scss = { "prettier" },
 			json = { "prettier" },

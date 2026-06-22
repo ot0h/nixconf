@@ -39,12 +39,6 @@ in {
     # Typst
     typst
 
-    # Tailwind CSS LSP
-    tailwindcss-language-server
-
-    # SuperHTML LSP
-    superhtml
-
     #Cosas de IA
     llmAgents.opencode
     qwen-code
@@ -55,7 +49,7 @@ in {
   home.activation.installExtraTools = let
     bun = "${pkgs.bun}/bin/bun";
   in
-    lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    lib.hm.dag.entryAfter ["linkGeneration"] ''
       # some-sass-language-server
       if ! command -v some-sass-language-server &> /dev/null; then
         ${bun} i -g some-sass-language-server
@@ -69,6 +63,10 @@ in {
       # NestJS CLI
       if ! command -v nest &> /dev/null; then
         ${bun} i -g @nestjs/cli
+      fi
+
+      if ! command -v vscode-langservers-extracted &> /dev/null; then
+        ${bun} i -g vscode-langservers-extracted
       fi
     '';
 }
