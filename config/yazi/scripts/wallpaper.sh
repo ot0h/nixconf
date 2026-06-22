@@ -38,6 +38,7 @@ declare -A THEME_MAP=(
     ["7.png"]="shadow"
     ["4.jpg"]="monochrome"
     ["12.png"]="monochrome"
+    ["13.jpg"]="monochrome"
     ["5.png"]="monochrome"
 )
 
