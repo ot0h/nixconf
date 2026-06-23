@@ -34,7 +34,7 @@ in {
   networking.firewall = {
     enable = true;
 
-    allowedTCPPorts = [22 80 2222 1865 3289 8022];
+    allowedTCPPorts = [22 80 2222 1865 3289 8022 8081];
   };
 
   zramSwap.enable = true;
