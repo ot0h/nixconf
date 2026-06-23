@@ -70,6 +70,10 @@
     fish-lsp
     bash-language-server
     shfmt
+
+    # SQL
+    sqls
+    sql-formatter
   ];
 
   linuxBins =

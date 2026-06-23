@@ -25,6 +25,8 @@ in {
     # Notas
     obsidian
 
+    nest-cli
+
     # Utilidades
     jq
     procps
@@ -58,11 +60,6 @@ in {
       # Angular CLI
       if ! command -v ng &> /dev/null; then
         ${bun} i -g @angular/cli
-      fi
-
-      # NestJS CLI
-      if ! command -v nest &> /dev/null; then
-        ${bun} i -g @nestjs/cli
       fi
 
       if ! command -v vscode-langservers-extracted &> /dev/null; then

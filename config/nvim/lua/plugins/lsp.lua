@@ -658,6 +658,26 @@ do
 		},
 	})
 	vim.lsp.enable("roslyn")
+
+	-- LSP para SQL (sqls)
+	vim.lsp.config("sqls", {
+		cmd = { "sqls" },
+		filetypes = { "sql" },
+		root_markers = { ".sqls.yml", ".git" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			sqls = {
+				connections = {
+					{
+						driver = "postgresql",
+						dataSourceName = "host=127.0.0.1 port=5432 user=postgres password=pass dbname=mydb sslmode=disable",
+					},
+				},
+			},
+		},
+	})
+	vim.lsp.enable("sqls")
 end
 
 do
@@ -681,6 +701,7 @@ do
 			bash = { "shfmt" },
 			fish = { "fish_indent" },
 			cs = { "csharpier" },
+			sql = { "sqlfmt" },
 		},
 		format_on_save = true,
 	})
