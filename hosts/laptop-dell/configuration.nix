@@ -197,6 +197,16 @@ in {
     };
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      openssl
+      zlib
+      stdenv.cc.cc.lib
+      glib
+    ];
+  };
+
   # Los paquetes de usuario ahora están en home.nix
 
   services.openssh = {
