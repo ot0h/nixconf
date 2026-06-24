@@ -35,6 +35,9 @@ in {
     fastfetch
     delta
 
+    lazydocker
+    docker
+
     # Cloud
     google-drive-ocamlfuse
 
