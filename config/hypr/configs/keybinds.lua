@@ -125,6 +125,8 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("ags request toggle PowerMenu
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " --title=clipse -e clipse"))
 
+hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
+
 hl.bind(
 	mainMod .. " + W",
 	hl.dsp.exec_cmd("ags request toggle-all ClockW Sidebar Marco-margen-arriba Marco-margen-abajo Marco-margen-derecho")
