@@ -11,10 +11,11 @@
   keybindings = import ./keybindings.nix;
 in {
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     extensions = extensions;
     extraPackages = packages;
-    userSettings = settings
+    userSettings =
+      settings
       // {
         lsp = lsp;
         languages = languages;
