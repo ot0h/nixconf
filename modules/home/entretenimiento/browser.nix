@@ -7,6 +7,6 @@
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
 
     # firefox
-    # (pkgs.callPackage ./helium.nix {})
+    (pkgs.callPackage ./helium.nix {})
   ];
 }
