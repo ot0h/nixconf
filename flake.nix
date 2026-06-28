@@ -33,6 +33,10 @@
       url = "github:Gentleman-Programming/Gentleman.Dots/nix-migration";
       flake = false;
     };
+    curd = {
+      url = "github:Wraient/curd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:

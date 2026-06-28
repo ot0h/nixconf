@@ -58,7 +58,7 @@ hl.window_rule({
 	size = "(monitor_w*0.8) (monitor_h*0.9)",
 })
 
-hl.window_rule({ name = "windowrule-7", match = { class = "^(Spotify)$" }, opacity = "0.85 0.85" })
+-- hl.window_rule({ name = "windowrule-7", match = { class = "^(Spotify)$" }, opacity = "0.85 0.85" })
 
 -- Authentication dialog
 hl.window_rule({
