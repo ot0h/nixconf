@@ -189,7 +189,7 @@ in {
   programs.git = {
     enable = true;
     config = {
-      user.name = "numbpi";
+      user.name = "typsit";
       user.email = "rimv715@gmail.com";
       init.defaultBranch = "main";
       pull.rebase = true;
