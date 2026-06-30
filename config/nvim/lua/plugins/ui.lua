@@ -237,6 +237,20 @@ require("snacks").setup({
 					},
 				},
 			},
+			grep = {
+				layout = "ivy_split",
+				regex = true,
+			},
+			buffers = {
+				finder = "buffers",
+				format = "buffer",
+				current = true,
+				sort_lastused = true,
+				layout = "ivy",
+			},
+			git_branches = {
+				layout = "select",
+			},
 		},
 	},
 	quickfile = { enabled = true },
