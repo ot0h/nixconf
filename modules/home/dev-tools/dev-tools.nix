@@ -59,16 +59,16 @@ in {
     lib.hm.dag.entryAfter ["linkGeneration"] ''
       # some-sass-language-server
       if ! command -v some-sass-language-server &> /dev/null; then
-        ${bun} i -g some-sass-language-server
+        ${bun} i -g some-sass-language-server || true
       fi
 
       # Angular CLI
       if ! command -v ng &> /dev/null; then
-        ${bun} i -g @angular/cli
+        ${bun} i -g @angular/cli || true
       fi
 
       if ! command -v vscode-langservers-extracted &> /dev/null; then
-        ${bun} i -g vscode-langservers-extracted
+        ${bun} i -g vscode-langservers-extracted || true
       fi
     '';
 }
