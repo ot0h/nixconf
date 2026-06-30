@@ -1,6 +1,6 @@
 # ❄️ nixconf
 
-Configuración personal de NixOS — [@numbpi](https://github.com/numbpi)
+Configuración personal de NixOS — [@qisvo](https://github.com/qisvo)
 
 > NixOS + Home Manager + Hyprland + AGS + Depresion xd
 
@@ -75,7 +75,7 @@ nixconf/
 
 ```bash
 # Clonar
-git clone https://github.com/numbpi/nixconf.git ~/nixconf
+git clone https://github.com/qisvo/nixconf.git ~/nixconf
 cd ~/nixconf
 
 # Compilar y activar

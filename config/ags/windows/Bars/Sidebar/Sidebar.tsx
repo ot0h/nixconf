@@ -11,7 +11,7 @@ import Volume from "./components/Volume"
 
 /**
  * Un Sidebar re insano papá
- * @author numbpi
+ * @author qisvo
  */
 export default function Sidebar(gdkmonitor: Gdk.Monitor, index: number = 0) {
   const { TOP, LEFT, BOTTOM } = Astal.WindowAnchor

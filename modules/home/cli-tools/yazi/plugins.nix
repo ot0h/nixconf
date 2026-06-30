@@ -8,7 +8,7 @@
   # por un cambio en la API de Yazi. Propio Fork
   bookmarks-yazi = pkgs.yaziPlugins.bookmarks.overrideAttrs (old: {
     src = pkgs.fetchFromGitHub {
-      owner = "numbpi";
+      owner = "qisvo";
       repo = "bookmarks.yazi";
       rev = "f0fb5ecd355bf76a4db356a54cc3c7f13be03cc0";
       hash = "sha256-NW4YliNg0z3WkfxWWun8VPxqdojrJ8RS8vPEXTm2ly4=";
