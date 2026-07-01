@@ -37,6 +37,7 @@
       url = "github:Wraient/curd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    shojiwm.url = "github:bea4dev/ShojiWM";
   };
 
   outputs = inputs @ {flake-parts, ...}:
