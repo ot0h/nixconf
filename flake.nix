@@ -29,10 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     llm-agents.url = "github:numtide/llm-agents.nix";
-    gentleman-dots = {
-      url = "github:Gentleman-Programming/Gentleman.Dots/nix-migration";
-      flake = false;
-    };
     curd = {
       url = "github:Wraient/curd";
       inputs.nixpkgs.follows = "nixpkgs";

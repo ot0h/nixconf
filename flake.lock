@@ -240,23 +240,6 @@
         "type": "github"
       }
     },
-    "gentleman-dots": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782775948,
-        "narHash": "sha256-+qOrJyMzlfm7OqmUdxB+/zZ09qF/vV2JTfcaoj5I0EE=",
-        "owner": "Gentleman-Programming",
-        "repo": "Gentleman.Dots",
-        "rev": "91ce9f1043322140e71defcb0180366fd7daedcc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gentleman-Programming",
-        "ref": "nix-migration",
-        "repo": "Gentleman.Dots",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -429,7 +412,6 @@
         "curd": "curd",
         "flake-parts": "flake-parts",
         "gazelle": "gazelle",
-        "gentleman-dots": "gentleman-dots",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
