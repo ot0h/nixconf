@@ -4,5 +4,8 @@
     ./yazi
   ];
 
-  home.packages = with pkgs; [zellij];
+  home.packages = with pkgs; [
+    zellij
+    herdr
+  ];
 }
