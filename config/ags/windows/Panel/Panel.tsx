@@ -1,8 +1,8 @@
-import { Astal, Gdk, Gtk } from "ags/gtk4"
-import app from "ags/gtk4/app"
-import Control from "./components/Control"
-import MediaPlayer from "./components/MediaPlayer"
-import Calendar from "./components/Calendar"
+import { Astal, Gdk, Gtk } from 'ags/gtk4'
+import app from 'ags/gtk4/app'
+import Control from './components/Control'
+import MediaPlayer from './components/MediaPlayer'
+import Calendar from './components/Calendar'
 
 export default function Panel(gdkmonitor: Gdk.Monitor, index: number = 0) {
   const { TOP, RIGHT } = Astal.WindowAnchor

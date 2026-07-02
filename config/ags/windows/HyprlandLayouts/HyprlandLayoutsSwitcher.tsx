@@ -1,11 +1,11 @@
-import { Astal, Gtk, Gdk } from "ags/gtk4"
-import app from "ags/gtk4/app"
-import { execAsync } from "ags/process"
-import { createState } from "ags"
+import { Astal, Gtk, Gdk } from 'ags/gtk4'
+import app from 'ags/gtk4/app'
+import { execAsync } from 'ags/process'
+import { createState } from 'ags'
 
 const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor
 
-type ScrollDir = "right" | "down"
+type ScrollDir = 'right' | 'down'
 
 export default function HyprlandLayoutsSwitcher(
   gdkmonitor: Gdk.Monitor,
@@ -13,9 +13,9 @@ export default function HyprlandLayoutsSwitcher(
 ) {
   let win: Astal.Window
 
-  const [scrollDir, setScrollDir] = createState<ScrollDir>("right")
+  const [scrollDir, setScrollDir] = createState<ScrollDir>('right')
   const toggleScrollDir = () =>
-    setScrollDir((d) => (d === "right" ? "down" : "right"))
+    setScrollDir((d) => (d === 'right' ? 'down' : 'right'))
 
   const getActiveWorkspace = async (): Promise<{
     id: number
@@ -23,14 +23,14 @@ export default function HyprlandLayoutsSwitcher(
   }> => {
     try {
       const specialRaw = await execAsync([
-        "hyprctl",
-        "-j",
-        "activespecialworkspace",
+        'hyprctl',
+        '-j',
+        'activespecialworkspace',
       ])
       if (
         specialRaw &&
-        specialRaw.trim() !== "" &&
-        specialRaw.trim() !== "{}"
+        specialRaw.trim() !== '' &&
+        specialRaw.trim() !== '{}'
       ) {
         const special = JSON.parse(specialRaw)
         if (special && special.id && special.id !== 0) {
@@ -41,7 +41,7 @@ export default function HyprlandLayoutsSwitcher(
       // no special workspace activo, ignorar
     }
 
-    const normalRaw = await execAsync(["hyprctl", "-j", "activeworkspace"])
+    const normalRaw = await execAsync(['hyprctl', '-j', 'activeworkspace'])
     return JSON.parse(normalRaw)
   }
 
@@ -51,51 +51,51 @@ export default function HyprlandLayoutsSwitcher(
       const ws = await getActiveWorkspace()
 
       const rule =
-        layout === "scrolling"
+        layout === 'scrolling'
           ? `hl.workspace_rule({ workspace = "${ws.id}", layout = "scrolling", layout_opts = { direction = "${scrollDir.get()}" } })`
           : `hl.workspace_rule({ workspace = "${ws.id}", layout = "${layout}" })`
 
-      await execAsync(["hyprctl", "eval", rule])
+      await execAsync(['hyprctl', 'eval', rule])
 
       await execAsync([
-        "notify-send",
-        "-u",
-        "normal",
-        "-i",
-        "dialog-information",
-        "-a",
-        "AGS",
-        `Layout: ${layout}${layout === "scrolling" ? ` (${scrollDir.get()})` : ""}`,
+        'notify-send',
+        '-u',
+        'normal',
+        '-i',
+        'dialog-information',
+        '-a',
+        'AGS',
+        `Layout: ${layout}${layout === 'scrolling' ? ` (${scrollDir.get()})` : ''}`,
         `Workspace: ${ws.name ?? ws.id}`,
       ])
     } catch (e) {
-      execAsync(["notify-send", "-u", "critical", "Error layout", String(e)])
+      execAsync(['notify-send', '-u', 'critical', 'Error layout', String(e)])
     }
   }
 
   const layouts = [
     {
-      icon: "󰕴",
-      label: "Dwindle",
-      action: () => switchLayout("dwindle"),
+      icon: '󰕴',
+      label: 'Dwindle',
+      action: () => switchLayout('dwindle'),
       isScrolling: false,
     },
     {
-      icon: "󰖯",
-      label: "Master",
-      action: () => switchLayout("master"),
+      icon: '󰖯',
+      label: 'Master',
+      action: () => switchLayout('master'),
       isScrolling: false,
     },
     {
-      icon: "",
-      label: "Scrolling",
-      action: () => switchLayout("scrolling"),
+      icon: '',
+      label: 'Scrolling',
+      action: () => switchLayout('scrolling'),
       isScrolling: true,
     },
     {
-      icon: "󱂬",
-      label: "Monocle",
-      action: () => switchLayout("monocle"),
+      icon: '󱂬',
+      label: 'Monocle',
+      action: () => switchLayout('monocle'),
       isScrolling: false,
     },
   ]
@@ -175,7 +175,7 @@ export default function HyprlandLayoutsSwitcher(
                   }}
                   onClicked={action}
                   halign={Gtk.Align.CENTER}
-                  cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                  cursor={Gdk.Cursor.new_from_name('pointer', null)}
                 >
                   <Gtk.EventControllerMotion onEnter={() => focus(i)} />
                   <box
@@ -198,7 +198,7 @@ export default function HyprlandLayoutsSwitcher(
                           $type="overlay"
                           class="scroll-dir-arrow"
                           label={scrollDir((d) =>
-                            d === "right" ? " 󰜴" : " 󰜮",
+                            d === 'right' ? ' 󰜴' : ' 󰜮',
                           )}
                           halign={Gtk.Align.CENTER}
                           valign={Gtk.Align.CENTER}

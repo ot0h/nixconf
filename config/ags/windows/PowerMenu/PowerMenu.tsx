@@ -1,7 +1,7 @@
-import { Gtk, Gdk } from "ags/gtk4"
-import { execAsync } from "ags/process"
-import Astal from "gi://Astal?version=4.0"
-import app from "ags/gtk4/app"
+import { Gtk, Gdk } from 'ags/gtk4'
+import { execAsync } from 'ags/process'
+import Astal from 'gi://Astal?version=4.0'
+import app from 'ags/gtk4/app'
 
 export default function PowerMenu(gdkmonitor: Gdk.Monitor, index: number = 0) {
   let buttonRefs: Gtk.Button[] = []
@@ -9,27 +9,27 @@ export default function PowerMenu(gdkmonitor: Gdk.Monitor, index: number = 0) {
 
   const botones = [
     {
-      icon: "󰐥",
-      action: () => execAsync("systemctl poweroff").catch(console.log),
+      icon: '󰐥',
+      action: () => execAsync('systemctl poweroff').catch(console.log),
     },
     {
-      icon: "󰜉",
-      action: () => execAsync("systemctl reboot").catch(console.log),
+      icon: '󰜉',
+      action: () => execAsync('systemctl reboot').catch(console.log),
     },
     {
-      icon: "󰌾",
-      action: () => execAsync("hyprlock").catch(console.log),
+      icon: '󰌾',
+      action: () => execAsync('hyprlock').catch(console.log),
     },
     {
-      icon: "󰍃",
+      icon: '󰍃',
       action: () => {
-        execAsync("hyprctl dispatch exit").catch(console.log)
-        execAsync("pkill ags").catch(console.log)
+        execAsync('hyprctl dispatch exit').catch(console.log)
+        execAsync('pkill ags').catch(console.log)
       },
     },
     {
-      icon: "󰤄",
-      action: () => execAsync("systemctl suspend").catch(console.log),
+      icon: '󰤄',
+      action: () => execAsync('systemctl suspend').catch(console.log),
     },
   ]
 
@@ -94,7 +94,7 @@ export default function PowerMenu(gdkmonitor: Gdk.Monitor, index: number = 0) {
           >
             {botones.map(({ icon, action }, i) => (
               <button
-                cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                cursor={Gdk.Cursor.new_from_name('pointer', null)}
                 $={(self) => {
                   buttonRefs[i] = self
                   if (i === middleIndex) self.grab_focus()

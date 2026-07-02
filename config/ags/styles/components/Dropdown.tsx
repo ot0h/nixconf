@@ -1,5 +1,5 @@
-import { Accessor, createState, State, With } from "ags"
-import { Gtk } from "ags/gtk4"
+import { Accessor, createState, State, With } from 'ags'
+import { Gtk } from 'ags/gtk4'
 
 type DropdownHeaderProps = {
   name: string | Accessor<string>

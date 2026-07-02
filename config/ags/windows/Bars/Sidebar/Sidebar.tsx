@@ -1,13 +1,13 @@
-import app from "ags/gtk4/app"
-import { Astal, Gdk, Gtk } from "ags/gtk4"
-import Workspaces from "./components/Workspaces"
-import Clock from "./components/Clock"
-import Battery from "./components/Battery"
-import Monitor from "./components/Monitor"
-import Network from "./components/Network"
-import Submap from "./components/Submap"
-import PowerMenuMini from "./components/PowerMenuMini"
-import Volume from "./components/Volume"
+import app from 'ags/gtk4/app'
+import { Astal, Gdk, Gtk } from 'ags/gtk4'
+import Workspaces from './components/Workspaces'
+import Clock from './components/Clock'
+import Battery from './components/Battery'
+import Monitor from './components/Monitor'
+import Network from './components/Network'
+import Submap from './components/Submap'
+import PowerMenuMini from './components/PowerMenuMini'
+import Volume from './components/Volume'
 
 /**
  * Un Sidebar re insano papá

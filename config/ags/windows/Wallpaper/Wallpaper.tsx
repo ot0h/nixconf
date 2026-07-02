@@ -1,23 +1,23 @@
-import app from "ags/gtk4/app"
-import { Astal, Gdk, Gtk } from "ags/gtk4"
-import GLib from "gi://GLib"
-import { execAsync } from "ags/process"
-import { createState, createComputed, For } from "gnim"
+import app from 'ags/gtk4/app'
+import { Astal, Gdk, Gtk } from 'ags/gtk4'
+import GLib from 'gi://GLib'
+import { execAsync } from 'ags/process'
+import { createState, createComputed, For } from 'gnim'
 
 const WALLPAPER_DIR = `${GLib.get_home_dir()}/Pictures/Wallpapers`
 const WALLPAPER_SCRIPT = `${GLib.get_home_dir()}/scripts/wallpaper.sh`
 
-const VALID_EXTS = [".jpg", ".jpeg", ".png"]
+const VALID_EXTS = ['.jpg', '.jpeg', '.png']
 const MAX_COLS = 6
 
 async function loadWallpapers(): Promise<string[]> {
   try {
     const out = await execAsync([
-      "bash",
-      "-c",
+      'bash',
+      '-c',
       `ls -1 ${WALLPAPER_DIR} 2>/dev/null`,
     ])
-    const all = out.trim().split("\n").filter(Boolean)
+    const all = out.trim().split('\n').filter(Boolean)
     const images = all.filter((f) =>
       VALID_EXTS.some((ext) => f.toLowerCase().endsWith(ext)),
     )
@@ -41,7 +41,7 @@ export default function WallpaperPicker(
   const centerY = Math.floor((geo.height - winH) / 2)
 
   const [walls, setWalls] = createState<string[]>([])
-  const [current, setCurrent] = createState<string>("")
+  const [current, setCurrent] = createState<string>('')
   const [selectedIdx, setSelectedIdx] = createState<number>(0)
   const [mouseActive, setMouseActive] = createState<boolean>(false)
 
@@ -50,7 +50,7 @@ export default function WallpaperPicker(
   let btnRefs: Gtk.Button[] = []
   let flowBox: Gtk.FlowBox | null = null
   let cursorHidden = false
-  const noneCursor = Gdk.Cursor.new_from_name("none", null)
+  const noneCursor = Gdk.Cursor.new_from_name('none', null)
 
   function showCursor() {
     if (cursorHidden) {
@@ -100,7 +100,7 @@ export default function WallpaperPicker(
     }
   }
 
-  execAsync(["bash", "-c", `cat ${GLib.get_home_dir()}/.wallpaper`])
+  execAsync(['bash', '-c', `cat ${GLib.get_home_dir()}/.wallpaper`])
     .then((w) => setCurrent(w.trim()))
     .catch(() => {})
 
@@ -117,7 +117,7 @@ export default function WallpaperPicker(
   const n = () => walls().length
   const cols = () => Math.min(n(), getCols())
   const rootClass = createComputed(
-    () => `wp-root${!mouseActive() ? " keyboard-focus" : ""}`,
+    () => `wp-root${!mouseActive() ? ' keyboard-focus' : ''}`,
   )
 
   function focus(dx: number, dy: number) {
@@ -142,9 +142,9 @@ export default function WallpaperPicker(
     if (!path) return
     setCurrent(path)
     self_win()!.visible = false
-    execAsync(["bash", WALLPAPER_SCRIPT, path])
+    execAsync(['bash', WALLPAPER_SCRIPT, path])
       .then(() => {
-        execAsync(["bash", "-c", "hyprctl reload"]).catch(console.error)
+        execAsync(['bash', '-c', 'hyprctl reload']).catch(console.error)
       })
       .catch(console.error)
   }
@@ -224,7 +224,7 @@ export default function WallpaperPicker(
           />
           <button
             class="wp-close"
-            cursor={Gdk.Cursor.new_from_name("pointer", null)}
+            cursor={Gdk.Cursor.new_from_name('pointer', null)}
             onClicked={() => (self_win()!.visible = false)}
           >
             <label label="" />
@@ -253,13 +253,13 @@ export default function WallpaperPicker(
               {(path, idx) => {
                 const btnClass = createComputed(
                   () =>
-                    `wp-thumb${current() === path ? " active" : ""}${!mouseActive() && selectedIdx() === idx() ? " focused" : ""}`,
+                    `wp-thumb${current() === path ? ' active' : ''}${!mouseActive() && selectedIdx() === idx() ? ' focused' : ''}`,
                 )
                 return (
                   <Gtk.FlowBoxChild class="wp-child">
                     <button
                       class={btnClass}
-                      cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                      cursor={Gdk.Cursor.new_from_name('pointer', null)}
                       $={(self) => {
                         btnRefs[idx()] = self
                       }}

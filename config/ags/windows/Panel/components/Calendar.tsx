@@ -1,20 +1,20 @@
-import { Gtk } from "ags/gtk4"
-import { createState, createComputed } from "gnim"
+import { Gtk } from 'ags/gtk4'
+import { createState, createComputed } from 'gnim'
 
 export default function Calendar() {
   const months = [
-    "enero",
-    "febrero",
-    "marzo",
-    "abril",
-    "mayo",
-    "junio",
-    "julio",
-    "agosto",
-    "septiembre",
-    "octubre",
-    "noviembre",
-    "diciembre",
+    'enero',
+    'febrero',
+    'marzo',
+    'abril',
+    'mayo',
+    'junio',
+    'julio',
+    'agosto',
+    'septiembre',
+    'octubre',
+    'noviembre',
+    'diciembre',
   ]
 
   const today = new Date()
@@ -31,7 +31,7 @@ export default function Calendar() {
   const cal = new Gtk.Calendar()
   cal.mark_day(today.getDate())
 
-  cal.connect("day-selected", () => {
+  cal.connect('day-selected', () => {
     const d = cal.get_date()
     cal.clear_marks()
     cal.mark_day(d.get_day_of_month())

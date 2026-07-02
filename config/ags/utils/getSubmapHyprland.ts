@@ -1,29 +1,29 @@
-import { createPoll } from "ags/time"
+import { createPoll } from 'ags/time'
 
 function iconFor(name: string): string {
   switch (name) {
-    case "resize":
-      return "󰩨 "
-    case "move":
-      return "󰆾 "
-    case "launch":
-      return "󱓞 "
-    case "zoom":
-      return " "
+    case 'resize':
+      return '󰩨 '
+    case 'move':
+      return '󰆾 '
+    case 'launch':
+      return '󱓞 '
+    case 'zoom':
+      return ' '
     default:
-      return " "
+      return ' '
   }
 }
 
 export const getSubmapHyprland = createPoll(
-  { raw: "default", icon: "" },
+  { raw: 'default', icon: '' },
   300,
-  "hyprctl submap",
+  'hyprctl submap',
   (out) => {
-    const raw = out.replace("submap:", "").trim()
+    const raw = out.replace('submap:', '').trim()
 
-    if (raw === "default") {
-      return { raw, icon: "" }
+    if (raw === 'default') {
+      return { raw, icon: '' }
     }
 
     return {

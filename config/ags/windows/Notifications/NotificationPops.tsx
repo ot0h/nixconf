@@ -1,20 +1,20 @@
-import app from "ags/gtk4/app"
-import { Astal, Gtk } from "ags/gtk4"
-import AstalNotifd from "gi://AstalNotifd"
-import GLib from "gi://GLib"
-import Notification from "./Notification"
-import { createBinding, For, createState, onCleanup } from "ags"
+import app from 'ags/gtk4/app'
+import { Astal, Gtk } from 'ags/gtk4'
+import AstalNotifd from 'gi://AstalNotifd'
+import GLib from 'gi://GLib'
+import Notification from './Notification'
+import { createBinding, For, createState, onCleanup } from 'ags'
 
 function urgency(n: AstalNotifd.Notification) {
   const { LOW, NORMAL, CRITICAL } = AstalNotifd.Urgency
   switch (n.urgency) {
     case LOW:
-      return "low"
+      return 'low'
     case CRITICAL:
-      return "critical"
+      return 'critical'
     case NORMAL:
     default:
-      return "normal"
+      return 'normal'
   }
 }
 
@@ -25,7 +25,7 @@ const TIMEOUT = {
 }
 
 export default function NotificationPopups() {
-  const monitors = createBinding(app, "monitors")
+  const monitors = createBinding(app, 'monitors')
   const notifd = AstalNotifd.get_default()
   const [notifications, setNotifications] = createState(
     new Array<AstalNotifd.Notification>(),
@@ -46,7 +46,7 @@ export default function NotificationPopups() {
     }
   }
 
-  const notifiedHandler = notifd.connect("notified", (_, id, replaced) => {
+  const notifiedHandler = notifd.connect('notified', (_, id, replaced) => {
     const notification = notifd.get_notification(id)
     if (replaced && notifications.get().some((n) => n.id === id)) {
       setNotifications((ns) => ns.map((n) => (n.id === id ? notification : n)))
@@ -61,7 +61,7 @@ export default function NotificationPopups() {
     })
   })
 
-  const resolvedHandler = notifd.connect("resolved", (_, id) => {
+  const resolvedHandler = notifd.connect('resolved', (_, id) => {
     dismiss(id)
   })
 

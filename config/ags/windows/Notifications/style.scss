@@ -1,6 +1,6 @@
-@use "sass:string";
+@use 'sass:string';
 @function gtkalpha($c, $a) {
-  @return string.unquote("alpha(#{$c},#{$a})");
+  @return string.unquote('alpha(#{$c},#{$a})');
 }
 
 window.NotificationPopups {
@@ -111,8 +111,12 @@ window.NotificationPopups {
       font-size: 12px;
       transition: all 150ms ease;
 
-      &:first-child { margin-left: 0; }
-      &:last-child  { margin-right: 0; }
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
 
       &:hover {
         background-color: transparentize($color3, 0.5);

@@ -1,9 +1,9 @@
-import Gtk from "gi://Gtk?version=4.0"
-import Gdk from "gi://Gdk?version=4.0"
-import Adw from "gi://Adw"
-import GLib from "gi://GLib"
-import AstalNotifd from "gi://AstalNotifd"
-import Pango from "gi://Pango"
+import Gtk from 'gi://Gtk?version=4.0'
+import Gdk from 'gi://Gdk?version=4.0'
+import Adw from 'gi://Adw'
+import GLib from 'gi://GLib'
+import AstalNotifd from 'gi://AstalNotifd'
+import Pango from 'gi://Pango'
 
 function isIcon(icon?: string | null) {
   const iconTheme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default()!)
@@ -14,7 +14,7 @@ function fileExists(path: string) {
   return GLib.file_test(path, GLib.FileTest.EXISTS)
 }
 
-function time(time: number, format = "%H:%M") {
+function time(time: number, format = '%H:%M') {
   return GLib.DateTime.new_from_unix_local(time).format(format)!
 }
 
@@ -22,12 +22,12 @@ function urgency(n: AstalNotifd.Notification) {
   const { LOW, NORMAL, CRITICAL } = AstalNotifd.Urgency
   switch (n.urgency) {
     case LOW:
-      return "low"
+      return 'low'
     case CRITICAL:
-      return "critical"
+      return 'critical'
     case NORMAL:
     default:
-      return "normal"
+      return 'normal'
   }
 }
 
@@ -59,7 +59,7 @@ export default function Notification({
             class="app-name"
             halign={Gtk.Align.START}
             ellipsize={Pango.EllipsizeMode.END}
-            label={n.appName || "Unknown"}
+            label={n.appName || 'Unknown'}
           />
           <label
             class="time"

@@ -1,39 +1,39 @@
-import { Astal, Gdk, Gtk } from "ags/gtk4"
-import { createPoll } from "ags/time"
-import GLib from "gi://GLib?version=2.0"
-import app from "ags/gtk4/app"
+import { Astal, Gdk, Gtk } from 'ags/gtk4'
+import { createPoll } from 'ags/time'
+import GLib from 'gi://GLib?version=2.0'
+import app from 'ags/gtk4/app'
 
 const WAL_COLORS = `${GLib.get_home_dir()}/.cache/wal/colors.json`
 
 function getWallpaperClass(): string {
   try {
     const [ok, bytes] = GLib.file_get_contents(WAL_COLORS)
-    if (!ok || !bytes) return ""
+    if (!ok || !bytes) return ''
     const { wallpaper } = JSON.parse(new TextDecoder().decode(bytes))
-    if (!wallpaper) return ""
-    const name = (wallpaper as string).split("/").pop() ?? ""
-    return `ClockW-${name.replace(/\.[^.]+$/, "")}`
+    if (!wallpaper) return ''
+    const name = (wallpaper as string).split('/').pop() ?? ''
+    return `ClockW-${name.replace(/\.[^.]+$/, '')}`
   } catch {
-    return ""
+    return ''
   }
 }
 
 const WALLPAPER_CLASS = getWallpaperClass()
-const WALLPAPER_NAME = WALLPAPER_CLASS.replace("ClockW-", "")
-const VISIBLE_WALLPAPERS = ["11", "4"]
+const WALLPAPER_NAME = WALLPAPER_CLASS.replace('ClockW-', '')
+const VISIBLE_WALLPAPERS = ['11', '4']
 const IS_CLOCK_VISIBLE = VISIBLE_WALLPAPERS.includes(WALLPAPER_NAME)
 
 export default function Clock(monitor: Gdk.Monitor, index: number = 0) {
-  const dayStr = createPoll("", 1000, () => {
-    return GLib.DateTime.new_now_local().format("%A")?.toLocaleUpperCase()!
+  const dayStr = createPoll('', 1000, () => {
+    return GLib.DateTime.new_now_local().format('%A')?.toLocaleUpperCase()!
   })
 
-  const timeStr = createPoll("", 1000, () => {
-    return GLib.DateTime.new_now_local().format("%H:%M")!
+  const timeStr = createPoll('', 1000, () => {
+    return GLib.DateTime.new_now_local().format('%H:%M')!
   })
 
-  const dateStr = createPoll("", 1000, () => {
-    return GLib.DateTime.new_now_local().format("%d/%m/%Y")!
+  const dateStr = createPoll('', 1000, () => {
+    return GLib.DateTime.new_now_local().format('%d/%m/%Y')!
   })
 
   return (
@@ -51,7 +51,7 @@ export default function Clock(monitor: Gdk.Monitor, index: number = 0) {
       }}
     >
       <box
-        class={"caja"}
+        class={'caja'}
         orientation={Gtk.Orientation.VERTICAL}
         spacing={4}
         halign={Gtk.Align.CENTER}

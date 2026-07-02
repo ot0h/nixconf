@@ -1,17 +1,17 @@
-import { Gtk } from "ags/gtk4"
-import AstalMpris from "gi://AstalMpris?version=0.1"
-import AstalCava from "gi://AstalCava"
-import Gdk from "gi://Gdk?version=4.0"
-import { createBinding, createComputed, For } from "gnim"
+import { Gtk } from 'ags/gtk4'
+import AstalMpris from 'gi://AstalMpris?version=0.1'
+import AstalCava from 'gi://AstalCava'
+import Gdk from 'gi://Gdk?version=4.0'
+import { createBinding, createComputed, For } from 'gnim'
 
 const BROWSERS = [
-  "firefox",
-  "chrome",
-  "mozilla zen",
-  "brave",
-  "chromium",
-  "zen-beta",
-  "helium",
+  'firefox',
+  'chrome',
+  'mozilla zen',
+  'brave',
+  'chromium',
+  'zen-beta',
+  'helium',
 ]
 const isBrowser = (id: string) =>
   BROWSERS.some((b) => id?.toLowerCase().includes(b))
@@ -25,7 +25,7 @@ cava?.set_noise_reduction(0.77)
 
 export default function MediaPlayer() {
   const mpris = AstalMpris.get_default()
-  const players = createBinding(mpris, "players")
+  const players = createBinding(mpris, 'players')
   const playerCount = createComputed(() => players()?.length ?? 0)
 
   let stack: Gtk.Stack
@@ -48,9 +48,9 @@ export default function MediaPlayer() {
       >
         <For each={players}>
           {(player) => {
-            const bus = createBinding(player, "busName")
-            const identity = createBinding(player, "identity")
-            const status = createBinding(player, "playbackStatus")
+            const bus = createBinding(player, 'busName')
+            const identity = createBinding(player, 'identity')
+            const status = createBinding(player, 'playbackStatus')
 
             return (
               <box
@@ -73,7 +73,7 @@ export default function MediaPlayer() {
                     }
                   })
 
-                  self.connect("destroy", () => {
+                  self.connect('destroy', () => {
                     pages.delete(key)
                     const first = stack.get_first_child()
                     if (first) stack.set_visible_child(first)
@@ -88,7 +88,7 @@ export default function MediaPlayer() {
                   <image
                     class="cover-art"
                     pixelSize={170}
-                    file={createBinding(player, "coverArt")}
+                    file={createBinding(player, 'coverArt')}
                   />
                 </box>
 
@@ -119,8 +119,8 @@ export default function MediaPlayer() {
                     class="cava-bars"
                     xalign={Gtk.Align.CENTER}
                     $={(self) => {
-                      const chars = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-                      cava?.connect("notify::values", () => {
+                      const chars = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
+                      cava?.connect('notify::values', () => {
                         const values = cava.get_values() as number[]
                         const text = values
                           .map(
@@ -132,7 +132,7 @@ export default function MediaPlayer() {
                                 )
                               ],
                           )
-                          .join("")
+                          .join('')
                         self.set_label(text)
                       })
                     }}
@@ -140,15 +140,15 @@ export default function MediaPlayer() {
 
                   <label
                     class="card-a-title"
-                    visible={identity((id) => !isBrowser(id ?? ""))}
-                    label={createBinding(player, "title")}
+                    visible={identity((id) => !isBrowser(id ?? ''))}
+                    label={createBinding(player, 'title')}
                     ellipsize={3}
                     max_width_chars={20}
                     xalign={0}
                   />
                   <label
                     class="card-a-artist"
-                    label={createBinding(player, "artist")}
+                    label={createBinding(player, 'artist')}
                     ellipsize={3}
                     max_width_chars={20}
                     xalign={0}
@@ -160,30 +160,30 @@ export default function MediaPlayer() {
                     halign={Gtk.Align.CENTER}
                   >
                     <button
-                      cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                      cursor={Gdk.Cursor.new_from_name('pointer', null)}
                       class="ctrl-side"
                       onClicked={() => player.previous()}
-                      visible={createBinding(player, "canGoPrevious")}
+                      visible={createBinding(player, 'canGoPrevious')}
                     >
                       <label label="󰒮" />
                     </button>
 
                     <button
-                      cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                      cursor={Gdk.Cursor.new_from_name('pointer', null)}
                       class="ctrl-play"
                       onClicked={() => player.play_pause()}
                     >
                       <label
                         valign={Gtk.Align.CENTER}
                         label={status((s) =>
-                          s === AstalMpris.PlaybackStatus.PLAYING ? "" : "󰐎",
+                          s === AstalMpris.PlaybackStatus.PLAYING ? '' : '󰐎',
                         )}
                       />
                     </button>
 
                     <button
                       class="ctrl-side"
-                      cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                      cursor={Gdk.Cursor.new_from_name('pointer', null)}
                       onClicked={() => player.next()}
                     >
                       <label label="󰒭" />
@@ -198,7 +198,7 @@ export default function MediaPlayer() {
                   >
                     <For each={players}>
                       {(p) => {
-                        const pBus = createBinding(p, "busName")
+                        const pBus = createBinding(p, 'busName')
                         return (
                           <button
                             class="dot-btn"
@@ -206,7 +206,7 @@ export default function MediaPlayer() {
                               const page = pages.get(pBus.peek())
                               if (page) stack.set_visible_child(page)
                             }}
-                            cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                            cursor={Gdk.Cursor.new_from_name('pointer', null)}
                           >
                             <box class="dot" halign={Gtk.Align.CENTER} />
                           </button>

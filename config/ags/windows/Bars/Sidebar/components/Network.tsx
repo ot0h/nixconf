@@ -1,11 +1,11 @@
-import { Gtk } from "ags/gtk4"
-import { execAsync } from "ags/process"
-import AstalNetwork from "gi://AstalNetwork?version=0.1"
-import { createBinding, For, With } from "gnim"
+import { Gtk } from 'ags/gtk4'
+import { execAsync } from 'ags/process'
+import AstalNetwork from 'gi://AstalNetwork?version=0.1'
+import { createBinding, For, With } from 'gnim'
 
 export default function network() {
   const network = AstalNetwork.get_default()
-  const wifi = createBinding(network, "wifi")
+  const wifi = createBinding(network, 'wifi')
 
   const sorted = (arr: Array<AstalNetwork.AccessPoint>) => {
     return arr.filter((ap) => !!ap.ssid).sort((a, b) => b.strength - a.strength)
@@ -28,20 +28,20 @@ export default function network() {
         {(wifi) =>
           wifi && (
             <menubutton>
-              <image iconName={createBinding(wifi, "iconName")} />
+              <image iconName={createBinding(wifi, 'iconName')} />
               <popover>
                 <box orientation={Gtk.Orientation.VERTICAL}>
-                  <For each={createBinding(wifi, "accessPoints")(sorted)}>
+                  <For each={createBinding(wifi, 'accessPoints')(sorted)}>
                     {(ap: AstalNetwork.AccessPoint) => (
                       <button onClicked={() => connect(ap)}>
                         <box spacing={4}>
-                          <image iconName={createBinding(ap, "iconName")} />
-                          <label label={createBinding(ap, "ssid")} />
+                          <image iconName={createBinding(ap, 'iconName')} />
+                          <label label={createBinding(ap, 'ssid')} />
                           <image
                             iconName="object-select-symbolic"
                             visible={createBinding(
                               wifi,
-                              "activeAccessPoint",
+                              'activeAccessPoint',
                             )((active) => active === ap)}
                           />
                         </box>

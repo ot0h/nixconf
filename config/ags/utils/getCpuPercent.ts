@@ -1,11 +1,11 @@
-import GLib from "gi://GLib"
+import GLib from 'gi://GLib'
 
 let prevIdle = 0
 let prevTotal = 0
 
 export function getCpuPercent(): number {
-  const [, contents] = GLib.file_get_contents("/proc/stat")
-  const line = new TextDecoder().decode(contents).split("\n")[0]
+  const [, contents] = GLib.file_get_contents('/proc/stat')
+  const line = new TextDecoder().decode(contents).split('\n')[0]
   const values = line.trim().split(/\s+/).slice(1).map(Number)
 
   const idle = values[3] + values[4] // idle + iowait

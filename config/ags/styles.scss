@@ -1,22 +1,22 @@
 // Estilos de AGS
 
 // Colores de PYWAL
-@import "./colors.scss";
+@import './colors.scss';
 
 * {
   all: unset;
-  font-family: "Pixel Code";
+  font-family: 'Pixel Code';
   background: $background;
   color: $foreground;
 }
 
 // WINDOWS
-@import "./windows/Bars/Sidebar/style.scss";
-@import "./windows/Panel/styles.scss";
-@import "./windows/Notifications/style.scss";
-@import "./windows/PowerMenu/style.scss";
-@import "./windows/AppLauncher/style.scss";
-@import "./windows/ScreenShots/style.scss";
-@import "./windows/HyprlandLayouts/style.scss";
-@import "./windows/Wallpaper/style.scss";
-@import "./windows/Clock/sytle.scss";
+@import './windows/Bars/Sidebar/style.scss';
+@import './windows/Panel/styles.scss';
+@import './windows/Notifications/style.scss';
+@import './windows/PowerMenu/style.scss';
+@import './windows/AppLauncher/style.scss';
+@import './windows/ScreenShots/style.scss';
+@import './windows/HyprlandLayouts/style.scss';
+@import './windows/Wallpaper/style.scss';
+@import './windows/Clock/sytle.scss';

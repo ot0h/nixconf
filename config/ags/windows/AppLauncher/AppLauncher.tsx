@@ -1,15 +1,15 @@
-import { Astal, Gtk, Gdk } from "ags/gtk4"
-import app from "ags/gtk4/app"
-import { For, createState } from "ags"
-import AstalApps from "gi://AstalApps"
-import Graphene from "gi://Graphene"
-import GLib from "gi://GLib"
-import { execAsync } from "ags/process"
+import { Astal, Gtk, Gdk } from 'ags/gtk4'
+import app from 'ags/gtk4/app'
+import { For, createState } from 'ags'
+import AstalApps from 'gi://AstalApps'
+import Graphene from 'gi://Graphene'
+import GLib from 'gi://GLib'
+import { execAsync } from 'ags/process'
 
 const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor
 
-const TERMINAL_APPS = ["nvim", "vim", "btop", "yazi", "ncspot", "hx"]
-const TERMINALS = ["kitty", "alacritty", "foot", "wezterm", "ghostty"]
+const TERMINAL_APPS = ['nvim', 'vim', 'btop', 'yazi', 'ncspot', 'hx']
+const TERMINALS = ['kitty', 'alacritty', 'foot', 'wezterm', 'ghostty']
 
 export default function AppLauncher(
   gdkmonitor: Gdk.Monitor,
@@ -25,14 +25,14 @@ export default function AppLauncher(
   const [list, setList] = createState(new Array<AstalApps.Application>())
   const [selected, setSelected] = createState(0)
 
-  const terminal = GLib.getenv("TERMINAL") ?? "kitty"
+  const terminal = GLib.getenv('TERMINAL') ?? 'kitty'
 
   const cleanExec = (exec: string) =>
-    exec.replace(/%[uUfFdDnNickvm]/g, "").trim()
+    exec.replace(/%[uUfFdDnNickvm]/g, '').trim()
 
   const isTerminalApp = (a: AstalApps.Application) =>
     TERMINAL_APPS.some((t) => a.executable?.includes(t)) ||
-    a.categories?.includes("TerminalEmulator") ||
+    a.categories?.includes('TerminalEmulator') ||
     false
 
   const isTerminalEmulator = (exec: string) =>
@@ -40,9 +40,9 @@ export default function AppLauncher(
 
   const notifyError = (name: string) => (e: unknown) =>
     execAsync([
-      "notify-send",
-      "-u",
-      "critical",
+      'notify-send',
+      '-u',
+      'critical',
       `Error al lanzar ${name}`,
       String(e),
     ])
@@ -62,7 +62,7 @@ export default function AppLauncher(
   }
 
   const resetState = () => {
-    searchentry?.set_text("")
+    searchentry?.set_text('')
     setList([])
     setSelected(0)
     buttonRefs = []
@@ -71,7 +71,7 @@ export default function AppLauncher(
   const showAll = async () => {
     apps.reload()
     buttonRefs = []
-    setList(apps.fuzzy_query(""))
+    setList(apps.fuzzy_query(''))
     setSelected(0)
   }
 
@@ -84,24 +84,24 @@ export default function AppLauncher(
 
     if (isTerminalEmulator(exec)) {
       execAsync([
-        "systemd-run",
-        "--user",
-        "--scope",
-        "bash",
-        "-c",
+        'systemd-run',
+        '--user',
+        '--scope',
+        'bash',
+        '-c',
         `cd ~ && ${exec}`,
       ]).catch(notifyError(a.name))
     } else if (isTerminalApp(a)) {
       execAsync([
-        "systemd-run",
-        "--user",
-        "--scope",
-        "bash",
-        "-c",
+        'systemd-run',
+        '--user',
+        '--scope',
+        'bash',
+        '-c',
         `cd ~ && ${terminal} ${exec}`,
       ]).catch(notifyError(a.name))
     } else {
-      execAsync(["systemd-run", "--user", "--scope", "bash", "-c", exec]).catch(
+      execAsync(['systemd-run', '--user', '--scope', 'bash', '-c', exec]).catch(
         notifyError(a.name),
       )
     }
@@ -181,19 +181,19 @@ export default function AppLauncher(
           $={(self) => {
             searchentry = self
 
-            app.connect("window-toggled", async (_, w) => {
+            app.connect('window-toggled', async (_, w) => {
               if (w.name === `AppLauncher-${index}` && w.visible) {
                 apps.reload()
                 buttonRefs = []
                 setList([])
-                self.set_text("")
+                self.set_text('')
                 self.grab_focus()
               }
             })
 
             const controller = new Gtk.EventControllerKey()
             controller.connect(
-              "key-pressed",
+              'key-pressed',
               (
                 _e: Gtk.EventControllerKey,
                 keyval: number,
@@ -244,7 +244,7 @@ export default function AppLauncher(
           onNotifyText={async ({ text }) => {
             apps.reload()
             buttonRefs = []
-            if (text === "") setList([])
+            if (text === '') setList([])
             else setList(apps.fuzzy_query(text))
             setSelected(0)
           }}
@@ -266,9 +266,9 @@ export default function AppLauncher(
                   $={(self) => (buttonRefs[index.get()] = self)}
                   class={selected(
                     (s) =>
-                      `launcher-item ${s === index.get() ? "selected" : ""}`,
+                      `launcher-item ${s === index.get() ? 'selected' : ''}`,
                   )}
-                  cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                  cursor={Gdk.Cursor.new_from_name('pointer', null)}
                   onClicked={() => launch(a)}
                 >
                   <Gtk.EventControllerMotion

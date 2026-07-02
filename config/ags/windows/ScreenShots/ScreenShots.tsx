@@ -1,55 +1,55 @@
-import { Astal, Gtk, Gdk } from "ags/gtk4"
-import app from "ags/gtk4/app"
-import { execAsync } from "ags/process"
-import { createState } from "ags"
-import GLib from "gi://GLib"
+import { Astal, Gtk, Gdk } from 'ags/gtk4'
+import app from 'ags/gtk4/app'
+import { execAsync } from 'ags/process'
+import { createState } from 'ags'
+import GLib from 'gi://GLib'
 
 const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor
 const SCREENSHOT_DIR = `${GLib.get_home_dir()}/Pictures/Screenshots`
 
-type Mode = "normal" | "clipboard"
-type PickerFormat = "hex" | "rgb"
+type Mode = 'normal' | 'clipboard'
+type PickerFormat = 'hex' | 'rgb'
 
 export default function ScreenShots(
   gdkmonitor: Gdk.Monitor,
   index: number = 0,
 ) {
   let win: Astal.Window
-  const [mode, setMode] = createState<Mode>("normal")
-  const [pickerFormat, setPickerFormat] = createState<PickerFormat>("hex")
+  const [mode, setMode] = createState<Mode>('normal')
+  const [pickerFormat, setPickerFormat] = createState<PickerFormat>('hex')
 
   const toggleMode = () =>
-    setMode((m) => (m === "normal" ? "clipboard" : "normal"))
+    setMode((m) => (m === 'normal' ? 'clipboard' : 'normal'))
   const togglePickerFormat = () =>
-    setPickerFormat((f) => (f === "hex" ? "rgb" : "hex"))
+    setPickerFormat((f) => (f === 'hex' ? 'rgb' : 'hex'))
 
   const botonesNormal = [
     {
-      icon: "",
-      label: "  Full",
+      icon: '',
+      label: '  Full',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "output", "-o", SCREENSHOT_DIR]).catch(
+        execAsync(['hyprshot', '-m', 'output', '-o', SCREENSHOT_DIR]).catch(
           console.log,
         )
       },
     },
     {
-      icon: "󰩬",
-      label: "Región",
+      icon: '󰩬',
+      label: 'Región',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "region", "-o", SCREENSHOT_DIR]).catch(
+        execAsync(['hyprshot', '-m', 'region', '-o', SCREENSHOT_DIR]).catch(
           console.log,
         )
       },
     },
     {
-      icon: "󰖯",
-      label: "Ventana",
+      icon: '󰖯',
+      label: 'Ventana',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "window", "-o", SCREENSHOT_DIR]).catch(
+        execAsync(['hyprshot', '-m', 'window', '-o', SCREENSHOT_DIR]).catch(
           console.log,
         )
       },
@@ -58,46 +58,46 @@ export default function ScreenShots(
 
   const botonesClipboard = [
     {
-      icon: "",
-      label: "  Full",
+      icon: '',
+      label: '  Full',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "output", "--clipboard-only"]).catch(
+        execAsync(['hyprshot', '-m', 'output', '--clipboard-only']).catch(
           console.log,
         )
       },
     },
     {
-      icon: "󰩬",
-      label: "Región",
+      icon: '󰩬',
+      label: 'Región',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "region", "--clipboard-only"]).catch(
+        execAsync(['hyprshot', '-m', 'region', '--clipboard-only']).catch(
           console.log,
         )
       },
     },
     {
-      icon: "󰖯",
-      label: "Ventana",
+      icon: '󰖯',
+      label: 'Ventana',
       action: () => {
         win.visible = false
-        execAsync(["hyprshot", "-m", "window", "--clipboard-only"]).catch(
+        execAsync(['hyprshot', '-m', 'window', '--clipboard-only']).catch(
           console.log,
         )
       },
     },
     {
-      icon: "",
+      icon: '',
       label: pickerFormat((f) => `Picker: (${f.toUpperCase()})`),
       action: () => {
         win.visible = false
         GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, () => {
           execAsync([
-            "hyprpicker",
-            "--autocopy",
+            'hyprpicker',
+            '--autocopy',
             `--format=${pickerFormat.get()}`,
-            "--notify",
+            '--notify',
           ]).catch(console.log)
           return GLib.SOURCE_REMOVE
         })
@@ -110,12 +110,12 @@ export default function ScreenShots(
   let buttonRefsClipboard: Gtk.Button[] = []
 
   const getBotones = () =>
-    mode.get() === "normal" ? botonesNormal : botonesClipboard
+    mode.get() === 'normal' ? botonesNormal : botonesClipboard
 
   const focus = (index: number) => {
     const list = getBotones()
     const refs =
-      mode.get() === "normal" ? buttonRefsNormal : buttonRefsClipboard
+      mode.get() === 'normal' ? buttonRefsNormal : buttonRefsClipboard
     selectedIndex = (index + list.length) % list.length
     refs[selectedIndex]?.grab_focus()
   }
@@ -136,7 +136,7 @@ export default function ScreenShots(
     }
     if (
       keyval === Gdk.KEY_space &&
-      mode.get() === "clipboard" &&
+      mode.get() === 'clipboard' &&
       selectedIndex === botonesClipboard.length - 1
     )
       togglePickerFormat()
@@ -168,20 +168,20 @@ export default function ScreenShots(
           <box spacing={8} halign={Gtk.Align.CENTER}>
             <button
               class={mode(
-                (m) => `mode-indicator ${m === "normal" ? "active" : ""}`,
+                (m) => `mode-indicator ${m === 'normal' ? 'active' : ''}`,
               )}
-              cursor={Gdk.Cursor.new_from_name("pointer", null)}
-              onClicked={() => setMode("normal")}
+              cursor={Gdk.Cursor.new_from_name('pointer', null)}
+              onClicked={() => setMode('normal')}
             >
               <label label="󰉉 Guardar" />
             </button>
             <label label="|" class="mode-separator" />
             <button
               class={mode(
-                (m) => `mode-indicator ${m === "clipboard" ? "active" : ""}`,
+                (m) => `mode-indicator ${m === 'clipboard' ? 'active' : ''}`,
               )}
-              cursor={Gdk.Cursor.new_from_name("pointer", null)}
-              onClicked={() => setMode("clipboard")}
+              cursor={Gdk.Cursor.new_from_name('pointer', null)}
+              onClicked={() => setMode('clipboard')}
             >
               <label label="󰅍 Clipboard" />
             </button>
@@ -190,7 +190,7 @@ export default function ScreenShots(
 
           {/* botones modo normal */}
           <box
-            visible={mode((m) => m === "normal")}
+            visible={mode((m) => m === 'normal')}
             orientation={Gtk.Orientation.HORIZONTAL}
             spacing={24}
             halign={Gtk.Align.CENTER}
@@ -202,7 +202,7 @@ export default function ScreenShots(
                 }}
                 onClicked={action}
                 halign={Gtk.Align.CENTER}
-                cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                cursor={Gdk.Cursor.new_from_name('pointer', null)}
               >
                 <Gtk.EventControllerMotion onEnter={() => focus(i)} />
                 <box
@@ -227,7 +227,7 @@ export default function ScreenShots(
 
           {/* botones modo clipboard */}
           <box
-            visible={mode((m) => m === "clipboard")}
+            visible={mode((m) => m === 'clipboard')}
             orientation={Gtk.Orientation.HORIZONTAL}
             spacing={24}
             halign={Gtk.Align.CENTER}
@@ -239,7 +239,7 @@ export default function ScreenShots(
                 }}
                 onClicked={action}
                 halign={Gtk.Align.CENTER}
-                cursor={Gdk.Cursor.new_from_name("pointer", null)}
+                cursor={Gdk.Cursor.new_from_name('pointer', null)}
               >
                 <Gtk.EventControllerMotion onEnter={() => focus(i)} />
                 <box
@@ -273,7 +273,7 @@ export default function ScreenShots(
           <label
             class="screenshot-path"
             label={mode((m) =>
-              m === "normal" ? `󰉋 ${SCREENSHOT_DIR}` : "󰅍 Solo clipboard",
+              m === 'normal' ? `󰉋 ${SCREENSHOT_DIR}` : '󰅍 Solo clipboard',
             )}
             halign={Gtk.Align.CENTER}
           />

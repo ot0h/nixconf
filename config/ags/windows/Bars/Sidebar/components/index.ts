@@ -1,8 +1,8 @@
-export { default as Workspaces } from "./Workspaces"
-export { default as Clock } from "./Clock"
-export { default as Battery } from "./Battery"
-export { default as Volume } from "./Volume"
-export { default as Monitor } from "./Monitor"
-export { default as Network } from "./Network"
-export { default as Submap } from "./Submap"
-export { default as PowerMenuMini } from "./PowerMenuMini"
+export { default as Workspaces } from './Workspaces'
+export { default as Clock } from './Clock'
+export { default as Battery } from './Battery'
+export { default as Volume } from './Volume'
+export { default as Monitor } from './Monitor'
+export { default as Network } from './Network'
+export { default as Submap } from './Submap'
+export { default as PowerMenuMini } from './PowerMenuMini'

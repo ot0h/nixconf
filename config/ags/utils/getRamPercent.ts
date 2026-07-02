@@ -1,7 +1,7 @@
-import GLib from "gi://GLib?version=2.0"
+import GLib from 'gi://GLib?version=2.0'
 
 export function getRamPercent(): number {
-  const [, contents] = GLib.file_get_contents("/proc/meminfo")
+  const [, contents] = GLib.file_get_contents('/proc/meminfo')
   const text = new TextDecoder().decode(contents)
 
   const total = Number(text.match(/MemTotal:\s+(\d+)/)?.[1])
