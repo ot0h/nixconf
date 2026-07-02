@@ -3,6 +3,7 @@
     jetbrains-mono
     caskaydia-cove
     iosevka-term-slab
+    departure-mono
   ];
 in {
   home.packages = with pkgs;

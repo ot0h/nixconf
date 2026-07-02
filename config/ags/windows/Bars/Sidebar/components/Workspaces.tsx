@@ -8,7 +8,7 @@ export default function Workspaces() {
   const focusWorkspaces = createBinding(hypr, 'focusedWorkspace')
 
   const workspaces = createBinding(hypr, 'workspaces').as(
-    (ws: Hyprland.Workspace[]) => ws.sort((a, b) => a.id - b.id),
+    (ws: Hyprland.Workspace[]) => ws.sort((a, b) => a.id - b.id)
   )
   return (
     <box class="workspaces-container">

@@ -3,7 +3,7 @@ import GLib from 'gi://GLib?version=2.0'
 export function getBatteryPercent(): number {
   try {
     const [, contents] = GLib.file_get_contents(
-      '/sys/class/power_supply/BAT0/capacity',
+      '/sys/class/power_supply/BAT0/capacity'
     )
     const text = new TextDecoder().decode(contents)
 

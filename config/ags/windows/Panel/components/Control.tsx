@@ -25,7 +25,7 @@ export default function Control() {
       icon: '',
       action: () =>
         execAsync('fish -c ~/scripts/hyprsunset.fish').catch((e) =>
-          console.log(e),
+          console.log(e)
         ),
     },
     {

@@ -28,7 +28,7 @@ export default function NotificationPopups() {
   const monitors = createBinding(app, 'monitors')
   const notifd = AstalNotifd.get_default()
   const [notifications, setNotifications] = createState(
-    new Array<AstalNotifd.Notification>(),
+    new Array<AstalNotifd.Notification>()
   )
   const revealerRefs = new Map<number, Gtk.Revealer>()
 

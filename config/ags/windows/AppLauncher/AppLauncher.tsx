@@ -13,7 +13,7 @@ const TERMINALS = ['kitty', 'alacritty', 'foot', 'wezterm', 'ghostty']
 
 export default function AppLauncher(
   gdkmonitor: Gdk.Monitor,
-  index: number = 0,
+  index: number = 0
 ) {
   let contentbox: Gtk.Box
   let searchentry: Gtk.Entry
@@ -102,7 +102,7 @@ export default function AppLauncher(
       ]).catch(notifyError(a.name))
     } else {
       execAsync(['systemd-run', '--user', '--scope', 'bash', '-c', exec]).catch(
-        notifyError(a.name),
+        notifyError(a.name)
       )
     }
   }
@@ -111,7 +111,7 @@ export default function AppLauncher(
     _e: Gtk.EventControllerKey,
     keyval: number,
     _: number,
-    mod: number,
+    mod: number
   ) {
     const isAlt = mod === Gdk.ModifierType.ALT_MASK
 
@@ -198,7 +198,7 @@ export default function AppLauncher(
                 _e: Gtk.EventControllerKey,
                 keyval: number,
                 _k: number,
-                mod: number,
+                mod: number
               ) => {
                 const isCtrl = mod === Gdk.ModifierType.CONTROL_MASK
 
@@ -234,7 +234,7 @@ export default function AppLauncher(
                 }
 
                 return false
-              },
+              }
             )
             self.add_controller(controller)
           }}
@@ -266,7 +266,7 @@ export default function AppLauncher(
                   $={(self) => (buttonRefs[index.get()] = self)}
                   class={selected(
                     (s) =>
-                      `launcher-item ${s === index.get() ? 'selected' : ''}`,
+                      `launcher-item ${s === index.get() ? 'selected' : ''}`
                   )}
                   cursor={Gdk.Cursor.new_from_name('pointer', null)}
                   onClicked={() => launch(a)}

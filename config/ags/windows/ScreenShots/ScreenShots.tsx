@@ -12,7 +12,7 @@ type PickerFormat = 'hex' | 'rgb'
 
 export default function ScreenShots(
   gdkmonitor: Gdk.Monitor,
-  index: number = 0,
+  index: number = 0
 ) {
   let win: Astal.Window
   const [mode, setMode] = createState<Mode>('normal')
@@ -30,7 +30,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'output', '-o', SCREENSHOT_DIR]).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -40,7 +40,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'region', '-o', SCREENSHOT_DIR]).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -50,7 +50,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'window', '-o', SCREENSHOT_DIR]).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -63,7 +63,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'output', '--clipboard-only']).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -73,7 +73,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'region', '--clipboard-only']).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -83,7 +83,7 @@ export default function ScreenShots(
       action: () => {
         win.visible = false
         execAsync(['hyprshot', '-m', 'window', '--clipboard-only']).catch(
-          console.log,
+          console.log
         )
       },
     },
@@ -168,7 +168,7 @@ export default function ScreenShots(
           <box spacing={8} halign={Gtk.Align.CENTER}>
             <button
               class={mode(
-                (m) => `mode-indicator ${m === 'normal' ? 'active' : ''}`,
+                (m) => `mode-indicator ${m === 'normal' ? 'active' : ''}`
               )}
               cursor={Gdk.Cursor.new_from_name('pointer', null)}
               onClicked={() => setMode('normal')}
@@ -178,7 +178,7 @@ export default function ScreenShots(
             <label label="|" class="mode-separator" />
             <button
               class={mode(
-                (m) => `mode-indicator ${m === 'clipboard' ? 'active' : ''}`,
+                (m) => `mode-indicator ${m === 'clipboard' ? 'active' : ''}`
               )}
               cursor={Gdk.Cursor.new_from_name('pointer', null)}
               onClicked={() => setMode('clipboard')}
@@ -273,7 +273,7 @@ export default function ScreenShots(
           <label
             class="screenshot-path"
             label={mode((m) =>
-              m === 'normal' ? `󰉋 ${SCREENSHOT_DIR}` : '󰅍 Solo clipboard',
+              m === 'normal' ? `󰉋 ${SCREENSHOT_DIR}` : '󰅍 Solo clipboard'
             )}
             halign={Gtk.Align.CENTER}
           />

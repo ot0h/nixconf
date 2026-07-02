@@ -128,9 +128,9 @@ export default function MediaPlayer() {
                               chars[
                                 Math.min(
                                   Math.floor(v * chars.length),
-                                  chars.length - 1,
+                                  chars.length - 1
                                 )
-                              ],
+                              ]
                           )
                           .join('')
                         self.set_label(text)
@@ -176,7 +176,7 @@ export default function MediaPlayer() {
                       <label
                         valign={Gtk.Align.CENTER}
                         label={status((s) =>
-                          s === AstalMpris.PlaybackStatus.PLAYING ? '' : '󰐎',
+                          s === AstalMpris.PlaybackStatus.PLAYING ? '' : '󰐎'
                         )}
                       />
                     </button>

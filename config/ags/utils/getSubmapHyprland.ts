@@ -30,5 +30,5 @@ export const getSubmapHyprland = createPoll(
       raw,
       icon: iconFor(raw),
     }
-  },
+  }
 )

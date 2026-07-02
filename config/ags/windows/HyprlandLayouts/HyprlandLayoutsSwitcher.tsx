@@ -9,7 +9,7 @@ type ScrollDir = 'right' | 'down'
 
 export default function HyprlandLayoutsSwitcher(
   gdkmonitor: Gdk.Monitor,
-  index: number = 0,
+  index: number = 0
 ) {
   let win: Astal.Window
 
@@ -198,7 +198,7 @@ export default function HyprlandLayoutsSwitcher(
                           $type="overlay"
                           class="scroll-dir-arrow"
                           label={scrollDir((d) =>
-                            d === 'right' ? ' 󰜴' : ' 󰜮',
+                            d === 'right' ? ' 󰜴' : ' 󰜮'
                           )}
                           halign={Gtk.Align.CENTER}
                           valign={Gtk.Align.CENTER}

@@ -19,7 +19,7 @@ async function loadWallpapers(): Promise<string[]> {
     ])
     const all = out.trim().split('\n').filter(Boolean)
     const images = all.filter((f) =>
-      VALID_EXTS.some((ext) => f.toLowerCase().endsWith(ext)),
+      VALID_EXTS.some((ext) => f.toLowerCase().endsWith(ext))
     )
     // Sort numérico: 1, 2, ..., 10, 11, ...
     return images
@@ -32,7 +32,7 @@ async function loadWallpapers(): Promise<string[]> {
 
 export default function WallpaperPicker(
   monitor: Gdk.Monitor,
-  index: number = 0,
+  index: number = 0
 ) {
   const geo = monitor.get_geometry()
   const winW = 720
@@ -77,7 +77,7 @@ export default function WallpaperPicker(
     const spacing = 8
     return Math.max(
       1,
-      Math.min(MAX_COLS, Math.floor((w + spacing) / (alloc.width + spacing))),
+      Math.min(MAX_COLS, Math.floor((w + spacing) / (alloc.width + spacing)))
     )
   }
 
@@ -117,7 +117,7 @@ export default function WallpaperPicker(
   const n = () => walls().length
   const cols = () => Math.min(n(), getCols())
   const rootClass = createComputed(
-    () => `wp-root${!mouseActive() ? ' keyboard-focus' : ''}`,
+    () => `wp-root${!mouseActive() ? ' keyboard-focus' : ''}`
   )
 
   function focus(dx: number, dy: number) {
@@ -253,7 +253,7 @@ export default function WallpaperPicker(
               {(path, idx) => {
                 const btnClass = createComputed(
                   () =>
-                    `wp-thumb${current() === path ? ' active' : ''}${!mouseActive() && selectedIdx() === idx() ? ' focused' : ''}`,
+                    `wp-thumb${current() === path ? ' active' : ''}${!mouseActive() && selectedIdx() === idx() ? ' focused' : ''}`
                 )
                 return (
                   <Gtk.FlowBoxChild class="wp-child">

@@ -8,10 +8,10 @@
       include /tmp/kitty-opacity.conf
     '';
     settings = {
-      font_family = "family=\"Pixel Code\"";
+      font_family = "family=\"DepartureMono Nerd Font\"";
       italic_font = "auto";
       bold_italic_font = "auto";
-      font_size = 9.0;
+      font_size = 11.0;
       disable_ligatures = "never";
       clear_all_shortcuts = "yes";
       term = "xterm-kitty";

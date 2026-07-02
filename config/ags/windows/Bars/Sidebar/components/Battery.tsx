@@ -3,7 +3,7 @@ import { getBatteryInfo } from '../../../../utils'
 
 export default function Battery() {
   const battery = createPoll({ percent: 0, status: 'Unknown' }, 2000, () =>
-    getBatteryInfo(),
+    getBatteryInfo()
   )
 
   const getIcon = (b: { percent: number; status: string }): string => {

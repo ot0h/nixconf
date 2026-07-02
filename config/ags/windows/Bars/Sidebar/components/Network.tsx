@@ -41,7 +41,7 @@ export default function network() {
                             iconName="object-select-symbolic"
                             visible={createBinding(
                               wifi,
-                              'activeAccessPoint',
+                              'activeAccessPoint'
                             )((active) => active === ap)}
                           />
                         </box>
