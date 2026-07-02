@@ -1,3 +1,3 @@
-export * from "./Control"
-export * from "./MediaPlayer"
-export * from "./Calendar"
+export { default as Control } from "./Control"
+export { default as MediaPlayer } from "./MediaPlayer"
+export { default as Calendar } from "./Calendar"
