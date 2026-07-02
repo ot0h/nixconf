@@ -37,7 +37,7 @@ in {
 
     lazydocker
     docker
-    rustlings
+    # rustlings
 
     # Cloud
     google-drive-ocamlfuse
