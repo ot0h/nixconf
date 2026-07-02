@@ -41,6 +41,7 @@ in {
 
     # Cloud
     google-drive-ocamlfuse
+    jujutsu
 
     ripgrep
     # Typst
