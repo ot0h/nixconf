@@ -43,7 +43,7 @@
 
     # ---- Fuente ----
     font = {
-      name = "Pixel Code";
+      name = "Departure Mono";
       size = 10;
     };
 

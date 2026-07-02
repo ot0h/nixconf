@@ -11,7 +11,7 @@
       config-file = "~/.cache/wal/ghostty.conf";
 
       # Font Settings
-      font-family = "Pixel Code";
+      font-family = "Departure Mono";
     };
   };
 }

@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  font = "Pixel Code";
+  font = "Departure Mono";
 in {
   assistant = {
     enabled = true;
