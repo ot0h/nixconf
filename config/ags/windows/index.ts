@@ -1,4 +1,5 @@
 export { default as Sidebar } from './Bars/Sidebar/Sidebar'
+export { default as Tobpar } from './Bars/Topbar/Topbar'
 export { default as Panel } from './Panel/Panel'
 export { default as NotificationPopups } from './Notifications/NotificationPops'
 export { default as PowerMenu } from './PowerMenu/PowerMenu'

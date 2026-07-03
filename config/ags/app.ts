@@ -11,6 +11,7 @@ import {
   ScreenShots,
   WallpaperPicker,
   Sidebar,
+  Tobpar,
 } from './windows'
 
 async function toggleOnActiveMonitor(windowBaseName: string) {
@@ -28,6 +29,7 @@ app.start({
     app.get_monitors().forEach((monitor, i) => {
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
+      // Tobpar(monitor, i)
       Panel(monitor, i)
       PowerMenu(monitor, i)
       ScreenShots(monitor, i)
