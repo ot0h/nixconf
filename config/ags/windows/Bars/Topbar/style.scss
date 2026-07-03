@@ -1,8 +1,36 @@
 .Topbar {
   padding: 5px 0px;
+  margin: 4px 8px;
+  border-radius: 5px;
 }
 
 // Clock
 .Topbar-Clock {
   background: none;
+}
+
+.Topbar-workspaces {
+  & .wButton {
+    all: unset;
+    min-width: 1em;
+    min-height: 0.45em;
+    padding: 0;
+    outline: none;
+    margin: 0 3px;
+    border-radius: 9999px;
+    background-color: rgba($foreground, 0.35);
+    transition:
+      min-width 1s ease,
+      background-color 1s ease;
+
+    &:hover {
+      background-color: $color4;
+      box-shadow: none;
+    }
+
+    &.aButton {
+      min-width: 50px;
+      background-color: $color10;
+    }
+  }
 }

@@ -14,6 +14,7 @@ export default function Clock() {
   return (
     <box class="Topbar-Clock">
       <label label={hours} valign={Gtk.Align.CENTER} />
+      <label label=":" valign={Gtk.Align.CENTER} />
       <label label={minutes} valign={Gtk.Align.CENTER} />
     </box>
   )
