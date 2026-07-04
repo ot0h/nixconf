@@ -1,13 +1,12 @@
-import { execAsync } from 'ags/process'
+import AstalBrightness from 'gi://AstalBrightness?version=0.1'
 export const MIN_BRIGHT: number = 0.15
 
+const brillo = AstalBrightness.get_default()
+
 export async function getBrightness(): Promise<number> {
-  const cur = await execAsync('brightnessctl g')
-  const max = await execAsync('brightnessctl m')
-  return Number(cur) / Number(max) // 0–1
+  return brillo.screen.brightness
 }
 
 export async function setBrightness(v: number) {
-  v = Math.max(MIN_BRIGHT, Math.min(1, v))
-  await execAsync(`brightnessctl set ${Math.floor(v * 100)}%`)
+  brillo.screen.brightness = v
 }
