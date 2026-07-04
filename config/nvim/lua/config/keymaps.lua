@@ -375,3 +375,8 @@ end, { desc = "Sidekick Prompt", icon = "" })
 map({ "n" }, "<C-t>", function()
 	require("minty.shades").open()
 end)
+
+-- Refacto
+map({ "n", "x" }, "<leader>rs", function()
+	require("refactoring").select_refactor()
+end, { desc = "Select Refactor", icon = "󰛸" })

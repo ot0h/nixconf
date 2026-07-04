@@ -5,6 +5,11 @@
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
+    "async.nvim": {
+      "rev": "e2a813be9cd143ab1181de6d8a0720e0230cd86e",
+      "src": "https://github.com/lewis6991/async.nvim",
+      "version": "'main'"
+    },
     "blink.cmp": {
       "rev": "91774548bc358c02fcc327d33c9ac0d9830c8c47",
       "src": "https://github.com/saghen/blink.cmp",
@@ -145,6 +150,11 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "refactoring.nvim": {
+      "rev": "64e10d782ae5b9653558482910213b8946651456",
+      "src": "https://github.com/ThePrimeagen/refactoring.nvim",
+      "version": "'master'"
     },
     "roslyn.nvim": {
       "rev": "c4ef25973bcc30a2c8c8766711fbbdb3d02b70a3",
