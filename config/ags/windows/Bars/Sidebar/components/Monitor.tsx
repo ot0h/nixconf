@@ -1,5 +1,5 @@
 import { createPoll } from 'ags/time'
-import { getCpuPercent, getRamPercent } from '../../../../utils'
+import { getCpuPercent, getRamPercent } from '@utils'
 
 export default function Monitor() {
   const ramPercent = createPoll(0, 2000, () => getRamPercent())

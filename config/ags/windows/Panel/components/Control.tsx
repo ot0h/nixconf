@@ -3,7 +3,7 @@ import { execAsync } from 'ags/process'
 import { createPoll } from 'ags/time'
 import AstalWp from 'gi://AstalWp?version=0.1'
 import { createBinding, createComputed, For } from 'gnim'
-import { getBrightness, MIN_BRIGHT, setBrightness } from '../../../utils'
+import { getBrightness, MIN_BRIGHT, setBrightness } from '@utils'
 import Gdk from 'gi://Gdk?version=4.0'
 
 export default function Control() {

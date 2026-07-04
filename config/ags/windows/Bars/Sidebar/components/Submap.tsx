@@ -1,5 +1,5 @@
+import { getSubmapHyprland } from '@utils'
 import { For } from 'gnim'
-import { getSubmapHyprland } from '../../../../utils'
 
 function splitForRender(str: string): string[] {
   return [...str].reverse().map((c, i) => `${c}\u200B${i}`)

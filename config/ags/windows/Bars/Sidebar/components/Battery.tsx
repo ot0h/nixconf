@@ -1,5 +1,5 @@
 import { createPoll } from 'ags/time'
-import { getBatteryInfo } from '../../../../utils'
+import { getBatteryInfo } from '@utils'
 
 export default function Battery() {
   const battery = createPoll({ percent: 0, status: 'Unknown' }, 2000, () =>
@@ -7,7 +7,7 @@ export default function Battery() {
   )
 
   const getIcon = (b: { percent: number; status: string }): string => {
-    if (b.status === 'Charging' || b.status === 'Full') return '󰂄'
+    if (b.status === 'Charging') return '󰂄'
 
     const p = b.percent
     if (p > 0 && p <= 20) return '󰁺'
@@ -27,7 +27,6 @@ export default function Battery() {
       <label
         label={battery.as(getIcon)}
         tooltip_text={battery.as((b) => `Bat: ${b.percent}%\n(${b.status})`)}
-        // class={battery.as((b) => (b.status === "Charging" ? "charging" : ""))}
       />
     </box>
   )
