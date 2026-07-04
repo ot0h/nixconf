@@ -11,7 +11,7 @@
       font_family = "family=\"Departure Mono\"";
       italic_font = "auto";
       bold_italic_font = "auto";
-      font_size = 11.0;
+      font_size = 10.0;
       disable_ligatures = "never";
       clear_all_shortcuts = "yes";
       term = "xterm-kitty";
