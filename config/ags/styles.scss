@@ -11,13 +11,13 @@
 }
 
 // WINDOWS
-@import './windows/Bars/Sidebar/style.scss';
-@import './windows/Bars/Topbar/style.scss';
-@import './windows/Panel/styles.scss';
-@import './windows/Notifications/style.scss';
-@import './windows/PowerMenu/style.scss';
-@import './windows/AppLauncher/style.scss';
-@import './windows/ScreenShots/style.scss';
-@import './windows/HyprlandLayouts/style.scss';
-@import './windows/Wallpaper/style.scss';
-@import './windows/Clock/sytle.scss';
+@import './src/styles/Bars/Sidebar';
+@import './src/styles/Bars/Topbar';
+@import './src/styles/Panel';
+@import './src/styles/Notifications';
+@import './src/styles/PowerMenu';
+@import './src/styles/AppLauncher';
+@import './src/styles/ScreenShots';
+@import './src/styles/HyprlandLayouts';
+@import './src/styles/Wallpaper';
+@import './src/styles/Clock';

@@ -12,7 +12,7 @@ import {
   WallpaperPicker,
   Sidebar,
   Tobpar,
-} from './windows'
+} from '@windows'
 
 async function toggleOnActiveMonitor(windowBaseName: string) {
   const out = await execAsync(['hyprctl', 'activeworkspace', '-j'])
