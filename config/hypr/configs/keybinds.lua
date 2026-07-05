@@ -18,7 +18,6 @@ local function bind_exec(key, cmd)
 	end)
 end
 
-hl.bind(mainMod .. " + Z", hl.dsp.submap("zoom"))
 hl.bind(mainMod .. " + R", hl.dsp.submap("resize"))
 hl.bind(mainMod .. " + M", hl.dsp.submap("move"))
 hl.bind(mainMod .. " + Return", hl.dsp.submap("launch"))
@@ -82,24 +81,6 @@ hl.define_submap("move", function()
 	hl.bind("K", hl.dsp.window.move({ x = 0, y = -40, relative = true }), { repeating = true })
 	hl.bind("J", hl.dsp.window.move({ x = 0, y = 40, relative = true }), { repeating = true })
 	hl.bind("R", hl.dsp.submap("resize"))
-	hl.bind("Escape", hl.dsp.submap("reset"))
-	hl.bind("CONTROL+C", hl.dsp.submap("reset"))
-	hl.bind("Q", hl.dsp.submap("reset"))
-end)
-
-local zoomIn = "hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
-local zoomOut =
-	"hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')"
-local zoomReset = "hyprctl -q keyword cursor:zoom_factor 1"
-
-hl.define_submap("zoom", function()
-	hl.bind("mouse_down", hl.dsp.exec_cmd(zoomIn), { mouse = true })
-	hl.bind("mouse_up", hl.dsp.exec_cmd(zoomOut), { mouse = true })
-	hl.bind("equal", hl.dsp.exec_cmd(zoomIn), { repeating = true })
-	hl.bind("minus", hl.dsp.exec_cmd(zoomOut), { repeating = true })
-	hl.bind("KP_ADD", hl.dsp.exec_cmd(zoomIn), { repeating = true })
-	hl.bind("KP_SUBTRACT", hl.dsp.exec_cmd(zoomOut), { repeating = true })
-	hl.bind("R", hl.dsp.exec_cmd(zoomReset))
 	hl.bind("Escape", hl.dsp.submap("reset"))
 	hl.bind("CONTROL+C", hl.dsp.submap("reset"))
 	hl.bind("Q", hl.dsp.submap("reset"))

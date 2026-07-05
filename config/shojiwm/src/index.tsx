@@ -51,6 +51,8 @@ COMPOSITOR.env.apply({
   SDL_IM_MODULE: "fcitx",
   GLFW_IM_MODULE: "ibus",
   ELECTRON_OZONE_PLATFORM_HINT: "wayland",
+  XCURSOR_THEME: "Bibata-Modern-Classic",
+  XCURSOR_SIZE: "24",
 })
 COMPOSITOR.env.publish()
 
@@ -256,7 +258,7 @@ COMPOSITOR.key.bind("terminal", "Super+T", () => {
   COMPOSITOR.process.spawn({ command: ["kitty"] })
 })
 
-COMPOSITOR.key.bind("chrome", "Super+B", () => {
+COMPOSITOR.key.bind("zen", "Super+B", () => {
   COMPOSITOR.process.spawn({
     command: "zen-beta",
   })
@@ -299,39 +301,39 @@ COMPOSITOR.key.bind("close-focused-window", "Super+Q", () => {
 COMPOSITOR.key.bind("toggle-focused-window-maximize", "Super+M", () => {
   HYBRID_WINDOW_MANAGER.toggleFocusedWindowMaximize()
 })
-COMPOSITOR.key.bind("tile-focus-left-quick", "Super+Left", () => {
+COMPOSITOR.key.bind("tile-focus-left-quick", "Super+H", () => {
   HYBRID_WINDOW_MANAGER.focusTile(-1)
 })
-COMPOSITOR.key.bind("tile-focus-right-quick", "Super+Right", () => {
+COMPOSITOR.key.bind("tile-focus-right-quick", "Super+L", () => {
   HYBRID_WINDOW_MANAGER.focusTile(1)
 })
-COMPOSITOR.key.bind("tile-focus-left", "Super+Ctrl+Left", () => {
+COMPOSITOR.key.bind("tile-focus-left", "Super+Ctrl+H", () => {
   HYBRID_WINDOW_MANAGER.focusTile(-1)
 })
-COMPOSITOR.key.bind("tile-focus-right", "Super+Ctrl+Right", () => {
+COMPOSITOR.key.bind("tile-focus-right", "Super+Ctrl+L", () => {
   HYBRID_WINDOW_MANAGER.focusTile(1)
 })
-COMPOSITOR.key.bind("tile-move-left", "Super+Shift+Left", () => {
+COMPOSITOR.key.bind("tile-move-left", "Super+Shift+H", () => {
   HYBRID_WINDOW_MANAGER.moveFocusedTile(-1)
   scheduleWorkspaceBroadcast()
 })
-COMPOSITOR.key.bind("tile-move-right", "Super+Shift+Right", () => {
+COMPOSITOR.key.bind("tile-move-right", "Super+Shift+L", () => {
   HYBRID_WINDOW_MANAGER.moveFocusedTile(1)
   scheduleWorkspaceBroadcast()
 })
-COMPOSITOR.key.bind("window-move-workspace-prev", "Super+Shift+Up", () => {
+COMPOSITOR.key.bind("window-move-workspace-prev", "Super+Shift+K", () => {
   HYBRID_WINDOW_MANAGER.moveFocusedWindowToWorkspace(-1)
   scheduleWorkspaceBroadcast()
 })
-COMPOSITOR.key.bind("window-move-workspace-next", "Super+Shift+Down", () => {
+COMPOSITOR.key.bind("window-move-workspace-next", "Super+Shift+J", () => {
   HYBRID_WINDOW_MANAGER.moveFocusedWindowToWorkspace(1)
   scheduleWorkspaceBroadcast()
 })
-COMPOSITOR.key.bind("workspace-prev", "Super+Ctrl+Up", () => {
+COMPOSITOR.key.bind("workspace-prev", "Super+Ctrl+K", () => {
   HYBRID_WINDOW_MANAGER.switchWorkspace(-1)
   scheduleWorkspaceBroadcast()
 })
-COMPOSITOR.key.bind("workspace-next", "Super+Ctrl+Down", () => {
+COMPOSITOR.key.bind("workspace-next", "Super+Ctrl+J", () => {
   HYBRID_WINDOW_MANAGER.switchWorkspace(1)
   scheduleWorkspaceBroadcast()
 })
@@ -400,7 +402,8 @@ COMPOSITOR.input.configure((input, _context) => {
       naturalScroll: true,
       scrollMethod: "twoFinger",
       disableWhileTyping: true,
-      scrollFactor: 0.3,
+      scrollFactor: 0.1,
+      pointerAccel: 1.0,
     },
     pointer: {
       pointerAccel: 0.0,

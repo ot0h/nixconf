@@ -8,8 +8,6 @@ function iconFor(name: string): string {
       return '󰆾 '
     case 'launch':
       return '󱓞 '
-    case 'zoom':
-      return ' '
     default:
       return ' '
   }
