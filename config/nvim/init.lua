@@ -31,6 +31,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim", version = "master" },
 	{ src = "https://github.com/ThePrimeagen/refactoring.nvim", version = "master" },
 	{ src = "https://github.com/lewis6991/async.nvim", version = "main" },
+	{ src = "https://github.com/nvim-mini/mini.splitjoin", version = "stable" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },

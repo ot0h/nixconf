@@ -175,3 +175,5 @@ require("flash").setup({
 		},
 	},
 })
+
+require("mini.splitjoin").setup()
