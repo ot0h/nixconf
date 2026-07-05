@@ -232,9 +232,7 @@ require("snacks").setup({
 				auto_close = true,
 				layout = {
 					-- auto_hide = { "input" },
-					layout = {
-						position = "right",
-					},
+					preset = "dropdown",
 				},
 			},
 			grep = {
