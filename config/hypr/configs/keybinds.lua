@@ -106,11 +106,19 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("ags request toggle PowerMenu
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " --title=clipse -e clipse"))
 
-hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + S", function()
+	local currentLayout = hl.get_active_workspace() and hl.get_active_workspace().tiled_layout
+
+	if currentLayout == "scrolling" then
+		hl.dispatch(hl.dsp.layout("fit all"))
+	else
+		hl.dispatch(hl.dsp.layout("togglesplit"))
+	end
+end)
 
 hl.bind(
 	mainMod .. " + W",
-	hl.dsp.exec_cmd("ags request toggle-all ClockW Sidebar Marco-margen-arriba Marco-margen-abajo Marco-margen-derecho")
+	hl.dsp.exec_cmd("ags request toggle-all Sidebar Marco-margen-arriba Marco-margen-abajo Marco-margen-derecho")
 )
 
 hl.bind("Print", hl.dsp.exec_cmd("ags request toggle Screenshot"))
