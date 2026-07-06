@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.lutris = {
-    enable = true;
+    enable = false;
     package = pkgs.lutris;
 
     protonPackages = with pkgs; [proton-ge-bin];

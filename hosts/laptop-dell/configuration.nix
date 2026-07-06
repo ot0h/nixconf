@@ -164,6 +164,11 @@ in {
     powerOnBoot = true;
   };
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   programs.fish = {
     enable = true;
   };
