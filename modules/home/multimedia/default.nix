@@ -5,7 +5,9 @@
 }: let
   curd = inputs.curd.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
-  imports = [];
+  imports = [
+    ./games.nix
+  ];
 
   home.packages = with pkgs; [
     # Reproductores
