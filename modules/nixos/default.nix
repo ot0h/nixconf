@@ -6,5 +6,6 @@
     ./servicios/avahi.nix
     ./servicios/cups.nix
     ./file-management/thunar.nix
+    ./games/default.nix
   ];
 }
