@@ -22,11 +22,8 @@
 .powermenumini {
   background: transparent;
   & .icon-iso {
-    font-size: 17;
-    margin: 0px;
-    margin-left: 3px;
+    font-size: 20px;
     background: transparent;
-    margin-right: 5px;
   }
   & label {
     margin: 3px 0;
@@ -41,6 +38,10 @@
     margin: 5px 0;
     color: $color3;
   }
+}
+
+.NotificationIcon {
+  font-size: 15px;
 }
 
 // Workspaces styles

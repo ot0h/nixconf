@@ -38,7 +38,7 @@ export default function PowerMenuMini() {
         onClicked={toggle}
         cursor={Gdk.Cursor.new_from_name('pointer', null)}
       >
-        <label class="icon-iso" label="" hexpand halign={Gtk.Align.CENTER} />
+        <label class="icon-iso" label="" hexpand halign={Gtk.Align.CENTER} />
       </button>
 
       <revealer

@@ -12,7 +12,7 @@ export default function Control() {
   const bright = createPoll(0, 200, () => getBrightness())
   const notifd = AstalNotifd.get_default()
   const notificationIcon = createPoll('', 200, () =>
-    notifd.get_notifications().length > 0 ? '' : ''
+    notifd.get_notifications().length > 0 ? '󱅫' : '󰂚'
   )
 
   const botones = createComputed(() => [

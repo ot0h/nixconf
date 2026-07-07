@@ -8,6 +8,7 @@ import Network from './components/Network'
 import Submap from './components/Submap'
 import PowerMenuMini from './components/PowerMenuMini'
 import Volume from './components/Volume'
+import Notification from './components/Notification'
 
 /**
  * Un Sidebar re insano papá
@@ -28,14 +29,22 @@ export default function Sidebar(gdkmonitor: Gdk.Monitor, index: number = 0) {
     >
       <centerbox
         cssName="centerbox"
-        orientation={1}
+        orientation={Gtk.Orientation.VERTICAL}
         halign={Gtk.Align.CENTER}
+        valign={Gtk.Align.FILL}
         vexpand
       >
         {/* ARRIBA */}
-        <box $type="start" orientation={1} spacing={1}>
+        <box
+          $type="start"
+          halign={Gtk.Align.CENTER}
+          orientation={Gtk.Orientation.VERTICAL}
+          valign={Gtk.Align.CENTER}
+          spacing={5}
+        >
           <PowerMenuMini />
           <Submap />
+          <Notification />
         </box>
 
         {/* CENTRO */}
