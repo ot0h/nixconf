@@ -5,7 +5,7 @@ import AstalNotifd from 'gi://AstalNotifd?version=0.1'
 
 export default function Notification() {
   const notifd = AstalNotifd.get_default()
-  const notificationIcon = createPoll('', 200, () =>
+  const notificationIcon = createPoll('', 2000, () =>
     notifd.get_notifications().length > 0 ? '󱅫' : '󰂚'
   )
 
