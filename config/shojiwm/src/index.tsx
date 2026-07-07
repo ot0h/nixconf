@@ -299,6 +299,18 @@ COMPOSITOR.key.bind("mute-volume", "XF86AudioMute", () =>
   }),
 )
 
+COMPOSITOR.key.bind("raise-bright", "XF86MonBrightnessUp", () =>
+  COMPOSITOR.process.spawn({
+    command: "brightnessctl -e4 -n2 set 5%+",
+  }),
+)
+
+COMPOSITOR.key.bind("lower-bright", "XF86MonBrightnessDown", () =>
+  COMPOSITOR.process.spawn({
+    command: "brightnessctl -e4 -n2 set 5%-",
+  }),
+)
+
 COMPOSITOR.key.bind("screenshot", "Super+P", () => {
   COMPOSITOR.process.spawn({
     command: "hyprshot -m region --raw | swappy -f -",
