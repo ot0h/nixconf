@@ -30,7 +30,8 @@ export default function Control() {
     },
     {
       icon: '',
-      action: () => execAsync('').catch((e) => console.log(e)),
+      action: () =>
+        execAsync('ags toggle Notification').catch((e) => console.log(e)),
     },
   ])
 

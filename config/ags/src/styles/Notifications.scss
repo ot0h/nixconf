@@ -129,3 +129,66 @@ window.NotificationPopups {
 .notis-box {
   background-color: transparent;
 }
+
+// Notification Center
+window.NotificationCenter {
+  all: unset;
+}
+
+.notification-center {
+  background-color: $background;
+  border: 1px solid transparentize($foreground, 0.7);
+  margin: 20px 30px;
+
+  & > .header {
+    padding: 12px 14px;
+    color: $foreground;
+
+    & .title {
+      font-size: 14px;
+      font-weight: bold;
+      color: $foreground;
+    }
+
+    & .clear-all {
+      background: transparentize($color1, 0.7);
+      border-radius: 4px;
+      padding: 4px 10px;
+      color: $color5;
+      font-size: 11px;
+      transition: all 150ms ease;
+
+      &:hover {
+        background: transparentize($color1, 0.5);
+        color: $foreground;
+      }
+    }
+  }
+
+  & separator {
+    background-color: transparentize($foreground, 0.8);
+    margin: 0;
+  }
+
+  & .notifications-list {
+    background: transparent;
+  }
+
+  & .notifications-container {
+    background: transparent;
+    padding: 6px 0;
+  }
+
+  & .empty-state {
+    padding: 40px;
+
+    & .empty-label {
+      color: transparentize($foreground, 0.5);
+      font-size: 13px;
+    }
+  }
+
+  & .Notification {
+    margin: 4px 8px;
+  }
+}

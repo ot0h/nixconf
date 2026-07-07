@@ -5,6 +5,7 @@ import {
   AppLauncher,
   Clock,
   HyprlandLayoutsSwitcher,
+  NotificationCenter,
   NotificationPopups,
   Panel,
   PowerMenu,
@@ -33,6 +34,7 @@ app.start({
       Panel(monitor, i)
       PowerMenu(monitor, i)
       ScreenShots(monitor, i)
+      NotificationCenter(monitor, i)
       HyprlandLayoutsSwitcher(monitor, i)
       WallpaperPicker(monitor, i)
       Clock(monitor, i)
