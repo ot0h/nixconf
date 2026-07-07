@@ -281,6 +281,24 @@ COMPOSITOR.key.bind("prev", "XF86AudioPrev", () => {
   COMPOSITOR.process.spawn({ command: "playerctl previous" })
 })
 
+COMPOSITOR.key.bind("raise-volume", "XF86AudioRaiseVolume", () =>
+  COMPOSITOR.process.spawn({
+    command: "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+  }),
+)
+
+COMPOSITOR.key.bind("lower-volume", "XF86AudioLowerVolume", () =>
+  COMPOSITOR.process.spawn({
+    command: "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+  }),
+)
+
+COMPOSITOR.key.bind("mute-volume", "XF86AudioMute", () =>
+  COMPOSITOR.process.spawn({
+    command: "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  }),
+)
+
 COMPOSITOR.key.bind("screenshot", "Super+P", () => {
   COMPOSITOR.process.spawn({
     command: "hyprshot -m region --raw | swappy -f -",
