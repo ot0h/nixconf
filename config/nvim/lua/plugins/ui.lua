@@ -227,12 +227,17 @@ require("snacks").setup({
 	picker = {
 		enabled = true,
 		sources = {
+			smart = {
+				layout = {
+					preset = "telescope",
+				},
+			},
 			explorer = {
 				title = "",
-				auto_close = true,
+				auto_close = false,
 				layout = {
 					-- auto_hide = { "input" },
-					preset = "dropdown",
+					preset = "sidebar",
 				},
 			},
 			grep = {
