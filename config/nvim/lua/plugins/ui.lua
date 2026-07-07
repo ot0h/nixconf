@@ -16,7 +16,7 @@ require("noice").setup({
 		},
 	},
 	cmdline = {
-		view = "cmdline",
+		view = "cmdline_popup",
 	},
 	presets = {
 		bottom_search = true,
