@@ -5,10 +5,15 @@ import AstalWp from 'gi://AstalWp?version=0.1'
 import { createBinding, createComputed, For } from 'gnim'
 import { getBrightness, MIN_BRIGHT, setBrightness } from '@utils'
 import Gdk from 'gi://Gdk?version=4.0'
+import AstalNotifd from 'gi://AstalNotifd?version=0.1'
 
 export default function Control() {
   const { defaultSpeaker: speaker } = AstalWp.get_default()
   const bright = createPoll(0, 200, () => getBrightness())
+  const notifd = AstalNotifd.get_default()
+  const notificationIcon = createPoll('', 200, () =>
+    notifd.get_notifications().length > 0 ? '' : ''
+  )
 
   const botones = createComputed(() => [
     {
@@ -29,9 +34,13 @@ export default function Control() {
         ),
     },
     {
-      icon: '',
-      action: () =>
-        execAsync('ags toggle Notification').catch((e) => console.log(e)),
+      icon: notificationIcon,
+      action: () => {
+        execAsync('ags request toggle Notification').catch((e) =>
+          console.log(e)
+        )
+        execAsync('ags request toggle Panel').catch((e) => console.log(e))
+      },
     },
   ])
 

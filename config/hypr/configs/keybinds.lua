@@ -103,6 +103,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("ags request toggle Panel"))
 hl.bind(mainMod .. " + CONTROL + SPACE", hl.dsp.exec_cmd("ags request toggle HyprlandLayoutsSwitcher"))
 
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("ags request toggle PowerMenu"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("ags request toggle Notification"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " --title=clipse -e clipse"))
 
