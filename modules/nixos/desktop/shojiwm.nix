@@ -1,10 +1,7 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [inputs.shojiwm.nixosModules.default];
 
   programs.shojiwm = {
-    enable = true;
+    enable = false;
   };
 }

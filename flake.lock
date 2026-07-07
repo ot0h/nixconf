@@ -389,22 +389,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1781577229,
-        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "ags": "ags",
@@ -416,26 +400,7 @@
         "llm-agents": "llm-agents",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
-        "shojiwm": "shojiwm",
         "zen-browser": "zen-browser"
-      }
-    },
-    "shojiwm": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1783243420,
-        "narHash": "sha256-/8Jl6G1TqSOiZuNHOzc7mIq2yfqRztaliEuhKPUfBH0=",
-        "owner": "bea4dev",
-        "repo": "ShojiWM",
-        "rev": "b461e05012c8ee33f49b2533336e4ef183807470",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bea4dev",
-        "repo": "ShojiWM",
-        "type": "github"
       }
     },
     "systems": {
