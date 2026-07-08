@@ -276,16 +276,18 @@ export default function NotificationCenter(
                   </button>
                 )}
               </For>
-              {notifications((ns) => ns.length === 0) && (
-                <box
-                  class="empty-state"
-                  halign={Gtk.Align.CENTER}
-                  valign={Gtk.Align.CENTER}
-                  vexpand
-                >
-                  <label label="Sin notificaciones" class="empty-label" />
-                </box>
-              )}
+              <box
+                visible={notifications((ns) => ns.length === 0)}
+                valign={Gtk.Align.CENTER}
+                halign={Gtk.Align.CENTER}
+                orientation={Gtk.Orientation.VERTICAL}
+                hexpand
+                vexpand
+                class="empty-info-noti"
+              >
+                <label class="empty-icon" label="󰂛" />
+                <label class="empty-info" label="Sin Notificaciones" />
+              </box>
             </box>
           </scrolledwindow>
         </box>

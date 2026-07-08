@@ -182,12 +182,15 @@ window.NotificationCenter {
     padding: 6px 0;
   }
 
-  & .empty-state {
-    padding: 40px;
-
-    & .empty-label {
-      color: transparentize($foreground, 0.5);
-      font-size: 13px;
+  & .empty-info-noti {
+    & > label {
+      margin-bottom: 10px;
+    }
+    & .empty-icon {
+      font-size: 40px;
+    }
+    & .empty-info {
+      font-weight: bold;
     }
   }
 
