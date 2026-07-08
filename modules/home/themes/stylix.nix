@@ -47,7 +47,10 @@ in {
         enable = true;
         image.enable = true;
       };
-      lazygit.enable = true;
+      lazygit = {
+        enable = true;
+        colors.enable = true;
+      };
       fzf.enable = true;
       cava.enable = true;
       bat.enable = true;
