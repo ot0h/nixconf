@@ -28,27 +28,24 @@ in {
     $color15: ${c.base07};
   '';
 
-  xdg.configFile."stylix-colors/colors.lua".text = ''
+  xdg.configFile."stylix-colors/palette.lua".text = ''
     return {
-      background = "${c.base00}",
-      foreground = "${c.base05}",
-      cursor = "${c.base05}",
-      color0 = "${c.base00}",
-      color1 = "${c.base08}",
-      color2 = "${c.base0B}",
-      color3 = "${c.base0A}",
-      color4 = "${c.base0D}",
-      color5 = "${c.base0E}",
-      color6 = "${c.base0C}",
-      color7 = "${c.base05}",
-      color8 = "${c.base03}",
-      color9 = "${c.base08}",
-      color10 = "${c.base0B}",
-      color11 = "${c.base0A}",
-      color12 = "${c.base0D}",
-      color13 = "${c.base0E}",
-      color14 = "${c.base0C}",
-      color15 = "${c.base07}",
+      base00 = "${c.base00}",
+      base01 = "${c.base01}",
+      base02 = "${c.base02}",
+      base03 = "${c.base03}",
+      base04 = "${c.base04}",
+      base05 = "${c.base05}",
+      base06 = "${c.base06}",
+      base07 = "${c.base07}",
+      base08 = "${c.base08}",
+      base09 = "${c.base09}",
+      base0A = "${c.base0A}",
+      base0B = "${c.base0B}",
+      base0C = "${c.base0C}",
+      base0D = "${c.base0D}",
+      base0E = "${c.base0E}",
+      base0F = "${c.base0F}",
     }
   '';
 }

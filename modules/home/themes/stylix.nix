@@ -43,7 +43,10 @@ in {
     targets = {
       gtk.enable = true;
       spotify-player.enable = true;
-      hyprland.enable = true;
+      hyprland = {
+        enable = true;
+        image = true;
+      };
       lazygit.enable = true;
       fzf.enable = true;
       cava.enable = true;
