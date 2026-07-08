@@ -44,6 +44,13 @@ in {
       gtk.enable = true;
       spotify-player.enable = true;
       hyprland.enable = true;
+      lazygit.enable = true;
+      fzf.enable = true;
+      cava.enable = true;
+      bat.enable = true;
+      kitty.enable = true;
+      ncspot.enable = true;
+      zen-browser.enable = true;
     };
   };
 }

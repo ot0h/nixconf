@@ -2,7 +2,6 @@
   programs.yazi.theme = {
     mgr = {
       border_symbol = " ";
-      border_style = {fg = "#838ba7";};
     };
 
     icon = {

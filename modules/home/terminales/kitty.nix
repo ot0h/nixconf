@@ -4,7 +4,7 @@
     package = pkgs.kitty;
 
     extraConfig = ''
-      include ~/.cache/wal/colors-kitty.conf
+      # include ~/.cache/wal/colors-kitty.conf
       include /tmp/kitty-opacity.conf
     '';
     settings = {

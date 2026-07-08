@@ -4,7 +4,6 @@
 # : Manager {{{
 
 border_symbol = " "
-border_style = { fg = "#838ba7" }
 
 [icon]
 prepend_conds = [{ if = "dir", text = "" }]
