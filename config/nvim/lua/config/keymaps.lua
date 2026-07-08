@@ -176,26 +176,6 @@ end, {
 	end,
 })
 
-map("n", "<leader>ui", function()
-	local cfg = require("pywal.config")
-	cfg.italic_enabled = not cfg.italic_enabled
-	require("pywal"):reload()
-	vim.notify(
-		"Italic: " .. (cfg.italic_enabled and "ON" or "OFF"),
-		cfg.italic_enabled and vim.log.levels.INFO or vim.log.levels.WARN,
-		{ title = "UI" }
-	)
-end, {
-	desc = "Italic",
-	icon = function()
-		local ok, cfg = pcall(require, "pywal.config")
-		if not ok then
-			return "󰔢"
-		end
-		return cfg.italic_enabled and "󰔡" or "󰔢"
-	end,
-})
-
 map("n", "<leader>uc", "<cmd>CopilotToggle<CR>", { desc = "Copilot", icon = "" })
 
 -- Conform y Guardado
