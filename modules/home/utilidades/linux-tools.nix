@@ -20,5 +20,6 @@
     libwebp
     gifsicle
     ghostscript
+    bibata-cursors
   ];
 }

@@ -16,7 +16,7 @@ require("noice").setup({
 		},
 	},
 	cmdline = {
-		view = "cmdline_popup",
+		view = "cmdline",
 	},
 	presets = {
 		bottom_search = true,
@@ -104,7 +104,7 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = {
-			{ "mode", icon = "" },
+			{ "mode", icon = "" },
 			{ show_macro_recording, color = macro_blink_color },
 		},
 		lualine_b = {
@@ -117,7 +117,7 @@ require("lualine").setup({
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
-				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
 		},
 		lualine_c = {
