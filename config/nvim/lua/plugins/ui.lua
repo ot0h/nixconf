@@ -60,6 +60,14 @@ require("incline").setup({
 	end,
 })
 
+-- Helper: obtiene un color hex desde un grupo de highlight activo
+-- (usa el colorscheme cargado, sea el que Stylix aplicó o cualquier otro)
+local function get_hl_color(group, attr)
+	local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+	local color = hl[attr]
+	return color and string.format("#%06x", color) or nil
+end
+
 -- Macro recording: parpadea alternando colores de fondo
 local macro_blink_on = true
 vim.fn.timer_start(500, function()
@@ -79,8 +87,9 @@ local function macro_blink_color()
 	if recording == "" then
 		return {}
 	end
-	local wal = require("colors")
-	return macro_blink_on and { fg = wal.background, gui = "bold" } or { fg = wal.color11, gui = "bold" }
+	local bg = get_hl_color("Normal", "bg")
+	local warn = get_hl_color("DiagnosticWarn", "fg")
+	return macro_blink_on and { fg = bg, gui = "bold" } or { fg = warn, gui = "bold" }
 end
 
 -- Plugin: nvim-lualine/lualine.nvim
@@ -124,16 +133,14 @@ require("lualine").setup({
 				require("noice").api.status.search.get,
 				cond = require("noice").api.status.search.has,
 				color = function()
-					local wal = require("colors")
-					return { fg = wal.color3 }
+					return { fg = get_hl_color("String", "fg") }
 				end,
 			},
 			{
 				require("noice").api.status.command.get,
 				cond = require("noice").api.status.command.has,
 				color = function()
-					local wal = require("colors")
-					return { fg = wal.color3 }
+					return { fg = get_hl_color("String", "fg") }
 				end,
 			},
 			{
@@ -158,11 +165,10 @@ require("lualine").setup({
 						return {}
 					end
 					local status = copilot.status.data
-					local wal = require("colors")
 					local colors = {
-						Normal = { fg = wal.color2 },
-						InProgress = { fg = wal.color3 },
-						Warning = { fg = wal.color1 },
+						Normal = { fg = get_hl_color("DiagnosticOk", "fg") },
+						InProgress = { fg = get_hl_color("DiagnosticWarn", "fg") },
+						Warning = { fg = get_hl_color("DiagnosticError", "fg") },
 					}
 					return colors[status.status] or {}
 				end,
