@@ -2,6 +2,6 @@
   imports = [
     ./ags.nix
     ./hyprland.nix
-    ./shojiwm.nix
+    # ./shojiwm.nix
   ];
 }

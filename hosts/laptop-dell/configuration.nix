@@ -9,7 +9,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/default.nix
-    ../../modules/nixos/desktop/shojiwm.nix
+    # ../../modules/nixos/desktop/shojiwm.nix
   ];
 
   # Mas cosas del Hardware
