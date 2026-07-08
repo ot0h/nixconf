@@ -72,6 +72,11 @@
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
+    "mini.base16": {
+      "rev": "ecbcb4e363169a663ece476f35fd87870c6d6a8b",
+      "src": "https://github.com/nvim-mini/mini.base16",
+      "version": "'stable'"
+    },
     "mini.files": {
       "rev": "0765a2502d3577b2b00d21f8f607f9bd7c8d89fc",
       "src": "https://github.com/nvim-mini/mini.files",
