@@ -34,6 +34,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # shojiwm.url = "github:bea4dev/ShojiWM";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -66,6 +70,9 @@
                   backupFileExtension = "backup";
                   extraSpecialArgs = {inherit inputs username;};
                   users.${username} = import ./hosts/${hostName}/home.nix;
+                  sharedModules = [
+                    inputs.stylix.homeModules.stylix
+                  ];
                 };
               }
             ];

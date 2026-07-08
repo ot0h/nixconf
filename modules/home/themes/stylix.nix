@@ -1,0 +1,49 @@
+{pkgs, ...}: let
+  imagen = ../../../extras/Wallpapers/14.jpg;
+in {
+  stylix = {
+    enable = true;
+    image = imagen;
+
+    cursor = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+
+    iconTheme = {
+      enable = true;
+      package = pkgs.tela-circle-icon-theme.override {
+        colorVariants = ["black"];
+      };
+      dark = "Tela-circle-black-dark";
+      light = "Tela-circle-black-light";
+    };
+
+    fonts = {
+      monospace = {
+        package = pkgs.departure-mono;
+        name = "Departure Mono";
+      };
+      sansSerif = {
+        package = pkgs.departure-mono;
+        name = "Departure Mono";
+      };
+      serif = {
+        package = pkgs.departure-mono;
+        name = "Departure Mono";
+      };
+      sizes = {
+        applications = 10;
+        desktop = 10;
+        terminal = 11;
+      };
+    };
+
+    targets = {
+      gtk.enable = true;
+      spotify-player.enable = true;
+      hyprland.enable = true;
+    };
+  };
+}
