@@ -36,8 +36,6 @@ app.start({
       ScreenShots(monitor, i)
       NotificationCenter(monitor, i)
       HyprlandLayoutsSwitcher(monitor, i)
-      WallpaperPicker(monitor, i)
-      Clock(monitor, i)
     })
   },
   requestHandler(argv: string[], res: (r: unknown) => void) {
