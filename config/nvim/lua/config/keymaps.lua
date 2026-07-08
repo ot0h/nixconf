@@ -106,6 +106,7 @@ map("n", "<space>,", ":lua Snacks.picker.buffers()<CR>", "Buffers")
 map({ "n", "v", "x" }, "<space>p", ":lua Snacks.picker()<CR>", { desc = "Snacks Picker", icon = "󱥰" })
 map("n", "<leader>fg", ":lua Snacks.picker.grep()<CR>", "Grep")
 map("n", "<leader>fb", ":lua Snacks.picker.grep_buffers()<CR>", "Grep Buffers")
+map("n", "<leader>ff", ":lua Snacks.picker.files()<CR>", "Grep Buffers")
 map("n", "<leader>fG", ":lua Snacks.picker.git_grep()<CR>", "Git Grep")
 
 map("n", "<leader>gg", ":lua Snacks.lazygit()<CR>", { desc = "Lazygit", icon = "" })
@@ -116,7 +117,9 @@ map("n", "<leader>sd", ":lua Snacks.picker.diagnostics()<CR>", "Search Diagnosti
 map("n", "<leader>sD", ":lua Snacks.picker.diagnostics_buffer()<CR>", "Search Diagnostic in Buffer")
 map("n", "<leader>st", ":lua Snacks.picker.treesitter()<CR>", "Search Treesitter")
 map("n", "<leader>su", ":lua Snacks.picker.undo()<CR>", "Search Undo")
+map("n", "<leader>sm", ":lua Snacks.picker.man()<CR>", "Search Man")
 map("n", "<leader>sl", ":lua Snacks.picker.lines()<CR>", "Search Line")
+map("n", "<leader>ss", ":lua Snacks.picker.lsp_symbols()<CR>", "Search LSP SYMBOLS")
 
 map("n", "<leader>n", ":lua Snacks.picker.notifications()<CR>", { desc = "notifications", icon = "" })
 map("n", "<leader>e", ":lua Snacks.picker.explorer()<CR>", { desc = "Explorer", icon = "" })
@@ -126,9 +129,8 @@ map("n", "gd", ":lua Snacks.picker.lsp_definitions()<CR>", "Go to LSP Definition
 map("n", "gR", ":lua Snacks.picker.lsp_references()<CR>", "Go to LSP Reference")
 map("n", "gI", ":lua Snacks.picker.lsp_implementations()<CR>", "Go to LSP Implementation")
 map("n", "gT", ":lua Snacks.picker.lsp_type_definitions()<CR>", "Go to LSP Type Definition")
-map("n", "gS", ":lua Snacks.picker.lsp_symbols()<CR>", "Go to LSP Symbols")
 map("x", "<space>fw", ":lua Snacks.picker.grep_word()<CR>", "Visual Grep Word")
-map("x", "<space>fi", ":lua Snacks.picker.icons()<CR>", "Search Icon")
+map({ "x", "n" }, "<space>fi", ":lua Snacks.picker.icons()<CR>", "Search Icon")
 
 -- Cosas de UI
 map("n", "<leader>uw", function()
