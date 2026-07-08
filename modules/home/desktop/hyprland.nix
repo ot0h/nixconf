@@ -4,6 +4,7 @@
     hypridle
     hyprlock
     hyprsunset
+    hyprpaper
     hyprshot
     hyprpicker
     pywal16

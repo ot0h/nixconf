@@ -54,9 +54,10 @@ in {
       neovim = {
         enable = true;
         colors = {
-        enable = true;
+          enable = true;
         };
       };
+      hyprpaper.enable = true;
     };
   };
 }
