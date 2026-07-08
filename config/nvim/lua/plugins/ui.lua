@@ -27,7 +27,7 @@ require("noice").setup({
 	showcmd = {
 		enabled = true,
 		format = {
-			cmdline = " %s",
+			cmdline = " %s",
 		},
 	},
 })
@@ -79,7 +79,7 @@ local function macro_blink_color()
 	if recording == "" then
 		return {}
 	end
-	local wal = require("pywal.core").get_colors()
+	local wal = require("colors")
 	return macro_blink_on and { fg = wal.background, gui = "bold" } or { fg = wal.color11, gui = "bold" }
 end
 
@@ -88,27 +88,27 @@ end
 -- description: A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 require("lualine").setup({
 	options = {
-		theme = "pywal",
+		theme = "auto",
 		icons_enabled = true,
 		globalstatus = true,
 		refresh = { statusline = 50 },
 	},
 	sections = {
 		lualine_a = {
-			{ "mode", icon = "" },
+			{ "mode", icon = "" },
 			{ show_macro_recording, color = macro_blink_color },
 		},
 		lualine_b = {
 			-- Branch de git
 			{
 				"branch",
-				icon = "",
+				icon = "",
 			},
 			-- Diagnósticos del LSP
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
-				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
 		},
 		lualine_c = {
@@ -124,7 +124,7 @@ require("lualine").setup({
 				require("noice").api.status.search.get,
 				cond = require("noice").api.status.search.has,
 				color = function()
-					local wal = require("pywal.core").get_colors()
+					local wal = require("colors")
 					return { fg = wal.color3 }
 				end,
 			},
@@ -132,7 +132,7 @@ require("lualine").setup({
 				require("noice").api.status.command.get,
 				cond = require("noice").api.status.command.has,
 				color = function()
-					local wal = require("pywal.core").get_colors()
+					local wal = require("colors")
 					return { fg = wal.color3 }
 				end,
 			},
@@ -146,7 +146,7 @@ require("lualine").setup({
 						return ""
 					end
 					local status = copilot.status.data
-					local icons = { Normal = " ", InProgress = "󰔟 ", Warning = " " }
+					local icons = { Normal = " ", InProgress = "󰔟 ", Warning = " " }
 					return icons[status.status] or ""
 				end,
 				color = function()
@@ -158,7 +158,7 @@ require("lualine").setup({
 						return {}
 					end
 					local status = copilot.status.data
-					local wal = require("pywal.core").get_colors()
+					local wal = require("colors")
 					local colors = {
 						Normal = { fg = wal.color2 },
 						InProgress = { fg = wal.color3 },
@@ -190,7 +190,7 @@ require("lualine").setup({
 				lualine_a = {
 					{
 						"mode",
-						icon = " ", -- Set the icon for the mode
+						icon = " ", -- Set the icon for the mode
 					},
 				},
 				lualine_b = {
@@ -290,30 +290,30 @@ require("snacks").setup({
 		},
 		preset = {
 			header = [[
-	        ████ ██████           █████      ██                     
-	       ███████████             █████                             
-	       █████████ ███████████████████ ███   ███████████   
-	      █████████  ███    █████████████ █████ ██████████████   
-	     █████████ ██████████ █████████ █████ █████ ████ █████   
-	   ███████████ ███    ███ █████████ █████ █████ ████ █████  
-	  ██████  █████████████████████ ████ █████ █████ ████ ██████ 
+	        ████ ██████           █████      ██                     
+	       ███████████             █████                             
+	       █████████ ███████████████████ ███   ███████████   
+	      █████████  ███    █████████████ █████ ██████████████   
+	     █████████ ██████████ █████████ █████ █████ ████ █████   
+	   ███████████ ███    ███ █████████ █████ █████ ████ █████  
+	  ██████  █████████████████████ ████ █████ █████ ████ ██████ 
 	 ]],
 		},
 
 		---@type snacks.dashboard.Item[]
 		keys = {
-			{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-			-- { icon = " ", key = "o", desc = "Obsidian", action = ":Oil ~/Documents/Notas/" },
-			{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-			{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
-			{ icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+			{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+			-- { icon = " ", key = "o", desc = "Obsidian", action = ":Oil ~/Documents/Notas/" },
+			{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+			{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
+			{ icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
 			{
-				icon = " ",
+				icon = " ",
 				key = "c",
 				desc = "Config",
 				action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
 			},
-			{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+			{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 		},
 	},
 })

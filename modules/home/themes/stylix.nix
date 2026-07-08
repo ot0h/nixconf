@@ -51,6 +51,7 @@ in {
       kitty.enable = true;
       ncspot.enable = true;
       zen-browser.enable = true;
+      neovim.enable = true;
     };
   };
 }
