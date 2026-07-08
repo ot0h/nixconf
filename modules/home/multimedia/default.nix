@@ -18,6 +18,7 @@ in {
 
     # Audio
     wiremix
+    kopuz
 
     mgba
 
