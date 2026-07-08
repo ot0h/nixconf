@@ -45,7 +45,7 @@ in {
       spotify-player.enable = true;
       hyprland = {
         enable = true;
-        image = true;
+        image.enable = true;
       };
       lazygit.enable = true;
       fzf.enable = true;
