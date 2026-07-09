@@ -1,73 +1,76 @@
 local M = {}
 
--- Cache for colors to avoid re-sourcing the wal file on every call
+-- Cache para no leer el archivo en cada llamada
 local cached_colors = nil
 
---- Get colors from pywal cache
---- Only sources the wal file once, then returns cached values
+--- Obtiene los colores importando directamente el archivo neovim.lua
 function M.get_colors()
-  if cached_colors then
-    return cached_colors
-  end
+	if cached_colors then
+		return cached_colors
+	end
 
-  -- Ensure wal colors are loaded
-  -- Note: pywal saves to ~/.cache/wal, not nvim's cache directory
-  local wal_file = vim.fn.expand("~/.cache/wal/colors-wal.vim")
-  if vim.fn.filereadable(wal_file) == 1 then
-    vim.cmd("source " .. wal_file)
-  end
+	-- Ruta de la carpeta donde tenés tu neovim.lua
+	local colors_dir = vim.fn.expand("~/.config/stylix-colors")
 
-  local base_colors = {
-    background = vim.g.background,
-    foreground = vim.g.foreground,
-    cursor = vim.g.cursor,
-    color0 = vim.g.color0,
-    color1 = vim.g.color1,
-    color2 = vim.g.color2,
-    color3 = vim.g.color3,
-    color4 = vim.g.color4,
-    color5 = vim.g.color5,
-    color6 = vim.g.color6,
-    color7 = vim.g.color7,
-    color8 = vim.g.color8,
-    color9 = vim.g.color9,
-    color10 = vim.g.color10,
-    color11 = vim.g.color11,
-    color12 = vim.g.color12,
-    color13 = vim.g.color13,
-    color14 = vim.g.color14,
-    color15 = vim.g.color15,
-  }
+	-- Le soplamos a Lua dónde buscar el módulo
+	package.path = package.path .. ";" .. colors_dir .. "/?.lua"
 
-  -- Add computed colors that don't exist in pywal but are used in config.lua
-  cached_colors = vim.tbl_extend("force", base_colors, {
-    -- Aliases for common pywal colors
-    red = base_colors.color1,      -- often used for errors
-    yellow = base_colors.color3,  -- often used for warnings
-    green = base_colors.color2,   -- often used for success
-    blue = base_colors.color4,   -- often used for info
-    purple = base_colors.color5, -- often used for hints
-    orange = base_colors.color11,
-    cyan = base_colors.color6,
-    -- Additional semantic colors commonly used
-    rosewater = base_colors.color7,
-    sky = base_colors.color6,
-    teal = base_colors.color5,
-    overlay = base_colors.color8,
-    surface = base_colors.background,
-    base = base_colors.background,
-    mantle = base_colors.background,
-    surface1 = base_colors.color0,
-    surface2 = base_colors.color8,
-  })
+	local ok, base16 = pcall(require, "neovim")
+	if not ok then
+		vim.notify(
+			"¡Pijazo de error! No se pudo encontrar o cargar neovim.lua en " .. colors_dir,
+			vim.log.levels.ERROR
+		)
+		base16 = {} -- Tabla vacía para que no se caiga la config
+	end
 
-  return cached_colors
-end
+	-- Mapeamos las variables de tu paleta
+	local base_colors = {
+		background = base16.base00 or "#1c1c1c",
+		foreground = base16.base05 or "#dfdfdf",
+		cursor = base16.base07 or "#e4e4e4",
 
---- Force reload colors (useful when pywal regenerates the theme)
-function M.reload()
-  cached_colors = nil
-  return M.get_colors()
+		-- Mapeo clásico de colores de terminal (color0 a color15)
+		color0 = base16.base00 or "#1c1c1c",
+		color1 = base16.base08 or "#919191",
+		color2 = base16.base0B or "#919191",
+		color3 = base16.base0A or "#919191",
+		color4 = base16.base0D or "#929292",
+		color5 = base16.base0E or "#919191",
+		color6 = base16.base0C or "#909090",
+		color7 = base16.base05 or "#dfdfdf",
+		color8 = base16.base03 or "#9e9e9e",
+		color9 = base16.base08 or "#919191",
+		color10 = base16.base0B or "#919191",
+		color11 = base16.base0A or "#919191",
+		color12 = base16.base0D or "#929292",
+		color13 = base16.base0E or "#919191",
+		color14 = base16.base0C or "#909090",
+		color15 = base16.base07 or "#e4e4e4",
+	}
+
+	-- Extendemos con los alias semánticos que ocupás
+	cached_colors = vim.tbl_extend("force", base_colors, {
+		red = base_colors.color1,
+		yellow = base_colors.color3,
+		green = base_colors.color2,
+		blue = base_colors.color4,
+		purple = base_colors.color5,
+		orange = base_colors.color11,
+		cyan = base_colors.color6,
+
+		rosewater = base16.base06 or "#dddddd",
+		sky = base_colors.color6,
+		teal = base16.base0F or "#919191",
+		overlay = base16.base02 or "#6b6b6b",
+		surface = base16.base01 or "#474747",
+		base = base_colors.background,
+		mantle = base_colors.background,
+		surface1 = base16.base01 or "#474747",
+		surface2 = base16.base02 or "#6b6b6b",
+	})
+
+	return cached_colors
 end
 
 return M

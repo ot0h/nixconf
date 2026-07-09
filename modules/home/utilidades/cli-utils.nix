@@ -18,14 +18,7 @@
     inputs.gazelle.packages.${pkgs.stdenv.hostPlatform.system}.default
     chafa
     file
+    bat
     cava
   ];
-
-  programs.bat = {
-    enable = true;
-    config = {
-      pager = "less -FR";
-      theme = "base16";
-    };
-  };
 }

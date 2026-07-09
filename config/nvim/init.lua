@@ -32,7 +32,6 @@ vim.pack.add({
 	{ src = "https://github.com/ThePrimeagen/refactoring.nvim", version = "master" },
 	{ src = "https://github.com/lewis6991/async.nvim", version = "main" },
 	{ src = "https://github.com/nvim-mini/mini.splitjoin", version = "stable" },
-	{ src = "https://github.com/nvim-mini/mini.base16", version = "stable" },
 
 	-- Dependencias
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -46,6 +45,14 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
+-- Pywal: debe ir ANTES de los plugins para que lualine encuentre pywal.core
+vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/lua/config/assets/pywal")
+local pywal_config = require("pywal.config")
+pywal_config.italic_enabled = false
+-- pywal_config.bold_override = { "Comment" }
+
+vim.cmd.colorscheme("pywal")
+
 require("plugins.nav")
 require("plugins.editor")
 require("plugins.ui")
@@ -55,4 +62,3 @@ require("plugins.markdown")
 require("plugins.typst")
 require("plugins.treesitter")
 require("plugins.ai")
-require("plugins.colors")
