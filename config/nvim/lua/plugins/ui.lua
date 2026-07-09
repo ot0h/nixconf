@@ -79,8 +79,8 @@ local function macro_blink_color()
 	if recording == "" then
 		return {}
 	end
-	local wal = require("pywal.core").get_colors()
-	return macro_blink_on and { fg = wal.background, gui = "bold" } or { fg = wal.color11, gui = "bold" }
+	local c = require("config.stylix.core").get_colors()
+	return macro_blink_on and { fg = c.background, gui = "bold" } or { fg = c.color11, gui = "bold" }
 end
 
 -- Plugin: nvim-lualine/lualine.nvim
@@ -88,7 +88,7 @@ end
 -- description: A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 require("lualine").setup({
 	options = {
-		theme = "pywal",
+		theme = "stylix",
 		icons_enabled = true,
 		globalstatus = true,
 		refresh = { statusline = 50 },
@@ -124,16 +124,16 @@ require("lualine").setup({
 				require("noice").api.status.search.get,
 				cond = require("noice").api.status.search.has,
 				color = function()
-					local wal = require("pywal.core").get_colors()
-					return { fg = wal.color3 }
+					local c = require("config.stylix.core").get_colors()
+					return { fg = c.color3 }
 				end,
 			},
 			{
 				require("noice").api.status.command.get,
 				cond = require("noice").api.status.command.has,
 				color = function()
-					local wal = require("pywal.core").get_colors()
-					return { fg = wal.color3 }
+					local c = require("config.stylix.core").get_colors()
+					return { fg = c.color3 }
 				end,
 			},
 			{
@@ -158,11 +158,11 @@ require("lualine").setup({
 						return {}
 					end
 					local status = copilot.status.data
-					local wal = require("pywal.core").get_colors()
+					local c = require("config.stylix.core").get_colors()
 					local colors = {
-						Normal = { fg = wal.color2 },
-						InProgress = { fg = wal.color3 },
-						Warning = { fg = wal.color1 },
+						Normal = { fg = c.color2 },
+						InProgress = { fg = c.color3 },
+						Warning = { fg = c.color1 },
 					}
 					return colors[status.status] or {}
 				end,

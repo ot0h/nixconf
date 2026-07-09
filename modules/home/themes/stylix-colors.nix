@@ -64,12 +64,12 @@ in {
        color7  = "${c.base07}",
        color8  = "${c.base08}",
        color9  = "${c.base09}",
-       color10 = "${c.base10}",
-       color11 = "${c.base11}",
-       color12 = "${c.base12}",
-       color13 = "${c.base13}",
-       color14 = "${c.base14}",
-       color15 = "${c.base15}",
+       color10 = "${c.base0B}",
+       color11 = "${c.base0A}",
+       color12 = "${c.base0D}",
+       color13 = "${c.base0E}",
+       color14 = "${c.base0C}",
+       color15 = "${c.base07}",
     }
   '';
 }

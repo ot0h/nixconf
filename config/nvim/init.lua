@@ -45,13 +45,7 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
--- Pywal: debe ir ANTES de los plugins para que lualine encuentre pywal.core
-vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/lua/config/assets/pywal")
-local pywal_config = require("pywal.config")
-pywal_config.italic_enabled = false
--- pywal_config.bold_override = { "Comment" }
-
-vim.cmd.colorscheme("pywal")
+require("config.stylix").setup()
 
 require("plugins.nav")
 require("plugins.editor")

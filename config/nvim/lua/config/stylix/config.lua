@@ -1,32 +1,20 @@
 local M = {}
 
--- ============================================================
--- CONFIGURACIÓN DE HIGHLIGHTS - EDITAR ACÁ
--- ============================================================
--- Para deshabilitar todos los italic: italic_enabled = false
--- Para usar bold en vez de italic en ciertos grupos: bold_override = { "Comment", "String" }
--- Para font custom por grupo (experimental, solo GUI): font_custom = { Comment = "Victor Mono 12" }
--- ============================================================
-M.italic_enabled = true -- Toggle global para italic
-M.bold_override = { "Comment" } -- Grupos que usan bold en vez de italic
-M.font_custom = {} -- Font por highlight group (solo GUI)
+M.italic_enabled = false
+M.bold_override = { "Comment" }
+M.font_custom = {}
 
--- Helper para aplicar italic/bold basado en configuración
--- group_name: nombre del highlight group
--- has_italic: valor original que tenía el highlight (boolean o nil)
 local function resolve_style(group_name, has_italic)
 	if not has_italic then
 		return { italic = nil, bold = nil }
 	end
 
-	-- Si el grupo está en bold_override, usar bold
 	for _, v in ipairs(M.bold_override) do
 		if group_name == v then
 			return { italic = false, bold = true }
 		end
 	end
 
-	-- Aplicar según configuración global
 	return {
 		italic = M.italic_enabled,
 		bold = false,
@@ -135,155 +123,39 @@ M.highlights_base = function(colors)
 		CmpItemMenu = { fg = colors.color2, bg = colors.background },
 
 		-- treesitter
-
-		-- These groups are for the neovim tree-sitter highlights.
-		-- As of writing, tree-sitter support is a WIP, group names may color5.
-		-- By default, most of these groups link to an appropriate Vim group,
-		-- TSError -> Error for example, so you do not have to define these unless
-		-- you explicitly want to support Treesitter's improved syntax awareness.
-
-		-- TSAnnotation = {}, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		-- TSAttribute         = { };    -- (unstable) TODO: docs
-		-- TSBoolean           = { };    -- For booleans.
-		-- TSCharacter         = { };    -- For characters.
-		-- TSComment = {}, -- For color1 blocks.
 		TSNote = { fg = colors.background, bg = colors.color5 },
 		TSComment = { fg = colors.color1, italic = false },
 		TSWarning = { fg = colors.background, bg = colors.color5 },
 		TSDanger = { fg = colors.background, bg = colors.color3 },
-		TSConstructor = { fg = colors.color6 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		-- TSConditional       = { };    -- For keywords related to conditionnals.
-		-- TSConstant          = { };    -- For constants
-		-- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
-		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
-		-- TSError             = { };    -- For syntax/parser errors.
-		-- TSException         = { };    -- For exception related keywords.
-		TSField = { fg = colors.color9 }, -- For fields.
-		-- TSFloat             = { };    -- For floats.
-		-- TSFunction = { fg = colors.color2 }, -- For function (calls and definitions).
-		-- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
-		-- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { italic = true }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = { fg = colors.color6 }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = colors.color8, bold = true }, -- For keywords used to define a fuction.
-		TSLabel = { fg = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
-		-- TSMethod            = { };    -- For method calls and definitions.
-		-- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
-		-- TSNone              = { };    -- TODO: docs
-		-- TSNumber            = { };    -- For all numbers
-		TSOperator = { fg = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = colors.color5, italic = false, bold = true }, -- For parameters of a function.
-		-- TSParameterReference= { };    -- For references to parameters of a function.
-		TSProperty = { fg = colors.color9 }, -- Same as `TSField`.
-		TSPunctDelimiter = { fg = colors.color7 }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = colors.foreground }, -- For brackets and parens.
-		TSPunctSpecial = { fg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
-		-- TSRepeat            = { };    -- For keywords related to loops.
-		-- TSString            = { };    -- For strings.
-		TSStringRegex = { fg = colors.color7 }, -- For regexes.
-		TSStringEscape = { fg = colors.color6 }, -- For escape characters within a string.
-		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-		-- TSType = { italic = true }, -- For types.
-		-- TSTypeBuiltin = { italic = true }, -- For builtin types.
-		TSVariableBuiltin = { fg = colors.color14, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-
-		-- TSTag = { fg = colors.color8, bold = true }, -- Tags like html tag names.
-		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-		-- TSText              = { };    -- For strings considered text in a markup language.
+		TSConstructor = { fg = colors.color6 },
+		TSField = { fg = colors.color9 },
+		TSInclude = { italic = true },
+		TSKeyword = { fg = colors.color6 },
+		TSKeywordFunction = { fg = colors.color8, bold = true },
+		TSLabel = { fg = colors.color7 },
+		TSOperator = { fg = colors.color7 },
+		TSParameter = { fg = colors.color5, italic = false, bold = true },
+		TSProperty = { fg = colors.color9 },
+		TSPunctDelimiter = { fg = colors.color7 },
+		TSPunctBracket = { fg = colors.foreground },
+		TSPunctSpecial = { fg = colors.color7 },
+		TSStringRegex = { fg = colors.color7 },
+		TSStringEscape = { fg = colors.color6 },
+		TSVariableBuiltin = { fg = colors.color14, italic = true },
 		TSTextReference = { fg = colors.color8 },
-		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
-		-- TSUnderline         = { };    -- For text to be represented with an underline.
-		-- TSStrike            = { };    -- For strikethrough text.
-		-- TSTitle             = { };    -- Text that is part of a title.
-		-- TSLiteral           = { };    -- Literal text.
-		-- TSURI               = { };    -- Any URI like a link or email.
-
-		-- LspTrouble
-		LspTroubleText = { fg = colors.foreground },
-		LspTroubleCount = { fg = colors.color6, bg = colors.foreground },
-		LspTroubleNormal = { fg = colors.foreground, bg = colors.background },
-
-		-- Illuminate
-		illuminatedWord = { bg = colors.foreground },
-		illuminatedCurWord = { bg = colors.foreground },
-
-		-- diff
-		diffAdded = { fg = colors.color4 },
-		diffRemoved = { fg = colors.color11 },
-		diffChanged = { fg = colors.color5 },
-		diffOldFile = { fg = colors.color5 },
-		diffNewFile = { fg = colors.color5 },
-		diffFile = { fg = colors.color7 },
-		diffLine = { fg = colors.color1 },
-		diffIndexLine = { fg = colors.color6 },
-
-		-- Neogit
-		NeogitBranch = { fg = colors.color6 },
-		NeogitRemote = { fg = colors.color6 },
-		NeogitHunkHeader = { bg = colors.background, fg = colors.foreground },
-		NeogitHunkHeaderHighlight = { bg = colors.foreground, fg = colors.color7 },
-		NeogitDiffContextHighlight = { bg = colors.background, fg = colors.foreground },
-		NeogitDiffDeleteHighlight = { fg = colors.color11, bg = colors.color11 },
-		NeogitDiffAddHighlight = { fg = colors.color4, bg = colors.color4 },
-
-		-- GitGutter
-		GitGutterAdd = { fg = colors.color4 }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = colors.color5 }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { fg = colors.color11 }, -- diff mode: Deleted line |diff.txt|
 
 		-- GitSigns
-		GitSignsAdd = { fg = colors.color4 }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = colors.color5 }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = colors.color11 }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = colors.color4 },
+		GitSignsChange = { fg = colors.color5 },
+		GitSignsDelete = { fg = colors.color11 },
 
 		-- Telescope
 		TelescopeBorder = { fg = colors.color1, bg = colors.background },
 		TelescopeNormal = { fg = colors.foreground, bg = colors.background },
 		TelescopeSelection = { fg = colors.background, bg = colors.color1 },
 
-		-- Indent Blank Line
-		IndentBlanklineChar = { fg = colors.color1, bg = colors.background },
-
-		-- NvimTree
-		NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
-		NvimTreeNormalNC = { fg = colors.foreground, bg = colors.background },
-		NvimTreeRootFolder = { fg = colors.color1 },
-		NvimTreeGitDirty = { fg = colors.color5 },
-		NvimTreeGitNew = { fg = colors.color4 },
-		NvimTreeGitDeleted = { fg = colors.color11 },
-		NvimTreeSpecialFile = { fg = colors.color6 },
-		NvimTreeIndentMarker = { fg = colors.foreground },
-		NvimTreeImageFile = { fg = colors.foreground },
-		NvimTreeSymlink = { fg = colors.color7 },
-		NvimTreeFolderIcon = { fg = colors.color2, bg = colors.background },
-		NvimTreeStatusLineNC = { bg = colors.background, fg = colors.background },
-
-		-- LspSaga
-		LspFloatWinNormal = { bg = colors.background },
-		LspFloatWinBorder = { fg = colors.foreground },
-		LspSagaBorderTitle = { fg = colors.color7 },
-		LspSagaHoverBorder = { fg = colors.color7 },
-		LspSagaRenameBorder = { fg = colors.color4 },
-		LspSagaDefPreviewBorder = { fg = colors.color4 },
-		LspSagaCodeActionBorder = { fg = colors.color7 },
-		LspSagaFinderSelection = { fg = colors.color1 },
-		LspSagaCodeActionTitle = { fg = colors.color7 },
-		LspSagaCodeActionContent = { fg = colors.color6 },
-		LspSagaSignatureHelpBorder = { fg = colors.color11 },
-		ReferencesCount = { fg = colors.color6 },
-		DefinitionCount = { fg = colors.color6 },
-		DefinitionIcon = { fg = colors.color7 },
-		ReferencesIcon = { fg = colors.color7 },
-		TargetWord = { fg = colors.color7 },
-
-		-- NeoVim
-		healthError = { fg = colors.color11 },
-		healthSuccess = { fg = colors.color4 },
-		healthWarning = { fg = colors.color5 },
-
-		-- BufferLine
-		BufferLineIndicatorSelected = { fg = colors.color5 },
-		BufferLineFill = { bg = colors.background },
+		-- LSP
+		LspInlayHint = { fg = colors.color4 },
 
 		-- Noice
 		NoiceCmdline = { fg = colors.color9, italic = false },
@@ -296,7 +168,6 @@ M.highlights_base = function(colors)
 		-- Flash
 		FlashPromptIcon = { fg = colors.foreground },
 		FlashPrompt = { fg = colors.color1 },
-		-- FlashMatch = { fg = colors.cursor, bold = true },
 		FlashLabel = { bg = colors.color4, fg = colors.cursor, bold = true },
 
 		-- WhichKey
@@ -307,36 +178,7 @@ M.highlights_base = function(colors)
 		WhichKeyGroup = { fg = colors.color5 },
 		WhichKeyNormal = { fg = colors.color5 },
 		WhichKeyBorder = { fg = colors.foreground },
-
 		WhichKeyIcon = { fg = colors.color5 },
-		WhichKeyIconAzure = { fg = colors.color5 },
-		WhichKeyIconBlue = { fg = colors.color5 },
-		WhichKeyIconCyan = { fg = colors.color5 },
-		WhichKeyIconGreen = { fg = colors.color5 },
-		WhichKeyIconGrey = { fg = colors.color5 },
-		WhichKeyIconOrange = { fg = colors.color5 },
-		WhichKeyIconPurple = { fg = colors.color5 },
-		WhichKeyIconRed = { fg = colors.color5 },
-		WhichKeyIconYellow = { fg = colors.color5 },
-
-		-- LSP
-		LspInlayHint = { fg = colors.color4 },
-		--Trouble
-		-- TroubleNormal = { fg = colors.color8 },
-
-		-- Oil Plugins de Tercero
-		DiagnosticError = { fg = colors.foreground },
-		DiagnosticWarn = { fg = colors.foreground },
-		DiagnosticInfo = { fg = colors.foreground },
-		DiagnosticHint = { fg = colors.foreground },
-
-		-- Markdwon Render
-		RenderMarkdownH1Bg = { bg = colors.color7, fg = colors.color0, bold = true },
-		RenderMarkdownH2Bg = { bg = colors.color6, fg = colors.color0, bold = true },
-		RenderMarkdownH3Bg = { bg = colors.color5, fg = colors.color0, bold = true },
-		RenderMarkdownH4Bg = { bg = colors.color5, fg = colors.color0, bold = true },
-		RenderMarkdownH5Bg = { bg = colors.color4, fg = colors.color0, bold = true },
-		RenderMarkdownH6Bg = { bg = colors.color3, fg = colors.color0, bold = true },
 
 		-- Snacks
 		SnacksPickerFile = { bg = "none" },
@@ -362,44 +204,49 @@ M.highlights_base = function(colors)
 		LualineNormal = { bg = "none" },
 		LualineInactive = { bg = "none" },
 
+		-- Oil
+		DiagnosticError = { fg = colors.foreground },
+		DiagnosticWarn = { fg = colors.foreground },
+		DiagnosticInfo = { fg = colors.foreground },
+		DiagnosticHint = { fg = colors.foreground },
+
+		-- RenderMarkdown
+		RenderMarkdownH1Bg = { bg = colors.color7, fg = colors.color0, bold = true },
+		RenderMarkdownH2Bg = { bg = colors.color6, fg = colors.color0, bold = true },
+		RenderMarkdownH3Bg = { bg = colors.color5, fg = colors.color0, bold = true },
+		RenderMarkdownH4Bg = { bg = colors.color5, fg = colors.color0, bold = true },
+		RenderMarkdownH5Bg = { bg = colors.color4, fg = colors.color0, bold = true },
+		RenderMarkdownH6Bg = { bg = colors.color3, fg = colors.color0, bold = true },
+
 		-- Markview
-		-- Paletas primarias (0 = base, 1-6 = acentos para headings/blockquotes)
 		MarkviewPalette0 = { fg = colors.foreground, bg = colors.background },
 		MarkviewPalette0Fg = { fg = colors.foreground },
 		MarkviewPalette0Bg = { bg = colors.background },
 		MarkviewPalette0Sign = { fg = colors.foreground, bg = colors.background },
-
 		MarkviewPalette1 = { fg = colors.color1, bg = colors.background },
 		MarkviewPalette1Fg = { fg = colors.color1 },
 		MarkviewPalette1Bg = { bg = colors.color1 },
 		MarkviewPalette1Sign = { fg = colors.color1, bg = colors.background },
-
 		MarkviewPalette2 = { fg = colors.color2, bg = colors.background },
 		MarkviewPalette2Fg = { fg = colors.color2 },
 		MarkviewPalette2Bg = { bg = colors.color2 },
 		MarkviewPalette2Sign = { fg = colors.color2, bg = colors.background },
-
 		MarkviewPalette3 = { fg = colors.color3, bg = colors.background },
 		MarkviewPalette3Fg = { fg = colors.color3 },
 		MarkviewPalette3Bg = { bg = colors.color3 },
 		MarkviewPalette3Sign = { fg = colors.color3, bg = colors.background },
-
 		MarkviewPalette4 = { fg = colors.color4, bg = colors.background },
 		MarkviewPalette4Fg = { fg = colors.color4 },
 		MarkviewPalette4Bg = { bg = colors.color4 },
 		MarkviewPalette4Sign = { fg = colors.color4, bg = colors.background },
-
 		MarkviewPalette5 = { fg = colors.color5, bg = colors.background },
 		MarkviewPalette5Fg = { fg = colors.color5 },
 		MarkviewPalette5Bg = { bg = colors.color5 },
 		MarkviewPalette5Sign = { fg = colors.color5, bg = colors.background },
-
 		MarkviewPalette6 = { fg = colors.color6, bg = colors.background },
 		MarkviewPalette6Fg = { fg = colors.color6 },
 		MarkviewPalette6Bg = { bg = colors.color6 },
 		MarkviewPalette6Sign = { fg = colors.color6, bg = colors.background },
-
-		-- Headings (brillantes: fondo claro con texto oscuro, como render-markdown)
 		MarkviewHeading1 = { fg = colors.color0, bg = colors.color7, bold = true },
 		MarkviewHeading2 = { fg = colors.color0, bg = colors.color6, bold = true },
 		MarkviewHeading3 = { fg = colors.color0, bg = colors.color5, bold = true },
@@ -412,14 +259,10 @@ M.highlights_base = function(colors)
 		MarkviewHeading4Sign = { fg = colors.color4, bg = colors.background },
 		MarkviewHeading5Sign = { fg = colors.color3, bg = colors.background },
 		MarkviewHeading6Sign = { fg = colors.color2, bg = colors.background },
-
-		-- Code blocks
 		MarkviewCode = { bg = colors.color8, fg = colors.color5 },
 		MarkviewCodeInfo = { fg = colors.foreground },
 		MarkviewCodeFg = { fg = colors.foreground },
 		MarkviewInlineCode = { fg = colors.color6, bg = colors.color8 },
-
-		-- Gradientes (tablas, alternancia de colores, etc.)
 		MarkviewGradient0 = { fg = colors.color0 },
 		MarkviewGradient1 = { fg = colors.color1 },
 		MarkviewGradient2 = { fg = colors.color2 },
@@ -432,4 +275,5 @@ M.highlights_base = function(colors)
 		MarkviewGradient9 = { fg = colors.color9 },
 	}
 end
+
 return M
