@@ -11,7 +11,7 @@ in {
       size = 24;
     };
 
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.tela-circle-icon-theme.override {
         colorVariants = ["black"];
