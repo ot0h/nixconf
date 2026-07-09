@@ -42,7 +42,6 @@ in {
 
     targets = {
       gtk.enable = true;
-      spotify-player.enable = true;
       hyprland = {
         enable = true;
         image.enable = true;
@@ -64,6 +63,7 @@ in {
         };
       };
       hyprpaper.enable = true;
+      starship.enable = true;
     };
   };
 }

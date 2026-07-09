@@ -12,7 +12,6 @@
     fzf
     zoxide
     sesh
-    bat
     fd
     xclip
     wl-clipboard
@@ -21,4 +20,12 @@
     file
     cava
   ];
+
+  programs.bat = {
+    enable = true;
+    config = {
+      pager = "less -FR";
+      theme = "base16";
+    };
+  };
 }
