@@ -99,16 +99,31 @@ require("lualine").setup({
 			{ show_macro_recording, color = macro_blink_color },
 		},
 		lualine_b = {
-			-- Branch de git
 			{
 				"branch",
-				icon = "",
+				icon = "",
 			},
-			-- Diagnósticos del LSP
 			{
-				"diagnostics",
-				sources = { "nvim_diagnostic" },
-				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				"diff",
+				symbols = { added = " ", modified = " ", removed = " " },
+				color = function()
+					local c = require("config.stylix.core").get_colors()
+					return { fg = c.color0 }
+				end,
+				diff_color = {
+					added = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.color0 }
+					end,
+					modified = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.color0 }
+					end,
+					removed = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.color0 }
+					end,
+				},
 			},
 		},
 		lualine_c = {
@@ -119,13 +134,12 @@ require("lualine").setup({
 			},
 		},
 		lualine_x = {
-			-- Noice: mensajes pendientes (showcmd, comandos, búsqueda)
 			{
 				require("noice").api.status.search.get,
 				cond = require("noice").api.status.search.has,
 				color = function()
 					local c = require("config.stylix.core").get_colors()
-					return { fg = c.color3 }
+					return { fg = c.cyan }
 				end,
 			},
 			{
@@ -133,7 +147,7 @@ require("lualine").setup({
 				cond = require("noice").api.status.command.has,
 				color = function()
 					local c = require("config.stylix.core").get_colors()
-					return { fg = c.color3 }
+					return { fg = c.yellow }
 				end,
 			},
 			{
@@ -160,12 +174,39 @@ require("lualine").setup({
 					local status = copilot.status.data
 					local c = require("config.stylix.core").get_colors()
 					local colors = {
-						Normal = { fg = c.color2 },
-						InProgress = { fg = c.color3 },
-						Warning = { fg = c.color1 },
+						Normal = { fg = c.green },
+						InProgress = { fg = c.yellow },
+						Warning = { fg = c.red },
 					}
 					return colors[status.status] or {}
 				end,
+			},
+			{
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				color = function()
+					local c = require("config.stylix.core").get_colors()
+					return { fg = c.color7 }
+				end,
+				diagnostics_color = {
+					error = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.red }
+					end,
+					warn = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.yellow }
+					end,
+					info = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.blue }
+					end,
+					hint = function()
+						local c = require("config.stylix.core").get_colors()
+						return { fg = c.cyan }
+					end,
+				},
 			},
 		},
 		lualine_y = {
@@ -190,7 +231,7 @@ require("lualine").setup({
 				lualine_a = {
 					{
 						"mode",
-						icon = " ", -- Set the icon for the mode
+						icon = "",
 					},
 				},
 				lualine_b = {

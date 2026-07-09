@@ -71,7 +71,6 @@ in {
        color12 = "${c.base0D}",
        color13 = "${c.base0E}",
        color14 = "${c.base0C}",
-       color15 = "${c.base07}",
     }
   '';
 
