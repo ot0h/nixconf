@@ -16,7 +16,7 @@ require("noice").setup({
 		},
 	},
 	cmdline = {
-		view = "cmdline_popup",
+		view = "cmdline",
 	},
 	presets = {
 		bottom_search = true,
@@ -59,7 +59,7 @@ require("incline").setup({
 		if filename == "" then
 			filename = "[No Name]"
 		end
-		local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
+		local ft_icon = require("nvim-web-devicons").get_icon_color(filename)
 
 		local function get_git_diff()
 			local icons = { removed = " ", changed = " ", added = " " }
@@ -100,12 +100,12 @@ require("incline").setup({
 			return label
 		end
 
+		local c = require("config.stylix.core").get_colors()
 		return {
 			{ get_diagnostic_label() },
 			{ get_git_diff() },
-			{ (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
+			{ (ft_icon or "") .. " ", guifg = c.foreground, guibg = "none" },
 			{ filename .. " ", gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
-			{ "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
 		}
 	end,
 })
@@ -142,6 +142,8 @@ require("lualine").setup({
 		icons_enabled = true,
 		globalstatus = true,
 		refresh = { statusline = 50 },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 	},
 	sections = {
 		lualine_a = {
@@ -175,13 +177,14 @@ require("lualine").setup({
 					end,
 				},
 			},
-		},
-		lualine_c = {
 			{
 				"filename",
 				file_status = true,
 				path = 1,
 			},
+		},
+		lualine_c = {
+			{ "lsp_status" },
 		},
 		lualine_x = {
 			{
@@ -189,15 +192,7 @@ require("lualine").setup({
 				cond = require("noice").api.status.search.has,
 				color = function()
 					local c = require("config.stylix.core").get_colors()
-					return { fg = c.cyan }
-				end,
-			},
-			{
-				require("noice").api.status.command.get,
-				cond = require("noice").api.status.command.has,
-				color = function()
-					local c = require("config.stylix.core").get_colors()
-					return { fg = c.yellow }
+					return { fg = c.cyan, bg = c.background }
 				end,
 			},
 			{
@@ -237,7 +232,7 @@ require("lualine").setup({
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 				color = function()
 					local c = require("config.stylix.core").get_colors()
-					return { fg = c.color7 }
+					return { fg = c.color7, bg = c.color0 }
 				end,
 				diagnostics_color = {
 					error = function()
@@ -260,8 +255,14 @@ require("lualine").setup({
 			},
 		},
 		lualine_y = {
-			{ "filetype" },
-			{ "encoding" },
+			{
+				"filetype",
+				color = function()
+					local c = require("config.stylix.core").get_colors()
+					return { fg = c.foreground }
+				end,
+				icons_enabled = true,
+			},
 		},
 		lualine_z = {
 			{ "location" },
