@@ -29,7 +29,7 @@
     angular-language-server
 
     # Nix
-    nixd
+    nil
     alejandra
 
     # Rust
@@ -55,9 +55,6 @@
     tinymist
     typstyle
 
-    # Elixir
-    elixir-ls
-
     # C# / .NET
     roslyn-ls
     dotnet-sdk_8
@@ -66,11 +63,13 @@
     emmet-language-server
     vscode-langservers-extracted
     tailwindcss-language-server
-    superhtml
 
     # Bash
     bash-language-server
     shfmt
+
+    # Fish
+    fish-lsp
 
     # Lua
     lua-language-server

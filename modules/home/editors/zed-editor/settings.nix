@@ -58,15 +58,9 @@ in {
   load_direnv = "shell_hook";
   base_keymap = "VSCode";
 
-  theme = {
-    mode = "system";
-    light = "Gruvbox Material";
-    dark = "Monosami Dark";
-  };
-
   ui_font_family = font;
   buffer_font_family = font;
   show_whitespaces = "all";
-  ui_font_size = 14;
-  buffer_font_size = 14;
+  ui_font_size = lib.mkDefault 14;
+  buffer_font_size = lib.mkDefault 14;
 }

@@ -121,21 +121,12 @@
     };
   };
 
-  # ── Nix (nixd) ───────────────────────────────────────────────────
-  nixd = {
+  # ── Nix (nil) ────────────────────────────────────────────────────
+  nil = {
     binary.path_lookup = true;
     settings = {
-      nixd = {
-        nixpkgs.expr = "import <nixpkgs> { }";
+      nil = {
         formatting.command = [ "alejandra" ];
-        options = {
-          nixos.expr = ''
-            (builtins.getFlake "/home/rimv/nixconf").nixosConfigurations."laptop-dell".options
-          '';
-          home-manager.expr = ''
-            (builtins.getFlake "/home/rimv/nixconf").nixosConfigurations."laptop-dell".options.home-manager.users.type.getSubOptions []
-          '';
-        };
       };
     };
   };
@@ -143,11 +134,8 @@
   # ── Bash ─────────────────────────────────────────────────────────
   bash-language-server.binary.path_lookup = true;
 
-  # ── Elixir ───────────────────────────────────────────────────────
-  elixir-ls = {
-    binary.path_lookup = true;
-    settings.dialyzerEnabled = true;
-  };
+  # ── Fish ─────────────────────────────────────────────────────────
+  fish-lsp.binary.path_lookup = true;
 
   # ── C# / .NET (Roslyn) ───────────────────────────────────────────
   # Usamos path explícito de Nix porque el bundled del extension
@@ -237,12 +225,6 @@
 
   # ── Some Sass (SCSS/Sass) ─────────────────────────────────────────
   some-sass-language-server.binary.path_lookup = true;
-
-  # ── SuperHTML (validación, formato, hover) ─────────────────────────
-  superhtml.binary = {
-    path_lookup = true;
-    arguments = [ "lsp" ];
-  };
 
   # ── Emmet ────────────────────────────────────────────────────────
   emmet-language-server.binary.path_lookup = true;

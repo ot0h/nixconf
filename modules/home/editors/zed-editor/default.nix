@@ -11,7 +11,7 @@
   keybindings = import ./keybindings.nix;
 in {
   programs.zed-editor = {
-    enable = false;
+    enable = true;
     extensions = extensions;
     extraPackages = packages;
     userSettings =
