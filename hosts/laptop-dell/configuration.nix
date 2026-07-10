@@ -92,6 +92,7 @@ in {
   };
 
   security.pam.services.hyprland.enableGnomeKeyring = true;
+  security.pam.services.astal-auth = {};
 
   xdg.portal = {
     enable = true;

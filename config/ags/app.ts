@@ -13,6 +13,7 @@ import {
   WallpaperPicker,
   Sidebar,
   Tobpar,
+  Lock,
 } from '@windows'
 
 async function toggleOnActiveMonitor(windowBaseName: string) {
@@ -31,6 +32,7 @@ app.start({
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
       // Tobpar(monitor, i)
+      Lock()
       Panel(monitor, i)
       PowerMenu(monitor, i)
       ScreenShots(monitor, i)

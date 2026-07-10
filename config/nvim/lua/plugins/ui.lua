@@ -183,9 +183,7 @@ require("lualine").setup({
 				path = 1,
 			},
 		},
-		lualine_c = {
-			{ "lsp_status" },
-		},
+		lualine_c = {},
 		lualine_x = {
 			{
 				require("noice").api.status.search.get,
