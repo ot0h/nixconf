@@ -5,6 +5,7 @@ in {
     enable = true;
     image = imagen;
 
+    polarity = "dark";
     cursor = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
