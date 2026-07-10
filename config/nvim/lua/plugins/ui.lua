@@ -41,22 +41,72 @@ require("nvim-web-devicons").setup({
 	strict = true,
 })
 
+-- Plugin: lewis6991/gitsigns.nvim
+-- URL: https://github.com/lewis6991/gitsigns.nvim
+-- description: Git integration for buffers
+require("gitsigns").setup()
+
 -- Plugin: b0o/incline.nvim
 -- URL: https://github.com/b0o/incline.nvim
 -- description: Floating statuslines for Neovim
 require("incline").setup({
-	window = { margin = { vertical = 0, horizontal = 0 } }, -- Set the window margin
+	window = { margin = { vertical = 0, horizontal = 0 } },
 	hide = {
-		cursorline = "smart", -- Hide the incline window when the cursorline is active
+		cursorline = "smart",
 	},
 	render = function(props)
-		local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t") -- Get the filename
-		if vim.bo[props.buf].modified then
-			filename = "[+] " .. filename -- Indicate if the file is modified
+		local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+		if filename == "" then
+			filename = "[No Name]"
+		end
+		local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
+
+		local function get_git_diff()
+			local icons = { removed = " ", changed = " ", added = " " }
+			local signs = vim.b[props.buf].gitsigns_status_dict
+			local labels = {}
+			if signs == nil then
+				return labels
+			end
+			for name, icon in pairs(icons) do
+				if tonumber(signs[name]) and signs[name] > 0 then
+					table.insert(
+						labels,
+						{ icon .. signs[name] .. " ", group = "GitSigns" .. name:gsub("^%l", string.upper) }
+					)
+				end
+			end
+			if #labels > 0 then
+				table.insert(labels, { "┊ " })
+			end
+			return labels
 		end
 
-		local icon, color = require("nvim-web-devicons").get_icon_color(filename) -- Get the icon and color for the file
-		return { { icon, guifg = color }, { " " }, { filename } } -- Return the rendered content
+		local function get_diagnostic_label()
+			local icons = { error = " ", warn = " ", info = " ", hint = " " }
+			local label = {}
+			for severity, icon in pairs(icons) do
+				local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
+				if n > 0 then
+					table.insert(
+						label,
+						{ icon .. n .. " ", group = "Diagnostic" .. severity:gsub("^%l", string.upper) }
+					)
+				end
+			end
+			if #label > 0 then
+				table.insert(label, { "┊ " })
+			end
+			return label
+		end
+
+		return {
+			{ get_diagnostic_label() },
+			{ get_git_diff() },
+			{ (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
+			{ filename .. " ", gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
+			{ "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
+		}
 	end,
 })
 
