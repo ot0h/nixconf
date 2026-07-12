@@ -3,16 +3,13 @@ import styles from './styles.scss'
 import { execAsync } from 'ags/process'
 import {
   AppLauncher,
-  Clock,
   HyprlandLayoutsSwitcher,
   NotificationCenter,
   NotificationPopups,
   Panel,
   PowerMenu,
   ScreenShots,
-  WallpaperPicker,
   Sidebar,
-  Tobpar,
   Lock,
 } from '@windows'
 
@@ -31,7 +28,6 @@ app.start({
     app.get_monitors().forEach((monitor, i) => {
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
-      // Tobpar(monitor, i)
       Lock()
       Panel(monitor, i)
       PowerMenu(monitor, i)
