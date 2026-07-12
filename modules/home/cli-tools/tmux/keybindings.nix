@@ -81,5 +81,5 @@
   bind-key o if-shell -F '#{==:#{session_name},scratch}' { detach-client } { display-popup -d "#{pane_current_path}" -w 80% -h 80% -E -b rounded -s "fg=colour4" -S "bg=colour0" "tmux new-session -A -s scratch \\; set -gq allow-passthrough on" }
 
     # Lazygit
-    bind g display-popup  -d "#{pane_current_path}"  -w 80% -h 80%  -E "lazygit"
+    bind g display-popup  -d "#{pane_current_path}"  -w 95% -h 80%  -E "lazygit"
 ''
