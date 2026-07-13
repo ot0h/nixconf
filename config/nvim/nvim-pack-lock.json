@@ -11,7 +11,7 @@
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "91774548bc358c02fcc327d33c9ac0d9830c8c47",
+      "rev": "db8ea0b7c7ab8c8f8faa3912833c1671381e6304",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -40,7 +40,7 @@
       "version": "'main'"
     },
     "flash.nvim": {
-      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "https://github.com/folke/flash.nvim",
       "version": "'main'"
     },
@@ -68,7 +68,7 @@
       "version": "'master'"
     },
     "markview.nvim": {
-      "rev": "41ecde17c96941fb5b7c97995a10712738e85efe",
+      "rev": "2471f4097f8561a6880a0fe05ee0f21cbc82b374",
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
@@ -97,7 +97,7 @@
       "version": "'stable'"
     },
     "mini.surround": {
-      "rev": "19b44c1bbe4eecaf191896b8bec657d5fdd549e4",
+      "rev": "c30ec60393b256427512c6996a2b37d9cbcbb66a",
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
@@ -116,7 +116,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
+      "rev": "d5b6e3db4c17b0146f63a2fc47e2027a754b2cb1",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -138,7 +138,7 @@
       "src": "https://github.com/yioneko/nvim-vtsls"
     },
     "nvim-web-devicons": {
-      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+      "rev": "09d1324e264c6950262dbe02a9bce2933a6800db",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
     },
@@ -162,7 +162,7 @@
       "version": "'master'"
     },
     "roslyn.nvim": {
-      "rev": "05ffc134f0b70ce2715c761745f1f78321fcfa9b",
+      "rev": "b4954e97e145bd8129b3bbe99809759f6ced2235",
       "src": "https://github.com/seblyng/roslyn.nvim",
       "version": "'main'"
     },
@@ -172,7 +172,7 @@
       "version": "'main'"
     },
     "smart-splits.nvim": {
-      "rev": "0e5bc00d2a32e6c782cd279cb96ab6c7ae49cd94",
+      "rev": "9493405fb8ee683aa6efd50c529f6296ad8f40ad",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },
