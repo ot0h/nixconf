@@ -136,6 +136,11 @@ window.NotificationPopups {
         background-color: transparentize($color3, 0.5);
         color: $foreground;
       }
+
+      & > label {
+        background: none;
+        font-weight: bold;
+      }
     }
   }
 }
