@@ -67,7 +67,7 @@ export default function Control() {
         </box>
         <box class="container-bright">
           <button
-            onClicked={() => setBrightness(bright.get() < 0.05 ? 0.5 : 0)}
+            onClicked={() => setBrightness(MIN_BRIGHT === 0.15 ? 1 : 0.15)}
             cursor={Gdk.Cursor.new_from_name('pointer', null)}
           >
             <label
