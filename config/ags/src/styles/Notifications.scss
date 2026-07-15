@@ -18,6 +18,7 @@ window.NotificationPopups {
 
     .header .app-name {
       color: $color7;
+      background: none;
     }
   }
 
@@ -36,6 +37,7 @@ window.NotificationPopups {
     .app-icon {
       margin-right: 6px;
       color: $color4;
+      background: none;
     }
 
     .app-name {
@@ -43,12 +45,14 @@ window.NotificationPopups {
       font-weight: bold;
       color: $color4;
       margin-right: 4px;
+      background: none;
     }
 
     .time {
       font-size: 10px;
       color: $color2;
       margin: 0 6px;
+      background: none;
     }
 
     button {
@@ -73,17 +77,20 @@ window.NotificationPopups {
 
   .content {
     margin: 10px 12px;
+    background: none;
 
     .summary {
       font-size: 13px;
       font-weight: bold;
       color: $foreground;
+      background: none;
     }
 
     .body {
       font-size: 12px;
       color: $color5;
       margin-top: 2px;
+      background: none;
     }
 
     .image {
@@ -91,16 +98,23 @@ window.NotificationPopups {
       margin-right: 10px;
       min-width: 48px;
       min-height: 48px;
+      background: none;
     }
 
     .icon-image {
       margin-right: 10px;
       color: $color4;
+      background: none;
+
+      & > image {
+        background: none;
+      }
     }
   }
 
   .actions {
     margin: 8px 12px;
+    background: none;
 
     button {
       background-color: transparentize($color1, 0.6);
@@ -144,8 +158,13 @@ window.NotificationCenter {
   border-left: 1px solid transparentize($foreground, 0.8);
   padding: 0;
 
+  & box {
+    background: none;
+  }
+
   & > .header {
     padding: 16px 14px;
+    background: none;
     color: $foreground;
     border-bottom: 1px solid transparentize($foreground, 0.85);
 
@@ -153,10 +172,11 @@ window.NotificationCenter {
       font-size: 14px;
       font-weight: bold;
       color: $foreground;
+      background: none;
     }
 
     & .clear-all {
-      background: transparent;
+      background: none;
       border-radius: 4px;
       padding: 6px;
       color: $color5;
@@ -164,6 +184,7 @@ window.NotificationCenter {
 
       &:hover {
         color: $color7;
+        background: none;
       }
     }
   }
@@ -174,11 +195,11 @@ window.NotificationCenter {
   }
 
   & .notifications-list {
-    background: transparent;
+    background: none;
   }
 
   & .notifications-container {
-    background: transparent;
+    background: none;
     padding: 6px 0;
   }
 
@@ -195,7 +216,7 @@ window.NotificationCenter {
   }
 
   & .notif-btn {
-    background: transparent;
+    background: none;
     padding: 0;
     border: none;
     border-left: 3px solid transparent;
@@ -215,7 +236,7 @@ window.NotificationCenter {
   & .Notification {
     margin: 0;
     padding: 0;
-    background: transparent;
+    background: none;
     border-left: none;
     border-radius: 0;
 
@@ -233,6 +254,7 @@ window.NotificationCenter {
 
     & .actions {
       margin: 6px 10px 8px;
+      background: none;
 
       & .action-btn {
         background: transparentize($foreground, 0.9);
@@ -242,6 +264,10 @@ window.NotificationCenter {
         min-height: 0;
         color: $color5;
         transition: all 150ms ease;
+
+        & image {
+          background: none;
+        }
 
         &:hover {
           background: transparentize($foreground, 0.8);
@@ -269,6 +295,11 @@ window.NotificationCenter {
         color: $color5;
         font-size: 12px;
         transition: all 150ms ease;
+
+        & > label {
+          background: none;
+          font-weight: bold;
+        }
 
         &:first-child {
           margin-left: 0;
