@@ -24,7 +24,7 @@ vim.pack.add({
 	{ src = "https://github.com/OXY2DEV/markview.nvim", version = "main" },
 	{ src = "https://github.com/folke/sidekick.nvim", version = "main" },
 	{ src = "https://github.com/zbirenbaum/copilot.lua", version = "master" },
-	{ src = "https://github.com/seblyng/roslyn.nvim", version = "main" },
+	-- { src = "https://github.com/seblyng/roslyn.nvim", version = "main" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim", version = "main" },
 	{ src = "https://github.com/nvzone/minty", version = "main" },
 	{ src = "https://github.com/nvzone/volt", version = "main" },
@@ -42,17 +42,36 @@ vim.pack.add({
 })
 
 require("config.options")
-require("config.keymaps")
 require("config.autocmds")
-
 require("config.stylix").setup()
 
 require("plugins.nav")
-require("plugins.editor")
-require("plugins.ui")
-require("plugins.lsp")
-require("plugins.roslyn")
-require("plugins.markdown")
-require("plugins.typst")
-require("plugins.treesitter")
-require("plugins.ai")
+
+require("config.keymaps")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	once = true,
+	callback = function()
+		require("plugins.editor")
+		require("plugins.ui")
+		require("plugins.lsp")
+		require("plugins.treesitter")
+		require("plugins.ai")
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	once = true,
+	callback = function()
+		require("plugins.markdown")
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "typst", "typ" },
+	once = true,
+	callback = function()
+		require("plugins.typst")
+	end,
+})

@@ -161,11 +161,6 @@
       "src": "https://github.com/ThePrimeagen/refactoring.nvim",
       "version": "'master'"
     },
-    "roslyn.nvim": {
-      "rev": "b4954e97e145bd8129b3bbe99809759f6ced2235",
-      "src": "https://github.com/seblyng/roslyn.nvim",
-      "version": "'main'"
-    },
     "sidekick.nvim": {
       "rev": "208e1c5b8170c01fd1d07df0139322a76479b235",
       "src": "https://github.com/folke/sidekick.nvim",

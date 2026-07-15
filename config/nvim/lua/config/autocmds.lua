@@ -1,5 +1,3 @@
-local Snacks = require("snacks")
-
 -- Activar Hints en los servidores declarados
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
@@ -31,7 +29,7 @@ vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",
 	callback = function(event)
 		if event.data.actions[1].type == "move" then
-			Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
+			require("snacks").rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
 		end
 	end,
 })
@@ -39,6 +37,6 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_autocmd("User", {
 	pattern = "MiniFilesActionRename",
 	callback = function(event)
-		Snacks.rename.on_rename_file(event.data.from, event.data.to)
+		require("snacks").rename.on_rename_file(event.data.from, event.data.to)
 	end,
 })
