@@ -1,9 +1,11 @@
 {pkgs, ...}: let
-  imagen = ../../../extras/Wallpapers/mono.png;
+  imagen = ../../../extras/Wallpapers/skull.jpg;
 in {
   stylix = {
     enable = true;
     image = imagen;
+
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/grayscale-dark.yaml";
 
     polarity = "dark";
     cursor = {
