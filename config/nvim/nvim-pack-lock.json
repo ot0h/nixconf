@@ -11,7 +11,7 @@
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "db8ea0b7c7ab8c8f8faa3912833c1671381e6304",
+      "rev": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -49,7 +49,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
-      "rev": "25050e4ed39e628282831d4cbecb1850454ce915",
+      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": "'main'"
     },
@@ -73,7 +73,7 @@
       "version": "'main'"
     },
     "mini.files": {
-      "rev": "0765a2502d3577b2b00d21f8f607f9bd7c8d89fc",
+      "rev": "d08e8da87be8bf07d09245294821706afcca31cd",
       "src": "https://github.com/nvim-mini/mini.files",
       "version": "'main'"
     },
@@ -97,7 +97,7 @@
       "version": "'stable'"
     },
     "mini.surround": {
-      "rev": "c30ec60393b256427512c6996a2b37d9cbcbb66a",
+      "rev": "8d5d0c5aa92449368ac251e85451d79d8f69d296",
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": "'main'"
     },
@@ -116,7 +116,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "d5b6e3db4c17b0146f63a2fc47e2027a754b2cb1",
+      "rev": "b386c50cd7816f8c8a2b13b298a218af1f5a75c6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -138,7 +138,7 @@
       "src": "https://github.com/yioneko/nvim-vtsls"
     },
     "nvim-web-devicons": {
-      "rev": "09d1324e264c6950262dbe02a9bce2933a6800db",
+      "rev": "0ca28b61a04fe7426cefbdd52c2647ef0e335b5f",
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'master'"
     },
@@ -182,7 +182,7 @@
       "version": "'main'"
     },
     "typst-preview.nvim": {
-      "rev": "87db18b8d19c8b0eed399f52e4c527ce5afe4817",
+      "rev": "1c2e19486397be1c580b560fc50ee36abe329c46",
       "src": "https://github.com/chomosuke/typst-preview.nvim",
       "version": "'master'"
     },
