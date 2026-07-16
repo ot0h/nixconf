@@ -20,6 +20,7 @@ export default function Panel(gdkmonitor: Gdk.Monitor, index: number = 0) {
         orientation={Gtk.Orientation.VERTICAL}
         vexpand={false}
         valign={Gtk.Align.START}
+        hexpand
       >
         <box class="container-box" orientation={Gtk.Orientation.VERTICAL}>
           <Control />

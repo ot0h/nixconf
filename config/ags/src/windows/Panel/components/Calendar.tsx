@@ -48,6 +48,7 @@ export default function Calendar() {
       halign={Gtk.Align.CENTER}
       spacing={0}
       class="calendar-box"
+      hexpand
     >
       <box orientation={Gtk.Orientation.VERTICAL} class="calendar-header">
         <label class="calendar-day" label={day()} halign={Gtk.Align.CENTER} />

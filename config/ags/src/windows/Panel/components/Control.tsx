@@ -50,6 +50,7 @@ export default function Control() {
       css_name="center-control"
       orientation={1}
       halign={Gtk.Align.CENTER}
+      hexpand
     >
       <box $type="start" orientation={1}>
         <box class="container-volume">
