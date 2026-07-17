@@ -10,12 +10,14 @@ export default function Notification() {
   )
 
   return (
-    <button
-      class="NotificationIcon"
-      cursor={Gdk.Cursor.new_from_name('pointer', null)}
-      onClicked={() => execAsync('ags request toggle Notification')}
-    >
-      <label label={notificationIcon} />
-    </button>
+    <>
+      <button
+        class="NotificationIcon"
+        cursor={Gdk.Cursor.new_from_name('pointer', null)}
+        onClicked={() => execAsync('ags request toggle Notification')}
+      >
+        <label label={notificationIcon} />
+      </button>
+    </>
   )
 }

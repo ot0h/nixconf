@@ -9,6 +9,7 @@ import Submap from './components/Submap'
 import PowerMenuMini from './components/PowerMenuMini'
 import Volume from './components/Volume'
 import Notification from './components/Notification'
+import { Hypridle } from './components'
 
 /**
  * Un Sidebar re insano papá
@@ -45,6 +46,7 @@ export default function Sidebar(gdkmonitor: Gdk.Monitor, index: number = 0) {
           <PowerMenuMini />
           <Submap />
           <Notification />
+          <Hypridle />
         </box>
 
         {/* CENTRO */}
