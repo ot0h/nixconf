@@ -158,6 +158,13 @@ export default function NotificationCenter(
               class="title"
             />
             <button
+              class="close"
+              onClicked={() => (win.visible = false)}
+              cursor={Gdk.Cursor.new_from_name('pointer', null)}
+            >
+              <image iconName="close" />
+            </button>
+            <button
               class="clear-all"
               onClicked={clearAll}
               visible={notifications((ns) => ns.length > 0)}
