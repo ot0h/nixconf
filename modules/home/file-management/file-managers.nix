@@ -10,7 +10,6 @@
     # Archivos y transferencia
     sshfs
     ripdrag
-    jmtpfs
 
     # Compresión
     unrar

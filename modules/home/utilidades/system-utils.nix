@@ -8,7 +8,6 @@
     # Archivos y compresión
     unrar
     websocat
-    jmtpfs
     ouch
     imagemagick
     poppler-utils
