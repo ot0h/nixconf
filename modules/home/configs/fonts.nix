@@ -3,11 +3,12 @@
     jetbrains-mono
     caskaydia-cove
     iosevka-term-slab
+    departure-mono
   ];
 in {
   home.packages = with pkgs;
     [
-      departure-mono
+      # departure-mono
       # pixel-code
       # iosevka
       liberation_ttf

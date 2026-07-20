@@ -8,7 +8,7 @@
       include /tmp/kitty-opacity.conf
     '';
     settings = {
-      font_family = "family=\"Departure Mono\"";
+      font_family = "family=\"DepartureMono Nerd Font\"";
       italic_font = "auto";
       bold_italic_font = "auto";
       font_size = 10.0;
