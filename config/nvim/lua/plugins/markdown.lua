@@ -23,8 +23,7 @@ else
 end
 
 require("markview").setup({
-	---@type markview.config
-	html = { enable = false },
-	---@type markview.config
-	typst = { enable = false },
+	typst = {
+		enable = false,
+	},
 })

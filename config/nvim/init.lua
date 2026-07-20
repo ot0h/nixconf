@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
+	pattern = { "markdown", "typst", "typ" },
 	once = true,
 	callback = function()
 		require("plugins.markdown")
