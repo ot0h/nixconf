@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  statusbarVariant = "custom"; # Puede ser => dotbar, minimal o custom
+  statusbarVariant = "dotbar"; # Puede ser => dotbar, minimal o custom
 
   keybindings = import ./keybindings.nix;
   plugins = import ./plugins.nix {inherit pkgs;};
