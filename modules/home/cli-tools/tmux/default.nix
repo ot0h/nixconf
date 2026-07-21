@@ -1,13 +1,16 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: let
-  statusbarVariant = "dotbar"; # Puede ser => dotbar, minimal o custom
+  statusbarVariant = "custom"; # Puede ser => dotbar, minimal o custom
+
+  c = config.lib.stylix.colors.withHashtag;
 
   keybindings = import ./keybindings.nix;
   plugins = import ./plugins.nix {inherit pkgs;};
-  statusbar = import ./statusbar/${statusbarVariant}.nix {inherit pkgs;};
+  statusbar = import ./statusbar/${statusbarVariant}.nix {inherit pkgs; inherit c;};
 in {
   programs.tmux = {
     enable = true;

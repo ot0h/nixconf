@@ -1,4 +1,4 @@
-{pkgs}: {
+{pkgs, ...}: {
   plugin = pkgs.tmuxPlugins.dotbar;
 
   config = ''

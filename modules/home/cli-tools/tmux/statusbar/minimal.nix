@@ -1,4 +1,4 @@
-{pkgs ? null}: {
+{pkgs ? null, ...}: {
   config = ''
     # --- Minimal Statusbar ---
     set -g status-interval 1
