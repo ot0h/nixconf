@@ -37,6 +37,7 @@ export default function LockScreen(monitor: Gdk.Monitor, index: number) {
       exclusivity={Astal.Exclusivity.IGNORE}
       vexpand
       hexpand
+      cursor={Gdk.Cursor.new_from_name('none', null)}
       keymode={Astal.Keymode.EXCLUSIVE}
       $={(self) => {
         self.connect('notify::visible', () => {
