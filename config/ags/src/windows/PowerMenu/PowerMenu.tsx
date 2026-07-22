@@ -18,7 +18,7 @@ export default function PowerMenu(gdkmonitor: Gdk.Monitor, index: number = 0) {
     },
     {
       icon: '󰌾',
-      action: () => execAsync('hyprlock').catch(console.log),
+      action: () => execAsync('ags request lock').catch(console.log),
     },
     {
       icon: '󰍃',

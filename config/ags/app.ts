@@ -4,6 +4,7 @@ import { execAsync } from 'ags/process'
 import {
   AppLauncher,
   HyprlandLayoutsSwitcher,
+  LockScreen,
   NotificationCenter,
   NotificationPopups,
   Panel,
@@ -32,10 +33,28 @@ app.start({
       ScreenShots(monitor, i)
       NotificationCenter(monitor, i)
       HyprlandLayoutsSwitcher(monitor, i)
+      LockScreen(monitor, i)
     })
   },
   requestHandler(argv: string[], res: (r: unknown) => void) {
     const [cmd, ...args] = argv
+
+    if (cmd === 'lock') {
+      app.get_monitors().forEach((_, i) => {
+        const win = app.get_window(`LockScreen-${i}`)
+        if (win && !win.visible) win.visible = true
+      })
+      res('ok')
+      return
+    }
+
+    for (let i = 0; i < app.get_monitors().length; i++) {
+      if (app.get_window(`LockScreen-${i}`)?.visible) {
+        res('locked')
+        return
+      }
+    }
+
     if (cmd === 'toggle') {
       toggleOnActiveMonitor(args[0]).then(() => res('ok'))
     } else if (cmd === 'toggle-all') {

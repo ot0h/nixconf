@@ -101,6 +101,8 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("ags request toggle Panel"))
 
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("ags request toggle LockScreen"))
+
 hl.bind(mainMod .. " + CONTROL + SPACE", hl.dsp.exec_cmd("ags request toggle HyprlandLayoutsSwitcher"))
 
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("ags request toggle PowerMenu"))
