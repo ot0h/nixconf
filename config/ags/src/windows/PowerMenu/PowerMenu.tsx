@@ -99,7 +99,10 @@ export default function PowerMenu(gdkmonitor: Gdk.Monitor, index: number = 0) {
                   buttonRefs[i] = self
                   if (i === middleIndex) self.grab_focus()
                 }}
-                onClicked={action}
+                onClicked={() => {
+                  action()
+                  app.get_window(`PowerMenu-${index}`)?.set_visible(false)
+                }}
                 halign={Gtk.Align.CENTER}
                 heightRequest={120}
               >

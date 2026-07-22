@@ -36,7 +36,7 @@
 
     .scroll-dir-arrow {
       font-size: 35px;
-      color: $color10;
+      color: $background;
       animation: pulso-flecha 2s ease-in-out infinite;
       background-color: transparent;
     }
@@ -54,7 +54,7 @@
       }
 
       .scroll-dir-arrow {
-        color: $color4;
+        color: $background;
       }
     }
   }
@@ -62,27 +62,26 @@
 
 @keyframes parpadeo-icon {
   0% {
-    color: $color7;
+    color: $color4;
   }
   50% {
     color: $color3;
   }
   100% {
-    color: $color7;
+    color: $color4;
   }
 }
 
 @keyframes parpadeo-label {
-  0% {
+  0%,
+  100% {
+    font-style: oblique;
     color: $color6;
     font-weight: bold;
   }
   50% {
+    font-style: normal;
     color: $color3;
     font-weight: normal;
-  }
-  100% {
-    color: $color6;
-    font-weight: bold;
   }
 }
