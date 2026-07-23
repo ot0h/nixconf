@@ -1,4 +1,4 @@
-import { Gtk } from 'ags/gtk4'
+import { Gdk, Gtk } from 'ags/gtk4'
 import { execAsync } from 'ags/process'
 import AstalNetwork from 'gi://AstalNetwork?version=0.1'
 import { createBinding, For, With } from 'gnim'
@@ -23,7 +23,11 @@ export default function network() {
   }
 
   return (
-    <box visible={wifi(Boolean)} orientation={1}>
+    <box
+      visible={wifi(Boolean)}
+      orientation={1}
+      cursor={Gdk.Cursor.new_from_name('pointer', null)}
+    >
       <With value={wifi}>
         {(wifi) =>
           wifi && (
@@ -36,7 +40,9 @@ export default function network() {
                       <button onClicked={() => connect(ap)}>
                         <box spacing={4}>
                           <image iconName={createBinding(ap, 'iconName')} />
-                          <label label={createBinding(ap, 'ssid')} />
+                          <label
+                            label={createBinding(ap, 'ssid')((a) => String(a))}
+                          />
                           <image
                             iconName="object-select-symbolic"
                             visible={createBinding(
