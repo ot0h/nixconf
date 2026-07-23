@@ -15,6 +15,7 @@ export default function Battery() {
         class={'Battery-Lock'}
         spacing={10}
         orientation={Gtk.Orientation.HORIZONTAL}
+        valign={Gtk.Align.END}
       >
         <image iconName={createBinding(bat, 'iconName')} pixelSize={23} />
         <label label={percent} justify={Gtk.Justification.CENTER} />

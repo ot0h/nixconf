@@ -84,9 +84,57 @@ revealer {
 .Battery-Lock {
   background: none;
 
-  & label {
+  & label,
+  image {
     background: none;
     font-size: 20px;
     font-weight: bold;
+  }
+}
+
+.lockscreen-media {
+  background: none;
+  margin: 0 24px;
+
+  & .media-coverart {
+    background: none;
+    border-radius: 12px;
+  }
+
+  & .media-title {
+    font-size: 16px;
+    font-weight: bold;
+    background: none;
+  }
+
+  & .media-artist {
+    font-size: 14px;
+    opacity: 0.7;
+    background: none;
+  }
+
+  & .media-time {
+    font-size: 12px;
+    opacity: 0.6;
+    background: none;
+    min-width: 40px;
+  }
+
+  & .media-progress {
+    min-height: 4px;
+    background: none;
+    border-radius: 2px;
+
+    trough {
+      background: transparentize($foreground, 0.8);
+      border-radius: 2px;
+      min-height: 4px;
+    }
+
+    progress {
+      background: $foreground;
+      border-radius: 2px;
+      min-height: 4px;
+    }
   }
 }

@@ -4,9 +4,7 @@ import { Astal, Gdk, Gtk } from 'ags/gtk4'
 import app from 'ags/gtk4/app'
 import Gio from 'gi://Gio?version=2.0'
 import GLib from 'gi://GLib?version=2.0'
-import Clock from './components/Clock'
-import Input from './components/Input'
-import Battery from './components/Battery'
+import { Battery, Clock, Input, Media } from './components'
 
 export default function LockScreen(monitor: Gdk.Monitor, index: number) {
   const { TOP, BOTTOM, RIGHT, LEFT } = Astal.WindowAnchor
@@ -74,9 +72,15 @@ export default function LockScreen(monitor: Gdk.Monitor, index: number) {
           $={(self) => {
             self.grab_focus()
 
+            let lastX = -1
+            let lastY = -1
             const motion = new Gtk.EventControllerMotion()
-            motion.connect('motion', () => {
-              if (!showInput.get() && !showGuard) setShowInput(true)
+            motion.connect('motion', (_controller, x, y) => {
+              if (x !== lastX || y !== lastY) {
+                lastX = x
+                lastY = y
+                if (!showInput.get() && !showGuard) setShowInput(true)
+              }
             })
             self.add_controller(motion)
 
@@ -93,7 +97,7 @@ export default function LockScreen(monitor: Gdk.Monitor, index: number) {
             orientation={Gtk.Orientation.VERTICAL}
             $type="center"
             halign={Gtk.Align.CENTER}
-            valign={Gtk.Align.CENTER}
+            valign={Gtk.Align.BASELINE}
             spacing={60}
           >
             <Clock />
@@ -105,13 +109,10 @@ export default function LockScreen(monitor: Gdk.Monitor, index: number) {
             />
           </box>
 
-          <box
-            $type="end"
-            orientation={Gtk.Orientation.HORIZONTAL}
-            halign={Gtk.Align.FILL}
-            valign={Gtk.Align.CENTER}
-          >
+          <box $type="end" orientation={Gtk.Orientation.HORIZONTAL}>
             <Battery />
+            <box hexpand />
+            <Media />
           </box>
         </centerbox>
       </overlay>
