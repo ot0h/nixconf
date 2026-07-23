@@ -6,6 +6,7 @@ import Gio from 'gi://Gio?version=2.0'
 import GLib from 'gi://GLib?version=2.0'
 import Clock from './components/Clock'
 import Input from './components/Input'
+import Battery from './components/Battery'
 
 export default function LockScreen(monitor: Gdk.Monitor, index: number) {
   const { TOP, BOTTOM, RIGHT, LEFT } = Astal.WindowAnchor
@@ -102,6 +103,15 @@ export default function LockScreen(monitor: Gdk.Monitor, index: number) {
               setShowInput={setShowInput}
               resetKey={resetKey}
             />
+          </box>
+
+          <box
+            $type="end"
+            orientation={Gtk.Orientation.HORIZONTAL}
+            halign={Gtk.Align.FILL}
+            valign={Gtk.Align.CENTER}
+          >
+            <Battery />
           </box>
         </centerbox>
       </overlay>

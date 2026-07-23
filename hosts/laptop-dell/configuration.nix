@@ -216,6 +216,8 @@ in {
 
   # Los paquetes de usuario ahora están en home.nix
 
+  services.upower.enable = true;
+
   services.openssh = {
     enable = true;
 

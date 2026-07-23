@@ -28,6 +28,7 @@ in {
       astalPkgs.apps
       astalPkgs.mpris
       astalPkgs.io
+      astalPkgs.powerprofiles
       astalPkgs.astal4
 
       agsPkg.default
