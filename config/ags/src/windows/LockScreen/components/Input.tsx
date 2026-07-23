@@ -22,7 +22,8 @@ export default function Input({
     resetKey.get()
     setError('')
     if (entryRef) entryRef.set_text('')
-    if (revealerRef && revealerRef.get_reveal_child()) revealerRef.set_reveal_child(false)
+    if (revealerRef && revealerRef.get_reveal_child())
+      revealerRef.set_reveal_child(false)
   })
 
   function onActivate(self: Gtk.Entry) {
