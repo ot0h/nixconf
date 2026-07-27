@@ -1,5 +1,5 @@
 {
-  description = "Configuracion NixOS de rimv";
+  description = "Mi configuración chafona para Nix y NixOS";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
