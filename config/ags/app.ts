@@ -12,6 +12,7 @@ import {
   ScreenShots,
   Sidebar,
 } from '@windows'
+import { watchBattery } from '@services'
 
 async function toggleOnActiveMonitor(windowBaseName: string) {
   const out = await execAsync(['hyprctl', 'activeworkspace', '-j'])
@@ -25,6 +26,7 @@ app.start({
   css: styles,
   main() {
     NotificationPopups()
+    watchBattery()
     app.get_monitors().forEach((monitor, i) => {
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
