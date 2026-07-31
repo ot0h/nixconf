@@ -3,6 +3,7 @@ import styles from './styles.scss'
 import { execAsync } from 'ags/process'
 import {
   AppLauncher,
+  BrightnessOSD,
   HyprlandLayoutsSwitcher,
   LockScreen,
   NotificationCenter,
@@ -29,6 +30,7 @@ app.start({
     NotificationPopups()
     watchBattery()
     VolumeOSD()
+    BrightnessOSD()
     app.get_monitors().forEach((monitor, i) => {
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
