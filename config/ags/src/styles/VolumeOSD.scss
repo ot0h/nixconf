@@ -1,0 +1,27 @@
+.osd-box {
+  background-color: $background;
+  border-radius: 12px;
+  padding: 12px 16px;
+
+  levelbar {
+    background: none;
+
+    trough {
+      background: none;
+    }
+
+    block {
+      min-height: 6px;
+      border-radius: 4px;
+    }
+
+    block.filled {
+      background-color: $color15;
+    }
+
+    block.empty {
+      background-color: $foreground;
+      opacity: 0.2;
+    }
+  }
+}

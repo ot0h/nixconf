@@ -11,6 +11,7 @@ import {
   PowerMenu,
   ScreenShots,
   Sidebar,
+  VolumeOSD,
 } from '@windows'
 import { watchBattery } from '@services'
 
@@ -27,6 +28,7 @@ app.start({
   main() {
     NotificationPopups()
     watchBattery()
+    VolumeOSD()
     app.get_monitors().forEach((monitor, i) => {
       AppLauncher(monitor, i)
       Sidebar(monitor, i)
