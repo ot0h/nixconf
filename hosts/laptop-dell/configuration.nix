@@ -190,7 +190,7 @@ in {
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Raul Moncada";
-    extraGroups = ["networkmanager" "wheel" "scanner" "lp"];
+    extraGroups = ["networkmanager" "wheel" "scanner" "lp" "dialout"];
   };
 
   programs.git = {
