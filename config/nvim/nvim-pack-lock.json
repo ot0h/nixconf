@@ -1,17 +1,17 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "3067d706e9738fbed404fa0397199c9d1921fd1c",
+      "rev": "7e3f6dd6ef6da93f74974521c81d8d5bff0443c5",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "async.nvim": {
-      "rev": "e2a813be9cd143ab1181de6d8a0720e0230cd86e",
+      "rev": "99aed904ae1253c27fac60b862b6d73ef1380e54",
       "src": "https://github.com/lewis6991/async.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "bd62d0889dabd9419e35996e3ac820e8e1e7665c",
+      "rev": "e116ff9c5c1c2ed6bcdb2e0a6e547099876a8116",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -68,7 +68,7 @@
       "version": "'master'"
     },
     "markview.nvim": {
-      "rev": "2471f4097f8561a6880a0fe05ee0f21cbc82b374",
+      "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
       "src": "https://github.com/OXY2DEV/markview.nvim",
       "version": "'main'"
     },
@@ -112,11 +112,11 @@
       "version": "'main'"
     },
     "nui.nvim": {
-      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "rev": "a25dd472316d806eb38a5dd667c2e40da5570c75",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
+      "rev": "fbaef6156f9ad65790931ab543ab1dfec57bbec7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -124,7 +124,7 @@
       "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
-      "rev": "a1bcffc8095c142ad1f7a9671a4ae180333f9209",
+      "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -167,7 +167,7 @@
       "version": "'main'"
     },
     "smart-splits.nvim": {
-      "rev": "0fe3bbd99d48458ad188c4c262c31049fa9b018c",
+      "rev": "289971cfdbc7f7b1c91670a228b239d870130af7",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
       "version": "'master'"
     },

@@ -1,3 +1,14 @@
 {
-  "$schema": "https://opencode.ai/config.json"
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "engram": {
+      "command": [
+        "/nix/store/8n9fc4b99mzhb4dbkcpq2qrnkmm1jy1l-engram-1.16.3/bin/engram",
+        "mcp",
+        "--tools=agent"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  }
 }

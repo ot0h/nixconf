@@ -1,0 +1,217 @@
+# Wired de Hartico
+
+> Manual completo del sistema Wired del hotel Hartico: qué hace cada furni wired, cómo funciona
+> de verdad, todas las opciones de cada ventana y ejemplos de pilas montables.
+
+Toda la documentación en un solo fichero: https://wired.hartico.tv/wired-completo.md
+
+## Portada
+
+- [Wired de Hartico](https://wired.hartico.tv/): Manual completo del sistema Wired – qué hace cada pieza, cómo funciona de verdad, y cómo montar pilas que no se rompan.
+
+## Empezar
+
+- [Qué es el Wired](https://wired.hartico.tv/empezar/que-es/): La idea de fondo del sistema Wired y los seis tipos de pieza que vas a usar.
+- [Tu primera pila](https://wired.hartico.tv/empezar/primera-pila/): Montar una puerta que solo se abre para quien lleve una placa, paso a paso.
+- [Cómo usar esto con una IA](https://wired.hartico.tv/empezar/con-ia/): Pasarle toda la documentación a un asistente para que te diseñe pilas y te las optimice.
+
+## Conceptos
+
+- [Anatomía de una pila](https://wired.hartico.tv/conceptos/anatomia/): Qué es exactamente una pila, cuántas piezas de cada tipo admite y cómo se relaciona con las demás.
+- [El orden de ejecución](https://wired.hartico.tv/conceptos/orden-de-ejecucion/): Las cuatro fases por las que pasa una pila cada vez que se dispara, y por qué el orden explica casi todos los comportamientos raros.
+- [Fuentes y objetivos](https://wired.hartico.tv/conceptos/fuentes-y-objetivos/): Cómo decide un efecto sobre quién actúa, y cómo se reparten los objetivos cuando hay varias referencias.
+- [Retardos y repeticiones](https://wired.hartico.tv/conceptos/retardos/): El retardo que lleva cada efecto, los cuatro causantes de tiempo y sus rangos reales.
+- [Señales y pilas remotas](https://wired.hartico.tv/conceptos/senales/): Cómo hacer que una pila dispare a otra que está en otra baldosa, y qué viaja con la señal.
+- [Límites y rendimiento](https://wired.hartico.tv/conceptos/limites/): Qué le cuesta trabajo al servidor, qué pasa cuando te pasas, y cómo aligerar una sala sin perder el efecto.
+- [Opciones avanzadas](https://wired.hartico.tv/conceptos/opciones-avanzadas/): El enlace que esconde media configuración de un wired, y qué hay detrás.
+
+## Causantes
+
+- [Causantes](https://wired.hartico.tv/causantes/): Los 32 causantes disponibles, agrupados por lo que vigilan.
+- [Sobre un Furni](https://wired.hartico.tv/causantes/sobre-furni/): Se dispara cuando alguien pisa uno de los furnis que elijas.
+- [Vete](https://wired.hartico.tv/causantes/sale-de-furni/): Se dispara cuando alguien deja de pisar uno de los furnis que elijas.
+- [Click en Furni](https://wired.hartico.tv/causantes/clic-en-furni/): Se dispara cuando alguien hace clic en uno de los furnis que elijas.
+- [Cambiar estado de Furni](https://wired.hartico.tv/causantes/cambiar-estado-de-furni/): Se dispara con dos clics seguidos sobre el mismo furni.
+- [Click en Baldosa](https://wired.hartico.tv/causantes/clic-en-baldosa/): Dispara al clicar una Baldosa Invisible puesta en el suelo.
+- [Usuario Da Click a Usuario](https://wired.hartico.tv/causantes/clic-en-usuario/): Se dispara cuando alguien hace clic sobre otra persona de la sala.
+- [Teclado](https://wired.hartico.tv/causantes/teclado/): Se dispara cuando alguien pulsa una tecla concreta estando en la sala.
+- [Entrada](https://wired.hartico.tv/causantes/entra-en-la-sala/): Se dispara cuando alguien entra en la sala.
+- [Salida](https://wired.hartico.tv/causantes/sale-de-la-sala/): Se dispara cuando alguien sale de la sala.
+- [Clave](https://wired.hartico.tv/causantes/dice-algo/): Se dispara cuando alguien escribe un mensaje que coincide con lo que indiques.
+- [Usuario Realiza Acción](https://wired.hartico.tv/causantes/usuario-realiza-accion/): Se dispara cuando alguien baila, saluda o cambia de efecto.
+- [Periodos](https://wired.hartico.tv/causantes/periodos/): Repite la pila cada medio segundo a 30 segundos. El causante de tiempo de uso general.
+- [Periodos Cortos](https://wired.hartico.tv/causantes/periodos-cortos/): Repite la pila cada 50 a 500 milisegundos. Para animación fina.
+- [Periodos Largos](https://wired.hartico.tv/causantes/periodos-largos/): Repite la pila cada 5 segundos a 10 minutos. Para ciclos de sala.
+- [¡Ya!](https://wired.hartico.tv/causantes/ya/): Dispara pasado el tiempo indicado desde que arranca la sala. Se puede rearmar.
+- [Contador Alcanza el Tiempo Establecido](https://wired.hartico.tv/causantes/contador-llega-a-tiempo/): Se dispara cuando un contador de la sala alcanza la marca que indiques.
+- [Estado de los Furnis Cambia](https://wired.hartico.tv/causantes/estado-del-furni-cambia/): Se dispara cuando uno de los furnis que vigilas cambia de estado.
+- [Furni es Usado](https://wired.hartico.tv/causantes/furni-es-usado/): Se dispara cuando alguien usa el furni.
+- [Recibir Señal](https://wired.hartico.tv/causantes/recibir-senal/): Se dispara cuando otra pila envía una señal a la antena que escuchas.
+- [Cambio de variable](https://wired.hartico.tv/causantes/cambio-de-variable/): Se dispara cuando una variable se crea, cambia de valor o se elimina.
+- [Puntos Conseguidos](https://wired.hartico.tv/causantes/puntos-conseguidos/): Se dispara cuando un equipo alcanza los puntos que indiques.
+- [Comienza el juego](https://wired.hartico.tv/causantes/empieza-el-juego/): Se dispara cuando arranca la partida.
+- [Acaba el juego](https://wired.hartico.tv/causantes/termina-el-juego/): Se dispara cuando acaba la partida.
+- [Colisión](https://wired.hartico.tv/causantes/colision/): Se dispara cuando un furni en movimiento choca contra algo.
+- [Usuario entra en colisión](https://wired.hartico.tv/causantes/entra-en-colision/): Se dispara cuando un usuario provoca un choque.
+- [Entra en colisión con Usuario](https://wired.hartico.tv/causantes/colision-con-usuario/): Se dispara cuando un usuario choca contra otro usuario.
+- [Bot alcanza usuario](https://wired.hartico.tv/causantes/bot-alcanza-usuario/): Se dispara cuando un bot que persigue llega hasta una persona.
+- [Bot alcanza furni](https://wired.hartico.tv/causantes/bot-alcanza-furni/): Se dispara cuando un bot llega hasta uno de los furnis que indiques.
+- [Ausencia Positiva](https://wired.hartico.tv/causantes/ausencia-positiva/): Se dispara en el momento en que alguien se queda ausente.
+- [Ausencia Negativa](https://wired.hartico.tv/causantes/ausencia-negativa/): Se dispara cuando alguien vuelve de estar ausente.
+- [Usuario AFK](https://wired.hartico.tv/causantes/usuario-afk/): Se dispara cuando alguien lleva sin hacer nada el tiempo que indiques.
+- [Usuario AFK Dormido](https://wired.hartico.tv/causantes/usuario-afk-dormido/): Se dispara cuando alguien lleva sin moverse el tiempo que indiques.
+
+## Condiciones
+
+- [Condiciones](https://wired.hartico.tv/condiciones/): Las 37 condiciones disponibles, agrupadas por lo que comprueban.
+- [El Desencadenante es…](https://wired.hartico.tv/condiciones/desencadenante-es/): Comprueba que quien disparó la pila sea un habbo, una mascota o un bot concreto.
+- [Desencadenante NO Coincide](https://wired.hartico.tv/condiciones/desencadenante-no-coincide/): Se cumple cuando quien disparó la pila no es el usuario o el tipo que indiques.
+- [Usuario Lleva la Placa](https://wired.hartico.tv/condiciones/lleva-placa/): Comprueba que quien disparó la pila lleve puesta una placa concreta.
+- [Usuario NO Lleva la Placa](https://wired.hartico.tv/condiciones/no-lleva-placa/): Se cumple cuando el usuario no lleva puesta la placa que indiques.
+- [Usuario tiene Efecto](https://wired.hartico.tv/condiciones/tiene-efecto/): Comprueba que quien disparó la pila lleve puesto un efecto concreto.
+- [Usuario NO tiene Efecto](https://wired.hartico.tv/condiciones/no-tiene-efecto/): Se cumple cuando el usuario no lleva puesto el efecto que indiques.
+- [Usuario tiene item de mano](https://wired.hartico.tv/condiciones/item-de-mano/): Comprueba que quien disparó la pila lleve algo en la mano.
+- [Usuario NO tiene item de mano](https://wired.hartico.tv/condiciones/no-item-de-mano/): Se cumple cuando el usuario no lleva el objeto de mano que indiques.
+- [Miembro del Grupo](https://wired.hartico.tv/condiciones/miembro-de-grupo/): Comprueba que quien disparó la pila pertenezca a un grupo.
+- [NO es Miembro del Grupo](https://wired.hartico.tv/condiciones/no-miembro-de-grupo/): Se cumple cuando el usuario no pertenece al grupo que indiques.
+- [Miembro del Equipo](https://wired.hartico.tv/condiciones/miembro-de-equipo/): Comprueba que quien disparó la pila esté en un equipo del juego.
+- [NO es Miembro del Equipo](https://wired.hartico.tv/condiciones/no-miembro-de-equipo/): Se cumple cuando el usuario no está en el equipo que indiques.
+- [Usuario está Realizando Acción](https://wired.hartico.tv/condiciones/realiza-accion/): Comprueba que quien disparó la pila esté bailando o haciendo un gesto.
+- [Usuario NO está Realizando Acción](https://wired.hartico.tv/condiciones/no-realiza-accion/): Se cumple cuando el usuario no está haciendo el baile o la señal que indiques.
+- [Dirección del Usuario](https://wired.hartico.tv/condiciones/direccion-del-usuario/): Comprueba hacia dónde mira quien disparó la pila.
+- [Causante está Sobre el Furni](https://wired.hartico.tv/condiciones/causante-sobre-furni/): Comprueba que quien disparó la pila esté encima de un furni concreto.
+- [Causante NO está Sobre el Furni](https://wired.hartico.tv/condiciones/causante-no-sobre-furni/): Se cumple cuando el usuario no está encima de ninguno de los furnis que indiques.
+- [Furni Coincide](https://wired.hartico.tv/condiciones/furni-coincide/): Comprueba que los furnis estén entre los que señalaste.
+- [Furni NO Coincide](https://wired.hartico.tv/condiciones/furni-no-coincide/): Se cumple cuando los furnis no están entre los que señalaste.
+- [Furni encima](https://wired.hartico.tv/condiciones/furni-encima/): Comprueba que un furni tenga otro apilado encima.
+- [NO tiene un Furni encima](https://wired.hartico.tv/condiciones/no-furni-encima/): Se cumple cuando los furnis elegidos no tienen nada apilado encima.
+- [Furnis con Usuarios](https://wired.hartico.tv/condiciones/furnis-con-usuarios/): Comprueba que haya alguien encima de los furnis elegidos.
+- [Furnis SIN Usuarios](https://wired.hartico.tv/condiciones/furnis-sin-usuarios/): Se cumple cuando no hay nadie encima de los furnis elegidos.
+- [Posición o Estado Coincide](https://wired.hartico.tv/condiciones/posicion-o-estado/): Comprueba que un furni siga como estaba cuando lo guardaste.
+- [Posición o Estado NO Coincide](https://wired.hartico.tv/condiciones/posicion-o-estado-no/): Se cumple cuando los furnis han cambiado respecto a como los guardaste.
+- [Altitud de Furni Coincide](https://wired.hartico.tv/condiciones/altitud/): Comprueba la altura a la que está un furni.
+- [Aforo Coincide](https://wired.hartico.tv/condiciones/aforo/): Comprueba cuánta gente hay en la sala.
+- [Aforo NO Coincide](https://wired.hartico.tv/condiciones/aforo-no/): Se cumple cuando la gente que hay en la sala queda fuera del rango que indiques.
+- [Fecha y Hora](https://wired.hartico.tv/condiciones/fecha-y-hora/): Comprueba que la hora actual caiga dentro de una franja. El día no cuenta.
+- [Fecha](https://wired.hartico.tv/condiciones/fecha/): Comprueba el día de la semana, el día del mes o el mes.
+- [Hora](https://wired.hartico.tv/condiciones/hora/): Comprueba la hora, con zona horaria a elegir.
+- [Contador Coincide](https://wired.hartico.tv/condiciones/contador-coincide/): Comprueba el tiempo que marca un contador de la sala.
+- [Cantidad](https://wired.hartico.tv/condiciones/cantidad/): Comprueba cuántas cosas trajo el selector.
+- [Contiene variable](https://wired.hartico.tv/condiciones/contiene-variable/): Comprueba que exista una variable.
+- [Contiene variable (Negativo)](https://wired.hartico.tv/condiciones/no-contiene-variable/): Se cumple cuando la variable no existe.
+- [Valor de variable](https://wired.hartico.tv/condiciones/valor-de-variable/): Comprueba lo que vale una variable.
+- [Edad de variable](https://wired.hartico.tv/condiciones/edad-de-variable/): Comprueba cuánto hace que una variable se creó o cambió.
+
+## Efectos
+
+- [Efectos](https://wired.hartico.tv/efectos/): Los 48 efectos disponibles, agrupados por lo que hacen.
+- [Mutar](https://wired.hartico.tv/efectos/mutar/): Cambia el furni al siguiente estado, o al anterior.
+- [Mutar Aleatorio](https://wired.hartico.tv/efectos/mutar-aleatorio/): Pone el furni en un estado al azar.
+- [Mutar Inverso](https://wired.hartico.tv/efectos/mutar-inverso/): Hace retroceder el furni un estado, al revés que Mutar.
+- [A cero](https://wired.hartico.tv/efectos/a-cero/): Devuelve los furnis a la posición y el estado que tenían cuando lo configuraste.
+- [Mover](https://wired.hartico.tv/efectos/mover/): Mueve el furni una baldosa y lo gira.
+- [Movimiento Relativo de Furni](https://wired.hartico.tv/efectos/movimiento-relativo/): Mueve el furni varias baldosas en X e Y de una vez.
+- [Cambiar dirección de Furni](https://wired.hartico.tv/efectos/cambiar-direccion/): Lanza el furni a moverse en una dirección, y decide cómo rebota cuando choca.
+- [Cambiar Altitud de Furni](https://wired.hartico.tv/efectos/cambiar-altitud/): Sube o baja el furni.
+- [Mover Furni a Furni](https://wired.hartico.tv/efectos/mover-furni-a-furni/): Lleva unos furnis hasta la posición de otro.
+- [Mover Furni a Usuario](https://wired.hartico.tv/efectos/mover-furni-a-usuario/): Trae unos furnis hasta donde está el usuario.
+- [Mover Usuario a Furni](https://wired.hartico.tv/efectos/mover-usuario-a-furni/): Lleva a los usuarios hasta la posición de un furni.
+- [Mensaje](https://wired.hartico.tv/efectos/mensaje/): Muestra un texto en la sala o solo a quien disparó la pila.
+- [¡Adiós!](https://wired.hartico.tv/efectos/adios/): Teletransporta al usuario al furni que elijas.
+- [Mover y Rotar Usuario](https://wired.hartico.tv/efectos/mover-y-rotar-usuario/): Desplaza al usuario una baldosa y le cambia hacia dónde mira.
+- [Teletransportar a Sala](https://wired.hartico.tv/efectos/teletransportar-a-sala/): Envía al usuario a otra sala del hotel.
+- [Expulsar Usuario](https://wired.hartico.tv/efectos/expulsar-usuario/): Echa al usuario de la sala con un mensaje.
+- [Mutear usuario](https://wired.hartico.tv/efectos/mutear-usuario/): Deja al usuario sin poder hablar durante unos minutos.
+- [Congelar Usuario](https://wired.hartico.tv/efectos/congelar-usuario/): Deja al usuario clavado en su baldosa, con un efecto visual.
+- [Descongelar Usuario](https://wired.hartico.tv/efectos/descongelar-usuario/): Devuelve el movimiento a quien estaba congelado.
+- [Mensaje de Bot](https://wired.hartico.tv/efectos/mensaje-de-bot/): Hace que un bot hable o grite en la sala.
+- [Bot habla o susurra a usuario](https://wired.hartico.tv/efectos/bot-habla-a-usuario/): Hace que un bot se dirija a una persona concreta, en voz alta o al oído.
+- [Bot mover a furni](https://wired.hartico.tv/efectos/bot-mover-a-furni/): Manda a un bot caminando hasta el furni que elijas.
+- [Teletransportar Bot a Furni](https://wired.hartico.tv/efectos/teletransportar-bot-a-furni/): Coloca un bot sobre el furni que elijas, sin que camine hasta él.
+- [Bot Sigue a Usuario](https://wired.hartico.tv/efectos/bot-sigue-a-usuario/): Hace que un bot persiga a una persona, o que deje de hacerlo.
+- [Bot cambia ropa](https://wired.hartico.tv/efectos/bot-cambia-ropa/): Cambia el aspecto de un bot al look que le indiques.
+- [Dar Item de mano](https://wired.hartico.tv/efectos/dar-item-de-mano/): Hace que un bot entregue un objeto de mano a la persona.
+- [Unirse al Equipo](https://wired.hartico.tv/efectos/unirse-al-equipo/): Apunta al usuario al equipo rojo, verde, azul o amarillo.
+- [Abandonar Equipo](https://wired.hartico.tv/efectos/abandonar-equipo/): Saca al usuario del equipo en el que esté.
+- [Dar puntos](https://wired.hartico.tv/efectos/dar-puntos/): Suma o resta puntos a la persona.
+- [Dar Puntos a Equipo](https://wired.hartico.tv/efectos/dar-puntos-a-equipo/): Suma puntos al equipo de la persona, con un límite de veces por partida.
+- [Colisión de Equipo](https://wired.hartico.tv/efectos/colision-de-equipo/): Dispara el causante de colisión sobre los miembros de un equipo.
+- [Caza](https://wired.hartico.tv/efectos/caza/): Hace que el furni persiga al usuario más cercano.
+- [Fuga](https://wired.hartico.tv/efectos/fuga/): Hace que el furni huya del usuario más cercano.
+- [Caza Azul](https://wired.hartico.tv/efectos/caza-azul/): Detecta a quien pisa el furni y dispara la colisión, sin mover nada.
+- [Caza Amarillo](https://wired.hartico.tv/efectos/caza-amarillo/): Como la Caza Azul, pero detectando también a quien está pegado al furni.
+- [Control de Contador](https://wired.hartico.tv/efectos/control-de-contador/): Inicia, para, pausa, reanuda o reinicia un contador de la sala.
+- [Ajustar reloj](https://wired.hartico.tv/efectos/ajustar-reloj/): Suma, resta o fija los minutos de un contador.
+- [Reset](https://wired.hartico.tv/efectos/reset/): Pone a cero el temporizador interno de la sala.
+- [Dar variable](https://wired.hartico.tv/efectos/dar-variable/): Crea una variable y le pone un valor inicial.
+- [Eliminar variable](https://wired.hartico.tv/efectos/eliminar-variable/): Borra una variable, dejándola en "no existe".
+- [Cambiar valor de variable](https://wired.hartico.tv/efectos/cambiar-valor-de-variable/): Opera sobre una variable — asignar, sumar, restar, comparar y mucho más.
+- [Ejecuta Pilas](https://wired.hartico.tv/efectos/ejecuta-pilas/): Ejecuta otras pilas de la sala como si fueran parte de esta.
+- [Ejecutar pilas Negativo](https://wired.hartico.tv/efectos/ejecutar-pilas-negativo/): Ejecuta otras pilas cuando las condiciones de esta NO se cumplen.
+- [Enviar Señal](https://wired.hartico.tv/efectos/enviar-senal/): Lanza una señal a las pilas que estén escuchando, con furnis y usuarios adjuntos.
+- [Emisor de señales Negativo](https://wired.hartico.tv/efectos/emisor-de-senales-negativo/): Lanza una señal cuando las condiciones de la pila NO se cumplen.
+- [Escribir en Registro](https://wired.hartico.tv/efectos/escribir-en-registro/): Anota un mensaje en el registro de la sala, para depurar tus pilas.
+- [Escribir en Registro Negativo](https://wired.hartico.tv/efectos/escribir-en-registro-negativo/): Anota en el registro cuando las condiciones de la pila NO se cumplen.
+- [Wired Eventos](https://wired.hartico.tv/efectos/wired-eventos/): Otorga victorias del sistema de eventos del hotel.
+
+## Selectores
+
+- [Selectores](https://wired.hartico.tv/selectores/): Los 24 selectores disponibles, agrupados por lo que reúnen.
+- [Furnis Seleccionados](https://wired.hartico.tv/selectores/furnis-seleccionados/): Mete en la selección los furnis que elijas a mano.
+- [Furnis por Tipo](https://wired.hartico.tv/selectores/furnis-por-tipo/): Selecciona todos los furnis del mismo tipo que el que señales.
+- [Furnis en área](https://wired.hartico.tv/selectores/furnis-en-area/): Selecciona los furnis que hay dentro de una zona que dibujas.
+- [Furnis sobre Furni](https://wired.hartico.tv/selectores/furnis-sobre-furni/): Selecciona lo que está apilado encima, debajo o a la misma altura.
+- [Furnis por Altitud](https://wired.hartico.tv/selectores/furnis-por-altitud/): Selecciona los furnis que estén por encima, por debajo o justo a una altura.
+- [Furnis Vecinos](https://wired.hartico.tv/selectores/furnis-vecinos/): Selecciona los furnis de las casillas que dibujes alrededor de un punto.
+- [Furnis desde Señal](https://wired.hartico.tv/selectores/furnis-desde-senal/): Recoge los furnis que llegaron con la señal que despertó la pila.
+- [Furnis con variable](https://wired.hartico.tv/selectores/furnis-con-variable/): Selecciona los furnis cuya variable cumpla la comparación que indiques.
+- [Usuarios en Área](https://wired.hartico.tv/selectores/usuarios-en-area/): Selecciona a la gente que hay dentro de una zona que dibujas.
+- [Usuarios sobre Furni](https://wired.hartico.tv/selectores/usuarios-sobre-furni/): Selecciona a quien esté encima de los furnis que señales.
+- [Usuarios por Tipo](https://wired.hartico.tv/selectores/usuarios-por-tipo/): Selecciona solo habbos, solo mascotas o solo bots.
+- [Usuarios por Nombre](https://wired.hartico.tv/selectores/usuarios-por-nombre/): Selecciona a las personas cuyo nombre escribas.
+- [Usuarios en Equipo](https://wired.hartico.tv/selectores/usuarios-en-equipo/): Selecciona a los jugadores de un equipo, o de cualquiera.
+- [Usuarios en Grupo](https://wired.hartico.tv/selectores/usuarios-en-grupo/): Selecciona a los miembros de un grupo.
+- [Usuarios por Acción](https://wired.hartico.tv/selectores/usuarios-por-accion/): Selecciona a quien esté bailando, sentado, tumbado o haciendo un gesto.
+- [Usuarios con Objeto de Mano](https://wired.hartico.tv/selectores/usuarios-con-objeto-de-mano/): Selecciona a quien lleve en la mano el objeto que indiques.
+- [Usuarios Vecinos](https://wired.hartico.tv/selectores/usuarios-vecinos/): Selecciona a la gente de las casillas que dibujes alrededor de un punto.
+- [Usuarios desde Señal](https://wired.hartico.tv/selectores/usuarios-desde-senal/): Recoge a las personas que llegaron con la señal que despertó la pila.
+- [Usuarios con variable](https://wired.hartico.tv/selectores/usuarios-con-variable/): Selecciona a las personas cuya variable cumpla la comparación que indiques.
+- [Selección Remota](https://wired.hartico.tv/selectores/seleccion-remota/): Reutiliza la selección que calculan otras pilas.
+- [Filtrar a X Furnis](https://wired.hartico.tv/selectores/filtrar-a-x-furnis/): Recorta la selección a un número concreto de furnis.
+- [Filtrar a X Usuarios](https://wired.hartico.tv/selectores/filtrar-a-x-usuarios/): Recorta la selección a un número concreto de personas.
+- [Furni con variable más alta o baja](https://wired.hartico.tv/selectores/furni-con-variable-mas-alta/): Se queda con el furni que tenga el valor mayor o menor.
+- [Usuario con variable más alta o baja](https://wired.hartico.tv/selectores/usuario-con-variable-mas-alta/): Se queda con la persona que tenga el valor mayor o menor.
+
+## Complementos
+
+- [Complementos](https://wired.hartico.tv/complementos/): Los 15 complementos disponibles, agrupados por lo que cambian.
+- [Lógica de Condición](https://wired.hartico.tv/complementos/logica-de-condicion/): Cambia la regla de "todas las condiciones" por la que tú quieras.
+- [Límite de Ejecución](https://wired.hartico.tv/complementos/limite-de-ejecucion/): Limita cuántas veces puede correr la pila y cada cuánto.
+- [Ejecutar en Orden](https://wired.hartico.tv/complementos/ejecutar-en-orden/): Ejecuta los efectos de la pila según la altura a la que los coloques.
+- [Efecto aleatorio](https://wired.hartico.tv/complementos/efecto-aleatorio/): De todos los efectos de la pila, ejecuta unos pocos al azar.
+- [Efecto no visto](https://wired.hartico.tv/complementos/efecto-no-visto/): Ejecuta un efecto distinto en cada pasada, por turnos.
+- [Tiempo de Animación](https://wired.hartico.tv/complementos/tiempo-de-animacion/): Cambia lo que tardan los movimientos en verse.
+- [Cancelar Animación de Movimiento](https://wired.hartico.tv/complementos/cancelar-animacion-de-movimiento/): Hace que los furnis salten a su destino sin deslizarse.
+- [Movimientos Físicos](https://wired.hartico.tv/complementos/movimientos-fisicos/): Decide qué bloquea a los furnis en movimiento y qué no.
+- [Transportar Usuario](https://wired.hartico.tv/complementos/transportar-usuario/): Hace que la gente viaje encima de los furnis que se mueven.
+- [Curva de Movimiento](https://wired.hartico.tv/complementos/curva-de-movimiento/): Hace que el movimiento acelere o frene en vez de ir a velocidad fija.
+- [Identificar Nombres](https://wired.hartico.tv/complementos/identificar-nombres/): Permite meter el nombre de una persona dentro de un mensaje.
+- [Identificar Nombres de Furni](https://wired.hartico.tv/complementos/identificar-nombres-de-furni/): Permite meter el nombre de un furni dentro de un mensaje.
+- [Marcador de posición de variable](https://wired.hartico.tv/complementos/marcador-de-posicion-de-variable/): Permite meter el valor de una variable dentro de un mensaje.
+- [Capturador de variables](https://wired.hartico.tv/complementos/capturador-de-variables/): Guarda en una variable lo que el usuario escribe en el chat.
+- [Conector de texto](https://wired.hartico.tv/complementos/conector-de-texto/): Le pone un nombre legible a cada valor de una variable.
+
+## Variables
+
+- [Variables](https://wired.hartico.tv/variables/): Las 6 cajas de variables, y de quién es cada dato.
+- [Variable de usuario](https://wired.hartico.tv/variables/variable-de-usuario/): Guarda un dato en cada persona — su puntuación, su progreso, sus permisos.
+- [Variable de furni](https://wired.hartico.tv/variables/variable-de-furni/): Guarda un dato en cada mueble — su estado, sus veces usadas, su turno.
+- [Variable de contexto](https://wired.hartico.tv/variables/variable-de-contexto/): Un dato temporal que vive solo durante la ejecución de la pila.
+- [Variable global](https://wired.hartico.tv/variables/variable-global/): Un dato de la sala, o del hotel, compartido por todos.
+- [Variable heredada](https://wired.hartico.tv/variables/variable-heredada/): Trae a esta sala una variable que vive en otra.
+- [Echo](https://wired.hartico.tv/variables/echo/): Le pone nombre propio a una variable del sistema para poder tratarla como una tuya.
+
+## Referencia
+
+- [Todos los wireds](https://wired.hartico.tv/referencia/todos-los-wireds/): El listado completo de furnis wired del hotel, agrupados por familia.
+
