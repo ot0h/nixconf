@@ -1,7 +1,7 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "7e3f6dd6ef6da93f74974521c81d8d5bff0443c5",
+      "rev": "cef8d093b63c9be7e8b49f7dc341e8447fc4c300",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
@@ -116,7 +116,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "fbaef6156f9ad65790931ab543ab1dfec57bbec7",
+      "rev": "bff1bd61cb1455040533201ca1edf1e84efa578f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
