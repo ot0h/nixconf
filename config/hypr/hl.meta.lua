@@ -7,6 +7,7 @@
 ---| "config.reloaded"
 ---| "hyprland.shutdown"
 ---| "hyprland.start"
+---| "input.keyboard.key"
 ---| "keybinds.submap"
 ---| "layer.closed"
 ---| "layer.opened"
@@ -32,6 +33,7 @@
 ---| "workspace.created"
 ---| "workspace.move_to_monitor"
 ---| "workspace.removed"
+---| "workspace.special_active"
 
 ---@alias HL.ConfigKey
 ---| "animations.enabled"
@@ -202,6 +204,7 @@
 ---| "group.groupbar.col.inactive"
 ---| "group.groupbar.col.locked_active"
 ---| "group.groupbar.col.locked_inactive"
+---| "group.groupbar.disable_when_only"
 ---| "group.groupbar.enabled"
 ---| "group.groupbar.font_family"
 ---| "group.groupbar.font_size"
@@ -295,6 +298,8 @@
 ---| "input.touchpad.tap_to_click"
 ---| "input.virtualkeyboard.release_pressed_on_close"
 ---| "input.virtualkeyboard.share_states"
+---| "input_capture.capture_modifiers"
+---| "input_capture.enforce_barriers"
 ---| "layout.single_window_aspect_ratio"
 ---| "layout.single_window_aspect_ratio_tolerance"
 ---| "master.allow_small_split"
@@ -332,6 +337,7 @@
 ---| "misc.focus_on_activate"
 ---| "misc.font_family"
 ---| "misc.force_default_wallpaper"
+---| "misc.initial_workspace_token_timeout"
 ---| "misc.initial_workspace_tracking"
 ---| "misc.key_press_enables_dpms"
 ---| "misc.layers_hog_keyboard_focus"
@@ -343,6 +349,7 @@
 ---| "misc.on_focus_under_fullscreen"
 ---| "misc.render_unfocused_fps"
 ---| "misc.screencopy_force_8b"
+---| "misc.session_lock_blur"
 ---| "misc.session_lock_xray"
 ---| "misc.size_limits_tiled"
 ---| "misc.splash_font_family"
@@ -442,6 +449,7 @@ local __HL_LayoutProvider = {}
 ---@field description? string
 ---@field desc? string
 ---@field device? {inclusive?: boolean, list?: string[]}
+---@field allow_input_capture? boolean
 local __HL_BindOptions = {}
 
 ---@class HL.TimerOptions
@@ -474,6 +482,13 @@ local __HL_PermissionSpec = {}
 ---@field icon? integer|string
 ---@field font_size? number
 local __HL_NotificationOptions = {}
+
+---@class HL.Plugin
+---@field name? string
+---@field author? string
+---@field version? string
+---@field description? string
+local __HL_Plugin = {}
 
 ---@class HL.LayerQueryFilter
 ---@field monitor? HL.MonitorSelector
@@ -612,6 +627,8 @@ local __HL_WorkspaceRuleSpec = {}
 local __HL_EventSubscription = {}
 
 ---@class HL.Group
+---@field add fun(self: HL.Group, window: HL.Window, index?: integer)
+---@field remove fun(self: HL.Group, window_or_index: HL.Window|integer)
 ---@field current HL.Window|nil
 ---@field current_index integer
 ---@field denied boolean
@@ -625,13 +642,14 @@ local __HL_Group = {}
 ---@field remove fun(self: HL.Keybind, ...): any
 ---@field set_enabled fun(self: HL.Keybind, ...): any
 ---@field unbind fun(self: HL.Keybind, ...): any
+---@field allow_input_capture boolean|nil
 ---@field arg string
 ---@field auto_consuming boolean
 ---@field catchall boolean
 ---@field click boolean
 ---@field description any
 ---@field device_inclusive boolean
----@field devices nil
+---@field devices any
 ---@field display_key string
 ---@field dont_inhibit boolean
 ---@field drag boolean
@@ -732,8 +750,9 @@ local __HL_Timer = {}
 
 ---@class HL.Window
 ---@field accepts_input boolean
----@field active boolean|nil
+---@field active boolean
 ---@field address string
+---@field allowed_over_fullscreen boolean
 ---@field at integer|table
 ---@field class string
 ---@field content_type string
@@ -741,6 +760,7 @@ local __HL_Timer = {}
 ---@field focus_history_id integer
 ---@field fullscreen integer
 ---@field fullscreen_client integer
+---@field fullscreen_handler string
 ---@field group HL.Group|nil
 ---@field hidden boolean
 ---@field inhibiting_idle boolean
@@ -749,13 +769,14 @@ local __HL_Timer = {}
 ---@field layout HL.Window|boolean|integer|number|string|table|nil
 ---@field mapped boolean
 ---@field monitor HL.Monitor|nil
----@field over_fullscreen boolean
 ---@field pid integer
+---@field pin_fullscreened boolean
 ---@field pinned boolean
 ---@field size integer|table
 ---@field stable_id integer
 ---@field swallowing HL.Window|nil
 ---@field tags string|table
+---@field tearing_hint boolean|nil
 ---@field title string
 ---@field visible boolean
 ---@field workspace HL.Workspace|nil
@@ -791,9 +812,15 @@ local __HL_WindowRule = {}
 ---@field windows integer
 local __HL_Workspace = {}
 
+---@class HL.WorkspaceRule
+---@field is_enabled fun(self: HL.WorkspaceRule, ...): any
+---@field set_enabled fun(self: HL.WorkspaceRule, ...): any
+local __HL_WorkspaceRule = {}
+
 ---@class HL.API
 ---@field animation fun(...): any
 ---@field bind fun(keys: string, dispatcher: HL.Dispatcher|function, opts?: HL.BindOptions): HL.Keybind
+---@field clear_crashed_lockscreen fun(): nil
 ---@field config fun(config: HL.ConfigOpt): nil
 ---@field curve fun(...): any
 ---@field define_submap fun(name: string, reset_or_fn: string|function, fn?: function): nil
@@ -801,7 +828,7 @@ local __HL_Workspace = {}
 ---@field dispatch fun(dispatcher: HL.Dispatcher|function): any
 ---@field env fun(...): any
 ---@field exec_cmd fun(cmd: string, rules?: table<string, string|number|boolean>): nil
----@field exec_scheduled_prop_refresh_immediately fun(...): any
+---@field exec_scheduled_prop_refresh_immediately fun(): nil
 ---@field gesture fun(spec: HL.GestureSpec): nil
 ---@field get_active_monitor fun(): HL.Monitor|nil
 ---@field get_active_special_workspace fun(monitor?: HL.MonitorSelector): HL.Workspace|nil
@@ -813,7 +840,7 @@ local __HL_Workspace = {}
 ---@field get_last_window fun(): HL.Window|nil
 ---@field get_last_workspace fun(monitor?: HL.MonitorSelector): HL.Workspace|nil
 ---@field get_layers fun(filters?: HL.LayerQueryFilter): HL.LayerSurface[]
----@field get_loaded_plugins fun(...): any
+---@field get_loaded_plugins fun(): HL.Plugin[]
 ---@field get_monitor fun(selector: HL.MonitorSelector): HL.Monitor|nil
 ---@field get_monitor_at fun(x: number|HL.Vec2, y?: number): HL.Monitor|nil
 ---@field get_monitor_at_cursor fun(): HL.Monitor|nil
@@ -824,15 +851,16 @@ local __HL_Workspace = {}
 ---@field get_workspace fun(selector: HL.WorkspaceSelector): HL.Workspace|nil
 ---@field get_workspace_windows fun(workspace: HL.WorkspaceSelector): HL.Window[]
 ---@field get_workspaces fun(): HL.Workspace[]
+---@field is_key_down fun(key: number|string): boolean
 ---@field layer_rule fun(spec: HL.LayerRuleSpec): HL.LayerRule
 ---@field monitor fun(spec: HL.MonitorSpec): nil
 ---@field on fun(event: HL.EventName, cb: fun(...)): HL.EventSubscription
 ---@field permission fun(spec: HL.PermissionSpec): nil
 ---@field timer fun(callback: function, opts: HL.TimerOptions): HL.Timer
----@field unbind fun(...): any
----@field version fun(...): any
+---@field unbind fun(key: string): nil
+---@field version fun(): string
 ---@field window_rule fun(spec: HL.WindowRuleSpec): HL.WindowRule
----@field workspace_rule fun(spec: HL.WorkspaceRuleSpec): nil
+---@field workspace_rule fun(spec: HL.WorkspaceRuleSpec): HL.WorkspaceRule
 ---@field dsp HL.DspNamespace
 ---@field layout HL.LayoutNamespace
 ---@field notification HL.NotificationNamespace
@@ -852,6 +880,7 @@ local __HL_API = {}
 ---@field layout fun(...): HL.Dispatcher
 ---@field no_op fun(...): HL.Dispatcher
 ---@field pass fun(...): HL.Dispatcher
+---@field release_input_capture fun(...): HL.Dispatcher
 ---@field send_key_state fun(...): HL.Dispatcher
 ---@field send_shortcut fun(...): HL.Dispatcher
 ---@field submap fun(...): HL.Dispatcher
@@ -901,6 +930,7 @@ local __HL_DspGroupNamespace = {}
 local __HL_DspWindowNamespace = {}
 
 ---@class HL.DspWorkspaceNamespace
+---@field change_id fun(...): HL.Dispatcher
 ---@field move fun(...): HL.Dispatcher
 ---@field rename fun(...): HL.Dispatcher
 ---@field swap_monitors fun(...): HL.Dispatcher
@@ -1093,6 +1123,7 @@ hl = {}
 ---@field ['group.groupbar.col.inactive'] string|HL.Gradient
 ---@field ['group.groupbar.col.locked_active'] string|HL.Gradient
 ---@field ['group.groupbar.col.locked_inactive'] string|HL.Gradient
+---@field ['group.groupbar.disable_when_only'] boolean
 ---@field ['group.groupbar.enabled'] boolean
 ---@field ['group.groupbar.font_family'] string
 ---@field ['group.groupbar.font_size'] integer|boolean
@@ -1186,6 +1217,8 @@ hl = {}
 ---@field ['input.touchpad.tap_to_click'] boolean
 ---@field ['input.virtualkeyboard.release_pressed_on_close'] boolean
 ---@field ['input.virtualkeyboard.share_states'] integer|boolean
+---@field ['input_capture.capture_modifiers'] boolean
+---@field ['input_capture.enforce_barriers'] boolean
 ---@field ['layout.single_window_aspect_ratio'] HL.Vec2Like
 ---@field ['layout.single_window_aspect_ratio_tolerance'] number|boolean
 ---@field ['master.allow_small_split'] boolean
@@ -1223,6 +1256,7 @@ hl = {}
 ---@field ['misc.focus_on_activate'] boolean
 ---@field ['misc.font_family'] string
 ---@field ['misc.force_default_wallpaper'] integer|boolean
+---@field ['misc.initial_workspace_token_timeout'] integer|boolean
 ---@field ['misc.initial_workspace_tracking'] integer|boolean
 ---@field ['misc.key_press_enables_dpms'] boolean
 ---@field ['misc.layers_hog_keyboard_focus'] boolean
@@ -1234,6 +1268,7 @@ hl = {}
 ---@field ['misc.on_focus_under_fullscreen'] integer|boolean
 ---@field ['misc.render_unfocused_fps'] integer|boolean
 ---@field ['misc.screencopy_force_8b'] boolean
+---@field ['misc.session_lock_blur'] boolean
 ---@field ['misc.session_lock_xray'] boolean
 ---@field ['misc.size_limits_tiled'] boolean
 ---@field ['misc.splash_font_family'] string
@@ -1296,6 +1331,7 @@ local __HL_ConfigValueTypes = {}
 ---@field master? HL.ConfigOpt.Master
 ---@field scrolling? HL.ConfigOpt.Scrolling
 ---@field experimental? HL.ConfigOpt.Experimental
+---@field input_capture? HL.ConfigOpt.InputCapture
 ---@field quirks? HL.ConfigOpt.Quirks
 
 ---@class HL.ConfigOpt.General
@@ -1506,6 +1542,7 @@ local __HL_ConfigValueTypes = {}
 
 ---@class HL.ConfigOpt.Group.Groupbar
 ---@field enabled? boolean
+---@field disable_when_only? boolean
 ---@field font_family? string
 ---@field font_weight_active? integer|string
 ---@field font_weight_inactive? integer|string
@@ -1566,11 +1603,13 @@ local __HL_ConfigValueTypes = {}
 ---@field mouse_move_focuses_monitor? boolean
 ---@field allow_session_lock_restore? boolean
 ---@field session_lock_xray? boolean
+---@field session_lock_blur? boolean
 ---@field background_color? string
 ---@field close_special_on_empty? boolean
 ---@field on_focus_under_fullscreen? integer|boolean
 ---@field exit_window_retains_fullscreen? boolean
 ---@field initial_workspace_tracking? integer|boolean
+---@field initial_workspace_token_timeout? integer|boolean
 ---@field middle_click_paste? boolean
 ---@field render_unfocused_fps? integer|boolean
 ---@field disable_xdg_env_checks? boolean
@@ -1729,6 +1768,10 @@ local __HL_ConfigValueTypes = {}
 
 ---@class HL.ConfigOpt.Experimental
 ---@field wp_cm_1_2? boolean
+
+---@class HL.ConfigOpt.InputCapture
+---@field capture_modifiers? boolean
+---@field enforce_barriers? boolean
 
 ---@class HL.ConfigOpt.Quirks
 ---@field prefer_hdr? integer|boolean
