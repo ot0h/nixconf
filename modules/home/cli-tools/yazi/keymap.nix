@@ -209,6 +209,13 @@
           run = "plugin yafg";
           desc = "Plugin yafg";
         }
+
+        {
+          on = ["!"];
+          for = "unix";
+          run = ''shell "$SHELL" --block'';
+          desc = "Open $SHELL here";
+        }
       ];
     };
   };

@@ -31,19 +31,19 @@
     opener = {
       edit = [
         {
-          run = ''nvim "$@"'';
+          run = ''nvim "%s"'';
           block = true;
           for = "unix";
           desc = "Neovim";
         }
         {
-          run = ''zeditor "$@"'';
+          run = ''zeditor "%s"'';
           block = true;
           for = "unix";
           desc = "Zed";
         }
         {
-          run = ''code"$@"'';
+          run = ''code"%s"'';
           block = true;
           for = "unix";
           desc = "VSCODE";
@@ -56,7 +56,7 @@
           for = "linux";
         }
         {
-          run = ''open "$@"'';
+          run = ''open "%s"'';
           desc = "Open";
           for = "macos";
         }
@@ -69,19 +69,19 @@
       ];
       image = [
         {
-          run = "imv-dir $@";
+          run = "imv-dir %s";
           orphan = true;
           desc = "IMV-DIR";
           for = "linux";
         }
         {
-          run = ''aseprite "$@"'';
+          run = ''aseprite "%s"'';
           orphan = true;
           desc = "Aseprite";
           for = "linux";
         }
         {
-          run = ''gimp "$@"'';
+          run = ''gimp "%s"'';
           orphan = true;
           desc = "Gimp";
           for = "linux";
@@ -165,12 +165,12 @@
       ];
       play = [
         {
-          run = ''mpv "$@"'';
+          run = ''mpv "%s"'';
           orphan = true;
           for = "unix";
         }
         {
-          run = ''vlc "$@"'';
+          run = ''vlc "%s"'';
           orphan = true;
           desc = "VLC";
           for = "unix";
@@ -206,16 +206,10 @@
           desc = "Libreoffice";
           for = "linux";
         }
-        {
-          run = "onlyoffice-desktopeditors %s";
-          orphan = true;
-          desc = "OnlyOffice";
-          for = "linux";
-        }
       ];
       game = [
         {
-          run = ''mgba "$@"'';
+          run = ''mgba "%s"'';
           orphan = true;
           desc = "MGBA";
           for = "unix";
@@ -223,7 +217,7 @@
       ];
       nds = [
         {
-          run = ''melonDS "$@"'';
+          run = ''melonDS "%s"'';
           orphan = true;
           desc = "melonDs";
           for = "unix";
