@@ -11,4 +11,10 @@ hl.on("hyprland.start", function()
 		--watch ~/.config/stylix \
 		-- "ags quit; ags run & ags request reload; hyprctl reload"'
 	]])
+
+	hl.exec_cmd("systemctl --user start hyprland-session.target")
+end)
+
+hl.on("hyprland.shutdown", function()
+	os.execute("systemctl --user stop graphical-session.target")
 end)
