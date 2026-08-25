@@ -41,7 +41,6 @@ in {
 
     # Cloud
     google-drive-ocamlfuse
-    jujutsu
 
     ripgrep
     # Typst
@@ -49,7 +48,6 @@ in {
 
     #Cosas de IA
     llmAgents.opencode
-    llmAgents.pi
     (callPackage ./engram.nix {})
   ];
 
