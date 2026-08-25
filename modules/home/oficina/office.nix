@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Office
   home.packages = with pkgs; [
-    libreoffice-fresh
+    libreoffice-stable
     # onlyoffice-desktopeditors
   ];
 }
