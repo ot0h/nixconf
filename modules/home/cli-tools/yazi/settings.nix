@@ -165,7 +165,7 @@
       ];
       play = [
         {
-          run = ''mpv "%s"'';
+          run = "mpv %s";
           orphan = true;
           for = "unix";
         }
