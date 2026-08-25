@@ -1,17 +1,17 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "73e89eb3e536a4dd8f991c963bd37189520c9919",
+      "rev": "5f2a3b5dc13f3622000cb488c9af505b933152e3",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
     "async.nvim": {
-      "rev": "99aed904ae1253c27fac60b862b6d73ef1380e54",
+      "rev": "7ec027e64d200dfacb4080f0fa1a30297befea03",
       "src": "https://github.com/lewis6991/async.nvim",
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "d50cfb205c677143d1f036a4749e21c1c8c6bc85",
+      "rev": "101d71861f6a012f2be80e4100720874330d86aa",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },

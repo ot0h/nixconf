@@ -76,7 +76,7 @@
     stylua
   ];
 
-  linuxOnly = lib.optionals (!pkgs.stdenv.isDarwin) (with pkgs; [
+  linuxOnly = lib.optionals (!pkgs.stdenv.hostPlatform.isDarwin) (with pkgs; [
     wl-clipboard
     xsel
     xclip
