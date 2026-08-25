@@ -10,7 +10,10 @@
 
   keybindings = import ./keybindings.nix;
   plugins = import ./plugins.nix {inherit pkgs;};
-  statusbar = import ./statusbar/${statusbarVariant}.nix {inherit pkgs; inherit c;};
+  statusbar = import ./statusbar/${statusbarVariant}.nix {
+    inherit pkgs;
+    inherit c;
+  };
 in {
   programs.tmux = {
     enable = true;
@@ -57,6 +60,9 @@ in {
 
       # No fuerces resize agresivo (rompe coordenadas de imagen)
       set -g aggressive-resize off
+
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
     '';
   };
 

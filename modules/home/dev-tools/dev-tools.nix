@@ -49,8 +49,7 @@ in {
 
     #Cosas de IA
     llmAgents.opencode
-    llmAgents.mimo-code
-    qwen-code
+    llmAgents.pi
     (callPackage ./engram.nix {})
   ];
 
