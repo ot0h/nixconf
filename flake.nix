@@ -29,10 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     llm-agents.url = "github:numtide/llm-agents.nix";
-    curd = {
-      url = "github:Wraient/curd";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # shojiwm.url = "github:bea4dev/ShojiWM";
     stylix = {
       url = "github:nix-community/stylix";

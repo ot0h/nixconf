@@ -163,27 +163,6 @@
         "type": "github"
       }
     },
-    "curd": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1786005509,
-        "narHash": "sha256-6dupLSwxXt+40HypOe3vb/kSV/WlQuXLHvudsETCMic=",
-        "owner": "Wraient",
-        "repo": "curd",
-        "rev": "b859cc34cf0321c9f6e731dbe5b56aa76bf6004b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Wraient",
-        "repo": "curd",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -283,7 +262,7 @@
     },
     "flake-utils": {
       "inputs": {
-        "systems": "systems_2"
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -401,7 +380,7 @@
         "bun2nix": "bun2nix",
         "flake-parts": "flake-parts_2",
         "nixpkgs": "nixpkgs",
-        "systems": "systems_3",
+        "systems": "systems_2",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
@@ -532,7 +511,6 @@
       "inputs": {
         "ags": "ags",
         "astal": "astal_2",
-        "curd": "curd",
         "flake-parts": "flake-parts",
         "gazelle": "gazelle",
         "home-manager": "home-manager",
@@ -556,7 +534,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems_4",
+        "systems": "systems_3",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
         "tinted-tmux": "tinted-tmux",
@@ -607,21 +585,6 @@
       }
     },
     "systems_3": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_4": {
       "locked": {
         "lastModified": 1774449309,
         "narHash": "sha256-brhZ8DmuGtzkCYHJg4HEd602amKm89Y9ytsFZ5uWD1w=",

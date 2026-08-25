@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  curd = inputs.curd.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in {
+{pkgs, ...}: {
   imports = [
     ./games.nix
   ];
@@ -21,7 +15,6 @@ in {
 
     mgba
 
-    curd
-    (callPackage ./ani-cli.nix {})
+    ani-cli
   ];
 }
