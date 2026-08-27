@@ -1,6 +1,6 @@
-# ❄️ nixconf
+# ☠️ nixconf
 
-Configuración personal de NixOS — [@qisvo](https://github.com/qisvo)
+Configuración personal de NixOS — [@ot0h](https://github.com/ot0h)
 
 > NixOS + Home Manager + Hyprland + AGS + Depresion xd
 
