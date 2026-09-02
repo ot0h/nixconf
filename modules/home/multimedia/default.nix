@@ -7,6 +7,7 @@
     # Reproductores
     spotify
     ncspot
+    spotatui
     dart-sass
     mpv-unwrapped
 
