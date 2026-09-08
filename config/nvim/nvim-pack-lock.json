@@ -1,7 +1,7 @@
 {
   "plugins": {
     "SchemaStore.nvim": {
-      "rev": "077872be5d1c7ef47fb667df84ab49ea1dfcb1bc",
+      "rev": "2224119e0794fa979d435a7390fa6278877bf3ae",
       "src": "https://github.com/b0o/SchemaStore.nvim",
       "version": "'main'"
     },
@@ -11,7 +11,7 @@
       "version": "'main'"
     },
     "blink.cmp": {
-      "rev": "49d39fda6350d7f789d1da1053e86c9e256f8108",
+      "rev": "f72465357ede7f8d899f34816d49408813c374c6",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'main'"
     },
@@ -30,7 +30,7 @@
       "version": "'master'"
     },
     "copilot.lua": {
-      "rev": "bd8c2159660faccb40fb845b746cc9aad5881e76",
+      "rev": "901a6c564abb45c7703401ecc6416bb0d15afd37",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": "'master'"
     },
@@ -45,7 +45,7 @@
       "version": "'main'"
     },
     "friendly-snippets": {
-      "rev": "bb548e5ae4550a5e318b7e398a93b9af456b65e1",
+      "rev": "30bfd475adadfd4f286f86168831348dfd8aecdc",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
@@ -116,7 +116,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "da1aff0332774a0f60d52bf972e815dfc226f276",
+      "rev": "19576de1c1b6d1b5e231ea6ef9cba9a811c322bb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
