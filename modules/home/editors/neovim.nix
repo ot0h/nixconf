@@ -19,6 +19,7 @@
     fzf
     lazygit
     tailwindcss-language-server
+    copilot-language-server
 
     # LUA
     lua-language-server

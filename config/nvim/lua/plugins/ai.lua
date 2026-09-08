@@ -28,6 +28,10 @@ vim.api.nvim_create_user_command("CopilotToggle", function()
 					dismiss = "<C-]>",
 				},
 			},
+			server = {
+				type = "binary",
+				custom_server_filepath = vim.fn.exepath("copilot-language-servere"),
+			},
 			panel = { enabled = false },
 			filetypes = {
 				lua = true,
