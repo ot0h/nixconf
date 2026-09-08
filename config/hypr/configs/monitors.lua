@@ -15,3 +15,9 @@ hl.monitor({
 	position = "auto",
 	scale = 1.00,
 })
+hl.monitor({
+	output = "desc:Samsung Electric Company S19F350 H4TH402379",
+	mode = "preferred",
+	position = "auto",
+	scale = 1.00,
+})
