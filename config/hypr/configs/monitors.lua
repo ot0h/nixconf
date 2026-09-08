@@ -9,3 +9,9 @@ hl.monitor({
 	position = "auto",
 	scale = 1.2,
 })
+hl.monitor({
+	output = "desc:Dell Inc. DELL E2016H",
+	mode = "preferred",
+	position = "auto",
+	scale = 1.00,
+})
