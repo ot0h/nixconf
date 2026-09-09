@@ -362,3 +362,10 @@ end)
 map({ "n", "x" }, "<leader>rs", function()
 	require("refactoring").select_refactor()
 end, { desc = "Select Refactor", icon = "󰛸" })
+
+-- Multicursor
+local mc_ns = vim.api.nvim_create_namespace("nvim.multicursor")
+
+map("n", "<leader>mc", function()
+	vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+end, { desc = "Clear multicursors", icon = "󰇀" })
