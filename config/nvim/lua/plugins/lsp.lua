@@ -39,7 +39,7 @@ do
 
 			["<C-space>"] = {
 				function(cmp)
-					cmp.show({ providers = { "snippets" } })
+					cmp.show({ providers = { "snippets", "lsp", "buffer" } })
 				end,
 			},
 		},
