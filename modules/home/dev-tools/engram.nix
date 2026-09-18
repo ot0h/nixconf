@@ -5,16 +5,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "engram";
-  version = "1.16.3";
+  version = "2.0.0";
 
   src = fetchFromGitHub {
     owner = "Gentleman-Programming";
     repo = "engram";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-qk3pnrE/2Vzn+sOHsVp+pXyqCEFVLpaecb/AbAQPds0=";
+    hash = "sha256-d5bxn72roCafsnnRUZcwf66QcgZWXNdY/eqoqBP/W4s=";
   };
 
-  vendorHash = "sha256-O+pC4x4DKNUWr7Sx9iZOjK6a64wrQA4/lnjvkNLBX64=";
+  vendorHash = "sha256-tLWuHdnJgBSlzcyvXLzxtvzHSgoZqVXhmUjg2phBgYw=";
 
   # Tests require git in sandbox PATH; not worth the dependency for personal use
   doCheck = false;
