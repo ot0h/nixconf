@@ -8,6 +8,7 @@
 in {
   # Herramientas de desarrollo
   home.packages = with pkgs; [
+    android-tools
     git
     git-filter-repo
     lazygit
