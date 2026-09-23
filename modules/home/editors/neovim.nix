@@ -32,6 +32,7 @@
     yarn
     pnpm
     angular-language-server
+    astro-language-server
 
     # C++ / C
     clang-tools

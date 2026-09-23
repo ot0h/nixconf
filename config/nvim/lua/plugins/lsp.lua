@@ -678,6 +678,35 @@ do
 		},
 	})
 	vim.lsp.enable("sqls")
+
+	-- ASTRO
+	local function find_tsdk(root)
+		for dir in vim.fs.parents(root .. "/x") do
+			local p = dir .. "/node_modules/typescript/lib"
+			if vim.uv.fs_stat(p .. "/typescript.js") or vim.uv.fs_stat(p .. "/tsserverlibrary.js") then
+				return p
+			end
+		end
+		return vim.env.TSDK_FALLBACK
+	end
+
+	vim.lsp.config("astro", {
+		cmd = { "astro-ls", "--stdio" },
+		filetypes = { "astro" },
+		root_markers = { "astro.config.mjs", "astro.config.ts", "package.json", ".git" },
+		capabilities = capabilities,
+		on_attach = on_attach,
+		before_init = function(params, config)
+			local tsdk = find_tsdk(config.root_dir or vim.uv.cwd())
+			if not tsdk then
+				vim.notify("astro-ls: no encontré typescript (instálalo en el proyecto)", vim.log.levels.WARN)
+				return
+			end
+			params.initializationOptions = params.initializationOptions or {}
+			params.initializationOptions.typescript = { tsdk = tsdk }
+		end,
+	})
+	vim.lsp.enable("astro")
 end
 
 do
@@ -703,6 +732,7 @@ do
 			fish = { "fish_indent" },
 			cs = { "csharpier" },
 			sql = { "sqlfmt" },
+			astro = { "prettier" },
 		},
 		format_on_save = true,
 	})
