@@ -13,6 +13,7 @@
 
     # Audio
     wiremix
+    pavucontrol
 
     mgba
 
