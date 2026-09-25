@@ -30,6 +30,7 @@ in {
       astalPkgs.io
       astalPkgs.powerprofiles
       astalPkgs.astal4
+      astalPkgs.workspace
 
       agsPkg.default
       libadwaita
